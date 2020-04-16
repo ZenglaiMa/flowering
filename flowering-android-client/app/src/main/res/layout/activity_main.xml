@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@+id/rl_bottom"
+        android:background="#B5B5B5" />
+
+    <RelativeLayout
+        android:id="@+id/rl_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#FFF">
+
+        <com.yinglan.alphatabs.AlphaTabsIndicator xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/alphaIndicator"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:orientation="horizontal">
+
+            <com.yinglan.alphatabs.AlphaTabView
+                android:id="@+id/atv_one"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="5dp"
+                app:tabIconNormal="@drawable/flower_discovery_normal"
+                app:tabIconSelected="@drawable/flower_discovery_selected"
+                app:tabText="花觅"
+                app:textColorNormal="#2c2c2c"
+                app:textColorSelected="#45C01A" />
+
+            <com.yinglan.alphatabs.AlphaTabView
+                android:id="@+id/atv_two"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="5dp"
+                app:tabIconNormal="@drawable/flower_among_normal"
+                app:tabIconSelected="@drawable/flower_among_selected"
+                app:tabText="花间"
+                app:textColorNormal="#2c2c2c"
+                app:textColorSelected="#45C01A" />
+
+            <com.yinglan.alphatabs.AlphaTabView
+                android:id="@+id/atv_three"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="5dp"
+                app:tabIconNormal="@drawable/flower_post_normal"
+                app:tabIconSelected="@drawable/flower_post_selected"
+                app:tabText="花现"
+                app:textColorNormal="#2c2c2c"
+                app:textColorSelected="#45C01A" />
+
+            <com.yinglan.alphatabs.AlphaTabView
+                android:id="@+id/atv_four"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="5dp"
+                app:tabIconNormal="@drawable/mine_normal"
+                app:tabIconSelected="@drawable/mine_selected"
+                app:tabText="我"
+                app:textColorNormal="#2c2c2c"
+                app:textColorSelected="#45C01A" />
+
+        </com.yinglan.alphatabs.AlphaTabsIndicator>
+
+    </RelativeLayout>
+
+</RelativeLayout>
+
