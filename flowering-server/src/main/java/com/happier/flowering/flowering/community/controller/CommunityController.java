@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * @ClassName CommunityController
  * @Description 花间(即文章) controller
- * @Author Seven
+ * @Author Seven 赵语涵
  * @Date 2020-04-15 15:12
  */
 @RestController
@@ -18,8 +18,4 @@ public class CommunityController {
     @Autowired
     private CommunityService communityService;
 
-    @RequestMapping("test")
-    public void test(){
-        communityService.jSend_notification("收到一条通知", "aaaaa");
-    }
 }

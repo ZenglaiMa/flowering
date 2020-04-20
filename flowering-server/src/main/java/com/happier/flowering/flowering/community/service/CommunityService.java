@@ -10,21 +10,42 @@ import cn.jpush.api.push.model.PushPayload;
 import cn.jpush.api.push.model.audience.Audience;
 import cn.jpush.api.push.model.notification.AndroidNotification;
 import cn.jpush.api.push.model.notification.Notification;
+import com.happier.flowering.entity.Article;
+import com.happier.flowering.mapper.ArticleMapper;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import javax.annotation.Resource;
 
 /**
  * @ClassName CommunityService
  * @Description 花间(即文章) service
- * @Author Seven
+ * @Author Seven 赵语涵
  * @Date 2020-04-15 15:12
  */
 @Service
+@Transactional(readOnly = false)
 public class CommunityService {
     private final static String appKey = "17b9165411a620c111f01372";
     private final static String masterSecret = "44346d9b2e6467923cebfd1d";
+    @Resource
+    private ArticleMapper articleMapper;
     /*
-     * @description JPush推送文章方法1
-     * @param registrationId  特定的用户的registrationId 暂时没用到
+     * @description 任务调度 + JPush推送文章方法1
+     * @author 赵语涵
+     */
+    @Scheduled(cron = "0/2 * * * * ?")
+    public void jpush(){
+        Article article = articleMapper.getArticalById(1);
+        System.out.println(article.toString());
+        //TODO
+        jSend_notification("一条消息","c");
+    }
+
+    /*
+     * @description JPush推送文章方法2
+     * @param registrationId  特定的用户的registrationId 暂时没用到 删除了
      * @param alert 提醒的内容
      * @param extrasparam 附带的参数
      * @author 赵语涵
@@ -46,11 +67,17 @@ public class CommunityService {
             System.out.println("Msg ID: " + e.getMsgId());
         }
     }
+    /*
+     * @description JPush推送文章方法3
+     * @param registrationId  特定的用户的registrationId 暂时没用到 删除了
+     * @param alert 提醒的内容
+     * @param extrasparam 附带的参数
+     * @author 赵语涵
+     */
     public PushPayload send_N(String alert, String extrasparam){
         return PushPayload.newBuilder()
                 .setPlatform(Platform.all())//    推送平台设置：所有平台
-//              TODO：推送人，所有，不确定有没有实现
-//              .setAudience(Audience.registrationId(registrationId))
+//                .setAudience(Audience.registrationId("140fe1da9e35c48bff1"))
                 .setAudience(Audience.all())
 //    			.setNotification(Notification.alert(alert))
                 .setNotification(Notification.newBuilder()
