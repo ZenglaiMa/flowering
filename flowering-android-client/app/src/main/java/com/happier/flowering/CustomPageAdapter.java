@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  * @ClassName CustomPageAdapter
- * @Description 自定义ViewPagerAdapter, 用来填充ViewPager
+ * @Description 自定义ViewPagerAdapter, 用来填充ViewPager, 此类不允许改动!!(如非改动不可请联系马增来)
  * @Author seven
  * @date 2020/4/16 15:09
  * @Version 0.1

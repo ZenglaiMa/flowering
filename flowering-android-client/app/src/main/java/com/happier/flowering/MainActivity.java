@@ -16,7 +16,7 @@ import java.util.List;
 
 /**
  * @ClassName MainActivity
- * @Description 搭建基本的显示框架, 即TabHost + Fragment, 仿微信效果
+ * @Description 搭建基本的显示框架, 即TabHost + Fragment, 此类不允许改动!!(如非改动不可请联系马增来)
  * @Author seven
  * @date 2020/4/16 15:09
  * @Version 0.1

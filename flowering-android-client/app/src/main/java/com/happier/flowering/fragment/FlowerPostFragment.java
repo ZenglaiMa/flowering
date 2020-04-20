@@ -17,7 +17,7 @@ import com.yinglan.alphatabs.OnTabChangedListner;
 
 /**
  * @ClassName FlowerPostFragment
- * @Description 花现Fragment
+ * @Description 花现Fragment, 此类不允许改动!!(如非改动不可请联系马增来)
  * @Author seven
  * @date 2020/4/16 15:09
  * @Version 0.1
