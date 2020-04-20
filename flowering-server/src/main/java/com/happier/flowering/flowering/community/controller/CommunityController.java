@@ -18,4 +18,8 @@ public class CommunityController {
     @Autowired
     private CommunityService communityService;
 
+    @RequestMapping("test")
+    public void test(){
+        communityService.jSend_notification("收到一条通知", "aaaaa");
+    }
 }

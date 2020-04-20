@@ -1,8 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2bf21958-aa2b-480d-b968-3a7f1d23a780" name="Default Changelist" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="2bf21958-aa2b-480d-b968-3a7f1d23a780" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__cn_jpush_api_jiguang_common_1_1_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__cn_jpush_api_jpush_client_3_3_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_13.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_all_4_1_6_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_17.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_5_12.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_13.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_log4j12_1_7_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/qaplug_profiles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_30.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_7.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flowering-server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/flowering-server.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/happier/flowering/flowering/community/controller/CommunityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/happier/flowering/flowering/community/controller/CommunityController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/happier/flowering/flowering/community/service/CommunityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/happier/flowering/flowering/community/service/CommunityService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/flowering/community/service/CommunityService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/happier/flowering/flowering/community/service/CommunityService.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,8 +48,7 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="F:/apache-maven-3.5.4" />
-        <option name="userSettingsFile" value="F:\maven-repository\settings.xml" />
+        <option name="userSettingsFile" value="E:\spring\apache-maven-3.6.2-bin\apache-maven-3.6.2\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
     <option name="importingSettings">
@@ -46,27 +63,34 @@
   </component>
   <component name="ProjectId" id="1aYTMRwD1Y7uIRXrAeuviQlTzAR" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/happier/flowering/flowering" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\flowering\flowering-server\src\main\java\com\happier\flowering\flowering" />
       <recent name="E:\IdeaProjects\flowering-server\src\main\resources\static" />
       <recent name="E:\IdeaProjects\flowering-server\src\main\resources\static\img2" />
       <recent name="E:\IdeaProjects\flowering-server\src\main\resources\static\img1" />
       <recent name="E:\IdeaProjects\flowering-server\src\main\resources\static\img" />
-      <recent name="E:\IdeaProjects\flowering-server\src\main\resources\static\img\img2" />
     </key>
   </component>
   <component name="RestServicesNavigator">
@@ -74,18 +98,6 @@
       <expand />
       <select />
     </treeState>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager">
     <configuration name="FloweringApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
@@ -116,6 +128,7 @@
       <workItem from="1587026945885" duration="488000" />
       <workItem from="1587029138678" duration="404000" />
       <workItem from="1587297883473" duration="273000" />
+      <workItem from="1587350088509" duration="5766000" />
     </task>
     <servers />
   </component>
@@ -134,6 +147,52 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="207" y="266" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1587368810459">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="207" y="266" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1280.680@0.0.1280.680" timestamp="1587368810459" />
+    <state x="420" y="82" key="FileChooserDialogImpl" timestamp="1587350701617">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="420" y="82" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1587350701617" />
+    <state width="1237" height="225" key="GridCell.Tab.0.bottom" timestamp="1587368336952">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="225" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1587368336952" />
+    <state width="1237" height="225" key="GridCell.Tab.0.center" timestamp="1587368336951">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="225" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1587368336951" />
+    <state width="1237" height="225" key="GridCell.Tab.0.left" timestamp="1587368336951">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="225" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1587368336951" />
+    <state width="1237" height="225" key="GridCell.Tab.0.right" timestamp="1587368336952">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="225" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1587368336952" />
+    <state width="1237" height="225" key="GridCell.Tab.1.bottom" timestamp="1587368336952">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="225" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1587368336952" />
+    <state width="1237" height="225" key="GridCell.Tab.1.center" timestamp="1587368336952">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="225" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1587368336952" />
+    <state width="1237" height="225" key="GridCell.Tab.1.left" timestamp="1587368336952">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="225" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1587368336952" />
+    <state width="1237" height="225" key="GridCell.Tab.1.right" timestamp="1587368336952">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="225" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1587368336952" />
+    <state x="142" y="0" key="SettingsEditor" timestamp="1587350704850">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1587350704850" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/flowering_server$FloweringApplication.ic" NAME="FloweringApplication Coverage Results" MODIFIED="1586934828692" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
