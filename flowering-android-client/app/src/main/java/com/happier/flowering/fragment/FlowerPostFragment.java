@@ -26,6 +26,7 @@ public class FlowerPostFragment extends Fragment {
 
     private AlphaTabsIndicator indicator;
     private ImageView ivPublishPost;
+    private ImageView add;
 
     private static final int TAB_LATEST = 0;
     private static final int TAB_CHOICE = 1;
@@ -38,7 +39,7 @@ public class FlowerPostFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_flower_post, container, false);
-
+        add = view.findViewById(R.id.iv_publish_post);
         // 设置顶部选项卡
         showFragment(new LatestPostFragment());
         indicator = view.findViewById(R.id.alphaIndicator_post);
@@ -47,15 +48,19 @@ public class FlowerPostFragment extends Fragment {
             public void onTabSelected(int tabNum) {
                 Fragment fragment = null;
                 if (tabNum == TAB_LATEST) {
+                    //            add.setImageResource(R.drawable.add_48px);
                     fragment = new LatestPostFragment();
                 } else if (tabNum == TAB_CHOICE) {
+                    //            add.setImageResource(R.drawable.add_48px);
                     fragment = new ChoicePostFragment();
                 } else if (tabNum == TAB_TOPIC) {
+                    //           add.setImageResource(R.drawable.add1);
                     fragment = new TopicPostFragment();
                 }
                 showFragment(fragment);
             }
         });
+
 
         ivPublishPost = view.findViewById(R.id.iv_publish_post);
         ivPublishPost.setOnClickListener(new View.OnClickListener() {
@@ -70,6 +75,7 @@ public class FlowerPostFragment extends Fragment {
 
     // 根据不同的选项卡显示不同的Fragment
     private void showFragment(Fragment fragment) {
+
         if (curFragment == fragment) {
             return;
         }
