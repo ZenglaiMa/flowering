@@ -101,6 +101,7 @@ public class FlowerFindingFragment extends Fragment {
     private void initListener() {
         wordsNavigation.setOnShowLetter(letter -> {
             mLetter = letter;
+            Log.e("receive",mLetter);
             TopSmoothScroller scroller = new TopSmoothScroller(getActivity());
             switch (mLetter) {
                 case "A":

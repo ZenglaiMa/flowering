@@ -115,7 +115,7 @@ public class WordsNavigation extends View {
             final int letterWidth = mRect.width();
             final int letterHeight = mRect.height();
 
-            //绘制点击高亮的字母
+
             if (mTouchIndex == i) {
                 mPaint.setColor(colorChecked);
             } else {
@@ -131,13 +131,13 @@ public class WordsNavigation extends View {
         final int y = (int) event.getY();
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                if (y<=1220&&y>=0){
+                if (y>=0&&y<mHeight){
                     refreshLetterIndex(y);
                 }
                 Log.i("beingTouched",String.valueOf(y));
                 break;
             case MotionEvent.ACTION_MOVE:
-                if (y<=1220&&y>=0){
+                if (y>=0&&y<mHeight){
                     refreshLetterIndex(y);
                 }
                 Log.i("glid",String.valueOf(y));
@@ -169,13 +169,12 @@ public class WordsNavigation extends View {
         //y坐标 / 每个字母高度 = 当前字母下标
         int index = y / mEachHeight;
         if (index != mTouchIndex) {
-            mTouchIndex = index;;
+            mTouchIndex = index;
             //回调选中的字母
             if (onShowLetterListener != null) {
                 onShowLetterListener.showLatter(letters[mTouchIndex]);
             }
-          //  FlowerFindingFragment fragment = new FlowerFindingFragment();
-           // fragment.scrollTo(letters[mTouchIndex]);
+
             invalidate();
         }
     }
