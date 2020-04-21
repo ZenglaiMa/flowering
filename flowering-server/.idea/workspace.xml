@@ -2,16 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2bf21958-aa2b-480d-b968-3a7f1d23a780" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/adapter/LatestPostAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/model/NineGridModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/view/NineGridLayout.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/view/NineGridLayoutExd.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/view/RatioImageView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/res/anim/activity_zoom_close.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/res/anim/activity_zoom_open.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/res/drawable/test.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/res/layout/dialog_origin_image.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/res/layout/post_show_list_item.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/res/values/attrs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../flowering-android-client/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/happier/flowering/entity/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/happier/flowering/entity/Article.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/happier/flowering/entity/Type.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/happier/flowering/entity/Type.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/happier/flowering/flowering/community/controller/CommunityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/happier/flowering/flowering/community/controller/CommunityController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/happier/flowering/flowering/community/service/CommunityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/happier/flowering/flowering/community/service/CommunityService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/happier/flowering/mapper/ArticleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/happier/flowering/mapper/ArticleMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ArticleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ArticleMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/flowering/community/controller/CommunityController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/happier/flowering/flowering/community/controller/CommunityController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/flowering/community/service/CommunityService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/happier/flowering/flowering/community/service/CommunityService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/CustomPageAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/adapter/CustomPageAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/fragment/LatestPostFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/fragment/LatestPostFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/res/layout/fragment_post_latest_and_choice.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/res/layout/fragment_post_latest_and_choice.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/res/values/styles.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +132,7 @@
       <workItem from="1587350088509" duration="10666000" />
       <workItem from="1587383998765" duration="791000" />
       <workItem from="1587386289795" duration="1586000" />
-      <workItem from="1587434573464" duration="10641000" />
+      <workItem from="1587434573464" duration="10997000" />
     </task>
     <servers />
   </component>
@@ -161,38 +169,38 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="420" y="82" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1587434626488" />
-    <state width="1237" height="182" key="GridCell.Tab.0.bottom" timestamp="1587459395882">
+    <state width="1237" height="182" key="GridCell.Tab.0.bottom" timestamp="1587461362317">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="182" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1587459395882" />
-    <state width="1237" height="182" key="GridCell.Tab.0.center" timestamp="1587459395882">
+    <state width="1237" height="182" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1587461362317" />
+    <state width="1237" height="182" key="GridCell.Tab.0.center" timestamp="1587461362317">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="182" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1587459395882" />
-    <state width="1237" height="182" key="GridCell.Tab.0.left" timestamp="1587459395882">
+    <state width="1237" height="182" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1587461362317" />
+    <state width="1237" height="182" key="GridCell.Tab.0.left" timestamp="1587461362317">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="182" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1587459395882" />
-    <state width="1237" height="182" key="GridCell.Tab.0.right" timestamp="1587459395882">
+    <state width="1237" height="182" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1587461362317" />
+    <state width="1237" height="182" key="GridCell.Tab.0.right" timestamp="1587461362317">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="182" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1587459395882" />
-    <state width="1237" height="182" key="GridCell.Tab.1.bottom" timestamp="1587459395882">
+    <state width="1237" height="182" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1587461362317" />
+    <state width="1237" height="182" key="GridCell.Tab.1.bottom" timestamp="1587461362317">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="182" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1587459395882" />
-    <state width="1237" height="182" key="GridCell.Tab.1.center" timestamp="1587459395882">
+    <state width="1237" height="182" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1587461362317" />
+    <state width="1237" height="182" key="GridCell.Tab.1.center" timestamp="1587461362317">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="182" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1587459395882" />
-    <state width="1237" height="182" key="GridCell.Tab.1.left" timestamp="1587459395882">
+    <state width="1237" height="182" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1587461362317" />
+    <state width="1237" height="182" key="GridCell.Tab.1.left" timestamp="1587461362317">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="182" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1587459395882" />
-    <state width="1237" height="182" key="GridCell.Tab.1.right" timestamp="1587459395882">
+    <state width="1237" height="182" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1587461362317" />
+    <state width="1237" height="182" key="GridCell.Tab.1.right" timestamp="1587461362317">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="182" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1587459395882" />
+    <state width="1237" height="182" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1587461362317" />
     <state x="142" y="0" key="SettingsEditor" timestamp="1587434633729">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

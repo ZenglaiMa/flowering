@@ -4,11 +4,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
+    <ListView
+        android:id="@+id/m_post_lv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="最新和精选都是这个布局"
-        android:textSize="30dp" />
+        android:layout_height="match_parent" />
 
 </LinearLayout>
