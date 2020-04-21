@@ -12,4 +12,9 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="DialogStyle">
+        <item name="android:windowEnterAnimation">@anim/activity_zoom_open</item>
+        <item name="android:windowExitAnimation">@anim/activity_zoom_close</item>
+    </style>
+
 </resources>
