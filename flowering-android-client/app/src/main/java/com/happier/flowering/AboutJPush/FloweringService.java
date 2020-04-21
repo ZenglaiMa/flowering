@@ -1,4 +1,4 @@
-package com.happier.flowering.AboutJPush;
+package com.happier.flowering.aboutjpush;
 
 import cn.jpush.android.service.JCommonService;
 

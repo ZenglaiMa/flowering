@@ -18,4 +18,8 @@ public class CommunityController {
     @Autowired
     private CommunityService communityService;
 
+    @RequestMapping("/test")
+    public void test(){
+        System.out.println(communityService.getAllArticle());
+    }
 }

@@ -39,4 +39,13 @@ public class Type {
     public void setArticles(Set<Article> articles) {
         this.articles = articles;
     }
+
+    @Override
+    public String toString() {
+        return "Type{" +
+                "typeId=" + typeId +
+                ", typeName='" + typeName + '\'' +
+                ", articles=" + articles +
+                '}';
+    }
 }
