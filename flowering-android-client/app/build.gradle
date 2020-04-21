@@ -50,4 +50,5 @@ dependencies {
 
     implementation 'com.youth.banner:banner:1.4.9'
     implementation 'com.yinglan.alphatabs:library:1.0.8'
+    implementation 'com.wx.goodview:goodview:1.0.0'
 }
