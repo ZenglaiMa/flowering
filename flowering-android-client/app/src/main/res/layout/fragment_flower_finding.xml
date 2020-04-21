@@ -4,11 +4,61 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
+    <LinearLayout
+        android:id="@+id/ll_search"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="花觅"
-        android:textSize="50dp" />
+        android:layout_height="40dp"
+        android:focusable="true"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:focusableInTouchMode="true"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="20"
+            android:background="@drawable/searchbar"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/ytv_search"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:drawableLeft="@drawable/search"
+                android:gravity="center"
+                android:text=" 大家都在搜: 阳台养花"
+                android:textSize="15dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.happier.flowering.FlowerFinding.WordsNavigation
+            android:id="@+id/view_plant"
+            android:layout_width="32dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            />
+    </RelativeLayout>
 
 </LinearLayout>
