@@ -51,6 +51,7 @@ public class FlowerFindingFragment extends Fragment {
             "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
     private LinearLayoutManager mLayoutManager;
     List<Plant> plantList = new ArrayList<>();
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -63,7 +64,7 @@ public class FlowerFindingFragment extends Fragment {
         ytv = view.findViewById(R.id.ytv_search);
 
         List<Bean> beanList = new ArrayList<>();
-        for (int i = 0;i < letters.length;i++){
+        for (int i = 0; i < letters.length; i++) {
             beanList.add(new Bean(letters[i]));
         }
 
@@ -71,23 +72,23 @@ public class FlowerFindingFragment extends Fragment {
         plant1.setImg("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587406686475&di=87d6364ea7ce9dd1c0093b0c8c369309&imgtype=0&src=http%3A%2F%2Fd.hiphotos.baidu.com%2Fexp%2Fwhcrop%3D160%2C120%2Fsign%3D11126326e1fe9925cb593f125bd863ee%2F2fdda3cc7cd98d102ad277d2203fb80e7aec90ca.jpg");
         plant1.setNameCn("茉莉");
         plantList.add(plant1);
-            Plant plant2 = new Plant();
-            plant2.setImg("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587406686475&di=87d6364ea7ce9dd1c0093b0c8c369309&imgtype=0&src=http%3A%2F%2Fd.hiphotos.baidu.com%2Fexp%2Fwhcrop%3D160%2C120%2Fsign%3D11126326e1fe9925cb593f125bd863ee%2F2fdda3cc7cd98d102ad277d2203fb80e7aec90ca.jpg");
-            plant2.setNameCn("茉莉");
-            plantList.add(plant2);
-            Plant plant3 = new Plant();
-            plant3.setImg("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587406686475&di=87d6364ea7ce9dd1c0093b0c8c369309&imgtype=0&src=http%3A%2F%2Fd.hiphotos.baidu.com%2Fexp%2Fwhcrop%3D160%2C120%2Fsign%3D11126326e1fe9925cb593f125bd863ee%2F2fdda3cc7cd98d102ad277d2203fb80e7aec90ca.jpg");
-            plant3.setNameCn("茉莉");
-            plantList.add(plant3);
-            Plant plant4 = new Plant();
-            plant4.setImg("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587406686475&di=87d6364ea7ce9dd1c0093b0c8c369309&imgtype=0&src=http%3A%2F%2Fd.hiphotos.baidu.com%2Fexp%2Fwhcrop%3D160%2C120%2Fsign%3D11126326e1fe9925cb593f125bd863ee%2F2fdda3cc7cd98d102ad277d2203fb80e7aec90ca.jpg");
-            plant4.setNameCn("茉莉");
-            plantList.add(plant4);
-            Plant plant5 = new Plant();
-            plant5.setImg("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587406686475&di=87d6364ea7ce9dd1c0093b0c8c369309&imgtype=0&src=http%3A%2F%2Fd.hiphotos.baidu.com%2Fexp%2Fwhcrop%3D160%2C120%2Fsign%3D11126326e1fe9925cb593f125bd863ee%2F2fdda3cc7cd98d102ad277d2203fb80e7aec90ca.jpg");
-            plant5.setNameCn("茉莉");
-            plantList.add(plant5);
-        mAdapter = new RecyclerViewAdapter(getContext(), beanList,plantList);
+        Plant plant2 = new Plant();
+        plant2.setImg("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587406686475&di=87d6364ea7ce9dd1c0093b0c8c369309&imgtype=0&src=http%3A%2F%2Fd.hiphotos.baidu.com%2Fexp%2Fwhcrop%3D160%2C120%2Fsign%3D11126326e1fe9925cb593f125bd863ee%2F2fdda3cc7cd98d102ad277d2203fb80e7aec90ca.jpg");
+        plant2.setNameCn("茉莉");
+        plantList.add(plant2);
+        Plant plant3 = new Plant();
+        plant3.setImg("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587406686475&di=87d6364ea7ce9dd1c0093b0c8c369309&imgtype=0&src=http%3A%2F%2Fd.hiphotos.baidu.com%2Fexp%2Fwhcrop%3D160%2C120%2Fsign%3D11126326e1fe9925cb593f125bd863ee%2F2fdda3cc7cd98d102ad277d2203fb80e7aec90ca.jpg");
+        plant3.setNameCn("茉莉");
+        plantList.add(plant3);
+        Plant plant4 = new Plant();
+        plant4.setImg("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587406686475&di=87d6364ea7ce9dd1c0093b0c8c369309&imgtype=0&src=http%3A%2F%2Fd.hiphotos.baidu.com%2Fexp%2Fwhcrop%3D160%2C120%2Fsign%3D11126326e1fe9925cb593f125bd863ee%2F2fdda3cc7cd98d102ad277d2203fb80e7aec90ca.jpg");
+        plant4.setNameCn("茉莉");
+        plantList.add(plant4);
+        Plant plant5 = new Plant();
+        plant5.setImg("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587406686475&di=87d6364ea7ce9dd1c0093b0c8c369309&imgtype=0&src=http%3A%2F%2Fd.hiphotos.baidu.com%2Fexp%2Fwhcrop%3D160%2C120%2Fsign%3D11126326e1fe9925cb593f125bd863ee%2F2fdda3cc7cd98d102ad277d2203fb80e7aec90ca.jpg");
+        plant5.setNameCn("茉莉");
+        plantList.add(plant5);
+        mAdapter = new RecyclerViewAdapter(getContext(), beanList, plantList);
         mRecyclerView.addItemDecoration(new StickHeaderDecoration(getActivity()));
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         mRecyclerView.setAdapter(mAdapter);
@@ -97,8 +98,8 @@ public class FlowerFindingFragment extends Fragment {
         return view;
     }
 
-    private void initListener(){
-        wordsNavigation.setOnShowLetter(letter ->{
+    private void initListener() {
+        wordsNavigation.setOnShowLetter(letter -> {
             mLetter = letter;
             TopSmoothScroller scroller = new TopSmoothScroller(getActivity());
             switch (mLetter) {
@@ -262,7 +263,7 @@ public class FlowerFindingFragment extends Fragment {
         });
     }
 
-    public void smoothScrollToPosition(RecyclerView recyclerView,RecyclerView.State state,int position){
+    public void smoothScrollToPosition(RecyclerView recyclerView, RecyclerView.State state, int position) {
         LinearSmoothScroller linearSmoothScroller = new LinearSmoothScroller(recyclerView.getContext());
         linearSmoothScroller.setTargetPosition(position);
 
