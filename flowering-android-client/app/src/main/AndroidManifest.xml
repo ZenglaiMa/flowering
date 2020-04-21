@@ -18,7 +18,7 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <application
-        android:name=".AboutJPush.FloweringApplication"
+        android:name=".aboutjpush.FloweringApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -98,7 +98,7 @@
             android:exported="false" />
         <!-- User defined.  For test only  用户自定义接收消息器,3.0.7开始支持,目前新tag/alias接口设置结果会在该广播接收器对应的方法中回调 -->
         <!-- since 3.3.0 接收JPush相关事件 -->
-        <receiver android:name=".AboutJPush.FloweringMessageReceiver">
+        <receiver android:name=".aboutjpush.FloweringMessageReceiver">
             <intent-filter>
                 <action android:name="cn.jpush.android.intent.RECEIVE_MESSAGE" />
 
@@ -121,7 +121,7 @@
         <!-- 可配置android:process参数将PushService放在其他进程中 -->
         <!-- User defined.  For test only 继承自cn.jpush.android.service.JCommonService -->
         <service
-            android:name=".AboutJPush.FloweringService"
+            android:name=".aboutjpush.FloweringService"
             android:process=":pushcore">
             <intent-filter>
                 <action android:name="cn.jiguang.user.service.action" />

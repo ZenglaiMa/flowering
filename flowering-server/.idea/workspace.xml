@@ -2,64 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2bf21958-aa2b-480d-b968-3a7f1d23a780" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_core_2_11_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_all_4_1_6_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_all_4_1_42_Final.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_12_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_11_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flowering-android-client/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flowering-server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/flowering-server.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/FloweringApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/entity/Article.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/entity/Attention.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/entity/Collect.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/entity/Comment.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/entity/Message.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/entity/Plant.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/entity/Post.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/entity/Reply.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/entity/ThumbsUp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/entity/Topic.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/entity/Type.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/entity/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/flowering/center/controller/CenterController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/flowering/center/service/CenterService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/flowering/community/controller/CommunityController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/flowering/community/service/CommunityService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/flowering/discovery/controller/DiscoveryController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/flowering/discovery/service/DiscoveryService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/flowering/post/controller/PostController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/flowering/post/service/PostService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/mapper/ArticleMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/mapper/AttentionMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/mapper/CollectMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/mapper/CommentMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/mapper/MessageMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/mapper/PlantMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/mapper/PostMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/mapper/ReplyMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/mapper/ThumbsUpMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/mapper/TopicMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/mapper/TypeMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/mapper/UserMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/ArticleMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/AttentionMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/CollectMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/CommentMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/MessageMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/PlantMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/PostMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/ReplyMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/ThumbsUpMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/TopicMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/TypeMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mybatis.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/a.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/test.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/happier/flowering/FloweringApplicationTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/happier/flowering/entity/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/happier/flowering/entity/Article.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/happier/flowering/entity/Type.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/happier/flowering/entity/Type.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/happier/flowering/flowering/community/controller/CommunityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/happier/flowering/flowering/community/controller/CommunityController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/happier/flowering/flowering/community/service/CommunityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/happier/flowering/flowering/community/service/CommunityService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/happier/flowering/mapper/ArticleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/happier/flowering/mapper/ArticleMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ArticleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ArticleMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/flowering/community/controller/CommunityController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/happier/flowering/flowering/community/controller/CommunityController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/flowering/community/service/CommunityService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/happier/flowering/flowering/community/service/CommunityService.class" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -87,8 +40,8 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="F:/apache-maven-3.5.4" />
-        <option name="userSettingsFile" value="F:\apache-maven-3.5.4\conf\settings.xml" />
+        <option name="mavenHome" value="E:/spring/apache-maven-3.6.2-bin/apache-maven-3.6.2" />
+        <option name="userSettingsFile" value="E:\spring\apache-maven-3.6.2-bin\apache-maven-3.6.2\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
     <option name="importingSettings">
@@ -139,18 +92,6 @@
       <select />
     </treeState>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager">
     <configuration name="FloweringApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="flowering-server" />
@@ -183,6 +124,7 @@
       <workItem from="1587350088509" duration="10666000" />
       <workItem from="1587383998765" duration="791000" />
       <workItem from="1587386289795" duration="1586000" />
+      <workItem from="1587434573464" duration="10641000" />
     </task>
     <servers />
   </component>
@@ -203,58 +145,76 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="397" y="42" key="#com.intellij.ide.util.MemberChooser" timestamp="1587372521084">
+    <state x="233" y="0" key="#Auto_Import" timestamp="1587441350491">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="397" y="42" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1587372521084" />
+    <state x="233" y="0" key="#Auto_Import/0.0.1280.680@0.0.1280.680" timestamp="1587441350491" />
+    <state x="397" y="42" key="#com.intellij.ide.util.MemberChooser" timestamp="1587459346414">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="397" y="42" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1587459346414" />
     <state x="207" y="266" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1587368810459">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="207" y="266" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1280.680@0.0.1280.680" timestamp="1587368810459" />
-    <state x="420" y="82" key="FileChooserDialogImpl" timestamp="1587350701617">
+    <state x="420" y="82" key="FileChooserDialogImpl" timestamp="1587434626488">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="420" y="82" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1587350701617" />
-    <state width="1237" height="186" key="GridCell.Tab.0.bottom" timestamp="1587384816060">
+    <state x="420" y="82" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1587434626488" />
+    <state width="1237" height="182" key="GridCell.Tab.0.bottom" timestamp="1587459395882">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="186" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1587384816060" />
-    <state width="1237" height="186" key="GridCell.Tab.0.center" timestamp="1587384816056">
+    <state width="1237" height="182" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1587459395882" />
+    <state width="1237" height="182" key="GridCell.Tab.0.center" timestamp="1587459395882">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="186" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1587384816056" />
-    <state width="1237" height="186" key="GridCell.Tab.0.left" timestamp="1587384816052">
+    <state width="1237" height="182" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1587459395882" />
+    <state width="1237" height="182" key="GridCell.Tab.0.left" timestamp="1587459395882">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="186" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1587384816052" />
-    <state width="1237" height="186" key="GridCell.Tab.0.right" timestamp="1587384816059">
+    <state width="1237" height="182" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1587459395882" />
+    <state width="1237" height="182" key="GridCell.Tab.0.right" timestamp="1587459395882">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="186" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1587384816059" />
-    <state width="1237" height="186" key="GridCell.Tab.1.bottom" timestamp="1587384791889">
+    <state width="1237" height="182" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1587459395882" />
+    <state width="1237" height="182" key="GridCell.Tab.1.bottom" timestamp="1587459395882">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="186" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1587384791889" />
-    <state width="1237" height="186" key="GridCell.Tab.1.center" timestamp="1587384791889">
+    <state width="1237" height="182" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1587459395882" />
+    <state width="1237" height="182" key="GridCell.Tab.1.center" timestamp="1587459395882">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="186" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1587384791889" />
-    <state width="1237" height="186" key="GridCell.Tab.1.left" timestamp="1587384791888">
+    <state width="1237" height="182" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1587459395882" />
+    <state width="1237" height="182" key="GridCell.Tab.1.left" timestamp="1587459395882">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="186" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1587384791888" />
-    <state width="1237" height="186" key="GridCell.Tab.1.right" timestamp="1587384791889">
+    <state width="1237" height="182" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1587459395882" />
+    <state width="1237" height="182" key="GridCell.Tab.1.right" timestamp="1587459395882">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="186" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1587384791889" />
-    <state x="142" y="0" key="SettingsEditor" timestamp="1587384252305">
+    <state width="1237" height="182" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1587459395882" />
+    <state x="142" y="0" key="SettingsEditor" timestamp="1587434633729">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1587384252305" />
+    <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1587434633729" />
     <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1587370230829">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1587370230829" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/happier/flowering/mapper/ArticleMapper.java</url>
+          <line>31</line>
+          <properties class="com.happier.flowering.mapper.ArticleMapper" method="getAllArtical">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/flowering_server$FloweringApplication.ic" NAME="FloweringApplication Coverage Results" MODIFIED="1586934828692" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

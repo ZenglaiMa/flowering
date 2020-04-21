@@ -92,4 +92,19 @@ public class Article {
     public void setTypeId(Integer typeId) {
         this.typeId = typeId;
     }
+
+    @Override
+    public String toString() {
+        return "Article{" +
+                "articleId=" + articleId +
+                ", title='" + title + '\'' +
+                ", img='" + img + '\'' +
+                ", content='" + content + '\'' +
+                ", overview='" + overview + '\'' +
+                ", time=" + time +
+                ", readingNum=" + readingNum +
+                ", typeId=" + typeId +
+                ", type=" + type +
+                '}';
+    }
 }

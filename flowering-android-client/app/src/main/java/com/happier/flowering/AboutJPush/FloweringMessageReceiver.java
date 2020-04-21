@@ -1,10 +1,18 @@
-package com.happier.flowering.AboutJPush;
+package com.happier.flowering.aboutjpush;
 
 import android.content.Context;
-import android.content.Intent;
 import android.util.Log;
 
-import com.happier.flowering.MainActivity;
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.google.gson.reflect.TypeToken;
+import com.happier.flowering.entity.Article;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.Map;
 
 import cn.jpush.android.api.CustomMessage;
 import cn.jpush.android.api.NotificationMessage;
@@ -17,8 +25,21 @@ public class FloweringMessageReceiver extends JPushMessageReceiver {
     public void onNotifyMessageArrived(Context context, NotificationMessage notificationMessage) {
         super.onNotifyMessageArrived(context, notificationMessage);
         Log.e("test", "通知到达");
-//        Log.e("test", "接收到通知, 通知标题：" + notificationMessage.notificationTitle
-//                + "  通知内容:" + notificationMessage.notificationContent + " 附加字段：" + notificationMessage.notificationExtras);
+        String extras = notificationMessage.notificationExtras;
+        String flag="";
+        try {
+            JSONObject jsonObject = new JSONObject(extras);
+            String str = jsonObject.optString("extras");
+            Map<String, Object> map = new Gson().fromJson(str, new TypeToken<Map<String, Object>>() {}.getType());
+            flag = (String)map.get("flag");
+            if(flag.equals("0")) {//文章推送
+                Article article = new Gson().fromJson((String)map.get("artical"), Article.class);
+            }else {//私信
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     //用户点击通知时被回调(通知)

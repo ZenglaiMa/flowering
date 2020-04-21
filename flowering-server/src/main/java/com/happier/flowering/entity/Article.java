@@ -104,6 +104,7 @@ public class Article {
                 ", time=" + time +
                 ", readingNum=" + readingNum +
                 ", typeId=" + typeId +
+                ", type=" + type +
                 '}';
     }
 }

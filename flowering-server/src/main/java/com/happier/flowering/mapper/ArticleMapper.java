@@ -2,6 +2,8 @@ package com.happier.flowering.mapper;
 
 import com.happier.flowering.entity.Article;
 
+import java.util.List;
+
 /**
  * @ClassName ArticleMapper
  * @Description
@@ -16,4 +18,16 @@ public interface ArticleMapper {
      * @author adi
      */
     public Article getArticalById(int id);
+    /*
+     * @description 查询article表有多少条数据
+     * @return 数据条数
+     * @author 赵语涵
+     */
+    public int getCount();
+    /*
+     * @description 查询所有文章（带类型）
+     * @return
+     * @author adi
+     */
+    public List<Article> getAllArtical();
 }

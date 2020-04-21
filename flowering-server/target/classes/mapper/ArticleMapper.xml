@@ -12,10 +12,22 @@
         <result property="time" column="time"></result>
         <result property="readingNum" column="reading_num"></result>
         <result property="typeId" column="type_id"></result>
+        <association property="type" >
+            <id column="t_type_id" property="typeId"></id>
+            <result property="typeName" column="type_name"></result>
+        </association>
     </resultMap>
     <select id="getArticalById" resultMap="articalMap">
         select *
         from article
         where article_id=#{id}
+    </select>
+    <select id="getCount" resultType="java.lang.Integer">
+        select count(*)
+        from article
+    </select>
+    <select id="getAllArtical" resultMap="articalMap">
+        select a.article_id, a.content, a.title, a.img, a.overview, a.time, a.reading_num, a.type_id, t.type_id t_type_id, t.type_name
+        from article a left join type t on a.type_id=t.type_id
     </select>
 </mapper>
