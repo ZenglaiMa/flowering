@@ -11,6 +11,7 @@ import java.util.List;
 import cn.jpush.android.api.JPushInterface;
 
 public class FloweringApplication extends Application {
+
     public static String registrationId;
 
     private List<Activity> mList = new LinkedList<Activity>();
@@ -38,4 +39,5 @@ public class FloweringApplication extends Application {
     public static void setRegistrationId(String registrationId) {
         FloweringApplication.registrationId = registrationId;
     }
+
 }
