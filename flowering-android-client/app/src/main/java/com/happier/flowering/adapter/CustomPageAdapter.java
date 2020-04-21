@@ -1,4 +1,4 @@
-package com.happier.flowering;
+package com.happier.flowering.adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

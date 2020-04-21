@@ -1,6 +1,6 @@
 <resources>
 
-    <!-- Base application theme. -->
+    <!-- Base application theme.  -->
     <style name="AppTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
@@ -10,6 +10,11 @@
 
     <style name="CustomTheme" parent="AppTheme">
         <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="DialogStyle">
+        <item name="android:windowEnterAnimation">@anim/activity_zoom_open</item>
+        <item name="android:windowExitAnimation">@anim/activity_zoom_close</item>
     </style>
 
 </resources>

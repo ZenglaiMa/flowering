@@ -10,6 +10,7 @@ import cn.jpush.api.push.model.PushPayload;
 import cn.jpush.api.push.model.audience.Audience;
 import cn.jpush.api.push.model.notification.AndroidNotification;
 import cn.jpush.api.push.model.notification.Notification;
+import com.google.gson.Gson;
 import com.happier.flowering.entity.Article;
 import com.happier.flowering.mapper.ArticleMapper;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -17,6 +18,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.util.*;
 
 /**
  * @ClassName CommunityService
@@ -33,16 +35,25 @@ public class CommunityService {
     @Resource
     private ArticleMapper articleMapper;
 
+    public List<Article> getAllArticle(){
+        return articleMapper.getAllArtical();
+    }
     /*
      * @description 任务调度 + JPush推送文章方法1
      * @author 赵语涵
      */
 //    @Scheduled(cron = "0/2 * * * * ?")
     public void jpush() {
-        Article article = articleMapper.getArticalById(1);
+        int count = articleMapper.getCount();
+        Random rand = new Random();
+        int randNum = rand.nextInt(count)+1;
+        Article article = articleMapper.getArticalById(randNum);
         System.out.println(article.toString());
-        //TODO
-        jSend_notification("一条消息", "c");
+
+        Map<String, Object> map = new HashMap<>();
+        map.put("flag", "0");//0代表是文章推送，1代表是私信
+        map.put("artical", new Gson().toJson(article));
+        jSend_notification(article.getTitle(), new Gson().toJson(map));
     }
 
     /*
@@ -80,8 +91,8 @@ public class CommunityService {
     public PushPayload send_N(String alert, String extrasparam) {
         return PushPayload.newBuilder()
                 .setPlatform(Platform.all())//    推送平台设置：所有平台
-//                .setAudience(Audience.registrationId("140fe1da9e35c48bff1"))
-                .setAudience(Audience.all())
+                .setAudience(Audience.registrationId("140fe1da9e35c48bff1"))
+//                .setAudience(Audience.all())
 //    			.setNotification(Notification.alert(alert))
                 .setNotification(Notification.newBuilder()
                         .addPlatformNotification(AndroidNotification.newBuilder()
