@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.happier.flowering.R;
-import com.happier.flowering.adapter.LatestPostAdapter;
+import com.happier.flowering.adapter.LatestAndChoicePostAdapter;
 import com.happier.flowering.model.NineGridModel;
 
 import java.util.ArrayList;
@@ -43,7 +43,7 @@ public class LatestPostFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_post_latest_and_choice, container, false);
 
         initData();
-        LatestPostAdapter adapter = new LatestPostAdapter(getContext(), dataSource, R.layout.post_show_list_item);
+        LatestAndChoicePostAdapter adapter = new LatestAndChoicePostAdapter(getContext(), dataSource, R.layout.post_show_list_item);
         ListView listView = view.findViewById(R.id.m_post_lv);
         listView.setAdapter(adapter);
 

@@ -74,6 +74,21 @@
 
         </LinearLayout>
 
+        <TextView
+            android:id="@+id/tv_show_comments"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="查看评论"
+            android:textColor="@color/qmui_config_color_50_blue" />
+
+        <ListView
+            android:id="@+id/m_lv_comments"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="5dp"
+            android:visibility="gone" />
+
     </LinearLayout>
 
 </LinearLayout>
