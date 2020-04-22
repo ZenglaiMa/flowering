@@ -81,7 +81,8 @@ public class LatestPostFragment extends Fragment {
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void initData(String result) {
-        List<PostListModel> models = gson.fromJson(result, new TypeToken<List<PostListModel>>() {}.getType());
+        List<PostListModel> models = gson.fromJson(result, new TypeToken<List<PostListModel>>() {
+        }.getType());
         for (PostListModel model : models) {
             Map<String, Object> map = new HashMap<>();
             map.put("post_id", model.getPostId());
@@ -89,6 +90,7 @@ public class LatestPostFragment extends Fragment {
             map.put("nickname", model.getNickname());
             map.put("head_img", model.getHeadImg());
             map.put("topic_name", model.getTopicName());
+            map.put("user_id", model.getUserId());
 
             String[] imgUrls = model.getPostImg().split(",");
             NineGridModel nineGridModel = new NineGridModel();

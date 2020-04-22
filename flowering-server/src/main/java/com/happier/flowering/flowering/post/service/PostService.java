@@ -30,6 +30,7 @@ public class PostService {
             model.setPostText(post.getTxt());
             model.setPostImg(post.getImg());
             model.setPostCreateTime(post.getTime());
+            model.setUserId(post.getUser().getUserId());
             model.setNickname(post.getUser().getNickname());
             model.setHeadImg(post.getUser().getHeadImg());
             model.setTopicName(post.getTopic().getTopicName());

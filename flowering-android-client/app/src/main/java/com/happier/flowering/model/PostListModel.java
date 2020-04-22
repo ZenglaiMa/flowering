@@ -14,6 +14,7 @@ public class PostListModel {
     private String postText;
     private String postImg;
     private Date postCreateTime;
+    private Integer userId;
     private String nickname;
     private String headImg;
     private String topicName;
@@ -74,4 +75,11 @@ public class PostListModel {
         this.topicName = topicName;
     }
 
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
 }

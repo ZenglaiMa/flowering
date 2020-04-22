@@ -21,7 +21,7 @@
 
     <select id="findAll" resultMap="postResultMapper">
         select
-            p.post_id, p.txt, p.img, p.time, u.nickname, u.head_img, t.topic_name
+            p.post_id, p.txt, p.img, p.time,u.user_id, u.nickname, u.head_img, t.topic_name
         from
             user u left outer join post p on u.user_id = p.user_id left outer join topic t on p.topic_id = t.topic_id
         order by

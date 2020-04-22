@@ -138,7 +138,7 @@ public class LatestAndChoicePostAdapter extends BaseAdapter {
             switch (v.getId()) {
                 case R.id.m_post_user_header_img:
                     // todo: 点击头像进入用户个人主页
-                    Toast.makeText(context, "todo: 用户(id=" + Integer.valueOf(dataSource.get(position).get("post_id").toString()) + ")个人主页", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "todo: 用户(id=" + Integer.valueOf(dataSource.get(position).get("user_id").toString()) + ")个人主页", Toast.LENGTH_SHORT).show();
                     break;
                 case R.id.m_good:
                     // todo: 先执行点赞逻辑, 成功之后执行后边代码

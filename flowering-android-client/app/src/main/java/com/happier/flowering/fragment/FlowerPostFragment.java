@@ -74,14 +74,12 @@ public class FlowerPostFragment extends Fragment {
             }
         });
 
-
         return view;
     }
 
 
     // 根据不同的选项卡显示不同的Fragment
     public void showFragment(Fragment fragment) {
-
         if (curFragment == fragment) {
             return;
         }
