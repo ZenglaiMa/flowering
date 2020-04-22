@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <ListView
+    <com.happier.flowering.view.NoScrollListView
         android:id="@+id/m_post_lv"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

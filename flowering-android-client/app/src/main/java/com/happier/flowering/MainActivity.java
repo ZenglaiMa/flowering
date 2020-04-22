@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         fragments.add(new FlowerAmongFragment());
         fragments.add(new FlowerPostFragment());
         fragments.add(new FlowerMineFragment());
+
         viewPager.setAdapter(new CustomPageAdapter(getSupportFragmentManager(), fragments));
 
         alphaTabsIndicator = findViewById(R.id.alphaIndicator);
@@ -55,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
             fragments.remove(2);
             Fragment post = new FlowerPostFragment();
             Bundle bundle = new Bundle();
-            bundle.putInt("position",2);
+            bundle.putInt("back",2);
             post.setArguments(bundle);
             fragments.add(2, post);
             viewPager.setCurrentItem(2);

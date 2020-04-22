@@ -14,11 +14,15 @@ import com.happier.flowering.R;
 
 public class PreWordNavigation extends LinearLayout{
     private Context mContext;
+    private WordsNavigation.onShowLetterListener onShowLetterListener = null;
     public PreWordNavigation(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         mContext = context;
         setOrientation(VERTICAL);
         initView();
+    }
+    public void setOnShowLetter(WordsNavigation.onShowLetterListener showLetterListener) {
+        this.onShowLetterListener = showLetterListener;
     }
 
     private void initView() {
@@ -38,21 +42,18 @@ public class PreWordNavigation extends LinearLayout{
         tv.setClickable(true);
         tv.setText(character);
         tv.setTextColor(getResources().getColor(R.color.colorGreen));
-        /**tv.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.e("clicked",character);
-            }
-        });*/
+
 
         tv.setOnTouchListener(new OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 switch (event.getAction()) {
                     case MotionEvent.ACTION_DOWN:
+                        refreshLetterIndex(character);
                         Log.e("clicked",character);
                         break;
                     case MotionEvent.ACTION_MOVE:
+                        refreshLetterIndex(character);
                         Log.e("clicked",character);
                         break;
                 }
@@ -60,5 +61,12 @@ public class PreWordNavigation extends LinearLayout{
             }
         });
         return tv;
+    }
+
+    private void refreshLetterIndex(String character) {
+        if (onShowLetterListener != null) {
+            onShowLetterListener.showLatter(character);
+        }
+        invalidate();
     }
 }

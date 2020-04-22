@@ -26,7 +26,6 @@ public class FlowerPostFragment extends Fragment {
 
     private AlphaTabsIndicator indicator;
     private ImageView ivPublishPost;
-    private ImageView add;
 
     private static final int TAB_LATEST = 0;
     private static final int TAB_CHOICE = 1;
@@ -39,7 +38,8 @@ public class FlowerPostFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_flower_post, container, false);
-        add = view.findViewById(R.id.iv_publish_post);
+
+        ivPublishPost = view.findViewById(R.id.iv_publish_post);
 
         indicator = view.findViewById(R.id.alphaIndicator_post);
         indicator.setOnTabChangedListner(new OnTabChangedListner() {
@@ -47,13 +47,10 @@ public class FlowerPostFragment extends Fragment {
             public void onTabSelected(int tabNum) {
                 Fragment fragment = null;
                 if (tabNum == TAB_LATEST) {
-                    //            add.setImageResource(R.drawable.add_48px);
                     fragment = new LatestPostFragment();
                 } else if (tabNum == TAB_CHOICE) {
-                    //            add.setImageResource(R.drawable.add_48px);
                     fragment = new ChoicePostFragment();
                 } else if (tabNum == TAB_TOPIC) {
-                    //           add.setImageResource(R.drawable.add1);
                     fragment = new TopicPostFragment();
                 }
                 showFragment(fragment);
@@ -61,14 +58,14 @@ public class FlowerPostFragment extends Fragment {
         });
 
         // 设置顶部选项卡
-        if (getArguments() != null) {
-            int position = (int) getArguments().get("position");
+        if (getArguments() != null && getArguments().get("back") != null) {
+            int position = (int) getArguments().get("back");
             indicator.setTabCurrenItem(position);
             getArguments().clear();
-        }else {
+        } else {
             showFragment(new LatestPostFragment());
         }
-
+        //发布
         ivPublishPost = view.findViewById(R.id.iv_publish_post);
         ivPublishPost.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,6 +73,7 @@ public class FlowerPostFragment extends Fragment {
                 publishPost();
             }
         });
+
 
         return view;
     }
@@ -108,7 +106,7 @@ public class FlowerPostFragment extends Fragment {
      **/
     private void publishPost() {
         // todo: 跳转到发布花现界面
-        Toast.makeText(getContext(), "跳转到发布花现界面", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(), "todo: 跳转到发布花现界面", Toast.LENGTH_SHORT).show();
     }
 
 }
