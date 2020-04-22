@@ -1,15 +1,19 @@
 package com.happier.flowering;
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import com.happier.flowering.adapter.CustomPageAdapter;
 import com.happier.flowering.fragment.FlowerAmongFragment;
 import com.happier.flowering.fragment.FlowerFindingFragment;
 import com.happier.flowering.fragment.FlowerMineFragment;
 import com.happier.flowering.fragment.FlowerPostFragment;
+import com.happier.flowering.fragment.TopicPostFragment;
 import com.yinglan.alphatabs.AlphaTabsIndicator;
 
 import java.util.ArrayList;
@@ -43,6 +47,19 @@ public class MainActivity extends AppCompatActivity {
 
         alphaTabsIndicator = findViewById(R.id.alphaIndicator);
         alphaTabsIndicator.setViewPager(viewPager);
+
+
+        Intent intent = getIntent();
+        Boolean back = intent.getBooleanExtra("back", false);
+        if (back) {
+            fragments.remove(2);
+            Fragment post = new FlowerPostFragment();
+            Bundle bundle = new Bundle();
+            bundle.putInt("position",2);
+            post.setArguments(bundle);
+            fragments.add(2, post);
+            viewPager.setCurrentItem(2);
+        }
 
     }
 }

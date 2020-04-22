@@ -40,8 +40,7 @@ public class FlowerPostFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_flower_post, container, false);
         add = view.findViewById(R.id.iv_publish_post);
-        // 设置顶部选项卡
-        showFragment(new LatestPostFragment());
+
         indicator = view.findViewById(R.id.alphaIndicator_post);
         indicator.setOnTabChangedListner(new OnTabChangedListner() {
             @Override
@@ -61,6 +60,14 @@ public class FlowerPostFragment extends Fragment {
             }
         });
 
+        // 设置顶部选项卡
+        if (getArguments() != null) {
+            int position = (int) getArguments().get("position");
+            indicator.setTabCurrenItem(position);
+            getArguments().clear();
+        }else {
+            showFragment(new LatestPostFragment());
+        }
 
         ivPublishPost = view.findViewById(R.id.iv_publish_post);
         ivPublishPost.setOnClickListener(new View.OnClickListener() {
@@ -73,8 +80,9 @@ public class FlowerPostFragment extends Fragment {
         return view;
     }
 
+
     // 根据不同的选项卡显示不同的Fragment
-    private void showFragment(Fragment fragment) {
+    public void showFragment(Fragment fragment) {
 
         if (curFragment == fragment) {
             return;

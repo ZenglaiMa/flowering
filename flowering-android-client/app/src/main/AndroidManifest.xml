@@ -142,6 +142,9 @@
             android:name="JPUSH_APPKEY"
             android:value="17b9165411a620c111f01372" /> <!-- </>值来自开发者平台取得的AppKey -->
         <!--Jpush 结束-->
+
+        <!--LKY-->
+        <activity android:name=".activity.TopicDetail"></activity>
     </application>
 
 </manifest>
