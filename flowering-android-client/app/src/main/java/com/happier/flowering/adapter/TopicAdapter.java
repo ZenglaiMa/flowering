@@ -1,6 +1,7 @@
-package com.happier.flowering.fragment;
+package com.happier.flowering.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.happier.flowering.R;
+import com.happier.flowering.activity.TopicDetail;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,15 +17,16 @@ import java.util.Map;
 
 public class TopicAdapter extends BaseAdapter {
     private Context context;
-    private List<String> topics= new ArrayList<>();
+    private List<String> topics = new ArrayList<>();
     private int item_layout_id;
 
 
-    public TopicAdapter(Context context, List<String>topics, int item_layout_id) {
+    public TopicAdapter(Context context, List<String> topics, int item_layout_id) {
         this.context = context;
         this.topics = topics;
         this.item_layout_id = item_layout_id;
     }
+
     /**
      * How many items are in the data set represented by this Adapter.
      *
@@ -81,8 +84,15 @@ public class TopicAdapter extends BaseAdapter {
             LayoutInflater inflater = LayoutInflater.from(context);
             convertView = inflater.inflate(item_layout_id, null);
         }
-        TextView textView=convertView.findViewById(R.id.l_tv_topic_item);
+        TextView textView = convertView.findViewById(R.id.l_tv_topic_item);
         textView.setText(topics.get(position));
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, TopicDetail.class);
+                context.startActivity(intent);
+            }
+        });
         return convertView;
     }
 }

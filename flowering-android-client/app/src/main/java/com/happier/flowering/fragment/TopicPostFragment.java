@@ -7,15 +7,13 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.happier.flowering.R;
+import com.happier.flowering.adapter.TopicAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static com.happier.flowering.R.drawable.add1;
 
 /**
  * @ClassName TopicPostFragment
