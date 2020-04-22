@@ -12,7 +12,9 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.happier.flowering.R;
+import com.happier.flowering.constant.Constant;
 import com.happier.flowering.model.NineGridModel;
 import com.happier.flowering.view.NineGridLayoutExd;
 import com.wx.goodview.GoodView;
@@ -32,10 +34,10 @@ import java.util.Map;
 public class LatestAndChoicePostAdapter extends BaseAdapter {
 
     private Context context;
-    private List<NineGridModel> dataSource;
+    private List<Map<String, Object>> dataSource;
     private int itemId;
 
-    public LatestAndChoicePostAdapter(Context context, List<NineGridModel> dataSource, int itemId) {
+    public LatestAndChoicePostAdapter(Context context, List<Map<String, Object>> dataSource, int itemId) {
         this.context = context;
         this.dataSource = dataSource;
         this.itemId = itemId;
@@ -82,8 +84,19 @@ public class LatestAndChoicePostAdapter extends BaseAdapter {
     }
 
     private void setDataAndEvent(final ViewHolder viewHolder, int position, final ViewGroup parent) {
-        viewHolder.nineGridImages.setIsShowAll(dataSource.get(position).isShowAll);
-        viewHolder.nineGridImages.setUrlList(dataSource.get(position).urlList);
+
+        Map<String, Object> data = dataSource.get(position);
+
+//        帖子id
+//        Integer postId = Integer.valueOf(data.get("post_id").toString());
+
+        Glide.with(context).load(Constant.BASE_IP + data.get("head_img").toString()).into(viewHolder.ivUserHeaderImage);
+        viewHolder.tvUserName.setText(data.get("nickname").toString());
+        viewHolder.tvTopicName.setText(data.get("topic_name").toString());
+        viewHolder.tvPostText.setText(data.get("post_text").toString());
+        viewHolder.tvPublishTime.setText(data.get("create_time").toString());
+        viewHolder.nineGridImages.setIsShowAll(((NineGridModel) data.get("nine_grid")).isShowAll);
+        viewHolder.nineGridImages.setUrlList(((NineGridModel) data.get("nine_grid")).urlList);
 
         setListener(viewHolder, position, parent);
 
@@ -125,7 +138,7 @@ public class LatestAndChoicePostAdapter extends BaseAdapter {
             switch (v.getId()) {
                 case R.id.m_post_user_header_img:
                     // todo: 点击头像进入用户个人主页
-                    Toast.makeText(context, "todo: 用户个人主页", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "todo: 用户(id=" + Integer.valueOf(dataSource.get(position).get("post_id").toString()) + ")个人主页", Toast.LENGTH_SHORT).show();
                     break;
                 case R.id.m_good:
                     // todo: 先执行点赞逻辑, 成功之后执行后边代码
@@ -165,6 +178,7 @@ public class LatestAndChoicePostAdapter extends BaseAdapter {
         viewHolder.ivPostShare = convertView.findViewById(R.id.m_post_share);
         viewHolder.tvShowComments = convertView.findViewById(R.id.tv_show_comments);
         viewHolder.lvComments = convertView.findViewById(R.id.m_lv_comments);
+        viewHolder.tvTopicName = convertView.findViewById(R.id.m_post_topic);
     }
 
     private void showPopupWindow(ViewGroup parent) {
@@ -189,5 +203,6 @@ public class LatestAndChoicePostAdapter extends BaseAdapter {
         public ImageView ivPostShare;
         public TextView tvShowComments;
         public ListView lvComments;
+        public TextView tvTopicName;
     }
 }

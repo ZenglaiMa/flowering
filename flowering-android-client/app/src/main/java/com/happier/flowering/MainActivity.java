@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         fragments.add(new FlowerAmongFragment());
         fragments.add(new FlowerPostFragment());
         fragments.add(new FlowerMineFragment());
+        viewPager.setOffscreenPageLimit(4);
         viewPager.setAdapter(new CustomPageAdapter(getSupportFragmentManager(), fragments));
 
         alphaTabsIndicator = findViewById(R.id.alphaIndicator);
