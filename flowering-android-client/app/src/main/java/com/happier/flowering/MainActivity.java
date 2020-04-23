@@ -1,5 +1,6 @@
 package com.happier.flowering;
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -39,10 +40,22 @@ public class MainActivity extends AppCompatActivity {
         fragments.add(new FlowerAmongFragment());
         fragments.add(new FlowerPostFragment());
         fragments.add(new FlowerMineFragment());
+        viewPager.setOffscreenPageLimit(4);
         viewPager.setAdapter(new CustomPageAdapter(getSupportFragmentManager(), fragments));
 
         alphaTabsIndicator = findViewById(R.id.alphaIndicator);
         alphaTabsIndicator.setViewPager(viewPager);
 
+        Intent intent = getIntent();
+        Boolean back = intent.getBooleanExtra("back", false);
+        if (back) {
+            fragments.remove(2);
+            Fragment post = new FlowerPostFragment();
+            Bundle bundle = new Bundle();
+            bundle.putInt("back",2);
+            post.setArguments(bundle);
+            fragments.add(2, post);
+            viewPager.setCurrentItem(2);
+        }
     }
 }
