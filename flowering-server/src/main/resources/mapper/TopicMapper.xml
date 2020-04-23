@@ -4,4 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.happier.flowering.mapper.TopicMapper">
 
+<select id="findAll" resultType="com.happier.flowering.entity.Topic">
+    select * from topic
+</select>
 </mapper>

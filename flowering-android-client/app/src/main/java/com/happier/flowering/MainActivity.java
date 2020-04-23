@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.happier.flowering.adapter.CustomPageAdapter;
+import com.happier.flowering.entity.Topic;
 import com.happier.flowering.fragment.FlowerAmongFragment;
 import com.happier.flowering.fragment.FlowerFindingFragment;
 import com.happier.flowering.fragment.FlowerMineFragment;
@@ -29,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
     private AlphaTabsIndicator alphaTabsIndicator;
 
     private List<Fragment> fragments = new ArrayList<>();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

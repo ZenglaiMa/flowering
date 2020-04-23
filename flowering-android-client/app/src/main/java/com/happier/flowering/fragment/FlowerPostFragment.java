@@ -1,6 +1,8 @@
 package com.happier.flowering.fragment;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -11,9 +13,22 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.happier.flowering.R;
+import com.happier.flowering.constant.Constant;
+import com.happier.flowering.entity.Topic;
 import com.yinglan.alphatabs.AlphaTabsIndicator;
 import com.yinglan.alphatabs.OnTabChangedListner;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.List;
 
 /**
  * @ClassName FlowerPostFragment
@@ -40,6 +55,7 @@ public class FlowerPostFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_flower_post, container, false);
 
         ivPublishPost = view.findViewById(R.id.iv_publish_post);
+
 
         indicator = view.findViewById(R.id.alphaIndicator_post);
         indicator.setOnTabChangedListner(new OnTabChangedListner() {
@@ -76,7 +92,6 @@ public class FlowerPostFragment extends Fragment {
 
         return view;
     }
-
 
     // 根据不同的选项卡显示不同的Fragment
     public void showFragment(Fragment fragment) {

@@ -16,6 +16,9 @@ import com.happier.flowering.adapter.LatestAndChoicePostAdapter;
 import com.happier.flowering.constant.Constant;
 import com.happier.flowering.model.NineGridModel;
 import com.happier.flowering.model.PostListModel;
+import com.scwang.smartrefresh.layout.SmartRefreshLayout;
+import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -43,9 +46,10 @@ import okhttp3.Response;
 public class LatestPostFragment extends Fragment {
 
     private ListView listView;
+    private SmartRefreshLayout refreshLayout;
 
     private List<Map<String, Object>> dataSource = new ArrayList<>();
-    private LatestAndChoicePostAdapter adapter;
+    private LatestAndChoicePostAdapter adapter = null;
 
     private OkHttpClient client = new OkHttpClient();
     private Gson gson = new Gson();
@@ -57,8 +61,20 @@ public class LatestPostFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_post_latest_and_choice, container, false);
         listView = view.findViewById(R.id.m_post_lv);
+        refreshLayout = view.findViewById(R.id.m_post_list_refresh);
 
         getPostInfo();
+
+        refreshLayout.setOnRefreshListener(new OnRefreshListener() {
+            @Override
+            public void onRefresh(@NonNull RefreshLayout refreshLayout) {
+                if (adapter != null) {
+                    dataSource.clear();
+                    getPostInfo();
+                }
+                refreshLayout.finishRefresh();
+            }
+        });
 
         return view;
     }
@@ -81,8 +97,7 @@ public class LatestPostFragment extends Fragment {
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void initData(String result) {
-        List<PostListModel> models = gson.fromJson(result, new TypeToken<List<PostListModel>>() {
-        }.getType());
+        List<PostListModel> models = gson.fromJson(result, new TypeToken<List<PostListModel>>() {}.getType());
         for (PostListModel model : models) {
             Map<String, Object> map = new HashMap<>();
             map.put("post_id", model.getPostId());

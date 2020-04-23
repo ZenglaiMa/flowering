@@ -13,6 +13,7 @@ public class Topic {
 
     private Integer topicId; // 话题id
     private String topicName; // 话题名
+    private String introduction;
 
     private Set<Post> posts = new HashSet<>(); // 该话题下包含的帖子
 
@@ -38,5 +39,13 @@ public class Topic {
 
     public void setPosts(Set<Post> posts) {
         this.posts = posts;
+    }
+
+    public String getIntroduction() {
+        return introduction;
+    }
+
+    public void setIntroduction(String introduction) {
+        this.introduction = introduction;
     }
 }

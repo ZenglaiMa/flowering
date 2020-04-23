@@ -13,6 +13,7 @@ import com.happier.flowering.R;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.happier.flowering.fragment.FlowerPostFragment;
 import com.happier.flowering.fragment.LatestPostFragment;
@@ -23,6 +24,9 @@ import com.yinglan.alphatabs.OnTabChangedListner;
 public class TopicDetail extends AppCompatActivity {
     private AlphaTabsIndicator topicIndicator;
     private ImageView back;
+    private TextView topic_name;
+    private TextView topic_introduction;
+
     private static final int TAB_normal = 0;
     private static final int TAB_hotter = 1;
 
@@ -33,6 +37,15 @@ public class TopicDetail extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.topic_detail);
         showFragment(new LatestPostFragment());
+
+        topic_name = findViewById(R.id.l_topic_name);
+        topic_introduction = findViewById(R.id.l_topic_introduction);
+        String name = getIntent().getStringExtra("name");
+        String introduction = getIntent().getStringExtra("introduction");
+        int id = getIntent().getIntExtra("id", 0);
+        topic_name.setText("#" + name + "#");
+        topic_introduction.setText(introduction);
+
         topicIndicator = findViewById(R.id.alphaIndicator_post);
         topicIndicator.setOnTabChangedListner(new OnTabChangedListner() {
             @Override
@@ -49,12 +62,12 @@ public class TopicDetail extends AppCompatActivity {
             }
         });
 
-        back=findViewById(R.id.l_iv_back);
+        back = findViewById(R.id.l_iv_back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(TopicDetail.this, MainActivity.class);
-                intent.putExtra("back",true);
+                intent.putExtra("back", true);
                 startActivity(intent);
             }
         });

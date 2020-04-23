@@ -6,9 +6,24 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="50dp"
+        android:text="推荐"
         android:gravity="center"
-        android:text="花间"
-        android:textSize="50dp" />
+        android:textSize="25dp" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <ListView
+            android:id="@+id/z_lv_left"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"></ListView>
+
+        <ListView
+            android:id="@+id/z_lv_rigth"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></ListView>
+    </LinearLayout>
 </LinearLayout>

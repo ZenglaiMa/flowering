@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.happier.flowering.R;
 import com.happier.flowering.activity.TopicDetail;
+import com.happier.flowering.entity.Topic;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,11 +18,11 @@ import java.util.Map;
 
 public class TopicAdapter extends BaseAdapter {
     private Context context;
-    private List<String> topics = new ArrayList<>();
+    private List<Topic> topics = new ArrayList<>();
     private int item_layout_id;
 
 
-    public TopicAdapter(Context context, List<String> topics, int item_layout_id) {
+    public TopicAdapter(Context context, List<Topic> topics, int item_layout_id) {
         this.context = context;
         this.topics = topics;
         this.item_layout_id = item_layout_id;
@@ -85,11 +86,14 @@ public class TopicAdapter extends BaseAdapter {
             convertView = inflater.inflate(item_layout_id, null);
         }
         TextView textView = convertView.findViewById(R.id.l_tv_topic_item);
-        textView.setText(topics.get(position));
+        textView.setText(topics.get(position).getTopicName());
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, TopicDetail.class);
+                intent.putExtra("name",topics.get(position).getTopicName());
+                intent.putExtra("introduction",topics.get(position).getIntroduction());
+                intent.putExtra("id",topics.get(position).getTopicId());
                 context.startActivity(intent);
             }
         });
