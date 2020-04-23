@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/z_ll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/z_tv_type"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:text="显示文章类型" />
+
+    <ImageView
+        android:id="@+id/z_iv_img"
+        android:layout_width="match_parent"
+        android:layout_height="100dp" />
+
+    <TextView
+        android:id="@+id/z_tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="fill_vertical"
+        android:text="显示文章标题" />
+
+    <TextView
+        android:id="@+id/z_tv_overview"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="fill_vertical"
+        android:text="文章一句话描述" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="fill_vertical"
+        android:text="文：flowering" />
+</LinearLayout>

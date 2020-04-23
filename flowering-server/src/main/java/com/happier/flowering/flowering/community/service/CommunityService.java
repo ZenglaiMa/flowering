@@ -35,6 +35,11 @@ public class CommunityService {
     @Resource
     private ArticleMapper articleMapper;
 
+    /*
+     * @description 获取所有的文章
+     * @return
+     * @author 赵语涵
+     */
     public List<Article> getAllArticle(){
         return articleMapper.getAllArtical();
     }
