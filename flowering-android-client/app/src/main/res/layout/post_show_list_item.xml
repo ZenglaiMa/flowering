@@ -61,6 +61,11 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/good_normal" />
 
+            <TextView
+                android:id="@+id/m_thumbs_up_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
             <ImageView
                 android:id="@+id/m_post_comment"
                 android:layout_width="wrap_content"

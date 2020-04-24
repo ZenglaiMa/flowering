@@ -128,6 +128,7 @@ public class LatestPostFragment extends Fragment {
                 map.put("head_img", model.getHeadImg());
                 map.put("topic_name", model.getTopicName());
                 map.put("user_id", model.getUserId());
+                map.put("thumbs_up_count", model.getThumbsUpCount());
 
                 String[] imgUrls = model.getPostImg().split(",");
                 NineGridModel nineGridModel = new NineGridModel();

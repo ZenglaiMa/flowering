@@ -95,6 +95,7 @@ public class LatestAndChoicePostAdapter extends BaseAdapter {
         viewHolder.tvTopicName.setText(data.get("topic_name").toString());
         viewHolder.tvPostText.setText(data.get("post_text").toString());
         viewHolder.tvPublishTime.setText(data.get("create_time").toString());
+        viewHolder.tvThumbsUpCount.setText(String.valueOf(data.get("thumbs_up_count")));
         viewHolder.nineGridImages.setIsShowAll(((NineGridModel) data.get("nine_grid")).isShowAll);
         viewHolder.nineGridImages.setUrlList(((NineGridModel) data.get("nine_grid")).urlList);
 
@@ -146,6 +147,7 @@ public class LatestAndChoicePostAdapter extends BaseAdapter {
                     viewHolder.ivPostGood.setImageResource(R.drawable.good_selected);
                     goodView.setText("+1");
                     goodView.show(viewHolder.ivPostGood);
+                    viewHolder.tvThumbsUpCount.setText(String.valueOf(Integer.valueOf(viewHolder.tvThumbsUpCount.getText().toString()) + 1));
                     break;
                 case R.id.m_post_comment:
                     // todo: 执行评论逻辑
@@ -179,6 +181,7 @@ public class LatestAndChoicePostAdapter extends BaseAdapter {
         viewHolder.tvShowComments = convertView.findViewById(R.id.tv_show_comments);
         viewHolder.lvComments = convertView.findViewById(R.id.m_lv_comments);
         viewHolder.tvTopicName = convertView.findViewById(R.id.m_post_topic);
+        viewHolder.tvThumbsUpCount = convertView.findViewById(R.id.m_thumbs_up_count);
     }
 
     private void showPopupWindow(ViewGroup parent) {
@@ -204,5 +207,6 @@ public class LatestAndChoicePostAdapter extends BaseAdapter {
         public TextView tvShowComments;
         public ListView lvComments;
         public TextView tvTopicName;
+        public TextView tvThumbsUpCount;
     }
 }

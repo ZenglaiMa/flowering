@@ -18,6 +18,7 @@ public class PostListModel {
     private String nickname;
     private String headImg;
     private String topicName;
+    private Integer thumbsUpCount;
 
     public Integer getPostId() {
         return postId;
@@ -81,5 +82,13 @@ public class PostListModel {
 
     public void setUserId(Integer userId) {
         this.userId = userId;
+    }
+
+    public Integer getThumbsUpCount() {
+        return thumbsUpCount;
+    }
+
+    public void setThumbsUpCount(Integer thumbsUpCount) {
+        this.thumbsUpCount = thumbsUpCount;
     }
 }
