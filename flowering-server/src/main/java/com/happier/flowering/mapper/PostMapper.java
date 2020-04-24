@@ -12,6 +12,8 @@ import java.util.List;
  */
 public interface PostMapper {
 
-    List<Post> findAll();
+    List<Post> findAllByCreateTime();
+
+    List<Post> findAllByThumbsUp();
 
 }

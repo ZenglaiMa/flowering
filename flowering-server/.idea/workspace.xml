@@ -181,6 +181,7 @@
       <change beforePath="$PROJECT_DIR$/target/classes/templates/test.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/happier/flowering/FloweringApplicationTests.class" beforeDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -222,8 +223,8 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="D:/apache_maven/apache-maven-3.3.9" />
-        <option name="userSettingsFile" value="C:\Users\Lenovo\.m2\settings.xml" />
+        <option name="mavenHome" value="F:/apache-maven-3.5.4" />
+        <option name="userSettingsFile" value="F:\apache-maven-3.5.4\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
     <option name="importingSettings">
@@ -277,6 +278,18 @@
       <select />
     </treeState>
   </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
   <component name="RunManager">
     <configuration name="FloweringApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="flowering-server" />
@@ -318,6 +331,7 @@
       <workItem from="1587609939691" duration="196000" />
       <workItem from="1587611633781" duration="1039000" />
       <workItem from="1587649610618" duration="2403000" />
+      <workItem from="1587688876882" duration="7233000" />
     </task>
     <servers />
   </component>

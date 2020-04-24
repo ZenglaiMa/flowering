@@ -19,13 +19,24 @@
         </association>
     </resultMap>
 
-    <select id="findAll" resultMap="postResultMapper">
+    <select id="findAllByCreateTime" resultMap="postResultMapper">
         select
             p.post_id, p.txt, p.img, p.time,u.user_id, u.nickname, u.head_img, t.topic_name
         from
             user u left outer join post p on u.user_id = p.user_id left outer join topic t on p.topic_id = t.topic_id
         order by
             p.time desc
+    </select>
+
+    <select id="findAllByThumbsUp" resultMap="postResultMapper">
+        select
+            p.post_id, p.txt, p.img, p.time,u.user_id, u.nickname, u.head_img, t.topic_name
+        from
+            user u left outer join post p on u.user_id = p.user_id left outer join topic t on p.topic_id = t.topic_id left outer join thumbsup th on p.post_id = th.post_id
+        group by
+            th.post_id
+        order by
+            count(th.post_id) desc
     </select>
 
 </mapper>

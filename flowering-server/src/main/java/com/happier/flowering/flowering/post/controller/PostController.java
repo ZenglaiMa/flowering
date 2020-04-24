@@ -5,6 +5,7 @@ import com.happier.flowering.model.PostListModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -22,9 +23,14 @@ public class PostController {
     @Autowired
     private PostService postService;
 
-    @GetMapping("/list")
-    public List<PostListModel> list() {
-        return postService.listPosts();
+    @GetMapping("/latest")
+    public List<PostListModel> listByCreateTime(@RequestParam("pageNum") int pageNum, @RequestParam("pageSize") int pageSize) {
+        return postService.listPostsByCreateTime(pageNum, pageSize);
+    }
+
+    @GetMapping("/choice")
+    public List<PostListModel> listByThumbsUp(@RequestParam("pageNum") int pageNum, @RequestParam("pageSize") int pageSize) {
+        return postService.listPostsByThumbsUp(pageNum, pageSize);
     }
 
 }

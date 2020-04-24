@@ -22,7 +22,6 @@ public class TopicController {
 
     @RequestMapping("/list")
     public List<Topic> list() {
-        System.out.println("topicList");
         return topicService.listTopics();
     }
 }
