@@ -37,6 +37,7 @@ public class PostService {
             model.setNickname(post.getUser().getNickname());
             model.setHeadImg(post.getUser().getHeadImg());
             model.setTopicName(post.getTopic().getTopicName());
+            model.setThumbsUpCount(post.getThumbsUpCount());
             models.add(model);
         }
 
@@ -57,6 +58,7 @@ public class PostService {
             model.setNickname(post.getUser().getNickname());
             model.setHeadImg(post.getUser().getHeadImg());
             model.setTopicName(post.getTopic().getTopicName());
+            model.setThumbsUpCount(post.getThumbsUpCount());
             models.add(model);
         }
 
