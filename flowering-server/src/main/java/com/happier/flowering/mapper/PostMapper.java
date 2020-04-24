@@ -16,4 +16,6 @@ public interface PostMapper {
 
     List<Post> findAllByThumbsUp();
 
+    List<Post> findByTopicId(Integer topicId);
+
 }

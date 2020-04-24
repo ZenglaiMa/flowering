@@ -33,4 +33,9 @@ public class PostController {
         return postService.listPostsByThumbsUp(pageNum, pageSize);
     }
 
+    @GetMapping("/topic")
+    public List<PostListModel> listByTopic(@RequestParam("pageNum") int pageNum, @RequestParam("pageSize") int pageSize, @RequestParam("topicId") Integer topicId) {
+        return postService.listPostsByTopic(pageNum, pageSize, topicId);
+    }
+
 }

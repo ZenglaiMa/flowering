@@ -42,4 +42,15 @@
             count(th.post_id) desc
     </select>
 
+    <select id="findByTopicId" resultMap="postResultMapper">
+        select
+            p.post_id, p.txt, p.img, p.time,u.user_id, u.nickname, u.head_img, t.topic_name, count(th.post_id) as thu
+        from
+            user u left outer join post p on u.user_id = p.user_id left outer join topic t on p.topic_id = t.topic_id left outer join thumbsup th on p.post_id = th.post_id
+        where
+            t.topic_id = #{topicId}
+        group by
+            p.post_id
+    </select>
+
 </mapper>

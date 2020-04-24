@@ -64,4 +64,25 @@ public class PostService {
 
         return models;
     }
+
+    public List<PostListModel> listPostsByTopic(int pageNum, int pageSize, Integer topicId) {
+        List<PostListModel> models = new ArrayList<>();
+        PageHelper.startPage(pageNum, pageSize);
+        Page<Post> page = (Page<Post>) postMapper.findByTopicId(topicId);
+        for (Post post : page.getResult()) {
+            PostListModel model = new PostListModel();
+            model.setPostId(post.getPostId());
+            model.setPostText(post.getTxt());
+            model.setPostImg(post.getImg());
+            model.setPostCreateTime(post.getTime());
+            model.setUserId(post.getUser().getUserId());
+            model.setNickname(post.getUser().getNickname());
+            model.setHeadImg(post.getUser().getHeadImg());
+            model.setTopicName(post.getTopic().getTopicName());
+            model.setThumbsUpCount(post.getThumbsUpCount());
+            models.add(model);
+        }
+
+        return models;
+    }
 }

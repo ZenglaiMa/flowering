@@ -140,7 +140,7 @@
         <!--Jpush 结束-->
 
         <!--LKY-->
-        <activity android:name=".activity.TopicDetail"></activity>
+        <activity android:name=".activity.TopicDetailActivity"></activity>
     </application>
 
 </manifest>

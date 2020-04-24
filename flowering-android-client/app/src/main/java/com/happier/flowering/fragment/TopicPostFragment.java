@@ -7,20 +7,19 @@ import android.os.Message;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.happier.flowering.MainActivity;
 import com.happier.flowering.R;
-import com.happier.flowering.adapter.TopicAdapter;
+import com.happier.flowering.activity.TopicDetailActivity;
+import com.happier.flowering.adapter.TopicPostAdapter;
 import com.happier.flowering.constant.Constant;
 import com.happier.flowering.entity.Topic;
-import com.happier.flowering.model.PostListModel;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -40,30 +39,42 @@ import java.util.List;
  * @Version 0.1
  */
 public class TopicPostFragment extends Fragment {
-    private List<Topic> dataSource=new ArrayList<>();
-    private TopicAdapter topicAdapter;
+
+    private List<Topic> dataSource = new ArrayList<>();
+    private TopicPostAdapter topicPostAdapter;
     private ListView listView;
 
     private Handler handler;
-    private Gson gson=new Gson();
-    private static final String Topic_List = "/topic/list";
+    private Gson gson = new Gson();
+    private static final String PATH_TOPIC_LIST = "/topic/list";
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_post_topic, container, false);
-        listView=view.findViewById(R.id.l_lv_topic);
+        listView = view.findViewById(R.id.l_lv_topic);
+
         initTopics();
-        handler=new Handler(){
+
+        handler = new Handler() {
             @Override
             public void handleMessage(Message msg) {
-                String topics= (String) msg.obj;
-                Log.e("topics",topics);
-                dataSource= gson.fromJson(topics, new TypeToken<List<Topic>>() {}.getType());
-                topicAdapter=new TopicAdapter(view.getContext(),dataSource,R.layout.topic_item);
-                listView.setAdapter(topicAdapter);
+                String topics = (String) msg.obj;
+                dataSource = gson.fromJson(topics, new TypeToken<List<Topic>>() {}.getType());
+                topicPostAdapter = new TopicPostAdapter(getContext(), dataSource, R.layout.topic_item);
+                listView.setAdapter(topicPostAdapter);
             }
         };
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(getActivity(), TopicDetailActivity.class);
+                intent.putExtra("topicId", id);
+                startActivity(intent);
+                getActivity().overridePendingTransition(R.anim.right_in, R.anim.left_out);
+            }
+        });
 
         return view;
     }
@@ -73,13 +84,13 @@ public class TopicPostFragment extends Fragment {
             @Override
             public void run() {
                 try {
-                    URL url = new URL(Constant.BASE_IP1 + Topic_List);
+                    URL url = new URL(Constant.BASE_IP + PATH_TOPIC_LIST);
                     URLConnection conn = url.openConnection();
                     InputStream in = conn.getInputStream();
                     BufferedReader reader = new BufferedReader(new InputStreamReader(in, "utf-8"));
                     String info = reader.readLine();
-                    Message message=new Message();
-                    message.obj=info;
+                    Message message = new Message();
+                    message.obj = info;
                     handler.sendMessage(message);
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
