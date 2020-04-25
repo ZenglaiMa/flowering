@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.happier.flowering.R;
+import com.happier.flowering.view.WordsNavigation;
 
 public class PreWordNavigation extends LinearLayout{
     private Context mContext;

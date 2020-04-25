@@ -1,7 +1,6 @@
 package com.happier.flowering.fragment;
 
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -12,25 +11,27 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AbsListView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.happier.flowering.FlowerFinding.Bean;
-import com.happier.flowering.FlowerFinding.PreWordNavigation;
-import com.happier.flowering.FlowerFinding.RecyclerViewAdapter;
-import com.happier.flowering.FlowerFinding.ScrollEvent;
-import com.happier.flowering.FlowerFinding.StickHeaderDecoration;
-import com.happier.flowering.FlowerFinding.TopSmoothScroller;
-import com.happier.flowering.FlowerFinding.WordsNavigation;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import com.happier.flowering.entity.Bean;
+import com.happier.flowering.adapter.RecyclerViewAdapter;
+import com.happier.flowering.view.StickHeaderDecoration;
+import com.happier.flowering.view.TopSmoothScroller;
+import com.happier.flowering.view.WordsNavigation;
 import com.happier.flowering.R;
+import com.happier.flowering.constant.Constant;
 import com.happier.flowering.entity.Plant;
 
-import org.greenrobot.eventbus.EventBus;
-
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
+
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 /**
  * @ClassName FlowerFindingFragment
@@ -51,7 +52,10 @@ public class FlowerFindingFragment extends Fragment {
             "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
     private LinearLayoutManager mLayoutManager;
     List<Plant> plantList = new ArrayList<>();
-
+    public static final String GETALLPLANT_PATH = "/discovery/plantinfo ";
+    private final int  REQUEST_SUCCESS = 1;
+    private final int  REQUEST_FAIL = 0;
+    private Gson gson;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -68,26 +72,14 @@ public class FlowerFindingFragment extends Fragment {
             beanList.add(new Bean(letters[i]));
         }
 
-        Plant plant1 = new Plant();
-        plant1.setImg("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587406686475&di=87d6364ea7ce9dd1c0093b0c8c369309&imgtype=0&src=http%3A%2F%2Fd.hiphotos.baidu.com%2Fexp%2Fwhcrop%3D160%2C120%2Fsign%3D11126326e1fe9925cb593f125bd863ee%2F2fdda3cc7cd98d102ad277d2203fb80e7aec90ca.jpg");
-        plant1.setNameCn("茉莉");
-        plantList.add(plant1);
-        Plant plant2 = new Plant();
-        plant2.setImg("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587406686475&di=87d6364ea7ce9dd1c0093b0c8c369309&imgtype=0&src=http%3A%2F%2Fd.hiphotos.baidu.com%2Fexp%2Fwhcrop%3D160%2C120%2Fsign%3D11126326e1fe9925cb593f125bd863ee%2F2fdda3cc7cd98d102ad277d2203fb80e7aec90ca.jpg");
-        plant2.setNameCn("茉莉");
-        plantList.add(plant2);
-        Plant plant3 = new Plant();
-        plant3.setImg("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587406686475&di=87d6364ea7ce9dd1c0093b0c8c369309&imgtype=0&src=http%3A%2F%2Fd.hiphotos.baidu.com%2Fexp%2Fwhcrop%3D160%2C120%2Fsign%3D11126326e1fe9925cb593f125bd863ee%2F2fdda3cc7cd98d102ad277d2203fb80e7aec90ca.jpg");
-        plant3.setNameCn("茉莉");
-        plantList.add(plant3);
-        Plant plant4 = new Plant();
-        plant4.setImg("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587406686475&di=87d6364ea7ce9dd1c0093b0c8c369309&imgtype=0&src=http%3A%2F%2Fd.hiphotos.baidu.com%2Fexp%2Fwhcrop%3D160%2C120%2Fsign%3D11126326e1fe9925cb593f125bd863ee%2F2fdda3cc7cd98d102ad277d2203fb80e7aec90ca.jpg");
-        plant4.setNameCn("茉莉");
-        plantList.add(plant4);
-        Plant plant5 = new Plant();
-        plant5.setImg("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587406686475&di=87d6364ea7ce9dd1c0093b0c8c369309&imgtype=0&src=http%3A%2F%2Fd.hiphotos.baidu.com%2Fexp%2Fwhcrop%3D160%2C120%2Fsign%3D11126326e1fe9925cb593f125bd863ee%2F2fdda3cc7cd98d102ad277d2203fb80e7aec90ca.jpg");
-        plant5.setNameCn("茉莉");
-        plantList.add(plant5);
+        gson = new Gson();
+
+        GetAllPlantInfosThread thread = new GetAllPlantInfosThread();
+        thread.start();
+        while (thread.flag==false){
+            Log.e("Thread ","is running..");
+        }
+
         mAdapter = new RecyclerViewAdapter(getContext(), beanList, plantList);
         mRecyclerView.addItemDecoration(new StickHeaderDecoration(getActivity()));
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -96,6 +88,35 @@ public class FlowerFindingFragment extends Fragment {
         initListener();
 
         return view;
+    }
+
+    public class  GetAllPlantInfosThread extends  Thread{
+        boolean flag=false;
+        public GetAllPlantInfosThread(){
+
+        }
+        public void  run(){
+            try {
+                List<Plant> list = new ArrayList<>();
+                OkHttpClient okHttpClient = new OkHttpClient();
+                Request request = new Request.Builder()
+                        .url(Constant.BASE_IP+GETALLPLANT_PATH)
+                        .build();
+                Response response = okHttpClient.newCall(request).execute();
+
+                String plantJson = response.body().string();
+                plantList = gson.fromJson(plantJson, new TypeToken<List<Plant>>() {
+                }.getType());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            Log.e("执行完成 ","2");
+            callback();
+        }
+        public void callback(){
+            Log.e("子线程执行结束","1");
+            flag = true;
+        }
     }
 
     private void initListener() {

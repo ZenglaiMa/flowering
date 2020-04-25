@@ -54,10 +54,10 @@ public class GridViewAdapter extends BaseAdapter {
         ImageView img = convertView.findViewById(R.id.yimg_plant);
         TextView tvName = convertView.findViewById(R.id.ytv_plantName);
 
-        Picasso.with(context).load("https://gl.baidu.com/gonglve/api/getcontent?doc_id=845d923d910ef12d2bf9e7a6&type=pic&src=50b60e99edd01d5309894e68c0362d1e.png")
+        Picasso.with(context).load(plant.getImg())
                 .error(R.drawable.search)
                 .into(img);
-        tvName.setText("test");
+        tvName.setText(plant.getNameCn());
         return convertView;
     }
 }

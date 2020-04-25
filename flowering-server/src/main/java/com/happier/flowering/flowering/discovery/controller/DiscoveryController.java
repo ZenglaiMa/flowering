@@ -1,9 +1,14 @@
 package com.happier.flowering.flowering.discovery.controller;
 
+import com.google.gson.Gson;
 import com.happier.flowering.flowering.discovery.service.DiscoveryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 /**
  * @ClassName DiscoveryController
@@ -18,4 +23,11 @@ public class DiscoveryController {
     @Autowired
     private DiscoveryService discoveryService;
 
+    @RequestMapping("/plantinfo")
+    public String plantInfo(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        Gson gson = new Gson();
+        String plantList = gson.toJson(discoveryService.findAllPlantInfos());
+        System.out.println("success!!!");
+        return plantList;
+    }
 }
