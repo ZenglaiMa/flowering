@@ -39,4 +39,5 @@ public class Topic {
     public void setPosts(Set<Post> posts) {
         this.posts = posts;
     }
+
 }

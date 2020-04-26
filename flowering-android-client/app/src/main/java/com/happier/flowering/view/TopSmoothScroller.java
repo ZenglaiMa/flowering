@@ -1,4 +1,4 @@
-package com.happier.flowering.FlowerFinding;
+package com.happier.flowering.view;
 
 import android.content.Context;
 import android.support.v7.widget.LinearSmoothScroller;

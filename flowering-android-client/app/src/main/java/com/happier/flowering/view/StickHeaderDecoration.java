@@ -1,4 +1,4 @@
-package com.happier.flowering.FlowerFinding;
+package com.happier.flowering.view;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -8,6 +8,8 @@ import android.graphics.Rect;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+
+import com.happier.flowering.adapter.RecyclerViewAdapter;
 
 public class StickHeaderDecoration extends RecyclerView.ItemDecoration {
 

@@ -1,4 +1,4 @@
-package com.happier.flowering.FlowerFinding;
+package com.happier.flowering.view;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
@@ -14,7 +14,6 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import com.happier.flowering.R;
-import com.happier.flowering.fragment.FlowerFindingFragment;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;

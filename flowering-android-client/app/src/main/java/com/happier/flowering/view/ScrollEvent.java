@@ -1,4 +1,4 @@
-package com.happier.flowering.FlowerFinding;
+package com.happier.flowering.view;
 
 /**
  * @Created by xww.

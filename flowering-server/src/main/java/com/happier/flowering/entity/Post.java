@@ -23,6 +23,8 @@ public class Post {
     private Set<Comment> comments = new HashSet<>(); // 该帖子的评论
     private User user; // 所属用户
 
+    private Integer thumbsUpCount;
+
     public Integer getPostId() {
         return postId;
     }
@@ -93,5 +95,13 @@ public class Post {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public Integer getThumbsUpCount() {
+        return thumbsUpCount;
+    }
+
+    public void setThumbsUpCount(Integer thumbsUpCount) {
+        this.thumbsUpCount = thumbsUpCount;
     }
 }

@@ -4,9 +4,26 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.happier.flowering.view.NoScrollListView
-        android:id="@+id/m_post_lv"
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/m_post_list_refresh"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent">
+
+        <pl.droidsonroids.gif.GifImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/refresh" />
+
+        <com.happier.flowering.view.NoScrollListView
+            android:id="@+id/m_post_lv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
 
 </LinearLayout>

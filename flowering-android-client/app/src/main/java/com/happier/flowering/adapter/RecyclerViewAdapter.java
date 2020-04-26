@@ -1,4 +1,4 @@
-package com.happier.flowering.FlowerFinding;
+package com.happier.flowering.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -9,9 +9,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
 import com.happier.flowering.R;
-import com.happier.flowering.adapter.GridViewAdapter;
+import com.happier.flowering.entity.Bean;
 import com.happier.flowering.entity.Plant;
+import com.happier.flowering.view.MyGridView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +27,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public static final int TYPE_NORMAL = 1;
    // private GridView gridView;
     private GridViewAdapter gridViewAdapter;
+    Gson gson = new Gson();
     private List<Plant> plantList =  new ArrayList<>();
     public RecyclerViewAdapter(Context context, List<Bean> list,List<Plant> plantList) {
         this.mContext = context;
@@ -50,7 +53,21 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewAdapter.ViewHolder holder, int position) {
+        Gson gson = new Gson();
+        List<Plant> list = new ArrayList<>();
+        String groupName = mList.get(position).getGroupName();//获取分组首字母，根据首字母分配数据
+        for (int i = 0;i < plantList.size();i++){
+            if (plantList.get(i).getInitial().equals(groupName)){
+                Log.e("首字母",plantList.get(i).getInitial());
+                Log.e("groupName",groupName);
+                Plant plant = plantList.get(i);
+                list.add(plant);
+            }
+        }
 
+        Log.e("plantData",gson.toJson(list));
+        gridViewAdapter=new GridViewAdapter(list,mContext,R.layout.grindview_plant);
+        holder.gridView.setAdapter(gridViewAdapter);
     }
 
 
@@ -99,13 +116,16 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView mTextView;
-
+        MyGridView gridView;
         public ViewHolder(View itemView) {
             super(itemView);
+          /*  Gson gson = new Gson();
             MyGridView gridView=itemView.findViewById(R.id.gv);
-            gridViewAdapter=new GridViewAdapter(plantList,mContext,R.layout.grindview_plant);
+            Log.e("plantData",gson.toJson(list));
+            gridViewAdapter=new GridViewAdapter(list,mContext,R.layout.grindview_plant);
             gridView.setAdapter(gridViewAdapter);
-            Log.e("setText","777");
+            mTextView = itemView.findViewById(R.id.tv_item_text);*/
+            gridView=itemView.findViewById(R.id.gv);
             mTextView = itemView.findViewById(R.id.tv_item_text);
 
         }
