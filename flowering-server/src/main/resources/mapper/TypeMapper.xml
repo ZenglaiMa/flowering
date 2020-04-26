@@ -4,4 +4,8 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.happier.flowering.mapper.TypeMapper">
 
+    <select id="getAllTypes" resultType="Type">
+        select t.type_id, t.type_name
+        from type t
+    </select>
 </mapper>

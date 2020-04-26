@@ -3,5 +3,17 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.happier.flowering.mapper.CollectMapper">
-
+    <select id="isStar" resultType="int">
+        select count(*)
+        from collect
+        where user_id=#{userId} and article_id=#{articleId}
+    </select>
+    <insert id="setStar">
+        insert into collect(user_id, article_id)
+        values(#{userId}, #{articleId})
+    </insert>
+    <delete id="unStar">
+        delete from collect
+        where user_id=#{userId} and article_id=#{articleId}
+    </delete>
 </mapper>

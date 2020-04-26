@@ -7,7 +7,7 @@
         android:name="${applicationId}.permission.JPUSH_MESSAGE"
         android:protectionLevel="signature" />
 
-    <!-- Required  一些系统要求的权限，如访问网络等-->
+    <!-- Required  一些系统要求的权限，如访问网络等 -->
     <uses-permission android:name="${applicationId}.permission.JPUSH_MESSAGE" />
     <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
@@ -24,7 +24,6 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-
         android:theme="@style/CustomTheme">
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
@@ -137,10 +136,13 @@
         <meta-data
             android:name="JPUSH_APPKEY"
             android:value="17b9165411a620c111f01372" /> <!-- </>值来自开发者平台取得的AppKey -->
-        <!--Jpush 结束-->
+        <!-- Jpush 结束 -->
 
-        <!--LKY-->
-        <activity android:name=".activity.TopicDetail"></activity>
+
+        <!-- LKY -->
+        <activity android:name=".activity.TopicDetail" />
+        <!-- ZYH -->
+        <activity android:name=".activity.ArticleDetail" />
     </application>
 
 </manifest>

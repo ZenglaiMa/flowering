@@ -2,120 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2bf21958-aa2b-480d-b968-3a7f1d23a780" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/aboutjpush/FloweringApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/aboutjpush/FloweringMessageReceiver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/aboutjpush/FloweringService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/activity/TopicDetail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/adapter/LatestAndChoicePostAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/adapter/PostCommentListAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/adapter/TopicAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/fragment/HotterPostFragment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/fragment/NormalPostFragment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/model/PostListModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/view/NoScrollListView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/res/drawable/add1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/res/drawable/back.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/res/drawable/background.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/res/drawable/edit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/res/drawable/flower_topic.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/res/drawable/left.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/res/layout/post_comments_list_item.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/res/layout/topic_detail.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/res/layout/topic_item.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/happier/flowering/model/PostListModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/header-img/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/header-img/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/header-img/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/header-img/4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/header-img/5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/header-img/6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/header-img/7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/header-img/8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/header-img/9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/post-img/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/post-img/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/post-img/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/post-img/4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/post-img/5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/post-img/6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/post-img/7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/post-img/8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/post-img/9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/article-img/z_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/article-img/z_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/article-img/z_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/article-img/z_4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/article-img/z_5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/article-img/z_7.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../flowering-android-client/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/AboutJPush/FloweringApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/AboutJPush/FloweringApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/AboutJPush/FloweringMessageReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/AboutJPush/FloweringMessageReceiver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/AboutJPush/FloweringService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/AboutJPush/FloweringService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/FlowerFinding/PreWordNavigation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/FlowerFinding/PreWordNavigation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/FlowerFinding/WordsNavigation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/FlowerFinding/WordsNavigation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/adapter/LatestPostAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/adapter/FloweringAmongRightAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/adapter/FloweringAmongRightAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/constant/Constant.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/constant/Constant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/fragment/FlowerFindingFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/fragment/FlowerFindingFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/fragment/FlowerPostFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/fragment/FlowerPostFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/fragment/LatestPostFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/fragment/LatestPostFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/fragment/TopicPostFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/fragment/TopicPostFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/res/layout/fragment_post_latest_and_choice.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/res/layout/fragment_post_latest_and_choice.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/res/layout/fragment_post_topic.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/res/layout/fragment_post_topic.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/res/layout/post_show_list_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/res/layout/post_show_list_item.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/fragment/FlowerAmongFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/fragment/FlowerAmongFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/res/layout/adapter_flowering_among_left.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/res/layout/adapter_flowering_among_left.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/res/layout/adapter_flowering_among_right.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/res/layout/adapter_flowering_among_right.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/happier/flowering/flowering/post/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/happier/flowering/flowering/post/controller/PostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/happier/flowering/flowering/post/service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/happier/flowering/flowering/post/service/PostService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/happier/flowering/mapper/PostMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/happier/flowering/mapper/PostMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/PostMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/PostMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/a.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/FloweringApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/entity/Article.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/entity/Attention.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/entity/Collect.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/entity/Comment.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/entity/Message.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/entity/Plant.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/entity/Post.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/entity/Reply.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/entity/ThumbsUp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/entity/Topic.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/entity/Type.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/entity/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/flowering/center/controller/CenterController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/flowering/center/service/CenterService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/flowering/community/controller/CommunityController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/flowering/community/service/CommunityService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/flowering/discovery/controller/DiscoveryController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/flowering/discovery/service/DiscoveryService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/flowering/post/controller/PostController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/flowering/post/service/PostService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/mapper/ArticleMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/mapper/AttentionMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/mapper/CollectMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/mapper/CommentMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/mapper/MessageMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/mapper/PlantMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/mapper/PostMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/mapper/ReplyMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/mapper/ThumbsUpMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/mapper/TopicMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/mapper/TypeMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/happier/flowering/mapper/UserMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/ArticleMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/AttentionMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/CollectMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/CommentMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/MessageMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/PlantMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/PostMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/ReplyMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/ThumbsUpMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/TopicMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/TypeMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mybatis.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/a.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/test.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/happier/flowering/FloweringApplicationTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/happier/flowering/entity/Collect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/happier/flowering/entity/Collect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/happier/flowering/flowering/community/controller/CommunityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/happier/flowering/flowering/community/controller/CommunityController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/happier/flowering/flowering/community/service/CommunityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/happier/flowering/flowering/community/service/CommunityService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/happier/flowering/mapper/ArticleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/happier/flowering/mapper/ArticleMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/happier/flowering/mapper/CollectMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/happier/flowering/mapper/CollectMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/happier/flowering/mapper/TypeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/happier/flowering/mapper/TypeMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ArticleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ArticleMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/CollectMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/CollectMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/TypeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/TypeMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,7 +84,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static/article-img" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -182,15 +92,18 @@
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\flowering\flowering-server\src\main\resources\static\article-img" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.happier.flowering.flowering.finding.controller" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\flowering\flowering-server\src\main\resources\static\article-img" />
+      <recent name="E:\flowering\flowering-server\src\main\resources\static\post-img" />
       <recent name="E:\flowering\flowering-server\src\main\java\com\happier\flowering\flowering" />
       <recent name="E:\IdeaProjects\flowering-server\src\main\resources\static" />
       <recent name="E:\IdeaProjects\flowering-server\src\main\resources\static\img2" />
-      <recent name="E:\IdeaProjects\flowering-server\src\main\resources\static\img1" />
-      <recent name="E:\IdeaProjects\flowering-server\src\main\resources\static\img" />
     </key>
   </component>
   <component name="RestServicesNavigator">
@@ -237,6 +150,11 @@
       <workItem from="1587547223277" duration="7713000" />
       <workItem from="1587557998361" duration="1317000" />
       <workItem from="1587609939691" duration="196000" />
+      <workItem from="1587610306377" duration="10158000" />
+      <workItem from="1587696800237" duration="2118000" />
+      <workItem from="1587718686019" duration="13442000" />
+      <workItem from="1587885523844" duration="5133000" />
+      <workItem from="1587892913199" duration="66000" />
     </task>
     <servers />
   </component>
@@ -261,10 +179,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="233" y="0" key="#Auto_Import/0.0.1280.680@0.0.1280.680" timestamp="1587441350491" />
-    <state x="397" y="42" key="#com.intellij.ide.util.MemberChooser" timestamp="1587459346414">
+    <state x="397" y="42" key="#com.intellij.ide.util.MemberChooser" timestamp="1587723139324">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="397" y="42" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1587459346414" />
+    <state x="397" y="42" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1587723139324" />
     <state x="207" y="266" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1587368810459">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -273,38 +191,38 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="420" y="82" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1587610042704" />
-    <state width="1237" height="182" key="GridCell.Tab.0.bottom" timestamp="1587610146369">
+    <state width="1237" height="210" key="GridCell.Tab.0.bottom" timestamp="1587892737153">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="182" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1587610146369" />
-    <state width="1237" height="182" key="GridCell.Tab.0.center" timestamp="1587610146366">
+    <state width="1237" height="210" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1587892737153" />
+    <state width="1237" height="210" key="GridCell.Tab.0.center" timestamp="1587892737152">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="182" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1587610146366" />
-    <state width="1237" height="182" key="GridCell.Tab.0.left" timestamp="1587610146366">
+    <state width="1237" height="210" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1587892737152" />
+    <state width="1237" height="210" key="GridCell.Tab.0.left" timestamp="1587892737152">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="182" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1587610146366" />
-    <state width="1237" height="182" key="GridCell.Tab.0.right" timestamp="1587610146366">
+    <state width="1237" height="210" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1587892737152" />
+    <state width="1237" height="210" key="GridCell.Tab.0.right" timestamp="1587892737153">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="182" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1587610146366" />
-    <state width="1237" height="182" key="GridCell.Tab.1.bottom" timestamp="1587461362317">
+    <state width="1237" height="210" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1587892737153" />
+    <state width="1237" height="210" key="GridCell.Tab.1.bottom" timestamp="1587892737154">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="182" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1587461362317" />
-    <state width="1237" height="182" key="GridCell.Tab.1.center" timestamp="1587461362317">
+    <state width="1237" height="210" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1587892737154" />
+    <state width="1237" height="210" key="GridCell.Tab.1.center" timestamp="1587892737153">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="182" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1587461362317" />
-    <state width="1237" height="182" key="GridCell.Tab.1.left" timestamp="1587461362317">
+    <state width="1237" height="210" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1587892737153" />
+    <state width="1237" height="210" key="GridCell.Tab.1.left" timestamp="1587892737153">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="182" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1587461362317" />
-    <state width="1237" height="182" key="GridCell.Tab.1.right" timestamp="1587461362317">
+    <state width="1237" height="210" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1587892737153" />
+    <state width="1237" height="210" key="GridCell.Tab.1.right" timestamp="1587892737154">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="186" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1587384791889" />
+    <state width="1237" height="210" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1587892737154" />
     <state x="299" y="67" key="Maven.ArtifactSearchDialog" timestamp="1587458256185">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -327,7 +245,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/happier/flowering/mapper/ArticleMapper.java</url>
-          <line>31</line>
+          <line>54</line>
           <properties class="com.happier.flowering.mapper.ArticleMapper" method="getAllArtical">
             <option name="EMULATED" value="true" />
           </properties>

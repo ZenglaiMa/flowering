@@ -17,6 +17,16 @@
             <result property="typeName" column="type_name"></result>
         </association>
     </resultMap>
+    <select id="getReadingNum" resultType="java.lang.Integer">
+        select a.reading_num
+        from article a
+        where a.article_id=#{articleId}
+    </select>
+    <update id="addReadingNum">
+        update article
+        set reading_num=#{readingNum}
+        where article_id=#{articleId}
+    </update>
     <select id="getArticalById" resultMap="articalMap">
         select *
         from article
@@ -29,5 +39,10 @@
     <select id="getAllArtical" resultMap="articalMap">
         select a.article_id, a.content, a.title, a.img, a.overview, a.time, a.reading_num, a.type_id, t.type_id t_type_id, t.type_name
         from article a left join type t on a.type_id=t.type_id
+    </select>
+    <select id="getArticleByType" resultMap="articalMap">
+        select a.article_id, a.content, a.title, a.img, a.overview, a.time, a.reading_num, a.type_id, t.type_id t_type_id, t.type_name
+        from article a left join type t on a.type_id=t.type_id
+        where a.type_id=#{typeId}
     </select>
 </mapper>

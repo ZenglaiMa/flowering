@@ -12,7 +12,11 @@ import cn.jpush.api.push.model.notification.AndroidNotification;
 import cn.jpush.api.push.model.notification.Notification;
 import com.google.gson.Gson;
 import com.happier.flowering.entity.Article;
+import com.happier.flowering.entity.Collect;
+import com.happier.flowering.entity.Type;
 import com.happier.flowering.mapper.ArticleMapper;
+import com.happier.flowering.mapper.CollectMapper;
+import com.happier.flowering.mapper.TypeMapper;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -34,7 +38,67 @@ public class CommunityService {
 
     @Resource
     private ArticleMapper articleMapper;
-
+    @Resource
+    private TypeMapper typeMapper;
+    @Resource
+    private CollectMapper collectMapper;
+    /*
+     * @description 为某篇文章增加一个阅读量
+     * @param articleId 针对哪篇文章
+     * @return
+     * @author 赵语涵
+     */
+    public void updateReadingNum(int articleId){
+        int num = articleMapper.getReadingNum(articleId);
+        articleMapper.addReadingNum(articleId, num+1);
+    }
+    /*
+     * @description 获取某个类型的所有文章
+     * @param typeId
+     * @return
+     * @author 赵语涵
+     */
+    public List<Article> getArticleByType(int typeId) {
+        return articleMapper.getArticleByType(typeId);
+    }
+    /*
+     * @description 某个人将某个文章取消收藏
+     * @param collect
+     * @author 赵语涵
+     */
+    public void unStar(Collect collect){
+        collectMapper.unStar(collect);
+    }
+    /*
+     * @description 判断一篇文章是否被一个用户收藏
+     * @param collect
+     * @return
+     * @author 赵语涵
+     */
+    public int isStar(Collect collect){
+        int count = collectMapper.isStar(collect);
+        if(count == 0) {
+            return 0;//没有收藏
+        }else {
+            return 1;//收藏了
+        }
+    }
+    /*
+     * @description 某个人将某个文章收藏
+     * @param collect 传进来的collect
+     * @return
+     * @author 赵语涵
+     */
+    public void setStar(Collect collect){
+        collectMapper.setStar(collect);
+    }
+    /*
+     * @description 获取所有的类型
+     * @author 赵语涵
+     */
+    public List<Type> getAllTypes(){
+        return typeMapper.getAllTypes();
+    }
     /*
      * @description 获取所有的文章
      * @return
@@ -47,7 +111,7 @@ public class CommunityService {
      * @description 任务调度 + JPush推送文章方法1
      * @author 赵语涵
      */
-//    @Scheduled(cron = "0/2 * * * * ?")
+//    @Scheduled(cron = "0/10 * * * * ?")
     public void jpush() {
         int count = articleMapper.getCount();
         Random rand = new Random();

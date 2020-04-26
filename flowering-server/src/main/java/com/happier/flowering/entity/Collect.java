@@ -35,4 +35,13 @@ public class Collect {
     public void setArticleId(Integer articleId) {
         this.articleId = articleId;
     }
+
+    @Override
+    public String toString() {
+        return "Collect{" +
+                "id=" + id +
+                ", userId=" + userId +
+                ", articleId=" + articleId +
+                '}';
+    }
 }
