@@ -9,10 +9,6 @@ package com.happier.flowering.constant;
  */
 public class Constant {
 
-<<<<<<< HEAD
-    public static final String BASE_IP = "http://192.168.1.106:8080";
-=======
-    public static final String BASE_IP = "http://192.168.8.107:8080";
->>>>>>> 6a5565c8e71a6c8f71313227a5a7776ba84bc2bd
+    public static final String BASE_IP = "http://192.168.1.102:8080";
 
 }
