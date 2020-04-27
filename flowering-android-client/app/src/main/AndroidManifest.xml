@@ -16,6 +16,7 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:name=".aboutjpush.FloweringApplication"
@@ -138,14 +139,16 @@
             android:value="17b9165411a620c111f01372" /> <!-- </>值来自开发者平台取得的AppKey -->
         <!-- Jpush 结束 -->
 
-        <!--LKY-->
         <activity android:name=".activity.TopicDetailActivity" />
-        <!-- ZYH -->
         <activity android:name=".activity.ArticleDetail" />
+<<<<<<< HEAD
         <activity android:name=".mine.MCollection" />
         <activity android:name=".mine.MPraise" />
         <activity android:name=".mine.BePraised" />
         <activity android:name=".mine.PraiseOthers"></activity>
+=======
+        <activity android:name=".activity.PostPublishActivity" />
+>>>>>>> 0e98ebe64d2e203e5529cf14aac0729eaef76cb5
     </application>
 
 </manifest>

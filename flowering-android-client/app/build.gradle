@@ -61,7 +61,7 @@ dependencies {
     implementation 'com.youth.banner:banner:1.4.9'
     implementation 'com.yinglan.alphatabs:library:1.0.8'
     implementation 'com.wx.goodview:goodview:1.0.0'
-
     implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation 'org.devio.takephoto:takephoto_library:4.1.0'
 
 }
