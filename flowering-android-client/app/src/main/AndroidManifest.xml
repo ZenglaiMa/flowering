@@ -142,7 +142,10 @@
         <activity android:name=".activity.TopicDetailActivity" />
         <!-- ZYH -->
         <activity android:name=".activity.ArticleDetail" />
-
+        <activity android:name=".mine.MCollection" />
+        <activity android:name=".mine.MPraise" />
+        <activity android:name=".mine.BePraised" />
+        <activity android:name=".mine.PraiseOthers"></activity>
     </application>
 
 </manifest>
