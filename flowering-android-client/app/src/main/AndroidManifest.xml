@@ -141,30 +141,12 @@
 
         <activity android:name=".activity.TopicDetailActivity" />
         <activity android:name=".activity.ArticleDetail" />
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
         <activity android:name=".mine.MCollection" />
         <activity android:name=".mine.MPraise" />
         <activity android:name=".mine.BePraised" />
-        <activity android:name=".mine.PraiseOthers"></activity>
-=======
+        <activity android:name=".mine.PraiseOthers" />
         <activity android:name=".activity.PostPublishActivity" />
->>>>>>> 0e98ebe64d2e203e5529cf14aac0729eaef76cb5
-=======
-        <activity android:name=".activity.PostPublishActivity" />
->>>>>>> 0e98ebe64d2e203e5529cf14aac0729eaef76cb5
-=======
-        <activity android:name=".activity.PostPublishActivity" />
->>>>>>> 0e98ebe64d2e203e5529cf14aac0729eaef76cb5
-=======
-        <activity android:name=".activity.PostPublishActivity" />
->>>>>>> 0e98ebe64d2e203e5529cf14aac0729eaef76cb5
-=======
-        <activity android:name=".activity.PostPublishActivity" />
->>>>>>> 0e98ebe64d2e203e5529cf14aac0729eaef76cb5
+
     </application>
 
 </manifest>
