@@ -5,6 +5,10 @@ spring:
     url: jdbc:mysql://localhost:3306/flowering?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8&useSSL=false
     username: root
     password:
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
 
 #配置Mybatis
 mybatis:

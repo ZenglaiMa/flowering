@@ -3,11 +3,14 @@ package com.happier.flowering.flowering.post.controller;
 import com.happier.flowering.flowering.post.service.PostService;
 import com.happier.flowering.model.PostListModel;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.util.ResourceUtils;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -38,4 +41,29 @@ public class PostController {
         return postService.listPostsByTopic(pageNum, pageSize, topicId);
     }
 
+    @PostMapping("/publish")
+    public String publishPost(@RequestParam("postText") String postText, @RequestParam("topicId") Integer topicId, @RequestParam("userId") Integer userId, @RequestParam(value = "pic") MultipartFile[] files) {
+        StringBuffer picPath = new StringBuffer();
+        if (files != null) {
+            for (MultipartFile file : files) {
+                try {
+                    String tempPath = ResourceUtils.getURL("classpath:").getPath() + "static/post-img";
+                    String realPath = tempPath.replace("%20", " ").replace("/", "\\").substring(1);
+                    String fileName = System.currentTimeMillis() + ".jpg";
+                    file.transferTo(new File(realPath, fileName));
+                    picPath.append("/post-img/" + fileName + ",");
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        if (postService.publishPost(postText, picPath.substring(0, picPath.length() - 1), topicId, userId, new Date())) {
+            return "success";
+        } else {
+            return "fail";
+        }
+    }
 }

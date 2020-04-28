@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.happier.flowering.R;
 import com.happier.flowering.adapter.PictureShowGridViewAdapter;
+import com.happier.flowering.constant.Constant;
 
 import org.devio.takephoto.app.TakePhoto;
 import org.devio.takephoto.app.TakePhotoActivity;
@@ -56,6 +57,7 @@ public class PostPublishActivity extends TakePhotoActivity {
     private PictureShowGridViewAdapter adapter;
 
     private static final int MAX_SELECT_PIC_NUM = 9;
+    private static final String POST_PUBLISH_PATH = "/post/publish";
 
     private final String[] topics = {"#爱花展示#", "#阳台养花#", "#今日花事#", "#生活要有花#", "#花花世界#", "#花友交流#", "#爱花互换#", "#养花日记#", "#识花鉴花#", "#开心一天#", "#云赏花#", "#百花迎春#", "#今日萌宠#", "#早安日签#", "#艺术插花#", "#夏花绚烂#", "#盛夏花语#", "#秋日美好时光#", "#冬之物语#", "#多肉植物#"};
     private int topicId = 0;
@@ -117,11 +119,8 @@ public class PostPublishActivity extends TakePhotoActivity {
         }
     }
 
-    // todo: 执行发布花现逻辑
+    // todo: 该方法有问题!
     private void publish(String postText, String picPath, int selectedTopic) {
-//        Log.e("post text", postText);
-//        Log.e("picture path", picPath);
-//        Log.e("topic id", selectedTopic + "");
         MultipartBody.Builder builder = new MultipartBody.Builder();
         builder.setType(MultipartBody.FORM);
         builder.addFormDataPart("postText", postText);
@@ -130,10 +129,12 @@ public class PostPublishActivity extends TakePhotoActivity {
         String[] paths = picPath.split(",");
         for (String path : paths) {
             File file = new File(path);
-            builder.addFormDataPart("pic", file.getName(), RequestBody.create(MediaType.parse("multipart/form-data"), file));
+            if (file != null) {
+                builder.addFormDataPart("pic", file.getName(), RequestBody.create(MediaType.parse("multipart/form-data"), file));
+            }
         }
         MultipartBody body = builder.build();
-        Request request = new Request.Builder().url("").post(body).build();
+        Request request = new Request.Builder().url(Constant.BASE_IP + POST_PUBLISH_PATH).post(body).build();
         Call call = client.newCall(request);
         call.enqueue(new Callback() {
             @Override
@@ -142,7 +143,7 @@ public class PostPublishActivity extends TakePhotoActivity {
 
             @Override
             public void onResponse(Call call, Response response) throws IOException {
-                
+                Log.e("result", response.body().string());
             }
         });
     }

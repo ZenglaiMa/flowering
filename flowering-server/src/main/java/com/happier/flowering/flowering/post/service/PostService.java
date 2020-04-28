@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -84,5 +85,9 @@ public class PostService {
         }
 
         return models;
+    }
+
+    public boolean publishPost(String txt, String img, Integer topicId, Integer userId, Date time) {
+        return postMapper.savePost(txt, img, topicId, userId, time) > 0 ? true : false;
     }
 }
