@@ -1,6 +1,10 @@
 package com.happier.flowering.activity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
@@ -19,8 +23,19 @@ import org.devio.takephoto.app.TakePhotoActivity;
 import org.devio.takephoto.model.TImage;
 import org.devio.takephoto.model.TResult;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 /**
  * @ClassName PostPublishActivity
@@ -41,6 +56,11 @@ public class PostPublishActivity extends TakePhotoActivity {
     private PictureShowGridViewAdapter adapter;
 
     private static final int MAX_SELECT_PIC_NUM = 9;
+
+    private final String[] topics = {"#爱花展示#", "#阳台养花#", "#今日花事#", "#生活要有花#", "#花花世界#", "#花友交流#", "#爱花互换#", "#养花日记#", "#识花鉴花#", "#开心一天#", "#云赏花#", "#百花迎春#", "#今日萌宠#", "#早安日签#", "#艺术插花#", "#夏花绚烂#", "#盛夏花语#", "#秋日美好时光#", "#冬之物语#", "#多肉植物#"};
+    private int topicId = 0;
+
+    private OkHttpClient client = new OkHttpClient();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,17 +101,63 @@ public class PostPublishActivity extends TakePhotoActivity {
                     overridePendingTransition(R.anim.left_in, R.anim.right_out);
                     break;
                 case R.id.m_publish_post:
-                    // todo: 执行发布花现逻辑
-                    Toast.makeText(PostPublishActivity.this, "发布成功", Toast.LENGTH_SHORT).show();
-                    finish();
-                    overridePendingTransition(R.anim.left_in, R.anim.right_out);
+                    String postText = etPostText.getText().toString();
+                    if (TextUtils.isEmpty(postText) || dataSource.size() == 0 || dataSource == null || topicId == 0) {
+                        Toast.makeText(PostPublishActivity.this, "请完善花现内容", Toast.LENGTH_SHORT).show();
+                    } else {
+                        publish(postText, dataSource.toString(), topicId);
+                        finish();
+                        overridePendingTransition(R.anim.left_in, R.anim.right_out);
+                    }
                     break;
                 case R.id.m_btn_add_topic:
-                    // todo: 给帖子添加话题, 用Dialog
-                    Toast.makeText(PostPublishActivity.this, "给帖子添加话题", Toast.LENGTH_SHORT).show();
+                    addTopic();
                     break;
             }
         }
+    }
+
+    // todo: 执行发布花现逻辑
+    private void publish(String postText, String picPath, int selectedTopic) {
+//        Log.e("post text", postText);
+//        Log.e("picture path", picPath);
+//        Log.e("topic id", selectedTopic + "");
+        MultipartBody.Builder builder = new MultipartBody.Builder();
+        builder.setType(MultipartBody.FORM);
+        builder.addFormDataPart("postText", postText);
+        builder.addFormDataPart("topicId", String.valueOf(selectedTopic));
+        builder.addFormDataPart("userId", String.valueOf(1)); // todo: 得到真实user_id
+        String[] paths = picPath.split(",");
+        for (String path : paths) {
+            File file = new File(path);
+            builder.addFormDataPart("pic", file.getName(), RequestBody.create(MediaType.parse("multipart/form-data"), file));
+        }
+        MultipartBody body = builder.build();
+        Request request = new Request.Builder().url("").post(body).build();
+        Call call = client.newCall(request);
+        call.enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                
+            }
+        });
+    }
+
+    private void addTopic() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("请选择一个话题");
+        builder.setItems(topics, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                btnAddTopicToPost.setText(topics[which]);
+                topicId = which + 1;
+            }
+        });
+        builder.show();
     }
 
     @Override
