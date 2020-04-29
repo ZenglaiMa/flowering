@@ -15,6 +15,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/happier/flowering/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/happier/flowering/mapper/UserMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -127,6 +128,18 @@
       <select />
     </treeState>
   </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
   <component name="RunManager">
     <configuration name="FloweringApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="flowering-server" />
@@ -187,12 +200,10 @@
       <workItem from="1588037926523" duration="619000" />
       <workItem from="1588055915168" duration="12679000" />
       <workItem from="1588078642468" duration="688000" />
-<<<<<<< HEAD
       <workItem from="1588122794842" duration="5487000" />
       <workItem from="1588131614061" duration="97000" />
-=======
       <workItem from="1588121870061" duration="6745000" />
->>>>>>> 1c3702282bd10dea62d54a60658f13783b13cd91
+      <workItem from="1588132074646" duration="536000" />
     </task>
     <servers />
   </component>
