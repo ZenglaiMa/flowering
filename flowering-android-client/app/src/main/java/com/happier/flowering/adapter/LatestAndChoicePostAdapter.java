@@ -1,11 +1,16 @@
 package com.happier.flowering.adapter;
 
+import android.app.Dialog;
 import android.content.Context;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.BaseAdapter;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.PopupWindow;
@@ -19,10 +24,17 @@ import com.happier.flowering.model.NineGridModel;
 import com.happier.flowering.view.NineGridLayoutExd;
 import com.wx.goodview.GoodView;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 /**
  * @ClassName LatestAndChoicePostAdapter
@@ -36,6 +48,13 @@ public class LatestAndChoicePostAdapter extends BaseAdapter {
     private Context context;
     private List<Map<String, Object>> dataSource;
     private int itemId;
+
+    private static final String DO_GOOD_PATH = "/post/good";
+
+    private OkHttpClient client = new OkHttpClient();
+
+    // todo: 当前用户user_id, 从SharedPreference中获取, 目前暂定为1
+    private Integer currentUserId = 1;
 
     public LatestAndChoicePostAdapter(Context context, List<Map<String, Object>> dataSource, int itemId) {
         this.context = context;
@@ -102,14 +121,14 @@ public class LatestAndChoicePostAdapter extends BaseAdapter {
         setListener(viewHolder, position, parent);
 
         // 初始化评论列表
-        List<Map<String, String>> dataSource = new ArrayList<>();
+        List<Map<String, String>> comments = new ArrayList<>();
         for (int i = 0; i < 9; i++) {
             Map<String, String> map = new HashMap<>();
             map.put("name", "评论者" + (i + 1) + "号");
             map.put("content", "第" + (i + 1) + "条评论内容");
-            dataSource.add(map);
+            comments.add(map);
         }
-        PostCommentListAdapter adapter = new PostCommentListAdapter(context, dataSource, R.layout.post_comments_list_item);
+        PostCommentListAdapter adapter = new PostCommentListAdapter(context, comments, R.layout.post_comments_list_item);
         viewHolder.lvComments.setAdapter(adapter);
 
     }
@@ -142,16 +161,15 @@ public class LatestAndChoicePostAdapter extends BaseAdapter {
                     Toast.makeText(context, "todo: 用户(id=" + Integer.valueOf(dataSource.get(position).get("user_id").toString()) + ")个人主页", Toast.LENGTH_SHORT).show();
                     break;
                 case R.id.m_good:
-                    // todo: 先执行点赞逻辑, 成功之后执行后边代码
+                    doGood(Integer.valueOf(dataSource.get(position).get("post_id").toString()));
                     GoodView goodView = new GoodView(context);
-                    viewHolder.ivPostGood.setImageResource(R.drawable.good_selected);
+                    viewHolder.ivPostGood.setImageResource(R.drawable.good_selected_64px);
                     goodView.setText("+1");
                     goodView.show(viewHolder.ivPostGood);
                     viewHolder.tvThumbsUpCount.setText(String.valueOf(Integer.valueOf(viewHolder.tvThumbsUpCount.getText().toString()) + 1));
                     break;
                 case R.id.m_post_comment:
-                    // todo: 执行评论逻辑
-                    Toast.makeText(context, "todo: 评论", Toast.LENGTH_SHORT).show();
+                    doComment(position);
                     break;
                 case R.id.m_post_share:
                     showPopupWindow(parent);
@@ -167,6 +185,49 @@ public class LatestAndChoicePostAdapter extends BaseAdapter {
                     break;
             }
         }
+    }
+
+    // todo: 评论逻辑
+    private void doComment(int position) {
+        View view = LayoutInflater.from(context).inflate(R.layout.dialog_comment, null);
+        Dialog dialog = new Dialog(context);
+        dialog.setContentView(view);
+        dialog.setCanceledOnTouchOutside(true);
+        dialog.getWindow().setGravity(Gravity.BOTTOM | Gravity.CENTER);
+        WindowManager.LayoutParams params = dialog.getWindow().getAttributes();
+        params.width = WindowManager.LayoutParams.MATCH_PARENT;
+        params.height = 500;
+        dialog.getWindow().setAttributes(params);
+        EditText etContent = view.findViewById(R.id.m_et_comment_content);
+        view.findViewById(R.id.m_tv_send_comment).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String content = etContent.getText().toString();
+                if (TextUtils.isEmpty(content)) {
+                    Toast.makeText(context, "请输入评论内容", Toast.LENGTH_SHORT).show();
+                } else {
+                    Log.e("评论人id", currentUserId + "");
+                    Log.e("被评论的花现id", dataSource.get(position).get("post_id").toString());
+                    Log.e("评论内容", content);
+                    dialog.dismiss();
+                }
+            }
+        });
+        dialog.show();
+    }
+
+    private void doGood(int postId) {
+        Request request = new Request.Builder().url(Constant.BASE_IP + DO_GOOD_PATH + "?postId=" + postId + "&userId=" + currentUserId).build();
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                e.printStackTrace();
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+            }
+        });
     }
 
     private void findViews(ViewHolder viewHolder, View convertView) {
@@ -209,4 +270,5 @@ public class LatestAndChoicePostAdapter extends BaseAdapter {
         public TextView tvTopicName;
         public TextView tvThumbsUpCount;
     }
+
 }

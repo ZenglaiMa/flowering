@@ -7,6 +7,7 @@ import com.happier.flowering.mapper.PostMapper;
 import com.happier.flowering.model.PostListModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -19,6 +20,7 @@ import java.util.List;
  * @Date 2020-04-15 15:15
  */
 @Service
+@Transactional(readOnly = true)
 public class PostService {
 
     @Autowired
@@ -87,10 +89,18 @@ public class PostService {
         return models;
     }
 
+    @Transactional(readOnly = false)
     public boolean publishPost(String txt, String img, Integer topicId, Integer userId, Date time) {
         return postMapper.savePost(txt, img, topicId, userId, time) > 0 ? true : false;
     }
+<<<<<<< HEAD
     public List<Post> searchPostByUserId(int userId){
         return postMapper.searchPostByUserId(userId);
+=======
+
+    @Transactional(readOnly = false)
+    public int doGood(Integer userId, Integer postId) {
+        return postMapper.saveThumbsUp(userId, postId, new Date());
+>>>>>>> a6a1077767e15b056333947790db67c307f01d6b
     }
 }

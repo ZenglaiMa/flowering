@@ -42,7 +42,8 @@ public class PostController {
     }
 
     @PostMapping("/publish")
-    public String publishPost(@RequestParam("postText") String postText, @RequestParam("topicId") Integer topicId, @RequestParam("userId") Integer userId, @RequestParam(value = "pic") MultipartFile[] files) {
+    public String publishPost(@RequestParam("postText") String postText, @RequestParam("topicId") Integer topicId, @RequestParam("userId") Integer userId, @RequestParam("pic") MultipartFile[] files) {
+        System.out.println("publish post");
         StringBuffer picPath = new StringBuffer();
         if (files != null) {
             for (MultipartFile file : files) {
@@ -67,6 +68,7 @@ public class PostController {
         }
     }
 
+<<<<<<< HEAD
     /**
      * 個人發現
      * @param userId
@@ -74,5 +76,10 @@ public class PostController {
      */
     public String searchPostByUserId(int userId){
         return "";
+=======
+    @GetMapping("/good")
+    public void doGood(@RequestParam("postId") Integer postId, @RequestParam("userId") Integer userId) {
+        postService.doGood(userId, postId);
+>>>>>>> a6a1077767e15b056333947790db67c307f01d6b
     }
 }
