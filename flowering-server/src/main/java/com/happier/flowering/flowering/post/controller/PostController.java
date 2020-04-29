@@ -67,4 +67,9 @@ public class PostController {
             return "fail";
         }
     }
+
+    @GetMapping("/good")
+    public void doGood(@RequestParam("postId") Integer postId, @RequestParam("userId") Integer userId) {
+        postService.doGood(userId, postId);
+    }
 }

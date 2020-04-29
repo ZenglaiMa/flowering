@@ -24,4 +24,6 @@ public interface PostMapper {
     @Insert("insert into post(txt, img, topic_id, user_id, time) values(#{txt}, #{img}, #{topicId}, #{userId}, #{time})")
     int savePost(@Param("txt") String txt, @Param("img") String img, @Param("topicId") Integer topicId, @Param("userId") Integer userId, @Param("time") Date time);
 
+    @Insert("insert into thumbsup(user_id, post_id, time) values(#{userId}, #{postId}, #{time})")
+    int saveThumbsUp(@Param("userId") Integer userId, @Param("postId") Integer postId, @Param("time") Date time);
 }
