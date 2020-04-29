@@ -1,9 +1,15 @@
 package com.happier.flowering.flowering.center.controller;
 
+import com.google.gson.Gson;
+import com.happier.flowering.entity.User;
 import com.happier.flowering.flowering.center.service.CenterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * @ClassName CenterController
@@ -15,7 +21,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/center")
 public class CenterController {
 
-    @Autowired
+    @Resource
     private CenterService centerService;
 
+    @RequestMapping("/userInfo")
+    public String getUser(@RequestParam("id") int id){
+      User user=  this.centerService.findUser(id);
+      System.out.println(user.getNickname());
+     return new Gson().toJson(user);
+    }
 }
