@@ -90,4 +90,7 @@ public class PostService {
     public boolean publishPost(String txt, String img, Integer topicId, Integer userId, Date time) {
         return postMapper.savePost(txt, img, topicId, userId, time) > 0 ? true : false;
     }
+    public List<Post> searchPostByUserId(int userId){
+        return postMapper.searchPostByUserId(userId);
+    }
 }

@@ -22,4 +22,6 @@ public class TopicService {
     public List<Topic> listTopics(){
         return topicMapper.findAll();
     }
+
+
 }

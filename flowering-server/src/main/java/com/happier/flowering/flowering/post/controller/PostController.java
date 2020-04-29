@@ -66,4 +66,13 @@ public class PostController {
             return "fail";
         }
     }
+
+    /**
+     * 個人發現
+     * @param userId
+     * @return
+     */
+    public String searchPostByUserId(int userId){
+        return "";
+    }
 }

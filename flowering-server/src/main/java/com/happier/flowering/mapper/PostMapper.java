@@ -24,4 +24,11 @@ public interface PostMapper {
     @Insert("insert into post(txt, img, topic_id, user_id, time) values(#{txt}, #{img}, #{topicId}, #{userId}, #{time})")
     int savePost(@Param("txt") String txt, @Param("img") String img, @Param("topicId") Integer topicId, @Param("userId") Integer userId, @Param("time") Date time);
 
+
+    /**
+     * 個人花現
+     * @param userId
+     * @return
+     */
+    List<Post> searchPostByUserId(@Param("userId")int userId);
 }
