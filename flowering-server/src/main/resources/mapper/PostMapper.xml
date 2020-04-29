@@ -53,4 +53,8 @@
             p.post_id
     </select>
 
+    <select id="searchPostByUserId" resultMap="postResultMapper">
+selecc * from post p where p.user_id=#{userId}
+    </select>
+
 </mapper>

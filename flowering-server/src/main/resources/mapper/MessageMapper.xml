@@ -3,5 +3,18 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.happier.flowering.mapper.MessageMapper">
+    <resultMap type="com.happier.flowering.entity.Message" id="message">
+        <id property=" messageId" column="message_id" />
+        <result property="userIdSend" column="user_id_send" />
+        <result property="userIdRecv" column="user_id_recv" />
+        <result property="time" column="time" />
+    </resultMap>
+
+    <select id="searchMessageByUserId" resultMap="message">
+  select * from message where user_id_recv=#{userId}
+
+</select>
+
+
 
 </mapper>

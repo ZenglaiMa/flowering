@@ -125,9 +125,14 @@ public class PostService {
     public boolean publishPost(String txt, String img, Integer topicId, Integer userId, Date time) {
         return postMapper.savePost(txt, img, topicId, userId, time) > 0 ? true : false;
     }
+<<<<<<< HEAD
+    public List<Post> searchPostByUserId(int userId){
+        return postMapper.searchPostByUserId(userId);
+=======
 
     @Transactional(readOnly = false)
     public int doGood(Integer userId, Integer postId) {
         return postMapper.saveThumbsUp(userId, postId, new Date());
+>>>>>>> a6a1077767e15b056333947790db67c307f01d6b
     }
 }

@@ -68,8 +68,18 @@ public class PostController {
         }
     }
 
+<<<<<<< HEAD
+    /**
+     * 個人發現
+     * @param userId
+     * @return
+     */
+    public String searchPostByUserId(int userId){
+        return "";
+=======
     @GetMapping("/good")
     public void doGood(@RequestParam("postId") Integer postId, @RequestParam("userId") Integer userId) {
         postService.doGood(userId, postId);
+>>>>>>> a6a1077767e15b056333947790db67c307f01d6b
     }
 }
