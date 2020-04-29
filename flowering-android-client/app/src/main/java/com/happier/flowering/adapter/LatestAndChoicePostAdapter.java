@@ -2,8 +2,9 @@ package com.happier.flowering.adapter;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.os.Handler;
+import android.os.Message;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +21,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.happier.flowering.R;
 import com.happier.flowering.constant.Constant;
+import com.happier.flowering.model.CommentListModel;
 import com.happier.flowering.model.NineGridModel;
 import com.happier.flowering.view.NineGridLayoutExd;
 import com.wx.goodview.GoodView;
@@ -50,8 +52,18 @@ public class LatestAndChoicePostAdapter extends BaseAdapter {
     private int itemId;
 
     private static final String DO_GOOD_PATH = "/post/good";
+    private static final String DO_COMMENT_PATH = "/comment/send";
 
     private OkHttpClient client = new OkHttpClient();
+
+    private Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            if (msg.obj.equals("success")) {
+                notifyDataSetChanged();
+            }
+        }
+    };
 
     // todo: 当前用户user_id, 从SharedPreference中获取, 目前暂定为1
     private Integer currentUserId = 1;
@@ -106,9 +118,6 @@ public class LatestAndChoicePostAdapter extends BaseAdapter {
 
         Map<String, Object> data = dataSource.get(position);
 
-//        帖子id
-//        Integer postId = Integer.valueOf(data.get("post_id").toString());
-
         Glide.with(context).load(Constant.BASE_IP + data.get("head_img").toString()).into(viewHolder.ivUserHeaderImage);
         viewHolder.tvUserName.setText(data.get("nickname").toString());
         viewHolder.tvTopicName.setText(data.get("topic_name").toString());
@@ -121,16 +130,18 @@ public class LatestAndChoicePostAdapter extends BaseAdapter {
         setListener(viewHolder, position, parent);
 
         // 初始化评论列表
-        List<Map<String, String>> comments = new ArrayList<>();
-        for (int i = 0; i < 9; i++) {
-            Map<String, String> map = new HashMap<>();
-            map.put("name", "评论者" + (i + 1) + "号");
-            map.put("content", "第" + (i + 1) + "条评论内容");
-            comments.add(map);
+        List<CommentListModel> models = (List<CommentListModel>) data.get("comment_list");
+        if (models != null) {
+            List<Map<String, String>> comments = new ArrayList<>();
+            for (int i = 0; i < models.size(); i++) {
+                Map<String, String> map = new HashMap<>();
+                map.put("name", models.get(i).getUserName());
+                map.put("content", models.get(i).getContent());
+                comments.add(map);
+            }
+            PostCommentListAdapter adapter = new PostCommentListAdapter(context, comments, R.layout.post_comments_list_item);
+            viewHolder.lvComments.setAdapter(adapter);
         }
-        PostCommentListAdapter adapter = new PostCommentListAdapter(context, comments, R.layout.post_comments_list_item);
-        viewHolder.lvComments.setAdapter(adapter);
-
     }
 
     private void setListener(ViewHolder viewHolder, int position, ViewGroup parent) {
@@ -187,7 +198,6 @@ public class LatestAndChoicePostAdapter extends BaseAdapter {
         }
     }
 
-    // todo: 评论逻辑
     private void doComment(int position) {
         View view = LayoutInflater.from(context).inflate(R.layout.dialog_comment, null);
         Dialog dialog = new Dialog(context);
@@ -206,9 +216,26 @@ public class LatestAndChoicePostAdapter extends BaseAdapter {
                 if (TextUtils.isEmpty(content)) {
                     Toast.makeText(context, "请输入评论内容", Toast.LENGTH_SHORT).show();
                 } else {
-                    Log.e("评论人id", currentUserId + "");
-                    Log.e("被评论的花现id", dataSource.get(position).get("post_id").toString());
-                    Log.e("评论内容", content);
+                    Request request = new Request.Builder()
+                            .url(Constant.BASE_IP + DO_COMMENT_PATH + "?userId=" + currentUserId + "&postId=" + dataSource.get(position).get("post_id").toString() + "&content=" + content)
+                            .build();
+                    client.newCall(request).enqueue(new Callback() {
+                        @Override
+                        public void onFailure(Call call, IOException e) {
+                            e.printStackTrace();
+                        }
+
+                        @Override
+                        public void onResponse(Call call, Response response) throws IOException {
+                            CommentListModel model = new CommentListModel();
+                            model.setUserName(response.body().string());
+                            model.setContent(content);
+                            ((List<CommentListModel>) (dataSource.get(position).get("comment_list"))).add(model);
+                            Message message = new Message();
+                            message.obj = "success";
+                            handler.sendMessage(message);
+                        }
+                    });
                     dialog.dismiss();
                 }
             }
