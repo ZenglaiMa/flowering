@@ -1,7 +1,6 @@
 package com.happier.flowering.model;
 
 import java.util.Date;
-import java.util.List;
 
 /**
  * @ClassName PostListModel
@@ -20,15 +19,6 @@ public class PostListModel {
     private String headImg;
     private String topicName;
     private Integer thumbsUpCount;
-    private List<CommentListModel> commentListModels;
-
-    public List<CommentListModel> getCommentListModels() {
-        return commentListModels;
-    }
-
-    public void setCommentListModels(List<CommentListModel> commentListModels) {
-        this.commentListModels = commentListModels;
-    }
 
     public Integer getPostId() {
         return postId;

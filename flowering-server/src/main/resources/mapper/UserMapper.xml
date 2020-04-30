@@ -3,15 +3,5 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.happier.flowering.mapper.UserMapper">
-    <resultMap id="userMap" type="com.happier.flowering.entity.User">
-        <id property="userId" column="user_id"/>
-        <result property="nickname" column="nickname"/>
-        <result property="sex" column="sex"/>
-        <result property="address" column="address"/>
-        <result property="profile" column="profile"/>
-        <result property="headImg" column="head_img"/>
-    </resultMap>
-    <select id="findUserById" resultMap="userMap">
-        select * from user where user_id = #{id}
-    </select>
+
 </mapper>

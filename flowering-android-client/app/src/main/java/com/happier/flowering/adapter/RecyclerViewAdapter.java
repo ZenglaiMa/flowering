@@ -119,12 +119,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         MyGridView gridView;
         public ViewHolder(View itemView) {
             super(itemView);
-          /*  Gson gson = new Gson();
-            MyGridView gridView=itemView.findViewById(R.id.gv);
-            Log.e("plantData",gson.toJson(list));
-            gridViewAdapter=new GridViewAdapter(list,mContext,R.layout.grindview_plant);
-            gridView.setAdapter(gridViewAdapter);
-            mTextView = itemView.findViewById(R.id.tv_item_text);*/
             gridView=itemView.findViewById(R.id.gv);
             mTextView = itemView.findViewById(R.id.tv_item_text);
 

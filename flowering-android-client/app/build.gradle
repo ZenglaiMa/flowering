@@ -35,7 +35,6 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    //noinspection GradleCompatible
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     testImplementation 'junit:junit:4.12'
@@ -62,7 +61,10 @@ dependencies {
     implementation 'com.youth.banner:banner:1.4.9'
     implementation 'com.yinglan.alphatabs:library:1.0.8'
     implementation 'com.wx.goodview:goodview:1.0.0'
+
     implementation 'com.squareup.picasso:picasso:2.5.2'
-    implementation 'org.devio.takephoto:takephoto_library:4.1.0'
-    implementation 'com.zyao89:zloading:1.2.0'
+    implementation 'top.zibin:Luban:1.1.3'
+    implementation 'io.reactivex:rxjava:1.1.6'
+    implementation 'top.zibin:Luban:1.0.8'
+
 }

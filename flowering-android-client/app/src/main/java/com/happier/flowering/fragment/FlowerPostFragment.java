@@ -1,7 +1,8 @@
 package com.happier.flowering.fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -10,11 +11,24 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.happier.flowering.R;
-import com.happier.flowering.activity.PostPublishActivity;
+import com.happier.flowering.constant.Constant;
+import com.happier.flowering.entity.Topic;
 import com.yinglan.alphatabs.AlphaTabsIndicator;
 import com.yinglan.alphatabs.OnTabChangedListner;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.List;
 
 /**
  * @ClassName FlowerPostFragment
@@ -96,10 +110,16 @@ public class FlowerPostFragment extends Fragment {
         transaction.commit();
     }
 
+    /**
+     * @return void
+     * @Description 跳转到发布花现界面进行花现的发布
+     * @Author seven
+     * @Date 2020/4/20 14:33
+     * @Params []
+     **/
     private void publishPost() {
-        Intent intent = new Intent(getActivity(), PostPublishActivity.class);
-        startActivity(intent);
-        getActivity().overridePendingTransition(R.anim.right_in, R.anim.left_out);
+        // todo: 跳转到发布花现界面
+        Toast.makeText(getContext(), "todo: 跳转到发布花现界面", Toast.LENGTH_SHORT).show();
     }
 
 }

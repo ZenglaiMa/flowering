@@ -34,7 +34,6 @@
             android:orientation="horizontal">
 
             <LinearLayout
-                android:id="@+id/c_m_shou"
                 android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:layout_weight="1"
@@ -57,7 +56,6 @@
 
 
             <LinearLayout
-                android:id="@+id/c_m_tong"
                 android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:layout_weight="1"
@@ -101,7 +99,6 @@
                     android:src="@drawable/head" />
 
                 <TextView
-                    android:id="@+id/c_nickname"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
@@ -128,7 +125,6 @@
                 android:orientation="horizontal">
 
                 <LinearLayout
-                    android:id="@+id/c_praise"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"

@@ -57,9 +57,9 @@
 
             <ImageView
                 android:id="@+id/m_good"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@drawable/good_normal_64px" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/good_normal" />
 
             <TextView
                 android:id="@+id/m_thumbs_up_count"
@@ -68,17 +68,17 @@
 
             <ImageView
                 android:id="@+id/m_post_comment"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
-                android:src="@drawable/comment_64px" />
+                android:src="@drawable/post_comment" />
 
             <ImageView
                 android:id="@+id/m_post_share"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
-                android:src="@drawable/post_share_64px" />
+                android:src="@drawable/post_share" />
 
         </LinearLayout>
 

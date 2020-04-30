@@ -15,14 +15,9 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.PERMISSIONS_STORAGE"/>
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
-    <!--添加微信权限-->
-    <!--<uses-permission android:name="android.permission.INTERNET"/>-->
-    <!--<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>-->
-    <!--<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>-->
-    <!--<uses-permission android:name="android.permission.READ_PHONE_STATE"/>-->
-    <!--<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>-->
 
     <application
         android:name=".aboutjpush.FloweringApplication"
@@ -145,31 +140,13 @@
             android:value="17b9165411a620c111f01372" /> <!-- </>值来自开发者平台取得的AppKey -->
         <!-- Jpush 结束 -->
 
+        <!--LKY-->
         <activity android:name=".activity.TopicDetailActivity" />
+        <!-- ZYH -->
         <activity android:name=".activity.ArticleDetail" />
-        <activity android:name=".mine.MCollection" />
-        <activity android:name=".mine.MPraise" />
-        <activity android:name=".mine.BePraised" />
-        <activity android:name=".mine.PraiseOthers" />
-        <activity android:name=".activity.PostPublishActivity" />
-
-        <!--&lt;!&ndash; 微信登录 -->
-        <activity
-            android:name=".wxapi.WXEntryActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:exported="true"
-            android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data android:scheme="你申请的appid" />
-            </intent-filter>
-        </activity>
-
+        <activity android:name=".activity.FindPlantActivity"/>
+        <activity android:name=".activity.FindPlantDetailActivity"/>
+        <activity android:name=".activity.PlantDetailActivity"/>
     </application>
 
 </manifest>

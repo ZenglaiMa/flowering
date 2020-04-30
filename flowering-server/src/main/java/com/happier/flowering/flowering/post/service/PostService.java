@@ -2,19 +2,13 @@ package com.happier.flowering.flowering.post.service;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
-import com.happier.flowering.entity.Comment;
 import com.happier.flowering.entity.Post;
-import com.happier.flowering.mapper.CommentMapper;
 import com.happier.flowering.mapper.PostMapper;
-import com.happier.flowering.mapper.UserMapper;
-import com.happier.flowering.model.CommentListModel;
 import com.happier.flowering.model.PostListModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -24,15 +18,10 @@ import java.util.List;
  * @Date 2020-04-15 15:15
  */
 @Service
-@Transactional(readOnly = true)
 public class PostService {
 
     @Autowired
     private PostMapper postMapper;
-    @Autowired
-    private CommentMapper commentMapper;
-    @Autowired
-    private UserMapper userMapper;
 
     public List<PostListModel> listPostsByCreateTime(int pageNum, int pageSize) {
         List<PostListModel> models = new ArrayList<>();
@@ -49,14 +38,6 @@ public class PostService {
             model.setHeadImg(post.getUser().getHeadImg());
             model.setTopicName(post.getTopic().getTopicName());
             model.setThumbsUpCount(post.getThumbsUpCount());
-            List<CommentListModel> commentListModels = new ArrayList<>();
-            for (Comment comment : commentMapper.findByPostId(post.getPostId())) {
-                CommentListModel commentListModel = new CommentListModel();
-                commentListModel.setContent(comment.getContent());
-                commentListModel.setUserName(userMapper.findUserById(comment.getUserId()).getNickname());
-                commentListModels.add(commentListModel);
-            }
-            model.setCommentListModels(commentListModels);
             models.add(model);
         }
 
@@ -78,14 +59,6 @@ public class PostService {
             model.setHeadImg(post.getUser().getHeadImg());
             model.setTopicName(post.getTopic().getTopicName());
             model.setThumbsUpCount(post.getThumbsUpCount());
-            List<CommentListModel> commentListModels = new ArrayList<>();
-            for (Comment comment : commentMapper.findByPostId(post.getPostId())) {
-                CommentListModel commentListModel = new CommentListModel();
-                commentListModel.setContent(comment.getContent());
-                commentListModel.setUserName(userMapper.findUserById(comment.getUserId()).getNickname());
-                commentListModels.add(commentListModel);
-            }
-            model.setCommentListModels(commentListModels);
             models.add(model);
         }
 
@@ -107,32 +80,9 @@ public class PostService {
             model.setHeadImg(post.getUser().getHeadImg());
             model.setTopicName(post.getTopic().getTopicName());
             model.setThumbsUpCount(post.getThumbsUpCount());
-            List<CommentListModel> commentListModels = new ArrayList<>();
-            for (Comment comment : commentMapper.findByPostId(post.getPostId())) {
-                CommentListModel commentListModel = new CommentListModel();
-                commentListModel.setContent(comment.getContent());
-                commentListModel.setUserName(userMapper.findUserById(comment.getUserId()).getNickname());
-                commentListModels.add(commentListModel);
-            }
-            model.setCommentListModels(commentListModels);
             models.add(model);
         }
 
         return models;
     }
-
-    @Transactional(readOnly = false)
-    public boolean publishPost(String txt, String img, Integer topicId, Integer userId, Date time) {
-        return postMapper.savePost(txt, img, topicId, userId, time) > 0 ? true : false;
-    }
-
-    @Transactional(readOnly = false)
-    public int doGood(Integer userId, Integer postId) {
-        return postMapper.saveThumbsUp(userId, postId, new Date());
-    }
-
-    public List<Post> searchPostByUserId(int userId) {
-        return postMapper.searchPostByUserId(userId);
-    }
-
 }

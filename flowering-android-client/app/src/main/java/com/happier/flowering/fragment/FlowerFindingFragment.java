@@ -1,5 +1,6 @@
 package com.happier.flowering.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -11,11 +12,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.happier.flowering.activity.FindPlantActivity;
 import com.happier.flowering.entity.Bean;
 import com.happier.flowering.adapter.RecyclerViewAdapter;
 import com.happier.flowering.view.StickHeaderDecoration;
@@ -48,6 +51,7 @@ public class FlowerFindingFragment extends Fragment {
     private WordsNavigation wordsNavigation;
     private String mLetter;
     private TextView ytv;
+    private ImageView findPlantButton;
     private String[] letters = new String[]{"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P",
             "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
     private LinearLayoutManager mLayoutManager;
@@ -55,7 +59,7 @@ public class FlowerFindingFragment extends Fragment {
     public static final String GETALLPLANT_PATH = "/discovery/plantinfo ";
     private final int  REQUEST_SUCCESS = 1;
     private final int  REQUEST_FAIL = 0;
-    private Gson gson;
+    private Gson gson = new Gson();
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -65,14 +69,24 @@ public class FlowerFindingFragment extends Fragment {
         searchBarHeight = searchBar.getHeight();
         mRecyclerView = view.findViewById(R.id.rv_list);
         wordsNavigation = view.findViewById(R.id.view_plant);
+        findPlantButton = view.findViewById(R.id.ig_findPlant);
         ytv = view.findViewById(R.id.ytv_search);
+
+        findPlantButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(),FindPlantActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
 
         List<Bean> beanList = new ArrayList<>();
         for (int i = 0; i < letters.length; i++) {
             beanList.add(new Bean(letters[i]));
         }
 
-        gson = new Gson();
 
         GetAllPlantInfosThread thread = new GetAllPlantInfosThread();
         thread.start();
@@ -105,8 +119,8 @@ public class FlowerFindingFragment extends Fragment {
                 Response response = okHttpClient.newCall(request).execute();
 
                 String plantJson = response.body().string();
-                plantList = gson.fromJson(plantJson, new TypeToken<List<Plant>>() {
-                }.getType());
+                Log.e("myplant",plantJson);
+                plantList = gson.fromJson(plantJson,new TypeToken<List<Plant>>(){}.getType());
             } catch (IOException e) {
                 e.printStackTrace();
             }

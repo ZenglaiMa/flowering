@@ -12,7 +12,8 @@
         <RelativeLayout
             android:id="@+id/y_banner"
             android:layout_width="match_parent"
-            android:layout_height="40dp">
+            android:layout_height="40dp"
+            android:background="@color/colorGreen">
 
             <ImageView
                 android:id="@+id/yimg_drawback"
@@ -35,6 +36,7 @@
             android:id="@+id/y_banner2"
             android:layout_width="match_parent"
             android:layout_height="40dp"
+            android:background="@color/colorGreen"
             android:visibility="invisible">
 
             <ImageView
@@ -132,7 +134,8 @@
             android:id="@+id/y_line1"
             android:layout_width="match_parent"
             android:layout_height="10dp"
-            android:layout_below="@+id/y_desc" />
+            android:layout_below="@+id/y_desc"
+            android:background="@color/grey" />
 
         <LinearLayout
             android:id="@+id/y_fosterBanner"
@@ -186,7 +189,8 @@
             android:id="@+id/y_line2"
             android:layout_width="match_parent"
             android:layout_height="10dp"
-            android:layout_below="@+id/y_foster" />
+            android:layout_below="@+id/y_foster"
+            android:background="@color/grey" />
 
         <LinearLayout
             android:id="@+id/y_skillBanner"
