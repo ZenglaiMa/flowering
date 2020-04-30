@@ -70,7 +70,7 @@ public class DiscoveryController {
             return "plant not found";
         }
         Result result = new Result();
-        System.out.println("planttttt  "+plantInfo);
+
         return plantInfo;
     }
 }
