@@ -1,9 +1,7 @@
 package com.happier.flowering.flowering.post.service;
 
 import com.happier.flowering.entity.Topic;
-import com.happier.flowering.mapper.PostMapper;
 import com.happier.flowering.mapper.TopicMapper;
-import net.sf.jsqlparser.statement.select.Top;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,11 +15,12 @@ import java.util.List;
  */
 @Service
 public class TopicService {
+
     @Autowired
     private TopicMapper topicMapper;
+
     public List<Topic> listTopics(){
         return topicMapper.findAll();
     }
-
 
 }

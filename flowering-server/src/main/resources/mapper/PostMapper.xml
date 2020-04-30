@@ -54,7 +54,7 @@
     </select>
 
     <select id="searchPostByUserId" resultMap="postResultMapper">
-selecc * from post p where p.user_id=#{userId}
+        selecc * from post p where p.user_id = #{userId}
     </select>
 
 </mapper>
