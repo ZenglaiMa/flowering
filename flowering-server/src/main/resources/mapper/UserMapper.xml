@@ -11,7 +11,5 @@
         <result property="profile" column="profile"/>
         <result property="headImg" column="head_img"/>
     </resultMap>
-    <select id="findUserById" resultMap="userMap">
-        select * from user where user_id = #{id}
-    </select>
+
 </mapper>
