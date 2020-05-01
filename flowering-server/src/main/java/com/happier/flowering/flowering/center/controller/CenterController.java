@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @ClassName CenterController
@@ -32,7 +33,7 @@ public class CenterController {
       System.out.println(user.getNickname());
      return new Gson().toJson(user);
     }
-<<<<<<< HEAD
+
     @RequestMapping("/findInitiative")
     public String findInitiative(@RequestParam("id") int id){
         List<User> users = this.centerService.findInitiative(id);
@@ -43,8 +44,8 @@ public class CenterController {
         List<User> users = this.centerService.findpassive(id);
         return new Gson().toJson(users);
     }
-    
-=======
+
+
 
     /**
      * 個人詳情私信
@@ -53,10 +54,10 @@ public class CenterController {
      */
     @RequestMapping("/getAllMineMessage")
     public  String searchMessageByUserId(int userId) {
-        List<Message> messageList = this.centerService.searchMessageByUserId(userId);
-        return new Gson().toJson(messageList);
+        List<Map<String,Object>> messageAboutList = this.centerService.searchMessageByUserId(userId);
+        return new Gson().toJson(messageAboutList);
 
     }
 
->>>>>>> 61342c5b9dd6972f9116ce87063f9df0bc730916
+
 }

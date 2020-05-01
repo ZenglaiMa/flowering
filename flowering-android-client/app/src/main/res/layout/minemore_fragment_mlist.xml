@@ -3,14 +3,16 @@
     android:layout_height="80dp"
     android:orientation="horizontal"
     android:padding="10dp"
+    android:background="#FFF"
     xmlns:android="http://schemas.android.com/apk/res/android">
-<ImageView
-    android:layout_width="0dp"
-    android:layout_height="match_parent"
-    android:background="#ff0"
-    android:src="@drawable/q_image_border"
-    android:layout_weight="2.5"
-    />
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:background="#ff0"
+        android:src="@drawable/q_image_border"
+        android:layout_weight="2.5"
+        android:id="@+id/q_mlist_head"
+        />
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
