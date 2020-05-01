@@ -1,15 +1,36 @@
 package com.happier.flowering.flowering.center.service;
+<<<<<<< HEAD
 import com.happier.flowering.entity.*;
 import com.happier.flowering.mapper.*;
 import com.happier.flowering.entity.User;
 
+=======
+
+import com.happier.flowering.entity.Attention;
+import com.happier.flowering.entity.User;
+import com.happier.flowering.mapper.AttentionMapper;
+
+
+import com.happier.flowering.entity.Message;
+import com.happier.flowering.entity.User;
+import com.happier.flowering.mapper.MessageMapper;
+
+import com.happier.flowering.mapper.UserMapper;
+>>>>>>> cfdd22e1249577e0a60e777071be1d31ad980b48
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+<<<<<<< HEAD
 
 import java.util.*;
 
+=======
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+>>>>>>> cfdd22e1249577e0a60e777071be1d31ad980b48
 
 /**
  * @ClassName CenterService
@@ -22,6 +43,8 @@ import java.util.*;
 public class CenterService {
     @Resource
     private  UserMapper userMapper;
+    @Resource
+    private MessageMapper messageMapper;
     public User findUser(int id){
       User user=this.userMapper.findUserById(id);
       return user;
@@ -44,6 +67,7 @@ public class CenterService {
             users.add(user);
         }return users;
     }
+<<<<<<< HEAD
     @Resource
     private CollectMapper collectMapper;
     @Resource
@@ -94,14 +118,31 @@ public class CenterService {
         return list;
     }
     private MessageMapper messageMapper;
+=======
+
+
+>>>>>>> cfdd22e1249577e0a60e777071be1d31ad980b48
 
     /**
      * 個人私信
      * @param userId
      * @return
      */
-    public List<Message> searchMessageByUserId(int userId){
-        return messageMapper.searchMessageByUserId(userId);
+    public List<Map<String, Object>> searchMessageByUserId(int userId){
+        List <Map<String, Object>> mUsers=new ArrayList<>();
+        List<Message> messages= messageMapper.searchMessageByUserId(userId);
+        for(int i=0;i<messages.size();i++){
+            Map map = new HashMap();
+            User user=userMapper.findUserById(messages.get(i).getUserIdSend());
+            map.put("content",messages.get(i));
+            map.put("sender",user);
+            mUsers.add(map);
+        }
+        for(int j=0;j<mUsers.size();j++){
+            System.out.println(mUsers.get(j).get("content").toString()+mUsers.get(j).get("sender").toString());
+        }
+
+        return mUsers;
     }
 
 

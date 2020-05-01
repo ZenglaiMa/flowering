@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FF58E349"
+    android:background="#FFAAF5A3"
     android:orientation="vertical">
     <ImageView
         android:layout_width="30dp"
@@ -20,8 +20,9 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginLeft="20dp"
-            android:src="@color/btn_filled_blue_bg_normal"
-            android:id="@+id/q_btn_headImg"
+            android:src="@drawable/q_mine_headborder"
+            android:background="@drawable/flowering"
+            android:id="@+id/q_img_headImg"
 
             />
         <LinearLayout
@@ -35,7 +36,7 @@
                 android:layout_height="wrap_content"
                 android:text="昵称"
                 android:textSize="25dp"
-                android:id="@+id/q_btn_name"
+                android:id="@+id/q_text_name"
                 android:textColor="#ffffff"
 
                 />
@@ -45,15 +46,15 @@
                 android:text="gender"
                 android:textSize="15dp"
                 android:textColor="#FFDDDA3A"
-                android:id="@+id/q_btn_gender"
+                android:id="@+id/q_text_gender"
                 />
             <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="等级"
-            android:textSize="20dp"
-            android:textColor="#FFDDDA3A"
-                android:id="@+id/q_btn_level"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="地址"
+                android:textSize="20dp"
+                android:textColor="#FFDDDA3A"
+                android:id="@+id/q_text_address"
                 />
 
         </LinearLayout>
@@ -67,6 +68,7 @@
         android:textColor="#FFDDDA3A"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="20dp"
+        android:id="@+id/q_text_profile"
         />
     <TextView
         android:layout_width="350dp"
@@ -88,7 +90,7 @@
             android:text="90"
             android:textSize="20dp"
             android:textColor="#ffffff"
-            android:id="@+id/q_btn_thumbs"
+            android:id="@+id/q_text_thumbs"
             />
         <TextView
             android:layout_width="wrap_content"
@@ -106,7 +108,7 @@
             android:text="90"
             android:textSize="20dp"
             android:textColor="#ffffff"
-            android:id="@+id/q_btn_follow"
+            android:id="@+id/q_text_follow"
             />
         <TextView
             android:layout_width="wrap_content"
@@ -124,7 +126,7 @@
             android:text="90"
             android:textSize="20dp"
             android:textColor="#ffffff"
-            android:id="@+id/q_btn_fans"
+            android:id="@+id/q_text_fans"
             />
         <TextView
             android:layout_width="wrap_content"
@@ -138,7 +140,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-       android:layout_marginTop="5dp"
+        android:layout_marginTop="5dp"
         android:orientation="vertical"
         android:background="#ffffff"
         >
@@ -178,7 +180,7 @@
             android:id="@+id/q_tab_content"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-             />
+            />
 
 
     </LinearLayout>

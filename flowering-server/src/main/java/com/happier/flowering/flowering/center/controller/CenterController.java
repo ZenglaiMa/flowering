@@ -45,6 +45,7 @@ public class CenterController {
         List<User> users = this.centerService.findPassive(id);
         return new Gson().toJson(users);
     }
+<<<<<<< HEAD
     @RequestMapping("/findCollect")
     public String findCollect(@RequestParam("id") int id){
         List<Article> articles = this.centerService.findCollect(id);
@@ -60,6 +61,11 @@ public class CenterController {
         List<Map<String,String>> maps = this.centerService.findThumbsMe(id);
         return new Gson().toJson(maps);
     }
+=======
+
+
+
+>>>>>>> cfdd22e1249577e0a60e777071be1d31ad980b48
     /**
      * 個人詳情私信
      * @param userId
@@ -67,9 +73,13 @@ public class CenterController {
      */
     @RequestMapping("/getAllMineMessage")
     public  String searchMessageByUserId(int userId) {
-        List<Message> messageList = this.centerService.searchMessageByUserId(userId);
-        return new Gson().toJson(messageList);
+        List<Map<String,Object>> messageAboutList = this.centerService.searchMessageByUserId(userId);
+        return new Gson().toJson(messageAboutList);
 
     }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> cfdd22e1249577e0a60e777071be1d31ad980b48
 }
