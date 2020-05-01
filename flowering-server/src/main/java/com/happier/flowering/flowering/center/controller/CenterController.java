@@ -1,6 +1,7 @@
 package com.happier.flowering.flowering.center.controller;
 
 import com.google.gson.Gson;
+import com.happier.flowering.entity.Message;
 import com.happier.flowering.entity.User;
 import com.happier.flowering.flowering.center.service.CenterService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +32,7 @@ public class CenterController {
       System.out.println(user.getNickname());
      return new Gson().toJson(user);
     }
+<<<<<<< HEAD
     @RequestMapping("/findInitiative")
     public String findInitiative(@RequestParam("id") int id){
         List<User> users = this.centerService.findInitiative(id);
@@ -42,4 +44,19 @@ public class CenterController {
         return new Gson().toJson(users);
     }
     
+=======
+
+    /**
+     * 個人詳情私信
+     * @param userId
+     * @return
+     */
+    @RequestMapping("/getAllMineMessage")
+    public  String searchMessageByUserId(int userId) {
+        List<Message> messageList = this.centerService.searchMessageByUserId(userId);
+        return new Gson().toJson(messageList);
+
+    }
+
+>>>>>>> 61342c5b9dd6972f9116ce87063f9df0bc730916
 }

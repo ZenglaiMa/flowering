@@ -2,9 +2,9 @@ package com.happier.flowering.activity;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
@@ -18,11 +18,16 @@ import android.widget.Toast;
 import com.happier.flowering.R;
 import com.happier.flowering.adapter.PictureShowGridViewAdapter;
 import com.happier.flowering.constant.Constant;
+import com.zyao89.view.zloading.ZLoadingDialog;
+import com.zyao89.view.zloading.Z_TYPE;
 
 import org.devio.takephoto.app.TakePhoto;
 import org.devio.takephoto.app.TakePhotoActivity;
 import org.devio.takephoto.model.TImage;
 import org.devio.takephoto.model.TResult;
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.io.File;
 import java.io.IOException;
@@ -58,16 +63,21 @@ public class PostPublishActivity extends TakePhotoActivity {
 
     private static final int MAX_SELECT_PIC_NUM = 9;
     private static final String POST_PUBLISH_PATH = "/post/publish";
+    private static final String PUBLISH_POST_SUCCESS = "success";
 
     private final String[] topics = {"#爱花展示#", "#阳台养花#", "#今日花事#", "#生活要有花#", "#花花世界#", "#花友交流#", "#爱花互换#", "#养花日记#", "#识花鉴花#", "#开心一天#", "#云赏花#", "#百花迎春#", "#今日萌宠#", "#早安日签#", "#艺术插花#", "#夏花绚烂#", "#盛夏花语#", "#秋日美好时光#", "#冬之物语#", "#多肉植物#"};
     private int topicId = 0;
 
     private OkHttpClient client = new OkHttpClient();
 
+    private ZLoadingDialog zLoadingDialog = new ZLoadingDialog(this);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_publish);
+
+        EventBus.getDefault().register(this);
 
         findViews();
         setOnClickListener();
@@ -107,9 +117,16 @@ public class PostPublishActivity extends TakePhotoActivity {
                     if (TextUtils.isEmpty(postText) || dataSource.size() == 0 || dataSource == null || topicId == 0) {
                         Toast.makeText(PostPublishActivity.this, "请完善花现内容", Toast.LENGTH_SHORT).show();
                     } else {
+                        zLoadingDialog.setLoadingBuilder(Z_TYPE.LEAF_ROTATE)
+                                .setLoadingColor(Color.WHITE)
+                                .setHintText("发布中...")
+                                .setHintTextSize(16)
+                                .setHintTextColor(Color.WHITE)
+                                .setDurationTime(0.5)
+                                .setDialogBackgroundColor(Color.BLACK)
+                                .setCanceledOnTouchOutside(false)
+                                .show();
                         publish(postText, dataSource.toString(), topicId);
-                        finish();
-                        overridePendingTransition(R.anim.left_in, R.anim.right_out);
                     }
                     break;
                 case R.id.m_btn_add_topic:
@@ -119,18 +136,18 @@ public class PostPublishActivity extends TakePhotoActivity {
         }
     }
 
-    // todo: 该方法有问题!
     private void publish(String postText, String picPath, int selectedTopic) {
         MultipartBody.Builder builder = new MultipartBody.Builder();
         builder.setType(MultipartBody.FORM);
         builder.addFormDataPart("postText", postText);
         builder.addFormDataPart("topicId", String.valueOf(selectedTopic));
-        builder.addFormDataPart("userId", String.valueOf(1)); // todo: 得到真实user_id
-        String[] paths = picPath.split(",");
+        // todo: 从SharedPreference中得到真实user_id, 此处添加测试数据 user_id = 1
+        builder.addFormDataPart("userId", String.valueOf(1));
+        String[] paths = picPath.substring(1, picPath.length() - 1).replace(" ", "").split(",");
         for (String path : paths) {
             File file = new File(path);
             if (file != null) {
-                builder.addFormDataPart("pic", file.getName(), RequestBody.create(MediaType.parse("multipart/form-data"), file));
+                builder.addFormDataPart("pic", file.getName(), RequestBody.create(MediaType.parse("image/*"), file));
             }
         }
         MultipartBody body = builder.build();
@@ -139,13 +156,24 @@ public class PostPublishActivity extends TakePhotoActivity {
         call.enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
+                e.printStackTrace();
             }
 
             @Override
             public void onResponse(Call call, Response response) throws IOException {
-                Log.e("result", response.body().string());
+                EventBus.getDefault().post(response.body().string());
             }
         });
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void publishSuccess(String result) {
+        if (result.equals(PUBLISH_POST_SUCCESS)) {
+            zLoadingDialog.dismiss();
+            Toast.makeText(this, "发布成功", Toast.LENGTH_SHORT).show();
+            finish();
+            overridePendingTransition(R.anim.left_in, R.anim.right_out);
+        }
     }
 
     private void addTopic() {
@@ -203,5 +231,11 @@ public class PostPublishActivity extends TakePhotoActivity {
             return true;
         }
         return super.onKeyDown(keyCode, event);
+    }
+
+    @Override
+    protected void onDestroy() {
+        EventBus.getDefault().unregister(this);
+        super.onDestroy();
     }
 }

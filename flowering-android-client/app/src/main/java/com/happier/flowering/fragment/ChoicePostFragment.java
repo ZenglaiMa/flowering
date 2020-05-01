@@ -129,6 +129,7 @@ public class ChoicePostFragment extends Fragment {
                 map.put("topic_name", model.getTopicName());
                 map.put("user_id", model.getUserId());
                 map.put("thumbs_up_count", model.getThumbsUpCount());
+                map.put("comment_list", model.getCommentListModels());
 
                 String[] imgUrls = model.getPostImg().split(",");
                 NineGridModel nineGridModel = new NineGridModel();

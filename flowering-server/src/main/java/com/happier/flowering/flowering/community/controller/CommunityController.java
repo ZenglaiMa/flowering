@@ -29,17 +29,19 @@ public class CommunityController {
     private CommunityService communityService;
 
     @RequestMapping("/getAllTypes")
-    public String getAllTypes(){
+    public String getAllTypes() {
         List<Type> typeList = communityService.getAllTypes();
         return new Gson().toJson(typeList);
     }
+
     @RequestMapping("/getAllArticles")
-    public String getAllArticles(){
+    public String getAllArticles() {
         List<Article> typeList = communityService.getAllArticle();
         return new Gson().toJson(typeList);
     }
+
     @RequestMapping("/setStar")
-    public void setStar(HttpServletRequest request){
+    public void setStar(HttpServletRequest request) {
         try {
             ServletInputStream is = request.getInputStream();
             InputStreamReader isR = new InputStreamReader(is);
@@ -51,8 +53,9 @@ public class CommunityController {
             e.printStackTrace();
         }
     }
+
     @RequestMapping("/isStar")
-    public String isStar(HttpServletRequest request){
+    public String isStar(HttpServletRequest request) {
         try {
             ServletInputStream is = request.getInputStream();
             InputStreamReader isR = new InputStreamReader(is);
@@ -60,14 +63,15 @@ public class CommunityController {
             String jsonStr = reader.readLine();
             Collect collect = new Gson().fromJson(jsonStr, Collect.class);
             int flag = communityService.isStar(collect);
-            return flag+"";
+            return flag + "";
         } catch (Exception e) {
             e.printStackTrace();
             return "-------";
         }
     }
+
     @RequestMapping("/unStar")
-    public void unStar(HttpServletRequest request){
+    public void unStar(HttpServletRequest request) {
         try {
             ServletInputStream is = request.getInputStream();
             InputStreamReader isR = new InputStreamReader(is);
@@ -79,8 +83,9 @@ public class CommunityController {
             e.printStackTrace();
         }
     }
+
     @RequestMapping("/getArticleByType")
-    public String getArticleByType(HttpServletRequest request){
+    public String getArticleByType(HttpServletRequest request) {
         try {
             ServletInputStream is = request.getInputStream();
             InputStreamReader isR = new InputStreamReader(is);
@@ -94,8 +99,9 @@ public class CommunityController {
         }
 
     }
+
     @RequestMapping("/addReadingNum")
-    public void addReadingNum(HttpServletRequest request){
+    public void addReadingNum(HttpServletRequest request) {
         try {
             ServletInputStream is = request.getInputStream();
             InputStreamReader isR = new InputStreamReader(is);

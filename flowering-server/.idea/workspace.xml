@@ -10,6 +10,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/happier/flowering/mapper/AttentionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/happier/flowering/mapper/AttentionMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/AttentionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/AttentionMapper.xml" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -92,7 +93,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -118,11 +119,37 @@
   </component>
   <component name="RestServicesNavigator">
     <treeState>
-      <expand />
+      <expand>
+        <path>
+          <item name="Found 17 services " type="fcff1e1b:RestServiceStructure$RootNode" />
+        </path>
+        <path>
+          <item name="Found 17 services " type="fcff1e1b:RestServiceStructure$RootNode" />
+          <item name="flowering-server" type="c588b436:RestServiceStructure$ProjectNode" />
+        </path>
+      </expand>
       <select />
     </treeState>
   </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
   <component name="RunManager">
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="FloweringApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="flowering-server" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.happier.flowering.FloweringApplication" />
@@ -183,8 +210,22 @@
       <workItem from="1588055915168" duration="12679000" />
       <workItem from="1588078642468" duration="688000" />
       <workItem from="1588121870061" duration="7349000" />
+<<<<<<< HEAD
       <workItem from="1588250328709" duration="695000" />
       <workItem from="1588299360074" duration="5474000" />
+=======
+      <workItem from="1588165200477" duration="1515000" />
+      <workItem from="1588122794842" duration="5487000" />
+      <workItem from="1588131614061" duration="97000" />
+      <workItem from="1588121870061" duration="6745000" />
+      <workItem from="1588132074646" duration="536000" />
+      <workItem from="1588144438087" duration="6232000" />
+      <workItem from="1588162467912" duration="6056000" />
+      <workItem from="1588167805573" duration="182000" />
+      <workItem from="1588209224685" duration="1104000" />
+      <workItem from="1588211887837" duration="1902000" />
+      <workItem from="1588249771196" duration="545000" />
+>>>>>>> 61342c5b9dd6972f9116ce87063f9df0bc730916
     </task>
     <servers />
   </component>
@@ -210,6 +251,7 @@
     </state>
     <state x="233" y="0" key="#Auto_Import/0.0.1280.680@0.0.1280.680" timestamp="1587441350491" />
     <state x="397" y="42" key="#com.intellij.ide.util.MemberChooser" timestamp="1587723139324" />
+<<<<<<< HEAD
     <state width="1323" height="50" key="GridCell.Tab.0.bottom" timestamp="1588312578292">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -242,6 +284,40 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="50" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1588312578292" />
+=======
+    <state width="1323" height="127" key="GridCell.Tab.0.bottom" timestamp="1588136852726">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="127" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1588136852726" />
+    <state width="1323" height="127" key="GridCell.Tab.0.center" timestamp="1588136852725">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="127" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1588136852725" />
+    <state width="1323" height="127" key="GridCell.Tab.0.left" timestamp="1588136852724">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="127" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1588136852724" />
+    <state width="1323" height="127" key="GridCell.Tab.0.right" timestamp="1588136852725">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="127" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1588136852725" />
+    <state width="1323" height="127" key="GridCell.Tab.1.bottom" timestamp="1588136852727">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="127" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1588136852727" />
+    <state width="1323" height="127" key="GridCell.Tab.1.center" timestamp="1588136852726">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="127" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1588136852726" />
+    <state width="1323" height="127" key="GridCell.Tab.1.left" timestamp="1588136852726">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="127" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1588136852726" />
+    <state width="1323" height="127" key="GridCell.Tab.1.right" timestamp="1588136852727">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="127" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1588136852727" />
+>>>>>>> 61342c5b9dd6972f9116ce87063f9df0bc730916
     <state x="186" y="8" key="SettingsEditor" timestamp="1588122357377">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
