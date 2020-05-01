@@ -1,6 +1,7 @@
 package com.happier.flowering.flowering.center.controller;
 
 import com.google.gson.Gson;
+import com.happier.flowering.entity.Article;
 import com.happier.flowering.entity.Message;
 import com.happier.flowering.entity.User;
 import com.happier.flowering.flowering.center.service.CenterService;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @ClassName CenterController
@@ -32,7 +34,7 @@ public class CenterController {
       System.out.println(user.getNickname());
      return new Gson().toJson(user);
     }
-<<<<<<< HEAD
+
     @RequestMapping("/findInitiative")
     public String findInitiative(@RequestParam("id") int id){
         List<User> users = this.centerService.findInitiative(id);
@@ -40,12 +42,24 @@ public class CenterController {
     }
     @RequestMapping("/findPassive")
     public String findPassive(@RequestParam("id") int id){
-        List<User> users = this.centerService.findpassive(id);
+        List<User> users = this.centerService.findPassive(id);
         return new Gson().toJson(users);
     }
-    
-=======
-
+    @RequestMapping("/findCollect")
+    public String findCollect(@RequestParam("id") int id){
+        List<Article> articles = this.centerService.findCollect(id);
+        return new Gson().toJson(articles);
+    }
+    @RequestMapping("/findThumbsOther")
+    public String findThumbsOther(@RequestParam("id") int id){
+        List<Map<String,String>> maps = this.centerService.findThumbsOther(id);
+        return new Gson().toJson(maps);
+    }
+    @RequestMapping("/findThumbsMe")
+    public String findThumbsMe(@RequestParam("id") int id){
+        List<Map<String,String>> maps = this.centerService.findThumbsMe(id);
+        return new Gson().toJson(maps);
+    }
     /**
      * 個人詳情私信
      * @param userId
@@ -58,5 +72,4 @@ public class CenterController {
 
     }
 
->>>>>>> 61342c5b9dd6972f9116ce87063f9df0bc730916
 }

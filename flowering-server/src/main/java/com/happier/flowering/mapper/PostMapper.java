@@ -34,5 +34,5 @@ public interface PostMapper {
      * @return
      */
     List<Post> searchPostByUserId(@Param("userId") int userId);
-
+    Post searchPostByPostId(@Param("postId") int postId);
 }

@@ -7,6 +7,7 @@
         <id property="postId" column="post_id"/>
         <result property="txt" column="txt"/>
         <result property="img" column="img"/>
+        <result property="userId" column="user_id"/>
         <result property="time" column="time"/>
         <result property="thumbsUpCount" column="thu"/>
         <association property="user">
@@ -56,5 +57,7 @@
     <select id="searchPostByUserId" resultMap="postResultMapper">
         selecc * from post p where p.user_id = #{userId}
     </select>
-
+    <select id="searchPostByPostId" resultMap="postResultMapper">
+        select * from post p where p.post_id = #{postId}
+    </select>
 </mapper>

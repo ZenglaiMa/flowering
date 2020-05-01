@@ -16,4 +16,8 @@
         delete from collect
         where user_id=#{userId} and article_id=#{articleId}
     </delete>
+    <select id="findCollect" resultType="int">
+        select article_id from collect
+        where user_id=#{userId}
+    </select>
 </mapper>
