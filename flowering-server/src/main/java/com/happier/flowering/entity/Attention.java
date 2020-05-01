@@ -1,5 +1,8 @@
 package com.happier.flowering.entity;
 
+import javax.validation.constraints.Max;
+import java.util.List;
+
 /**
  * @ClassName Attention
  * @Description 关注关系

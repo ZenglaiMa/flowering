@@ -4,4 +4,11 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.happier.flowering.mapper.AttentionMapper">
 
+    <select id="findUserInitiativeId"  resultType="int">
+        select user_passive from attention where user_initiative = #{id}
+    </select>
+
+    <select id="findUserpassiveId"  resultType="int">
+        select user_initiative from attention where user_passive= #{id}
+    </select>
 </mapper>

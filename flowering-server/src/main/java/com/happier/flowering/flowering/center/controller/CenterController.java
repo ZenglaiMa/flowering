@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
  * @ClassName CenterController
@@ -30,4 +31,15 @@ public class CenterController {
       System.out.println(user.getNickname());
      return new Gson().toJson(user);
     }
+    @RequestMapping("/findInitiative")
+    public String findInitiative(@RequestParam("id") int id){
+        List<User> users = this.centerService.findInitiative(id);
+        return new Gson().toJson(users);
+    }
+    @RequestMapping("/findPassive")
+    public String findPassive(@RequestParam("id") int id){
+        List<User> users = this.centerService.findpassive(id);
+        return new Gson().toJson(users);
+    }
+    
 }
