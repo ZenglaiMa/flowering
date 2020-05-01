@@ -29,57 +29,52 @@ public class CenterController {
     private CenterService centerService;
 
     @RequestMapping("/userInfo")
-    public String getUser(@RequestParam("id") int id){
-      User user=  this.centerService.findUser(id);
-      System.out.println(user.getNickname());
-     return new Gson().toJson(user);
+    public String getUser(@RequestParam("id") int id) {
+        User user = this.centerService.findUser(id);
+        System.out.println(user.getNickname());
+        return new Gson().toJson(user);
     }
 
     @RequestMapping("/findInitiative")
-    public String findInitiative(@RequestParam("id") int id){
+    public String findInitiative(@RequestParam("id") int id) {
         List<User> users = this.centerService.findInitiative(id);
         return new Gson().toJson(users);
     }
+
     @RequestMapping("/findPassive")
-    public String findPassive(@RequestParam("id") int id){
+    public String findPassive(@RequestParam("id") int id) {
         List<User> users = this.centerService.findPassive(id);
         return new Gson().toJson(users);
     }
-<<<<<<< HEAD
+
     @RequestMapping("/findCollect")
-    public String findCollect(@RequestParam("id") int id){
+    public String findCollect(@RequestParam("id") int id) {
         List<Article> articles = this.centerService.findCollect(id);
         return new Gson().toJson(articles);
     }
+
     @RequestMapping("/findThumbsOther")
-    public String findThumbsOther(@RequestParam("id") int id){
-        List<Map<String,String>> maps = this.centerService.findThumbsOther(id);
+    public String findThumbsOther(@RequestParam("id") int id) {
+        List<Map<String, String>> maps = this.centerService.findThumbsOther(id);
         return new Gson().toJson(maps);
     }
+
     @RequestMapping("/findThumbsMe")
-    public String findThumbsMe(@RequestParam("id") int id){
-        List<Map<String,String>> maps = this.centerService.findThumbsMe(id);
+    public String findThumbsMe(@RequestParam("id") int id) {
+        List<Map<String, String>> maps = this.centerService.findThumbsMe(id);
         return new Gson().toJson(maps);
     }
-=======
 
-
-
->>>>>>> cfdd22e1249577e0a60e777071be1d31ad980b48
     /**
      * 個人詳情私信
+     *
      * @param userId
      * @return
      */
     @RequestMapping("/getAllMineMessage")
-    public  String searchMessageByUserId(int userId) {
-        List<Map<String,Object>> messageAboutList = this.centerService.searchMessageByUserId(userId);
+    public String searchMessageByUserId(int userId) {
+        List<Map<String, Object>> messageAboutList = this.centerService.searchMessageByUserId(userId);
         return new Gson().toJson(messageAboutList);
-
     }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> cfdd22e1249577e0a60e777071be1d31ad980b48
 }

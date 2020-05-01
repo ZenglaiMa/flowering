@@ -47,27 +47,27 @@ public class FlowerMineFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate( R.layout.fragment_flower_mine, container, false );
-        OkhttpThread okhttpThread = new OkhttpThread();
-        okhttpThread.start();
-        //设置昵称
-        TextView nickName = view.findViewById(R.id.c_nickname);
-        nickName.setText(user.getNickname());
-        collection = view.findViewById( R.id.c_m_shou);
-        collection.setOnClickListener( new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(),MCollection.class );
-                startActivity( intent );
-            }
-        } );
-        praise = view.findViewById( R.id.c_praise );
-        praise.setOnClickListener( new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), MPraise.class );
-                startActivity( intent );
-            }
-        } );
+//        OkhttpThread okhttpThread = new OkhttpThread();
+//        okhttpThread.start();
+//        //设置昵称
+//        TextView nickName = view.findViewById(R.id.c_nickname);
+//        nickName.setText(user.getNickname());
+//        collection = view.findViewById( R.id.c_m_shou);
+//        collection.setOnClickListener( new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(getActivity(),MCollection.class );
+//                startActivity( intent );
+//            }
+//        } );
+//        praise = view.findViewById( R.id.c_praise );
+//        praise.setOnClickListener( new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(getActivity(), MPraise.class );
+//                startActivity( intent );
+//            }
+//        } );
         return view;
 
 
