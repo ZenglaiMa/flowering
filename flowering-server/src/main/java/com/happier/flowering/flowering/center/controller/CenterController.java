@@ -2,6 +2,7 @@ package com.happier.flowering.flowering.center.controller;
 
 import com.google.gson.Gson;
 import com.happier.flowering.entity.Article;
+import com.happier.flowering.entity.Post;
 import com.happier.flowering.entity.User;
 import com.happier.flowering.flowering.center.service.CenterService;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -61,8 +62,17 @@ public class CenterController {
         List<Map<String, String>> maps = this.centerService.findThumbsMe(id);
         return new Gson().toJson(maps);
     }
+    @RequestMapping("/findThumbsMe")
+    public String findComments(@RequestParam("id") int id) {
+        List<Map<String, String>> maps = this.centerService.findComments(id);
+        return new Gson().toJson(maps);
+    }
+    @RequestMapping("/findPosts")
+    public  String findPosts(@RequestParam("id") int id){
+        List<Post> posts = this.centerService.fingPosts(id);
+        return new Gson().toJson(posts);
 
-    /**
+    }    /**
      * 個人詳情私信
      *
      * @param userId

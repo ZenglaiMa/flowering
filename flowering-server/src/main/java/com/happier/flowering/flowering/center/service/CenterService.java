@@ -132,22 +132,64 @@ public class CenterService {
      * @Date 2020/5/1
      */
 
-    public List<Map<String, String>> findThumbsMe(int id) {
-        Post post = this.postMapper.searchPostByPostId(id);
-        List<Integer> ids = this.thumbsUpMapper.findThumbsMe(id);
+    public List<Map<String, String>> findThumbsMe(int userId) {
+        List<Post> posts = this.postMapper.searchPostByUserId(userId);
         List<Map<String, String>> list = new ArrayList<>();
-        for (Integer i : ids) {
-            Map map = new HashMap();
-            User user = this.userMapper.findUserById(i);
-            map.put("userName", user.getNickname());
-            map.put("userImg", user.getHeadImg());
-            map.put("postTxt", post.getTxt());
-            map.put("postImg", post.getImg());
-            list.add(map);
+        for (Post post : posts) {
+            post = this.postMapper.searchPostByPostId(post.getPostId());
+            List<Integer> userIds = this.thumbsUpMapper.findThumbsMe(post.getPostId());
+            for (Integer i : userIds) {
+                Map map = new HashMap();
+                User user = this.userMapper.findUserById(i);
+                map.put("userName", user.getNickname());
+                map.put("userImg", user.getHeadImg());
+                map.put("postTxt", post.getTxt());
+                map.put("postImg", post.getImg());
+                list.add(map);
+            }
         }
         return list;
     }
 
+    /**
+     * @ClassName CenterService
+     * @Description 查询我的通知
+     * @Author 陈雅楠
+     * @Date 2020/5/2
+     */
+    @Resource
+    CommentMapper commentMapper;
+
+    public List<Map<String, String>> findComments(int userId) {
+        List<Map<String, String>> list = new ArrayList<>();
+        List<Post> posts = this.postMapper.searchPostByUserId(userId);
+        for (Post post : posts) {
+            List<Comment> comments = this.commentMapper.findCommentByPostId(post.getPostId());
+            for (Comment comment : comments) {
+                User user = this.userMapper.findUserById(comment.getUserId());
+                Map map = new HashMap();
+                map.put("CommentContent", comment.getContent());
+                map.put("CommentTime", comment.getTime());
+                map.put("UserName", user.getNickname());
+                map.put("UserImg", user.getHeadImg());
+                map.put("PostContent", post.getTxt());
+                map.put("PostImg", post.getImg());
+                list.add(map);
+            }
+        }
+        return list;
+    }
+
+    /**
+     * @ClassName CenterService
+     * @Description 查询我的通知
+     * @Author 陈雅楠
+     * @Date 2020/5/2
+     */
+    public List<Post> fingPosts(int userId){
+        List<Post> posts = this.postMapper.searchPostByUserId(userId);
+        return  posts;
+    }
     /**
      * 個人私信
      *

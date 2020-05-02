@@ -20,4 +20,5 @@ public interface CommentMapper {
 
     @Insert("insert into comment(user_id, post_id, content) values(#{userId}, #{postId}, #{content})")
     int save(@Param("userId") Integer userId, @Param("postId") Integer postId, @Param("content") String content);
+    public List<Comment> findCommentByPostId(@Param("postId") int postId);
 }
