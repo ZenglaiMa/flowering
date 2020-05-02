@@ -2,16 +2,13 @@ package com.happier.flowering.flowering.center.controller;
 
 import com.google.gson.Gson;
 import com.happier.flowering.entity.Article;
-import com.happier.flowering.entity.Message;
 import com.happier.flowering.entity.User;
 import com.happier.flowering.flowering.center.service.CenterService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Map;
 
@@ -76,9 +73,4 @@ public class CenterController {
         List<Map<String, Object>> messageAboutList = this.centerService.searchMessageByUserId(userId);
         return new Gson().toJson(messageAboutList);
     }
-
-<<<<<<< HEAD
-
-=======
->>>>>>> 31c113d6ed61d93effc4be50efc1fe11310f58cf
 }

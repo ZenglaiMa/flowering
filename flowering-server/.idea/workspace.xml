@@ -12,6 +12,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/PostMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/PostMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ThumbsUpMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ThumbsUpMapper.xml" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -94,7 +95,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -225,6 +226,7 @@
       <workItem from="1588211887837" duration="1902000" />
       <workItem from="1588249771196" duration="545000" />
       <workItem from="1588314566541" duration="4304000" />
+      <workItem from="1588383716679" duration="30000" />
     </task>
     <servers />
   </component>
@@ -250,7 +252,6 @@
     </state>
     <state x="233" y="0" key="#Auto_Import/0.0.1280.680@0.0.1280.680" timestamp="1587441350491" />
     <state x="397" y="42" key="#com.intellij.ide.util.MemberChooser" timestamp="1587723139324" />
-<<<<<<< HEAD
     <state width="1323" height="2" key="GridCell.Tab.0.bottom" timestamp="1588341239731">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -283,7 +284,6 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="2" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1588341239731" />
-=======
     <state width="1323" height="259" key="GridCell.Tab.0.bottom" timestamp="1588319002148">
       <state width="1323" height="50" key="GridCell.Tab.0.bottom" timestamp="1588312578292">
         <screen x="0" y="0" width="1366" height="728" />
@@ -364,7 +364,6 @@
       </state>
       <state x="370" y="119" width="626" height="490" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1588127843583" />
     </state>
->>>>>>> 31c113d6ed61d93effc4be50efc1fe11310f58cf
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

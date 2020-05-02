@@ -9,5 +9,5 @@ import com.happier.flowering.entity.User;
  * @Date 2020-04-15 15:10
  */
 public interface UserMapper {
-    public User findUserById(int id);
+    User findUserById(int id);
 }

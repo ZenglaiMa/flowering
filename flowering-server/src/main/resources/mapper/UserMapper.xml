@@ -6,10 +6,15 @@
     <resultMap id="userMap" type="com.happier.flowering.entity.User">
         <id property="userId" column="user_id"/>
         <result property="nickname" column="nickname"/>
+        <result property="password" column="password"/>
         <result property="sex" column="sex"/>
         <result property="address" column="address"/>
         <result property="profile" column="profile"/>
         <result property="headImg" column="head_img"/>
     </resultMap>
+
+    <select id="findUserById" resultMap="userMap">
+        select * from user where user_id = #{userId}
+    </select>
 
 </mapper>

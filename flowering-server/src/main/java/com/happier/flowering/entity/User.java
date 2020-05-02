@@ -13,10 +13,19 @@ public class User {
 
     private Integer userId; // 用户id
     private String nickname; // 用户名
+    private String password; // 密码
     private Integer sex; // 性别 1为男, 2为女
     private String address; // 地址
     private String profile; // 个人简介
     private String headImg; // 头像
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     private Set<Post> posts = new HashSet<>(); // 该用户发布的帖子
 
