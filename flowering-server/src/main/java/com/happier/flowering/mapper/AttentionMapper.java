@@ -1,6 +1,7 @@
 package com.happier.flowering.mapper;
 
 import com.happier.flowering.entity.Attention;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -14,4 +15,5 @@ public interface AttentionMapper {
 
     public List<Integer> findUserInitiativeId(int id);
     public List<Integer> findUserpassiveId(int id);
+    public void insertAttention(@Param("userInitiative") int userInitiative, @Param("userPassive") int userPassive);
 }

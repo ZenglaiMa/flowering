@@ -8,6 +8,7 @@ import com.happier.flowering.entity.Message;
 import com.happier.flowering.mapper.MessageMapper;
 import com.happier.flowering.mapper.UserMapper;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -108,9 +109,9 @@ public class CenterService {
      * @Author 陈雅楠
      * @Date 2020/5/1
      */
-    public List<Map<String, String>> findThumbsOther(int id) {
+    public List<Map<String, Object>> findThumbsOther(int id) {
         List<Integer> ids = this.thumbsUpMapper.findThumbsOther(id);
-        List<Map<String, String>> posts = new ArrayList<>();
+        List<Map<String, Object>> posts = new ArrayList<>();
         for (Integer i : ids) {
             Post post = this.postMapper.searchPostByPostId(i);
             Map map = new HashMap();
@@ -132,9 +133,9 @@ public class CenterService {
      * @Date 2020/5/1
      */
 
-    public List<Map<String, String>> findThumbsMe(int userId) {
+    public List<Map<String, Object>> findThumbsMe(int userId) {
         List<Post> posts = this.postMapper.searchPostByUserId(userId);
-        List<Map<String, String>> list = new ArrayList<>();
+        List<Map<String, Object>> list = new ArrayList<>();
         for (Post post : posts) {
             post = this.postMapper.searchPostByPostId(post.getPostId());
             List<Integer> userIds = this.thumbsUpMapper.findThumbsMe(post.getPostId());
@@ -160,8 +161,8 @@ public class CenterService {
     @Resource
     CommentMapper commentMapper;
 
-    public List<Map<String, String>> findComments(int userId) {
-        List<Map<String, String>> list = new ArrayList<>();
+    public List<Map<String, Object>> findComments(int userId) {
+        List<Map<String, Object>> list = new ArrayList<>();
         List<Post> posts = this.postMapper.searchPostByUserId(userId);
         for (Post post : posts) {
             List<Comment> comments = this.commentMapper.findCommentByPostId(post.getPostId());
@@ -180,15 +181,15 @@ public class CenterService {
         return list;
     }
 
-    /**
-     * @ClassName CenterService
-     * @Description 查询我的通知
-     * @Author 陈雅楠
-     * @Date 2020/5/2
-     */
-    public List<Post> fingPosts(int userId){
+
+    public List<Post> findPosts(int userId){
         List<Post> posts = this.postMapper.searchPostByUserId(userId);
         return  posts;
+    }
+
+    public void addAttention(int userInitiative, int userPassive){
+
+        this.attentionMapper.insertAttention(userInitiative,userPassive);
     }
     /**
      * 個人私信

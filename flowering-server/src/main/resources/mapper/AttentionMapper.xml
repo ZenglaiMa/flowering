@@ -11,4 +11,8 @@
     <select id="findUserpassiveId"  resultType="int">
         select user_initiative from attention where user_passive= #{id}
     </select>
+    <insert id="insertAttention">
+        insert into attention(user_initiative, user_passive)
+        values(#{userInitiative}, #{userPassive})
+    </insert>
 </mapper>

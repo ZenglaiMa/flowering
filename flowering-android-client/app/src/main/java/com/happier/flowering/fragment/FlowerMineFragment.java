@@ -17,6 +17,7 @@ import com.google.gson.reflect.TypeToken;
 import com.happier.flowering.R;
 import com.happier.flowering.constant.Constant;
 import com.happier.flowering.entity.User;
+import com.happier.flowering.mine.FlowerMinemore;
 import com.happier.flowering.mine.MCollection;
 import com.happier.flowering.mine.MPraise;
 
@@ -51,7 +52,7 @@ public class FlowerMineFragment extends Fragment {
         okhttpThread.start();
         //设置昵称
         TextView nickName = view.findViewById(R.id.c_nickname);
-        nickName.setText(user.getNickname());
+//        nickName.setText(user.getNickname());
         collection = view.findViewById( R.id.c_m_shou);
         collection.setOnClickListener( new View.OnClickListener() {
             @Override
@@ -66,6 +67,19 @@ public class FlowerMineFragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), MPraise.class );
                 startActivity( intent );
+            }
+        } );
+        view.findViewById(R.id.c_iv_center).setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(getActivity(), FlowerMinemore.class);
+                intent.putExtra("username",user.getNickname());
+                intent.putExtra("userImg", user.getHeadImg());
+                intent.putExtra( "address",user.getAddress());
+                intent.putExtra( "sex",user.getSex() );
+                intent.putExtra( "profile",user.getProfile());
+                startActivity(intent);
             }
         } );
         return view;

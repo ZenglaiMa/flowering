@@ -5,6 +5,7 @@ import com.happier.flowering.entity.Article;
 import com.happier.flowering.entity.Post;
 import com.happier.flowering.entity.User;
 import com.happier.flowering.flowering.center.service.CenterService;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -53,26 +54,32 @@ public class CenterController {
 
     @RequestMapping("/findThumbsOther")
     public String findThumbsOther(@RequestParam("id") int id) {
-        List<Map<String, String>> maps = this.centerService.findThumbsOther(id);
+        List<Map<String, Object>> maps = this.centerService.findThumbsOther(id);
         return new Gson().toJson(maps);
     }
 
     @RequestMapping("/findThumbsMe")
     public String findThumbsMe(@RequestParam("id") int id) {
-        List<Map<String, String>> maps = this.centerService.findThumbsMe(id);
+        List<Map<String, Object>> maps = this.centerService.findThumbsMe(id);
         return new Gson().toJson(maps);
     }
     @RequestMapping("/findThumbsMe")
     public String findComments(@RequestParam("id") int id) {
-        List<Map<String, String>> maps = this.centerService.findComments(id);
+        List<Map<String, Object>> maps = this.centerService.findComments(id);
         return new Gson().toJson(maps);
     }
     @RequestMapping("/findPosts")
     public  String findPosts(@RequestParam("id") int id){
-        List<Post> posts = this.centerService.fingPosts(id);
+        List<Post> posts = this.centerService.findPosts(id);
         return new Gson().toJson(posts);
-
-    }    /**
+    }
+    @RequestMapping("/addAttention")
+    public void addAttention(@RequestParam("userInitiative") int userInitiative, @RequestParam("userPassive") int userPassive){
+        //userInitiative:主动关注者
+        //userPassive:被动关注者
+        this.centerService.addAttention(userInitiative,userPassive);
+    }
+    /**
      * 個人詳情私信
      *
      * @param userId

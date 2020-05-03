@@ -15,7 +15,7 @@ public class MCollection extends AppCompatActivity {
     private ListView listView;
     private CollectionAdapter CollectionAdapter;
 
-    private List<Map> dataList = new ArrayList<>();
+    private List<Map<String,Object>> dataList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

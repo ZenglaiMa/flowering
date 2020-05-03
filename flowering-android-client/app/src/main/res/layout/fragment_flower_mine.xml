@@ -110,6 +110,7 @@
                     android:textSize="20dp" />
 
                 <ImageView
+                    android:id="@+id/c_iv_center"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_marginLeft="160dp"

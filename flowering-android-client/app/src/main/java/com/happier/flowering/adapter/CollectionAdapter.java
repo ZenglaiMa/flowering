@@ -18,10 +18,10 @@ import java.util.Map;
 public class CollectionAdapter extends BaseAdapter{
 
     private Context context;
-    private List<Map> contents = new ArrayList<>();
+    private List<Map<String,Object>> contents = new ArrayList<>();
     private int itemLayoutId;
 
-    public CollectionAdapter(Context context, List<Map> contents, int itemLayoutId) {
+    public CollectionAdapter(Context context,List<Map<String,Object>> contents, int itemLayoutId) {
         this.context = context;
         this.contents = contents;
         this.itemLayoutId = itemLayoutId;
