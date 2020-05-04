@@ -64,7 +64,7 @@ public class DiscoveryController {
         if (plantInfo==null){
             return "plant not found";
         }
-
+        System.out.println("66666666666666:"+plantInfo);
         return plantInfo;
     }
 }

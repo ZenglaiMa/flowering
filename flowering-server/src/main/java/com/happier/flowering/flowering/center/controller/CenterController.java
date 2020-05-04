@@ -64,11 +64,7 @@ public class CenterController {
         List<Map<String, Object>> maps = this.centerService.findThumbsMe(id);
         return new Gson().toJson(maps);
     }
-    @RequestMapping("/findThumbsMe")
-    public String findComments(@RequestParam("id") int id) {
-        List<Map<String, Object>> maps = this.centerService.findComments(id);
-        return new Gson().toJson(maps);
-    }
+
 
     /**
      * qiao  日期格式进行了修改
