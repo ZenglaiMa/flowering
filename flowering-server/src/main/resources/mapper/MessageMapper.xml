@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.happier.flowering.mapper.MessageMapper">
     <resultMap type="com.happier.flowering.entity.Message" id="message">
-        <id property=" messageId" column="message_id" />
+        <id property="messageId" column="message_id" />
         <result property="userIdSend" column="user_id_send" />
         <result property="userIdRecv" column="user_id_recv" />
         <result property="time" column="time" />
@@ -14,6 +14,9 @@
   select * from message where user_id_recv=#{userId}
 
 </select>
+    <insert id="sendMessage">
+        insert into message (user_id_send,user_id_recv,content,time) values (#{sendId},#{recvId},#{content},#{time});
+    </insert>
 
 
 

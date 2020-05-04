@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout android:layout_width="match_parent"
-    android:layout_height="80dp"
+    android:layout_height="60dp"
     android:orientation="horizontal"
     android:padding="10dp"
     android:background="#FFF"
@@ -10,7 +10,7 @@
         android:layout_height="match_parent"
         android:background="#ff0"
         android:src="@drawable/q_image_border"
-        android:layout_weight="2.5"
+        android:layout_weight="2"
         android:id="@+id/q_mlist_head"
         />
     <LinearLayout
@@ -25,24 +25,23 @@
             android:layout_height="0dp"
             android:text="胡不饿名字"
             android:layout_weight="3"
-            android:textSize="25dp"
+            android:textSize="20dp"
             android:id="@+id/q_mlist_name"
             />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:text="私信内容记得头像000ackgroud999"
-            android:textSize="20dp"
+            android:textSize="13dp"
             android:layout_weight="2"
             android:id="@+id/q_mlist_content"
             />
     </LinearLayout>
     <TextView
-        android:layout_marginTop="20dp"
         android:layout_height="match_parent"
         android:layout_width="0dp"
         android:layout_weight="3"
-        android:textSize="17dp"
+        android:textSize="13dp"
         android:textColor="#0f0"
         android:gravity="center"
         android:text="时间"

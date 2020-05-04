@@ -14,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -198,20 +199,28 @@ public class CenterService {
      * @return
      */
     public List<Map<String, Object>> searchMessageByUserId(int userId) {
-        List<Map<String, Object>> mUsers = new ArrayList<>();
+        List<Map<String, Object>> maUsers = new ArrayList<>();
         List<Message> messages = messageMapper.searchMessageByUserId(userId);
         for (int i = 0; i < messages.size(); i++) {
             Map map = new HashMap();
             User user = userMapper.findUserById(messages.get(i).getUserIdSend());
-            map.put("content", messages.get(i));
-            map.put("sender", user);
-            mUsers.add(map);
-        }
-        for (int j = 0; j < mUsers.size(); j++) {
-            System.out.println(mUsers.get(j).get("content").toString() + mUsers.get(j).get("sender").toString());
+            map.put("content", messages.get(i).getContent());
+            map.put("senderId", messages.get(i).getUserIdSend());
+            map.put("time", messages.get(i).getTime());
+            map.put("senderHead", user.getHeadImg());
+            map.put("senderName", user.getNickname());
+            maUsers.add(map);
         }
 
-        return mUsers;
+        return maUsers;
+    }
+    /**
+     * 回复私信发送
+     */
+    public int sendMessage(int sendId,int recvId,String content){
+        Date time= new java.sql.Date(new java.util.Date().getTime());
+        int num=messageMapper.sendMessage(sendId,recvId,content,time);
+        return num;
     }
 
 }
