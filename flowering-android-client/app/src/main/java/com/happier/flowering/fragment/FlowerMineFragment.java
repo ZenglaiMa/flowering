@@ -53,7 +53,11 @@ public class FlowerMineFragment extends Fragment {
         okhttpThread.start();
         //设置昵称
         TextView nickName = view.findViewById(R.id.c_nickname);
+<<<<<<< Updated upstream
 //        nickName.setText(user.getNickname());
+=======
+       // nickName.setText(user.getNickname());
+>>>>>>> Stashed changes
         collection = view.findViewById( R.id.c_m_shou);
         collection.setOnClickListener( new View.OnClickListener() {
             @Override

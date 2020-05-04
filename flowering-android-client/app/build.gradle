@@ -65,4 +65,8 @@ dependencies {
     implementation 'com.squareup.picasso:picasso:2.5.2'
     implementation 'org.devio.takephoto:takephoto_library:4.1.0'
     implementation 'com.zyao89:zloading:1.2.0'
+
+    //加载等待动画
+    implementation 'com.github.ybq:Android-SpinKit:1.4.0'
+    implementation 'com.wang.avi:library:2.1.3'
 }
