@@ -41,6 +41,10 @@ public class DiscoveryController {
 
     @RequestMapping("/findplant")
     public String findPlant(HttpServletRequest request) throws IOException{
+         File file = new File(this.getClass().getResource("/").getPath()+"plant-image");
+        if(!file.exists()){//如果文件夹不存在
+            file.mkdir();//创建文件夹
+        }
         String path = "plant-image/" + System.currentTimeMillis() + ".jpg";
         String plantInfo=null;
         try {
