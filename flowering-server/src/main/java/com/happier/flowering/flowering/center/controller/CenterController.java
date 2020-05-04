@@ -79,7 +79,14 @@ public class CenterController {
         //userPassive:被动关注者
         this.centerService.addAttention(userInitiative,userPassive);
     }
-    /**
+    @RequestMapping("/ifAttention")
+    public String ifAttention(@RequestParam("userInitiative") int userInitiative, @RequestParam("userPassive") int userPassive){
+        return this.centerService.ifAttention(userInitiative,userPassive);
+    }
+    @RequestMapping("/ifAttention")
+    public void deleteAttention(@Param("userInitiative") int userInitiative, @Param("userPassive") int userPassive){
+        this.centerService.deleteAttention(userInitiative,userPassive);
+    }    /**
      * 個人詳情私信
      *
      * @param userId
