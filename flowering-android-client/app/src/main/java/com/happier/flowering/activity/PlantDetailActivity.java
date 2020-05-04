@@ -9,8 +9,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
@@ -19,7 +17,6 @@ import com.happier.flowering.R;
 import com.happier.flowering.entity.Plant;
 import com.squareup.picasso.Picasso;
 
-import java.util.List;
 //植物详情页
 public class PlantDetailActivity extends AppCompatActivity {
     private TextView plantName;
