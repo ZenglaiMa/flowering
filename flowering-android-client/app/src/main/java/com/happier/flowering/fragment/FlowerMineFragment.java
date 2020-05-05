@@ -19,6 +19,7 @@ import com.happier.flowering.constant.Constant;
 import com.happier.flowering.entity.User;
 import com.happier.flowering.mine.FlowerMinemore;
 import com.happier.flowering.mine.MCollection;
+import com.happier.flowering.mine.MNotice;
 import com.happier.flowering.mine.MPraise;
 
 import java.io.IOException;
@@ -83,9 +84,14 @@ public class FlowerMineFragment extends Fragment {
                 startActivity(intent);
             }
         } );
+        view.findViewById(R.id.c_m_tong).setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), MNotice.class);
+                startActivity(intent);
+            }
+        } );
         return view;
-
-
     }
     private class OkhttpThread extends Thread{
 

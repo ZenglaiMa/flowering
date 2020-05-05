@@ -183,16 +183,26 @@ public class CenterService {
     }
 
 
-    public List<Post> findPosts(int userId){
+    public List<Post> findPosts(int userId) {
         List<Post> posts = this.postMapper.searchPostByUserId(userId);
-        return  posts;
+        return posts;
     }
 
-    public void addAttention(int userInitiative, int userPassive){
+    public void addAttention(int userInitiative, int userPassive) {
 
-        this.attentionMapper.insertAttention(userInitiative,userPassive);
+        this.attentionMapper.insertAttention(userInitiative, userPassive);
     }
-    /**
+
+    public String ifAttention(int userInitiative, int userPassive) {
+        int a = this.attentionMapper.ifAttention(userInitiative, userPassive);
+        if (a == 0) {
+            return "no";
+        }
+        else return "yes";
+    }
+    public void deleteAttention(@Param("userInitiative") int userInitiative, @Param("userPassive") int userPassive){
+        this.attentionMapper.deleteAttention(userInitiative,userPassive);
+    }    /**
      * 個人私信
      *
      * @param userId

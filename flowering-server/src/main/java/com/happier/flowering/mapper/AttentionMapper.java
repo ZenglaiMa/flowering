@@ -16,4 +16,6 @@ public interface AttentionMapper {
     public List<Integer> findUserInitiativeId(int id);
     public List<Integer> findUserpassiveId(int id);
     public void insertAttention(@Param("userInitiative") int userInitiative, @Param("userPassive") int userPassive);
+    public int ifAttention(@Param("userInitiative") int userInitiative, @Param("userPassive") int userPassive);
+    public void deleteAttention(@Param("userInitiative") int userInitiative, @Param("userPassive") int userPassive);
 }

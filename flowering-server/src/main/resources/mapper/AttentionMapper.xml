@@ -15,4 +15,10 @@
         insert into attention(user_initiative, user_passive)
         values(#{userInitiative}, #{userPassive})
     </insert>
+    <select id="ifAttention" resultType="int">
+        select count(*) from attention where user_initiative = #{userInitiative} and user_initiative = #{userInitiative}
+    </select>
+    <delete id="deleteAttention">
+        delete from attention where user_initiative = #{userInitiative} and user_initiative = #{userInitiative}
+    </delete>
 </mapper>
