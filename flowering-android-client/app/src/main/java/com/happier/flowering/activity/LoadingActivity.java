@@ -5,8 +5,10 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 
 import com.google.gson.Gson;
+import com.happier.flowering.CompressImageUtil;
 import com.happier.flowering.constant.Constant;
 import com.happier.flowering.entity.Plant;
 import com.zyao89.view.zloading.ZLoadingBuilder;
@@ -32,6 +34,9 @@ public class LoadingActivity extends AppCompatActivity {
     private static final String FINDPLANT_PATH = "/discovery/findplant";
     private   String path;
     private OkHttpClient client = new OkHttpClient();
+    private CompressImageUtil compressImageUtil = new CompressImageUtil();
+    private File mFile;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,7 +55,17 @@ public class LoadingActivity extends AppCompatActivity {
     private void sendToServer(String path) {
         List<Plant> list = new ArrayList<>();
         OkHttpClient okHttpClient = new OkHttpClient();
-        File mFile = new File(path);
+        String outPath = "/storage/emulated/0/Download/" + System.currentTimeMillis() + ".jpg";//压缩后图片路径
+       // compressImageUtil.compressByQuality(path,);
+        mFile = new File(path);
+        if (mFile.length()>=3000000){
+            try {
+                compressImageUtil.compressByQuality(path,outPath,2048,false);
+                mFile = new File(outPath);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
         RequestBody body = RequestBody.create(MediaType.parse("image/*"), mFile);
         Request request = new Request.Builder()
                 .post(body)

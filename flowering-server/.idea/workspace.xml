@@ -1,22 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2bf21958-aa2b-480d-b968-3a7f1d23a780" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../flowering-android-client/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/activity/FindPlantActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/activity/FindPlantActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/activity/FindPlantDetailActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/activity/FindPlantDetailActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/activity/LoadingActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/activity/LoadingActivity.java" afterDir="false" />
+    <list default="true" id="3e9a412e-9363-49e6-83a2-a54e93ddf1fd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flowering-server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/flowering-server.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/happier/flowering/flowering/center/controller/CenterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/happier/flowering/flowering/center/controller/CenterController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/happier/flowering/flowering/discovery/controller/DiscoveryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/happier/flowering/flowering/discovery/controller/DiscoveryController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="CoverageViewManager">
-    <option name="myElementSize" value="190" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -32,345 +27,117 @@
     <expand />
     <select />
   </component>
-  <component name="ExportToHTMLSettings">
-    <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/../flowering-server\exportToHTML" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="package-info" />
-        <option value="Interface" />
-        <option value="HTML File" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="F:/apache-maven-3.5.4" />
-        <option name="userSettingsFile" value="F:\apache-maven-3.5.4\conf\settings.xml" />
-      </MavenGeneralSettings>
-    </option>
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="jdkForImporter" value="1.8" />
-        <option name="vmOptionsForImporter" value="-Xmx768m" />
-      </MavenImportingSettings>
-    </option>
-  </component>
-  <component name="MavenRunner">
-    <option name="jreName" value="1.8" />
-  </component>
-  <component name="ProjectId" id="1aYTMRwD1Y7uIRXrAeuviQlTzAR" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="1bTXx07PW7jPpLthResvJh94OX1" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="E:/JAVA/xingseTest" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/backup2/flowering-server" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\GitFiles\flowering\flowering-server\src\main\java\com\happier\flowering\flowering" />
-      <recent name="E:\flowering\flowering-server\src\main\resources\static\article-img" />
-      <recent name="E:\flowering\flowering-server\src\main\resources\static\post-img" />
-      <recent name="E:\flowering\flowering-server\src\main\java\com\happier\flowering\flowering" />
-      <recent name="E:\IdeaProjects\flowering-server\src\main\resources\static" />
-      <recent name="E:\IdeaProjects\flowering-server\src\main\resources\static\img2" />
-      <recent name="E:\GitFile\flowering\flowering-server\src\main\resources\mapper" />
-      <recent name="E:\GitFile\flowering\flowering-server\src\main\java\com\happier\flowering\flowering" />
-      <recent name="E:\GitFile\flowering\flowering-server\src\main\java\com\happier\flowering" />
-      <recent name="E:\flowering\flowering-server\src\main\java\com\happier\flowering\flowering" />
-      <recent name="E:\IdeaProjects\flowering-server\src\main\resources\static" />
-    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.happier.flowering.flowering.discovery" />
-      <recent name="com.happier.flowering.flowering.discovery.service" />
-      <recent name="com.happier.flowering.flowering.discovery.controller" />
-      <recent name="" />
-      <recent name="com.happier.flowering" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\flowering\flowering-server\src\main\resources\static\article-img" />
-    </key>
-  </component>
-  <component name="RestServicesNavigator">
-    <treeState>
-      <expand>
-        <path>
-          <item name="Found 22 services " type="fcff1e1b:RestServiceStructure$RootNode" />
-        </path>
-        <path>
-          <item name="Found 22 services " type="fcff1e1b:RestServiceStructure$RootNode" />
-          <item name="flowering-server" type="c588b436:RestServiceStructure$ProjectNode" />
-        </path>
-      </expand>
-      <select />
-    </treeState>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="Application" factoryName="Application">
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FloweringApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <configuration name="FloweringApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="flowering-server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.happier.flowering.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.happier.flowering.FloweringApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.FloweringApplication" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="2bf21958-aa2b-480d-b968-3a7f1d23a780" name="Default Changelist" comment="" />
-      <created>1586911480211</created>
+      <changelist id="3e9a412e-9363-49e6-83a2-a54e93ddf1fd" name="Default Changelist" comment="" />
+      <created>1588657300555</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1586911480211</updated>
-      <workItem from="1586911486622" duration="12174000" />
-      <workItem from="1586932890428" duration="3552000" />
-      <workItem from="1586936465467" duration="83000" />
-      <workItem from="1586936993744" duration="712000" />
-      <workItem from="1586952727908" duration="1695000" />
-      <workItem from="1587021375630" duration="459000" />
-      <workItem from="1587023321632" duration="579000" />
-      <workItem from="1587026945885" duration="488000" />
-      <workItem from="1587029138678" duration="404000" />
-      <workItem from="1587297883473" duration="273000" />
-      <workItem from="1587350088509" duration="10666000" />
-      <workItem from="1587383998765" duration="791000" />
-      <workItem from="1587386289795" duration="1586000" />
-      <workItem from="1587434573464" duration="10997000" />
-      <workItem from="1587458219516" duration="486000" />
-      <workItem from="1587458987812" duration="1116000" />
-      <workItem from="1587547223277" duration="7713000" />
-      <workItem from="1587557998361" duration="1317000" />
-      <workItem from="1587605278573" duration="4902000" />
-      <workItem from="1587609939691" duration="196000" />
-      <workItem from="1587610306377" duration="10158000" />
-      <workItem from="1587696800237" duration="2118000" />
-      <workItem from="1587718686019" duration="13442000" />
-      <workItem from="1587885523844" duration="5133000" />
-      <workItem from="1587892913199" duration="66000" />
-      <workItem from="1587893454853" duration="67000" />
-      <workItem from="1587611633781" duration="1039000" />
-      <workItem from="1587649610618" duration="2403000" />
-      <workItem from="1587688876882" duration="7233000" />
-      <workItem from="1587697109908" duration="2196000" />
-      <workItem from="1587711312770" duration="1322000" />
-      <workItem from="1587728551855" duration="3226000" />
-      <workItem from="1587838696270" duration="1717000" />
-      <workItem from="1587862918211" duration="411000" />
-      <workItem from="1587864227081" duration="137000" />
-      <workItem from="1587897167902" duration="593000" />
-      <workItem from="1587918706976" duration="75000" />
-      <workItem from="1587970175651" duration="383000" />
-      <workItem from="1588037926523" duration="619000" />
-      <workItem from="1588055915168" duration="12679000" />
-      <workItem from="1588078642468" duration="688000" />
-      <workItem from="1588121870061" duration="7349000" />
-      <workItem from="1588250328709" duration="695000" />
-      <workItem from="1588299360074" duration="5474000" />
-      <workItem from="1588165200477" duration="1515000" />
-      <workItem from="1588122794842" duration="5487000" />
-      <workItem from="1588131614061" duration="97000" />
-      <workItem from="1588121870061" duration="6745000" />
-      <workItem from="1588132074646" duration="536000" />
-      <workItem from="1588144438087" duration="6232000" />
-      <workItem from="1588162467912" duration="6056000" />
-      <workItem from="1588167805573" duration="182000" />
-      <workItem from="1588209224685" duration="1104000" />
-      <workItem from="1588211887837" duration="1902000" />
-      <workItem from="1588249771196" duration="545000" />
-      <workItem from="1588314566541" duration="4304000" />
-      <workItem from="1588383716679" duration="30000" />
-      <workItem from="1588412939220" duration="2900000" />
-      <workItem from="1588416021653" duration="548000" />
-      <workItem from="1588504499232" duration="7065000" />
-      <workItem from="1588584339714" duration="2905000" />
-      <workItem from="1588586116434" duration="1043000" />
-      <workItem from="1588338716127" duration="2738000" />
-      <workItem from="1588424637138" duration="3143000" />
-      <workItem from="1588537692714" duration="10000" />
-      <workItem from="1588562179131" duration="222000" />
-      <workItem from="1588564693145" duration="1733000" />
-      <workItem from="1588600693352" duration="871000" />
-      <workItem from="1588639086260" duration="1617000" />
-      <workItem from="1588643013597" duration="52000" />
+      <updated>1588657300555</updated>
+      <workItem from="1588657303556" duration="3550000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
   <component name="WindowStateProjectService">
-    <state x="233" y="0" key="#Auto_Import" timestamp="1587441350491">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state x="233" y="0" key="#Auto_Import/0.0.1280.680@0.0.1280.680" timestamp="1587441350491" />
-    <state x="397" y="42" key="#com.intellij.ide.util.MemberChooser" timestamp="1587723139324" />
-    <state width="1323" height="94" key="GridCell.Tab.0.bottom" timestamp="1588600679544">
-    <state width="1323" height="2" key="GridCell.Tab.0.bottom" timestamp="1588513192088">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="94" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1588600679544" />
-    <state width="1323" height="94" key="GridCell.Tab.0.center" timestamp="1588600679544">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="94" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1588600679544" />
-    <state width="1323" height="94" key="GridCell.Tab.0.left" timestamp="1588600679544">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="94" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1588600679544" />
-    <state width="1323" height="94" key="GridCell.Tab.0.right" timestamp="1588600679544">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="94" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1588600679544" />
-    <state width="1323" height="94" key="GridCell.Tab.1.bottom" timestamp="1588600679544">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="94" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1588600679544" />
-    <state width="1323" height="94" key="GridCell.Tab.1.center" timestamp="1588600679544">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="94" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1588600679544" />
-    <state width="1323" height="94" key="GridCell.Tab.1.left" timestamp="1588600679544">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="94" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1588600679544" />
-    <state width="1323" height="94" key="GridCell.Tab.1.right" timestamp="1588600679544">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="94" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1588600679544" />
-    <state x="375" y="191" key="com.intellij.ide.util.TipDialog" timestamp="1588584482134">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="375" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1588584482134" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1588511688781">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1588511688781" />
-    <state x="686" y="211" key="FileChooserDialogImpl" timestamp="1588565255030">
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588657419986">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1588339368278" />
-    <state x="686" y="211" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1588565255030" />
-    <state width="1877" height="549" key="GridCell.Tab.0.bottom" timestamp="1588643065344">
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588657419986" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1588657758190">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1323" height="2" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1588513192088" />
-    <state width="1493" height="417" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588430649592" />
-    <state width="1877" height="549" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588643065344" />
-    <state width="1877" height="549" key="GridCell.Tab.0.center" timestamp="1588643065343">
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1588657758190" />
+    <state width="1877" height="803" key="GridCell.Tab.0.bottom" timestamp="1588660973825">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1323" height="2" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1588513192088" />
-    <state width="1493" height="417" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588430649592" />
-    <state width="1877" height="549" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588643065343" />
-    <state width="1877" height="549" key="GridCell.Tab.0.left" timestamp="1588643065343">
+    <state width="1877" height="803" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588660973825" />
+    <state width="1877" height="803" key="GridCell.Tab.0.center" timestamp="1588660973825">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1323" height="2" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1588513192088" />
-    <state width="1493" height="417" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588430649592" />
-    <state width="1877" height="549" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588643065343" />
-    <state width="1877" height="549" key="GridCell.Tab.0.right" timestamp="1588643065344">
+    <state width="1877" height="803" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588660973825" />
+    <state width="1877" height="803" key="GridCell.Tab.0.left" timestamp="1588660973825">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1323" height="2" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1588513192088" />
-    <state width="1493" height="417" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588430649592" />
-    <state width="1877" height="549" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588643065344" />
-    <state width="1877" height="549" key="GridCell.Tab.1.bottom" timestamp="1588643065344">
+    <state width="1877" height="803" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588660973825" />
+    <state width="1877" height="803" key="GridCell.Tab.0.right" timestamp="1588660973825">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1323" height="2" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1588513192089" />
-    <state width="1493" height="417" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588430649593" />
-    <state width="1877" height="549" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588643065344" />
-    <state width="1877" height="549" key="GridCell.Tab.1.center" timestamp="1588643065344">
+    <state width="1877" height="803" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588660973825" />
+    <state width="1877" height="803" key="GridCell.Tab.1.bottom" timestamp="1588660973826">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1323" height="2" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1588513192089" />
-    <state width="1493" height="417" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1588430649592" />
-    <state width="1877" height="549" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588643065344" />
-    <state width="1877" height="549" key="GridCell.Tab.1.left" timestamp="1588643065344">
+    <state width="1877" height="803" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588660973826" />
+    <state width="1877" height="803" key="GridCell.Tab.1.center" timestamp="1588660973826">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1323" height="2" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1588513192088" />
-    <state width="1493" height="417" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1588430649592" />
-    <state width="1877" height="549" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588643065344" />
-    <state width="1877" height="549" key="GridCell.Tab.1.right" timestamp="1588643065344">
+    <state width="1877" height="803" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588660973826" />
+    <state width="1877" height="803" key="GridCell.Tab.1.left" timestamp="1588660973826">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1323" height="2" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1588513192089" />
-    <state width="1493" height="417" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1588430649593" />
-    <state width="1877" height="549" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588643065344" />
-    <state x="564" y="299" key="com.intellij.ide.util.TipDialog" timestamp="1588643017529">
+    <state width="1877" height="803" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588660973826" />
+    <state width="1877" height="803" key="GridCell.Tab.1.right" timestamp="1588660973826">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="375" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1588507091387" />
-    <state x="449" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1588537693075" />
-    <state x="564" y="299" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588643017529" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1588511688781">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1877" height="803" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588660973826" />
+    <state x="640" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1588657303409">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1588511688781" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/happier/flowering/mapper/ArticleMapper.java</url>
-          <line>54</line>
-          <properties class="com.happier.flowering.mapper.ArticleMapper" method="getAllArtical">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="640" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588657303409" />
   </component>
 </project>

@@ -42,11 +42,7 @@ public class DiscoveryController {
 
     @RequestMapping("/findplant")
     public String findPlant(HttpServletRequest request) throws IOException{
-<<<<<<< HEAD
         File file = new File(this.getClass().getResource("/").getPath()+"plant-image");
-=======
-         File file = new File(this.getClass().getResource("/").getPath()+"plant-image");
->>>>>>> 90a1cf78dd8fc47eb884c7f8138cea6239a427eb
         if(!file.exists()){//如果文件夹不存在
             file.mkdir();//创建文件夹
         }
@@ -73,7 +69,7 @@ public class DiscoveryController {
         if (plantInfo==null){
             return "plant not found";
         }
-        System.out.println("66666666666666:"+plantInfo);
+
         return plantInfo;
     }
 }
