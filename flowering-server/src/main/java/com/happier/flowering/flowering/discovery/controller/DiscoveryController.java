@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -41,6 +42,10 @@ public class DiscoveryController {
 
     @RequestMapping("/findplant")
     public String findPlant(HttpServletRequest request) throws IOException{
+        File file = new File(this.getClass().getResource("/").getPath()+"plant-image");
+        if(!file.exists()){//如果文件夹不存在
+            file.mkdir();//创建文件夹
+        }
         String path = "plant-image/" + System.currentTimeMillis() + ".jpg";
         String plantInfo=null;
         try {
