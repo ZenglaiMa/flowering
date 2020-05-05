@@ -2,12 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.happier.flowering">
-
     <!-- Required -->
     <permission
         android:name="${applicationId}.permission.JPUSH_MESSAGE"
         android:protectionLevel="signature" />
-
     <!-- Required  一些系统要求的权限，如访问网络等 -->
     <uses-permission android:name="${applicationId}.permission.JPUSH_MESSAGE" />
     <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
@@ -18,8 +16,6 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
-<<<<<<< HEAD
-=======
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
     <!--添加微信权限-->
     <!--<uses-permission android:name="android.permission.INTERNET"/>-->
@@ -27,9 +23,6 @@
     <!--<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>-->
     <!--<uses-permission android:name="android.permission.READ_PHONE_STATE"/>-->
     <!--<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>-->
->>>>>>> Stashed changes
->>>>>>> 9d4110ab654358061c9116a7b27a46c3fc46e00c
-
     <!-- 添加微信权限 -->
     <!-- <uses-permission android:name="android.permission.INTERNET"/> -->
     <!-- <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/> -->
@@ -94,11 +87,6 @@
                 android:resource="@xml/rc_file_path"
                 tools:replace="android:resource" />
         </provider>
-
-
-
-
-
         <!-- since 3.0.9 Required SDK 核心功能 -->
         <provider
             android:name="cn.jpush.android.service.DataProvider"
@@ -127,7 +115,6 @@
             <intent-filter>
                 <action android:name="android.intent.action.PACKAGE_ADDED" />
                 <action android:name="android.intent.action.PACKAGE_REMOVED" />
-
                 <data android:scheme="package" />
             </intent-filter>
         </receiver>
@@ -183,7 +170,6 @@
         <activity android:name=".mine.PraiseOthers" />
         <activity android:name=".activity.PostPublishActivity" />
         <activity android:name=".mine.FlowerMinemore" />
-
         <!-- &lt;!&ndash; 微信登录 -->
         <activity
             android:name=".wxapi.WXEntryActivity"
@@ -194,21 +180,15 @@
             android:theme="@android:style/Theme.Translucent.NoTitleBar">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
-
                 <category android:name="android.intent.category.DEFAULT" />
-
                 <data android:scheme="你申请的appid" />
             </intent-filter>
         </activity>
-<<<<<<< HEAD
         <activity android:name=".mine.MNotice"></activity>
-=======
         <activity android:name=".activity.FindPlantActivity"/>
         <activity android:name=".activity.FindPlantDetailActivity"/>
         <activity android:name=".activity.PlantDetailActivity"/>
         <activity android:name=".activity.LoadingActivity"/>
-
->>>>>>> 9d4110ab654358061c9116a7b27a46c3fc46e00c
     </application>
 
 </manifest>
