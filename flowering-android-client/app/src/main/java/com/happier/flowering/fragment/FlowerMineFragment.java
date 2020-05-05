@@ -53,11 +53,16 @@ public class FlowerMineFragment extends Fragment {
         okhttpThread.start();
         //设置昵称
         TextView nickName = view.findViewById(R.id.c_nickname);
+<<<<<<< HEAD
 
 //        nickName.setText(user.getNickname());
 
        // nickName.setText(user.getNickname());
 
+=======
+//        nickName.setText(user.getNickname());
+       // nickName.setText(user.getNickname());
+>>>>>>> 33ddc12abad5711e383039917928af1c53071ff1
         collection = view.findViewById( R.id.c_m_shou);
         collection.setOnClickListener( new View.OnClickListener() {
             @Override

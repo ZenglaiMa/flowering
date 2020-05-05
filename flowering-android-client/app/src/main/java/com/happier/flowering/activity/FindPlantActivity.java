@@ -128,7 +128,7 @@ public class FindPlantActivity extends AppCompatActivity {
             Cursor cursor = getContentResolver().query(photoUri, null, null, null, null);
             if (cursor.moveToFirst()) {
                 imagePath = cursor.getString(cursor.getColumnIndex("_data"));
-                intent  = new Intent(FindPlantActivity.this,FindPlantDetailActivity.class);
+                intent  = new Intent(FindPlantActivity.this,LoadingActivity.class);
                 intent.putExtra("path",imagePath);
                 startActivity(intent);
             }
@@ -137,7 +137,7 @@ public class FindPlantActivity extends AppCompatActivity {
             Cursor cursor = getContentResolver().query(uri, null, null, null, null);
             if (cursor.moveToFirst()) {
                imagePath = cursor.getString(cursor.getColumnIndex("_data"));
-                intent  = new Intent(FindPlantActivity.this,FindPlantDetailActivity.class);
+                intent  = new Intent(FindPlantActivity.this,LoadingActivity.class);
                 intent.putExtra("path",imagePath);
                 startActivity(intent);
             }

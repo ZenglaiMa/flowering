@@ -64,11 +64,7 @@ public class CenterController {
         List<Map<String, Object>> maps = this.centerService.findThumbsMe(id);
         return new Gson().toJson(maps);
     }
-    @RequestMapping("/findThumbsMe")
-    public String findComments(@RequestParam("id") int id) {
-        List<Map<String, Object>> maps = this.centerService.findComments(id);
-        return new Gson().toJson(maps);
-    }
+
 
     /**
      * qiao  日期格式进行了修改
@@ -93,10 +89,7 @@ public class CenterController {
     public String ifAttention(@RequestParam("userInitiative") int userInitiative, @RequestParam("userPassive") int userPassive){
         return this.centerService.ifAttention(userInitiative,userPassive);
     }
-    @RequestMapping("/ifAttention")
-    public void deleteAttention(@Param("userInitiative") int userInitiative, @Param("userPassive") int userPassive){
-        this.centerService.deleteAttention(userInitiative,userPassive);
-    }    /**
+   /**
      * 個人詳情私信
      *
      * @param userId
