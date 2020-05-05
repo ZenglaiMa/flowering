@@ -31,7 +31,7 @@ public class PraiseOthers extends AppCompatActivity {
 
 
     public void setAdapters() {
-       praiseOthersAdapter= new PraiseOthersAdapter( this, dataList, R.layout.mine_collection_lisview );
+       praiseOthersAdapter= new PraiseOthersAdapter( this, dataList, R.layout.mine_praiseothers_list );
         listView.setAdapter(praiseOthersAdapter);
     }
 }

@@ -30,7 +30,7 @@ public class BePraised extends AppCompatActivity {
 
 
     public void setAdapters() {
-        bePraisedAdapter= new BePraisedAdapter( this, dataList, R.layout.mine_collection_lisview );
+        bePraisedAdapter= new BePraisedAdapter( this, dataList, R.layout.mine_bepraised_list );
         listView.setAdapter(bePraisedAdapter);
     }
 }

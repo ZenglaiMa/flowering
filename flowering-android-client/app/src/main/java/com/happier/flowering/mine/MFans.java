@@ -33,7 +33,7 @@ public class MFans extends AppCompatActivity {
 
 
     public void setAdapters() {
-        fansAdapter = new FansAdapter( this, dataList, R.layout.mine_collection_lisview );
+        fansAdapter = new FansAdapter( this, dataList, R.layout.mine_fans_list );
         listView.setAdapter( fansAdapter);
     }
 }

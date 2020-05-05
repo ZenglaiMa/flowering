@@ -31,7 +31,7 @@ public class MAttention extends AppCompatActivity {
 
 
     public void setAdapters() {
-       attentionAdapter = new AttentionAdapter( this, dataList, R.layout.mine_collection_lisview );
+       attentionAdapter = new AttentionAdapter( this, dataList, R.layout.mine_attention_list );
         listView.setAdapter( attentionAdapter);
     }
 }
