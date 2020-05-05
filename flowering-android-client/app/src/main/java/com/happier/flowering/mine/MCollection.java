@@ -21,7 +21,8 @@ public class MCollection extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_mcollection );
-
+        findViews();
+        setAdapters();
     }
 
     public void findViews() {

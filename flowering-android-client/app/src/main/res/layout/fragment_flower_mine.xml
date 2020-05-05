@@ -152,6 +152,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/c_attention"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -174,6 +175,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/c_fans"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -216,4 +218,4 @@
         android:layout_marginTop="500dp"
         android:textColor="#FF6F6F70" />
 
-</>
+</RelativeLayout>

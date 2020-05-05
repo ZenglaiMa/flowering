@@ -18,7 +18,9 @@ import com.happier.flowering.R;
 import com.happier.flowering.constant.Constant;
 import com.happier.flowering.entity.User;
 import com.happier.flowering.mine.FlowerMinemore;
+import com.happier.flowering.mine.MAttention;
 import com.happier.flowering.mine.MCollection;
+import com.happier.flowering.mine.MFans;
 import com.happier.flowering.mine.MNotice;
 import com.happier.flowering.mine.MPraise;
 
@@ -53,16 +55,16 @@ public class FlowerMineFragment extends Fragment {
         okhttpThread.start();
         //设置昵称
         TextView nickName = view.findViewById(R.id.c_nickname);
-<<<<<<< HEAD
+
 
 //        nickName.setText(user.getNickname());
 
        // nickName.setText(user.getNickname());
 
-=======
+
 //        nickName.setText(user.getNickname());
        // nickName.setText(user.getNickname());
->>>>>>> 33ddc12abad5711e383039917928af1c53071ff1
+
         collection = view.findViewById( R.id.c_m_shou);
         collection.setOnClickListener( new View.OnClickListener() {
             @Override
@@ -99,8 +101,23 @@ public class FlowerMineFragment extends Fragment {
                 startActivity(intent);
             }
         } );
+        view.findViewById( R.id.c_attention).setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), MAttention.class);
+                startActivity(intent);
+            }
+        } );
+        view.findViewById(R.id.c_fans).setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), MFans.class);
+                startActivity(intent);
+            }
+        } );
         return view;
     }
+
     private class OkhttpThread extends Thread{
 
         @Override

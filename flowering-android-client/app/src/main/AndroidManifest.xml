@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.happier.flowering">
+
     <!-- Required -->
     <permission
         android:name="${applicationId}.permission.JPUSH_MESSAGE"
@@ -16,21 +17,21 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
-    <!--添加微信权限-->
-    <!--<uses-permission android:name="android.permission.INTERNET"/>-->
-    <!--<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>-->
-    <!--<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>-->
-    <!--<uses-permission android:name="android.permission.READ_PHONE_STATE"/>-->
-    <!--<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>-->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
     <!-- 添加微信权限 -->
     <!-- <uses-permission android:name="android.permission.INTERNET"/> -->
     <!-- <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/> -->
     <!-- <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/> -->
     <!-- <uses-permission android:name="android.permission.READ_PHONE_STATE"/> -->
     <!-- <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/> -->
-    <application
-        xmlns:tools="http://schemas.android.com/tools"
+    <!-- 添加微信权限 -->
+    <!-- <uses-permission android:name="android.permission.INTERNET"/> -->
+    <!-- <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/> -->
+    <!-- <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/> -->
+    <!-- <uses-permission android:name="android.permission.READ_PHONE_STATE"/> -->
+    <!-- <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/> -->
+    <application xmlns:tools="http://schemas.android.com/tools"
         android:name=".aboutjpush.FloweringApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -75,13 +76,13 @@
             </intent-filter>
         </service>
 
-        <!--植物识别相关-->
+        <!-- 植物识别相关 -->
         <provider
-            tools:replace="android:authorities"
             android:name="android.support.v4.content.FileProvider"
             android:authorities="com.happier.FileProvider"
             android:exported="false"
-            android:grantUriPermissions="true">
+            android:grantUriPermissions="true"
+            tools:replace="android:authorities">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/rc_file_path"
@@ -115,6 +116,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.PACKAGE_ADDED" />
                 <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
                 <data android:scheme="package" />
             </intent-filter>
         </receiver>
@@ -180,15 +182,19 @@
             android:theme="@android:style/Theme.Translucent.NoTitleBar">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
+
                 <data android:scheme="你申请的appid" />
             </intent-filter>
         </activity>
-        <activity android:name=".mine.MNotice"></activity>
-        <activity android:name=".activity.FindPlantActivity"/>
-        <activity android:name=".activity.FindPlantDetailActivity"/>
-        <activity android:name=".activity.PlantDetailActivity"/>
-        <activity android:name=".activity.LoadingActivity"/>
+        <activity android:name=".mine.MNotice" />
+        <activity android:name=".activity.FindPlantActivity" />
+        <activity android:name=".activity.FindPlantDetailActivity" />
+        <activity android:name=".activity.PlantDetailActivity" />
+        <activity android:name=".activity.LoadingActivity" />
+        <activity android:name=".mine.MAttention" />
+        <activity android:name=".mine.MFans"></activity>
     </application>
 
 </manifest>
