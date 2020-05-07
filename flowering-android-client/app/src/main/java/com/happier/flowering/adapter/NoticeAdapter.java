@@ -54,11 +54,17 @@ public class NoticeAdapter extends BaseAdapter {
             LayoutInflater inflater = LayoutInflater.from( context );
             convertView = inflater.inflate( itemLayoutId, null );
         }
-
-//        ImageView img = convertView.findViewById( R.id.c_iv_colectionImg);
-//        img.setImageResource(contents.get( position ).toString());
-//        TextView textView = convertView.findViewById( R.id.c_tv_collectionText);
-//        textView.setText(contents.get(position).toString());
+//  "CommentContent", "CommentTime","UserName", "UserImg", "PostContent", "PostImg"
+        TextView CommentContent = convertView.findViewById(R.id.c_tv_notice_comment_content);
+        TextView CommentTime = convertView.findViewById(R.id.c_tv_notice_comment_time);
+        TextView UserName = convertView.findViewById(R.id.c_tv_notice_user_name);
+        ImageView UserImg = convertView.findViewById(R.id.c_iv_notice_user_Img);
+        ImageView PostImg = convertView.findViewById(R.id.c_iv_notice_post_Img);
+        CommentContent.setText(contents.get(position).get("CommentContent").toString());
+        CommentTime.setText(contents.get(position).get("CommentTime").toString());
+        UserName.setText(contents.get(position).get("UserName").toString());
+        UserImg.setImageResource((int)contents.get(position).get("UserImg"));
+        PostImg.setImageResource((int)contents.get(position).get("PostImg"));
         return convertView;
     }
 }

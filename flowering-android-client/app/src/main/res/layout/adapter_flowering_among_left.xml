@@ -3,12 +3,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-
     <TextView
         android:id="@+id/z_tv_flowering_among_left"
         android:layout_width="wrap_content"
         android:layout_height="90dp"
         android:ems="1"
+        android:padding="2dp"
         android:layout_gravity="center"
-        android:textSize="18dp" />
+        android:textSize="17dp" />
 </LinearLayout>
