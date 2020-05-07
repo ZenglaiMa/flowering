@@ -36,11 +36,10 @@ public class LoadingActivity extends AppCompatActivity {
     private OkHttpClient client = new OkHttpClient();
     private CompressImageUtil compressImageUtil = new CompressImageUtil();
     private File mFile;
-
+    ZLoadingDialog dialog = new ZLoadingDialog(LoadingActivity.this);
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ZLoadingDialog dialog = new ZLoadingDialog(LoadingActivity.this);
         dialog.setLoadingBuilder(Z_TYPE.LEAF_ROTATE)//设置类型
                 .setLoadingColor(Color.GREEN)//颜色
                 .setHintText("Loading...")
@@ -81,6 +80,7 @@ public class LoadingActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 String plantJson = response.body().string();
+                dialog.dismiss();
                 finish();
                 Intent intent2 = new Intent(LoadingActivity.this,FindPlantDetailActivity.class);
                 intent2.putExtra("plantInfos",plantJson);
