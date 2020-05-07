@@ -51,100 +51,99 @@ public class FlowerMineFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate( R.layout.fragment_flower_mine, container, false );
-        OkhttpThread okhttpThread = new OkhttpThread();
-        okhttpThread.start();
+
+        getInfo();
         //设置昵称
-        TextView nickName = view.findViewById(R.id.c_nickname);
+        TextView nickName = view.findViewById( R.id.c_nickname );
 
 
 //        nickName.setText(user.getNickname());
 
-       // nickName.setText(user.getNickname());
+        // nickName.setText(user.getNickname());
 
 
 //        nickName.setText(user.getNickname());
-       // nickName.setText(user.getNickname());
-
-        collection = view.findViewById( R.id.c_m_shou);
+        // nickName.setText(user.getNickname());
+        //跳转收藏
+        collection = view.findViewById( R.id.c_m_shou );
         collection.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(),MCollection.class );
+                Intent intent = new Intent( getActivity(), MCollection.class );
                 startActivity( intent );
             }
         } );
+        //跳转获赞
         praise = view.findViewById( R.id.c_praise );
         praise.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), MPraise.class );
+                Intent intent = new Intent( getActivity(), MPraise.class );
                 startActivity( intent );
             }
         } );
-        view.findViewById(R.id.c_iv_center).setOnClickListener( new View.OnClickListener() {
+        //调到个人主页
+        view.findViewById( R.id.c_iv_center ).setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(getActivity(), FlowerMinemore.class);
-                intent.putExtra("username",user.getNickname());
-                intent.putExtra("userImg", user.getHeadImg());
-                intent.putExtra( "address",user.getAddress());
-                intent.putExtra( "sex",user.getSex() );
-                intent.putExtra( "profile",user.getProfile());
-                startActivity(intent);
+                intent.setClass( getActivity(), FlowerMinemore.class );
+                intent.putExtra( "username", user.getNickname() );
+                intent.putExtra( "userImg", user.getHeadImg() );
+                intent.putExtra( "address", user.getAddress() );
+                intent.putExtra( "sex", user.getSex() );
+                intent.putExtra( "profile", user.getProfile() );
+                startActivity( intent );
             }
         } );
-        view.findViewById(R.id.c_m_tong).setOnClickListener( new View.OnClickListener() {
+        //通知
+        view.findViewById( R.id.c_m_tong ).setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), MNotice.class);
-                startActivity(intent);
+                Intent intent = new Intent( getActivity(), MNotice.class );
+                startActivity( intent );
             }
         } );
-        view.findViewById( R.id.c_attention).setOnClickListener( new View.OnClickListener() {
+        //关注
+        view.findViewById( R.id.c_attention ).setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), MAttention.class);
-                startActivity(intent);
+                Intent intent = new Intent( getActivity(), MAttention.class );
+                startActivity( intent );
             }
         } );
-        view.findViewById(R.id.c_fans).setOnClickListener( new View.OnClickListener() {
+        //粉丝
+        view.findViewById( R.id.c_fans ).setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), MFans.class);
-                startActivity(intent);
+                Intent intent = new Intent( getActivity(), MFans.class );
+                startActivity( intent );
             }
         } );
         return view;
     }
 
-    private class OkhttpThread extends Thread{
+    //得到个人基本信息
+    public void getInfo() {
+        OkHttpClient okHttpClient = new OkHttpClient();
+        Request request = new Request.Builder().url( Constant.BASE_IP + "/center/userInfo" + "?id=" + 1 ).build();
+        Call call = okHttpClient.newCall( request );
 
-        @Override
-        public void run() {
-            super.run();
-            OkHttpClient okHttpClient = new OkHttpClient();
-            Request request = new Request.Builder().url(Constant.BASE_IP + "/center/userInfo" + "?id=" + 1 ).build();
-            Call call = okHttpClient.newCall(request);
+        call.enqueue( new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                e.printStackTrace();
+            }
 
-            call.enqueue( new Callback() {
-                @Override
-                public void onFailure(Call call, IOException e) {
-                    e.printStackTrace();
-                }
-
-                @Override
-                public void onResponse(Call call, Response response) throws IOException {
-                    String info = response.body().string();
-                    Type type = new TypeToken<User>() {
-                    }.getType();
-                    user = new Gson().fromJson( info, type );
-                    Log.e("用户",user.getNickname());
-                }
-            } );
-
-        }
-
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                String info = response.body().string();
+                Type type = new TypeToken<User>() {
+                }.getType();
+                user = new Gson().fromJson( info, type );
+                // Log.e("用户",user.getNickname());
+            }
+        } );
     }
 
 

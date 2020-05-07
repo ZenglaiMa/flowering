@@ -5,6 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.happier.flowering.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,11 +53,16 @@ public class PraiseOthersAdapter extends BaseAdapter {
             LayoutInflater inflater = LayoutInflater.from( context );
             convertView = inflater.inflate( itemLayoutId, null );
         }
+        //"userName""userImg""postTxt""postImg"
+        TextView userName = convertView.findViewById( R.id.c_tv_PraiseOthers_user_name);
+        ImageView userImg = convertView.findViewById(R.id.c_iv_PraiseOthers_user_Img);
+        TextView postTxt = convertView.findViewById(R.id.c_tv_PraiseOthers_post_txt);
+        ImageView postImg = convertView.findViewById( R.id.c_iv_PraiseOthers_post_Img);
+        userName.setText( contents.get( position ).get("userName").toString());
+        userImg.setImageResource( (int)contents.get( position ).get("userImg") );
+        postTxt.setText( contents.get( position ).get("postTxt ").toString());
+        postImg.setImageResource((int)contents.get( position ).get("postImg"));
 
-//        ImageView img = convertView.findViewById( R.id.c_iv_colectionImg);
-//        img.setImageResource(contents.get( position ).toString());
-//        TextView textView = convertView.findViewById( R.id.c_tv_collectionText);
-//        textView.setText(contents.get(position).toString());
         return convertView;
     }
 }

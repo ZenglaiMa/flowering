@@ -5,6 +5,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.happier.flowering.R;
+import com.happier.flowering.entity.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,10 +17,10 @@ import java.util.Map;
 
 public class FansAdapter    extends BaseAdapter{
         private Context context;
-        private List<Map<String,Object>> contents = new ArrayList<>();
+        private  List<User> contents = new ArrayList<>();
         private int itemLayoutId;
 
-        public FansAdapter(Context context,List<Map<String,Object>> contents, int itemLayoutId) {
+        public FansAdapter(Context context, List<User> contents, int itemLayoutId) {
             this.context = context;
             this.contents = contents;
             this.itemLayoutId = itemLayoutId;
@@ -49,11 +54,10 @@ public class FansAdapter    extends BaseAdapter{
                 LayoutInflater inflater = LayoutInflater.from( context );
                 convertView = inflater.inflate( itemLayoutId, null );
             }
-
-//        ImageView img = convertView.findViewById( R.id.c_iv_colectionImg);
-//        img.setImageResource(contents.get( position ).toString());
-//        TextView textView = convertView.findViewById( R.id.c_tv_collectionText);
-//        textView.setText(contents.get(position).toString());
+            ImageView img = convertView.findViewById( R.id.c_iv_fansImg);
+            img.setImageResource( Integer.parseInt(contents.get(position).getHeadImg()));
+            TextView name = convertView.findViewById(R.id.c_tv_fansName);
+            name.setText(contents.get(position).getNickname());
             return convertView;
         }
 }

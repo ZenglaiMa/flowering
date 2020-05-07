@@ -65,6 +65,11 @@ public class CenterController {
         return new Gson().toJson(maps);
     }
 
+    @RequestMapping("/findComments")
+    public String findComments(@RequestParam("id") int id) {
+        List<Map<String, Object>> maps = this.centerService.findComments(id);
+        return new Gson().toJson(maps);
+    }
 
     /**
      * qiao  日期格式进行了修改
@@ -115,8 +120,6 @@ public class CenterController {
             return"ok";
         }
         return "fail";
-
-
     }
 
 }
