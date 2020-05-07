@@ -173,21 +173,21 @@
         <activity android:name=".activity.PostPublishActivity" />
         <activity android:name=".mine.FlowerMinemore" />
         <!-- &lt;!&ndash; 微信登录 -->
-        <activity
-            android:name=".wxapi.WXEntryActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:exported="true"
-            android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
+        <!--<activity-->
+            <!--android:name=".wxapi.WXEntryActivity"-->
+            <!--android:configChanges="keyboardHidden|orientation|screenSize"-->
+            <!--android:exported="true"-->
+            <!--android:launchMode="singleTop"-->
+            <!--android:screenOrientation="portrait"-->
+            <!--android:theme="@android:style/Theme.Translucent.NoTitleBar">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.VIEW" />-->
 
-                <category android:name="android.intent.category.DEFAULT" />
+                <!--<category android:name="android.intent.category.DEFAULT" />-->
 
-                <data android:scheme="你申请的appid" />
-            </intent-filter>
-        </activity>
+                <!--<data android:scheme="你申请的appid" />-->
+            <!--</intent-filter>-->
+        <!--</activity>-->
         <activity android:name=".mine.MNotice" />
         <activity android:name=".activity.FindPlantActivity" />
         <activity android:name=".activity.FindPlantDetailActivity" />
