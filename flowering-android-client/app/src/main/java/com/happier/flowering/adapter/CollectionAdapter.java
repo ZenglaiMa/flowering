@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 
 import com.happier.flowering.R;
+import com.happier.flowering.entity.Article;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,10 +19,10 @@ import java.util.Map;
 public class CollectionAdapter extends BaseAdapter{
 
     private Context context;
-    private List<Map<String,Object>> contents = new ArrayList<>();
+    private List<Article> contents = new ArrayList<>();
     private int itemLayoutId;
 
-    public CollectionAdapter(Context context,List<Map<String,Object>> contents, int itemLayoutId) {
+    public CollectionAdapter(Context context,List<Article> contents, int itemLayoutId) {
         this.context = context;
         this.contents = contents;
         this.itemLayoutId = itemLayoutId;
@@ -57,9 +58,9 @@ public class CollectionAdapter extends BaseAdapter{
         }
 
         ImageView img = convertView.findViewById( R.id.c_iv_colectionImg);
-//        img.setImageResource(contents.get( position ).toString());
+        img.setImageResource( Integer.parseInt(contents.get(position).getImg()));
         TextView textView = convertView.findViewById( R.id.c_tv_collectionText);
-//        textView.setText(contents.get(position).toString());
+        textView.setText(contents.get(position).getContent());
         return convertView;
     }
 }

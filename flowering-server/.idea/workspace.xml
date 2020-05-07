@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3e9a412e-9363-49e6-83a2-a54e93ddf1fd" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/src/main/resources/static/article-img/z_10.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/static/article-img/z_11.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/static/article-img/z_12.jpg" afterDir="false" />
@@ -21,6 +22,13 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flowering-server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/flowering-server.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/article-img/z_7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/article-img/z_7.jpg" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/adapter/BePraisedAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/adapter/BePraisedAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/fragment/FlowerMineFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/fragment/FlowerMineFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/mine/BePraised.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/mine/BePraised.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/happier/flowering/flowering/center/controller/CenterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/happier/flowering/flowering/center/controller/CenterController.java" afterDir="false" />
+>>>>>>> c376b7578ed360869eb43c6506157315c5fb7a6c
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +81,9 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
@@ -129,8 +140,13 @@
       <updated>1588657300555</updated>
       <workItem from="1588657303556" duration="3550000" />
       <workItem from="1588725842686" duration="1114000" />
+<<<<<<< HEAD
       <workItem from="1588758676807" duration="2720000" />
       <workItem from="1588816787986" duration="2959000" />
+=======
+      <workItem from="1588824915408" duration="2309000" />
+      <workItem from="1588837226085" duration="2310000" />
+>>>>>>> c376b7578ed360869eb43c6506157315c5fb7a6c
     </task>
     <servers />
   </component>
@@ -151,6 +167,10 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
+    <state x="275" y="25" key="#Project_Structure" timestamp="1588826897726">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="25" key="#Project_Structure/0.0.1366.728@0.0.1366.728" timestamp="1588826897726" />
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588657419986">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -200,13 +220,19 @@
     </state>
     <state width="1237" height="281" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1588840687270" />
     <state width="1877" height="803" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588660973826" />
+<<<<<<< HEAD
     <state x="142" y="0" key="SettingsEditor" timestamp="1588773919178">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1588773919178" />
     <state x="640" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1588657303409">
       <screen x="0" y="0" width="1920" height="1040" />
+=======
+    <state x="455" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1588837226500">
+      <screen x="0" y="0" width="1366" height="728" />
+>>>>>>> c376b7578ed360869eb43c6506157315c5fb7a6c
     </state>
+    <state x="455" y="241" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1588837226500" />
     <state x="640" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588657303409" />
   </component>
 </project>
