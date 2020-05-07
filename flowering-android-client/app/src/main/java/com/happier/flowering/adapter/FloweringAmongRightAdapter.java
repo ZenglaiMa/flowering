@@ -57,7 +57,7 @@ public class FloweringAmongRightAdapter extends BaseAdapter {
         TextView tvTitle = convertView.findViewById(R.id.z_tv_title);
         TextView tvReadingNum = convertView.findViewById(R.id.z_tv_reading_num);
 
-        tvType.setText(dataSource.get(position).getType().getTypeName());
+        tvType.setText("—— " + dataSource.get(position).getType().getTypeName() +" ——");
         tvTitle.setText(dataSource.get(position).getTitle());
         tvOverview.setText(dataSource.get(position).getOverview());
         tvReadingNum.setText(dataSource.get(position).getReadingNum()+"人阅读");

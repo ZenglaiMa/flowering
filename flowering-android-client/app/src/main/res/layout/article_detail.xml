@@ -20,8 +20,12 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:clickable="false"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:longClickable="false"
+            android:maxHeight="300.0dip"
+            android:orientation="horizontal"
+            android:scrollbars="none">
 
             <ImageView
                 android:id="@+id/z_iv_star"

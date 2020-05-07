@@ -1,7 +1,9 @@
 package com.happier.flowering.activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Point;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LevelListDrawable;
@@ -9,11 +11,13 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
+import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
@@ -72,6 +76,7 @@ public class ArticleDetail extends AppCompatActivity {
         article = new Gson().fromJson(intent.getStringExtra("article"), Article.class);
         init();
         tv.setText(Html.fromHtml(article.getContent(), new MImageGetter(), null));
+        tv.setMovementMethod(ScrollingMovementMethod.getInstance());
     }
 
     public void init() {
@@ -127,9 +132,14 @@ public class ArticleDetail extends AppCompatActivity {
             @Override
             public void run() {
                 if (bitmap != null) {
+                    Point p = new Point();
+                    //获取窗口管理器
+                    WindowManager wm = (WindowManager) getBaseContext().getSystemService(Context.WINDOW_SERVICE);
+                    wm.getDefaultDisplay().getSize(p);
                     BitmapDrawable drawable = new BitmapDrawable(bitmap);
+                    float a = p.x/bitmap.getWidth();
                     draw.addLevel(1, 1, drawable);
-                    draw.setBounds(0, 0, bitmap.getWidth(), bitmap.getHeight());
+                    draw.setBounds(0, 0, p.x, (int)(bitmap.getHeight()*a));
                     draw.setLevel(1);
 
                     CharSequence charSequence = tv.getText();

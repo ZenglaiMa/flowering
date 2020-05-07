@@ -144,6 +144,7 @@ public class FlowerAmongFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 getArticlesByType(types.get(position).getTypeId());
+
             }
         });
     }

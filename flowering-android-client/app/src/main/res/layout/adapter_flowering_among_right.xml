@@ -10,16 +10,19 @@
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:gravity="center"
+        android:textColor="#C0C0C0"
         android:text="显示文章类型"
-        android:textSize="18dp" />
+        android:textSize="13dp" />
 
     <ImageView
         android:id="@+id/z_iv_img"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:scaleType="fitXY" />
+        android:layout_height="wrap_content"
+        android:scaleType="fitCenter" />
 
     <TextView
+        android:textSize="20dp"
+        android:textStyle="bold"
         android:id="@+id/z_tv_title"
         android:layout_width="match_parent"
         android:layout_height="40dp"
@@ -29,7 +32,7 @@
     <TextView
         android:id="@+id/z_tv_overview"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="20dp"
         android:gravity="fill_vertical"
         android:text="文章一句话描述" />
 
@@ -40,15 +43,18 @@
 
         <TextView
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textColor="#C0C0C0"
             android:gravity="fill_vertical"
             android:text="文：flowering" />
+
         <TextView
+            android:textColor="#C0C0C0"
             android:id="@+id/z_tv_reading_num"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:gravity="fill_vertical"
             android:text="" />
     </LinearLayout>
