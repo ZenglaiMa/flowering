@@ -36,22 +36,22 @@ public class DiscoveryController {
 
 
     @RequestMapping("/test")
-    public String test(){
+    public String test() {
         return "planttest";
     }
 
     @RequestMapping("/findplant")
-    public String findPlant(HttpServletRequest request) throws IOException{
-        File file = new File(this.getClass().getResource("/").getPath()+"plant-image");
-        if(!file.exists()){//如果文件夹不存在
+    public String findPlant(HttpServletRequest request) throws IOException {
+        File file = new File((this.getClass().getResource("/").getPath() + "plant-image").replace("%20", " "));
+        if (!file.exists()) {//如果文件夹不存在
             file.mkdir();//创建文件夹
         }
         String path = "plant-image/" + System.currentTimeMillis() + ".jpg";
-        String plantInfo=null;
+        String plantInfo = null;
         try {
             InputStream is = request.getInputStream();
 
-            String realPath = this.getClass().getResource("/").getPath()+path;
+            String realPath = (this.getClass().getResource("/").getPath() + path).replace("%20", " ");
             FileOutputStream fos = new FileOutputStream(realPath);
             byte[] buffer = new byte[512];
             int len;
@@ -66,7 +66,7 @@ public class DiscoveryController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        if (plantInfo==null){
+        if (plantInfo == null) {
             return "plant not found";
         }
 
