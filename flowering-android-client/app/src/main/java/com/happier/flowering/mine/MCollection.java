@@ -2,6 +2,7 @@ package com.happier.flowering.mine;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.ListView;
 
 import com.google.gson.Gson;
@@ -33,21 +34,8 @@ public class MCollection extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_mcollection );
-        getCollection();
-        findViews();
-        setAdapters();
-    }
 
-    public void findViews() {
-        listView = findViewById( R.id.c_lv_collection );
-    }
-
-
-    public void setAdapters() {
-        CollectionAdapter = new CollectionAdapter( this, dataList, R.layout.mine_collection_lisview );
-        listView.setAdapter( CollectionAdapter );
-    }
-    public void getCollection(){
+        Log.e("收藏",dataList.toString());
         OkHttpClient okHttpClient = new OkHttpClient();
         Request request = new Request.Builder().url( Constant.BASE_IP + "/center/findCollect" + "?id=" + 1 ).build();
         Call call = okHttpClient.newCall( request );
@@ -64,7 +52,20 @@ public class MCollection extends AppCompatActivity {
                 Type type = new TypeToken<List<Article>>() {
                 }.getType();
                 dataList= new Gson().fromJson( info, type );
+                findViews();
+                setAdapters();
             }
         } );
+
+    }
+
+    public void findViews() {
+        listView = findViewById( R.id.c_lv_collection );
+    }
+
+
+    public void setAdapters() {
+        CollectionAdapter = new CollectionAdapter( this, dataList, R.layout.mine_collection_lisview );
+        listView.setAdapter( CollectionAdapter );
     }
 }

@@ -63,8 +63,8 @@ public class NoticeAdapter extends BaseAdapter {
         CommentContent.setText(contents.get(position).get("CommentContent").toString());
         CommentTime.setText(contents.get(position).get("CommentTime").toString());
         UserName.setText(contents.get(position).get("UserName").toString());
-        UserImg.setImageResource((int)contents.get(position).get("UserImg"));
-        PostImg.setImageResource((int)contents.get(position).get("PostImg"));
+//        UserImg.setImageResource((int)contents.get(position).get("UserImg"));
+//        PostImg.setImageResource((int)contents.get(position).get("PostImg"));
         return convertView;
     }
 }

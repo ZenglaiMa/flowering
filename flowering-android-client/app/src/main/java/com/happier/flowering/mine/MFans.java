@@ -2,6 +2,7 @@ package com.happier.flowering.mine;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ListView;
 
 import com.google.gson.Gson;
@@ -34,21 +35,8 @@ public class MFans extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_mfans );
-        findViews();
-        setAdapters();
-    }
 
-
-    public void findViews() {
-        listView = findViewById( R.id.c_lv_collection );
-    }
-
-
-    public void setAdapters() {
-        fansAdapter = new FansAdapter( this, dataList, R.layout.mine_fans_list );
-        listView.setAdapter( fansAdapter);
-    }
-    public void getFans(){
+        Log.e("粉丝",dataList.toString());
         OkHttpClient okHttpClient = new OkHttpClient();
         Request request = new Request.Builder().url( Constant.BASE_IP + "/center/findPassive" + "?id=" + 1 ).build();
         Call call = okHttpClient.newCall( request );
@@ -65,7 +53,22 @@ public class MFans extends AppCompatActivity {
                 Type type = new TypeToken<List<User>>() {
                 }.getType();
                 dataList= new Gson().fromJson( info, type );
+                findViews();
+                setAdapters();
             }
         } );
+
     }
+
+
+    public void findViews() {
+        listView = findViewById( R.id.c_lv_mFans );
+    }
+
+
+    public void setAdapters() {
+        fansAdapter = new FansAdapter( this, dataList, R.layout.mine_fans_list );
+        listView.setAdapter( fansAdapter);
+    }
+
 }

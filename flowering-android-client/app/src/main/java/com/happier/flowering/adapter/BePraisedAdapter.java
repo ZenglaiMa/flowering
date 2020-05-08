@@ -59,13 +59,9 @@ public class BePraisedAdapter extends BaseAdapter {
        TextView postTxt = convertView.findViewById(R.id.c_tv_bePraised_post_txt);
        ImageView postImg = convertView.findViewById( R.id.c_iv_bePraised_post_Img);
         userName.setText( contents.get( position ).get("userName").toString());
-        userImg.setImageResource( (int)contents.get( position ).get("userImg") );
-        postTxt.setText( contents.get( position ).get("postTxt ").toString());
-        postImg.setImageResource((int)contents.get( position ).get("postImg"));
-//        ImageView img = convertView.findViewById( R.id.c_iv_colectionImg);
-//        img.setImageResource(contents.get( position ).toString());
-//        TextView textView = convertView.findViewById( R.id.c_tv_collectionText);
-//        textView.setText(contents.get(position).toString());
+//        userImg.setImageResource( (int)contents.get( position ).get("userImg") );
+        postTxt.setText( contents.get( position ).get("postTxt").toString());
+//        postImg.setImageResource((int)contents.get( position ).get("postImg"));
         return convertView;
     }
 }

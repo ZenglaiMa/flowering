@@ -58,7 +58,7 @@ public class CollectionAdapter extends BaseAdapter{
         }
 
         ImageView img = convertView.findViewById( R.id.c_iv_colectionImg);
-        img.setImageResource( Integer.parseInt(contents.get(position).getImg()));
+//        img.setImageResource( Integer.parseInt(contents.get(position).getImg()));
         TextView textView = convertView.findViewById( R.id.c_tv_collectionText);
         textView.setText(contents.get(position).getContent());
         return convertView;

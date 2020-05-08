@@ -32,42 +32,49 @@ public class CenterController {
     public String getUser(@RequestParam("id") int id) {
         User user = this.centerService.findUser(id);
         System.out.println(user.getNickname());
+        System.out.println("用户个人信息"+new Gson().toJson(user));
         return new Gson().toJson(user);
     }
 
     @RequestMapping("/findInitiative")
     public String findInitiative(@RequestParam("id") int id) {
         List<User> users = this.centerService.findInitiative(id);
+        System.out.println("我的关注"+new Gson().toJson(users));
         return new Gson().toJson(users);
     }
 
     @RequestMapping("/findPassive")
     public String findPassive(@RequestParam("id") int id) {
         List<User> users = this.centerService.findPassive(id);
+        System.out.println("我的粉丝"+new Gson().toJson(users));
         return new Gson().toJson(users);
     }
 
     @RequestMapping("/findCollect")
     public String findCollect(@RequestParam("id") int id) {
         List<Article> articles = this.centerService.findCollect(id);
+        System.out.println("我的收藏"+new Gson().toJson(articles));
         return new Gson().toJson(articles);
     }
 
     @RequestMapping("/findThumbsOther")
     public String findThumbsOther(@RequestParam("id") int id) {
         List<Map<String, Object>> maps = this.centerService.findThumbsOther(id);
+        System.out.println("我的点赞"+new Gson().toJson(maps));
         return new Gson().toJson(maps);
     }
 
     @RequestMapping("/findThumbsMe")
     public String findThumbsMe(@RequestParam("id") int id) {
         List<Map<String, Object>> maps = this.centerService.findThumbsMe(id);
+        System.out.println("我的获赞"+new Gson().toJson(maps));
         return new Gson().toJson(maps);
     }
 
     @RequestMapping("/findComments")
     public String findComments(@RequestParam("id") int id) {
         List<Map<String, Object>> maps = this.centerService.findComments(id);
+        System.out.println("我的通知"+new Gson().toJson(maps));
         return new Gson().toJson(maps);
     }
 

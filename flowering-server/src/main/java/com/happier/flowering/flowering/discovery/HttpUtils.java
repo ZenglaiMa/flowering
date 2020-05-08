@@ -31,10 +31,10 @@ import java.util.List;
 import java.util.Map;
 
 public class HttpUtils {
-	
+
 	/**
 	 * get
-	 * 
+	 *
 	 * @param host
 	 * @param path
 	 * @param method
@@ -53,13 +53,13 @@ public class HttpUtils {
         for (Map.Entry<String, String> e : headers.entrySet()) {
         	request.addHeader(e.getKey(), e.getValue());
         }
-        
+
         return httpClient.execute(request);
     }
-	
+
 	/**
 	 * post form
-	 * 
+	 *
 	 * @param host
 	 * @param path
 	 * @param method
@@ -93,11 +93,11 @@ public class HttpUtils {
         }
 
         return httpClient.execute(request);
-    }	
-	
+    }
+
 	/**
 	 * Post String
-	 * 
+	 *
 	 * @param host
 	 * @param path
 	 * @param method
@@ -125,10 +125,10 @@ public class HttpUtils {
 
         return httpClient.execute(request);
     }
-	
+
 	/**
 	 * Post stream
-	 * 
+	 *
 	 * @param host
 	 * @param path
 	 * @param method
@@ -156,7 +156,7 @@ public class HttpUtils {
 
         return httpClient.execute(request);
     }
-	
+
 	/**
 	 * Put String
 	 * @param host
@@ -186,7 +186,7 @@ public class HttpUtils {
 
         return httpClient.execute(request);
     }
-	
+
 	/**
 	 * Put stream
 	 * @param host
@@ -216,10 +216,10 @@ public class HttpUtils {
 
         return httpClient.execute(request);
     }
-	
+
 	/**
 	 * Delete
-	 *  
+	 *
 	 * @param host
 	 * @param path
 	 * @param method
@@ -238,10 +238,10 @@ public class HttpUtils {
         for (Map.Entry<String, String> e : headers.entrySet()) {
         	request.addHeader(e.getKey(), e.getValue());
         }
-        
+
         return httpClient.execute(request);
     }
-	
+
 	private static String buildUrl(String host, String path, Map<String, String> querys) throws UnsupportedEncodingException {
     	StringBuilder sbUrl = new StringBuilder();
     	sbUrl.append(host);
@@ -262,26 +262,26 @@ public class HttpUtils {
         			if (!StringUtils.isBlank(query.getValue())) {
         				sbQuery.append("=");
         				sbQuery.append(URLEncoder.encode(query.getValue(), "utf-8"));
-        			}        			
+        			}
                 }
         	}
         	if (0 < sbQuery.length()) {
         		sbUrl.append("?").append(sbQuery);
         	}
         }
-    	
+
     	return sbUrl.toString();
     }
-	
+
 	private static HttpClient wrapClient(String host) {
 		HttpClient httpClient = new DefaultHttpClient();
 		if (host.startsWith("https://")) {
 			sslClient(httpClient);
 		}
-		
+
 		return httpClient;
 	}
-	
+
 	private static void sslClient(HttpClient httpClient) {
         try {
             SSLContext ctx = SSLContext.getInstance("TLS");
@@ -290,10 +290,10 @@ public class HttpUtils {
                     return null;
                 }
                 public void checkClientTrusted(X509Certificate[] xcs, String str) {
-                	
+
                 }
                 public void checkServerTrusted(X509Certificate[] xcs, String str) {
-                	
+
                 }
             };
             ctx.init(null, new TrustManager[] { tm }, null);
