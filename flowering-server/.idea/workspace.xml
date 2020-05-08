@@ -2,28 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2fd2d116-7c56-4cab-b16a-12a8dc75878a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../flowering-android-client/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/adapter/AttentionAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/adapter/AttentionAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/adapter/BePraisedAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/adapter/BePraisedAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/adapter/CollectionAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/adapter/CollectionAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/adapter/FansAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/adapter/FansAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/adapter/NoticeAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/adapter/NoticeAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/adapter/PraiseOthersAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/adapter/PraiseOthersAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/constant/Constant.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/constant/Constant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/fragment/FlowerMineFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/fragment/FlowerMineFragment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/mine/BePraised.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/mine/BePraised.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/mine/MAttention.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/mine/MAttention.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/mine/MCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/mine/MCollection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/mine/MFans.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/mine/MFans.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/mine/MNotice.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/mine/MNotice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/mine/FlowerMinemore.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/mine/FlowerMinemore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/mine/MPraise.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/mine/MPraise.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/mine/PraiseOthers.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/mine/PraiseOthers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/res/layout/activity_mpraise.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/res/layout/activity_mpraise.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/happier/flowering/flowering/center/controller/CenterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/happier/flowering/flowering/center/controller/CenterController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/happier/flowering/flowering/discovery/HttpUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/happier/flowering/flowering/discovery/HttpUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/CommentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/CommentMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/PostMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/PostMapper.xml" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,111 +21,228 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-<<<<<<< HEAD
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
     <option name="FILTER_INFO" value="true" />
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
-=======
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="F:/apache-maven-3.5.4" />
-        <option name="userSettingsFile" value="F:\apache-maven-3.5.4\conf\settings.xml" />
-      </MavenGeneralSettings>
-    </option>
->>>>>>> bbcad49fd9803410b7b521f53b5509dc7c9ac6c1
+    <component name="MavenImportPreferences">
+      <option name="generalSettings">
+        <MavenGeneralSettings>
+          <option name="mavenHome" value="F:/apache-maven-3.5.4" />
+          <option name="userSettingsFile" value="F:\apache-maven-3.5.4\conf\settings.xml" />
+        </MavenGeneralSettings>
+      </option>
+    </component>
+    <component name="ProjectId" id="1bZyGazPpueUqBS615ltmej8cse" />
+    <component name="ProjectViewState">
+      <option name="hideEmptyMiddlePackages" value="true" />
+      <option name="showExcludedFiles" value="true" />
+      <option name="showLibraryContents" value="true" />
+    </component>
+    <component name="PropertiesComponent">
+      <property name="RequestMappingsPanelOrder0" value="0" />
+      <property name="RequestMappingsPanelOrder1" value="1" />
+      <property name="RequestMappingsPanelWidth0" value="75" />
+      <property name="RequestMappingsPanelWidth1" value="75" />
+      <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+      <property name="WebServerToolWindowFactoryState" value="false" />
+      <property name="aspect.path.notification.shown" value="true" />
+      <property name="node.js.detected.package.eslint" value="true" />
+      <property name="node.js.detected.package.tslint" value="true" />
+      <property name="node.js.path.for.package.eslint" value="project" />
+      <property name="node.js.path.for.package.tslint" value="project" />
+      <property name="node.js.selected.package.eslint" value="(autodetect)" />
+      <property name="node.js.selected.package.tslint" value="(autodetect)" />
+      <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    </component>
+    <component name="RestServicesNavigator">
+      <treeState>
+        <expand>
+          <path>
+            <item name="Found 29 services " type="fcff1e1b:RestServiceStructure$RootNode" />
+          </path>
+          <path>
+            <item name="Found 29 services " type="fcff1e1b:RestServiceStructure$RootNode" />
+            <item name="flowering-server" type="c588b436:RestServiceStructure$ProjectNode" />
+          </path>
+        </expand>
+        <select />
+      </treeState>
+    </component>
+    <component name="RunDashboard">
+      <option name="ruleStates">
+        <list>
+          <RuleState>
+            <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+          </RuleState>
+          <RuleState>
+            <option name="name" value="StatusDashboardGroupingRule" />
+          </RuleState>
+        </list>
+      </option>
+    </component>
+    <component name="RunManager">
+      <configuration name="FloweringApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+        <module name="flowering-server" />
+        <extension name="coverage">
+          <pattern>
+            <option name="PATTERN" value="com.happier.flowering.*" />
+            <option name="ENABLED" value="true" />
+          </pattern>
+        </extension>
+        <option name="SPRING_BOOT_MAIN_CLASS" value="com.happier.flowering.FloweringApplication" />
+        <method v="2">
+          <option name="Make" enabled="true" />
+        </method>
+      </configuration>
+    </component>
+    <component name="ServiceViewManager">
+      <option name="viewStates">
+        <list>
+          <serviceView>
+            <option name="contentProportion" value="0.5942813" />
+            <treeState>
+              <expand>
+                <path>
+                  <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                  <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                </path>
+                <path>
+                  <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                  <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                  <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                </path>
+              </expand>
+              <select />
+            </treeState>
+          </serviceView>
+        </list>
+      </option>
+    </component>
+    <component name="SvnConfiguration">
+      <configuration />
+    </component>
+    <component name="TaskManager">
+      <task active="true" id="Default" summary="Default task">
+        <changelist id="2fd2d116-7c56-4cab-b16a-12a8dc75878a" name="Default Changelist" comment="" />
+        <created>1588853671316</created>
+        <option name="number" value="Default" />
+        <option name="presentableId" value="Default" />
+        <updated>1588853671316</updated>
+        <workItem from="1588853676274" duration="130000" />
+        <workItem from="1588853819191" duration="218000" />
+        <workItem from="1588854379886" duration="1930000" />
+        <workItem from="1588856388670" duration="3350000" />
+        <workItem from="1588899560240" duration="3069000" />
+        <workItem from="1588854953165" duration="2211000" />
+      </task>
+      <servers />
+    </component>
+    <component name="TypeScriptGeneratedFilesManager">
+      <option name="version" value="1" />
+    </component>
+    <component name="Vcs.Log.Tabs.Properties">
+      <option name="TAB_STATES">
+        <map>
+          <entry key="MAIN">
+            <value>
+              <State />
+            </value>
+          </entry>
+        </map>
+      </option>
+    </component>
+    <component name="WindowStateProjectService">
+      <state x="517" y="38" key="#Tomcat_Server" timestamp="1588854859280">
+        <screen x="0" y="0" width="1366" height="728" />
+      </state>
+      <state x="517" y="38" key="#Tomcat_Server/0.0.1366.728@0.0.1366.728" timestamp="1588854859280" />
+      <state x="-5" y="33" width="1092" height="686" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588855926388">
+        <screen x="0" y="0" width="1366" height="728" />
+      </state>
+      <state x="-5" y="33" width="1092" height="686" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1588855926388" />
+      <state width="1323" height="155" key="GridCell.Tab.0.bottom" timestamp="1588900999691">
+        <screen x="0" y="0" width="1366" height="728" />
+      </state>
+      <state width="1323" height="155" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1588900999691" />
+      <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588854038065" />
+      <state width="1323" height="155" key="GridCell.Tab.0.center" timestamp="1588900999691">
+        <screen x="0" y="0" width="1366" height="728" />
+      </state>
+      <state width="1323" height="155" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1588900999691" />
+      <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588854038065" />
+      <state width="1323" height="155" key="GridCell.Tab.0.left" timestamp="1588900999689">
+        <screen x="0" y="0" width="1366" height="728" />
+      </state>
+      <state width="1323" height="155" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1588900999689" />
+      <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588854038065" />
+      <state width="1323" height="155" key="GridCell.Tab.0.right" timestamp="1588900999691">
+        <screen x="0" y="0" width="1366" height="728" />
+      </state>
+      <state width="1323" height="155" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1588900999691" />
+      <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588854038065" />
+      <state width="1323" height="155" key="GridCell.Tab.1.bottom" timestamp="1588900999691">
+        <screen x="0" y="0" width="1366" height="728" />
+      </state>
+      <state width="1323" height="155" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1588900999691" />
+      <state width="1877" height="282" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588854038066" />
+      <state width="1323" height="155" key="GridCell.Tab.1.center" timestamp="1588900999691">
+        <screen x="0" y="0" width="1366" height="728" />
+      </state>
+      <state width="1323" height="155" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1588900999691" />
+      <state width="1877" height="282" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588854038065" />
+      <state width="1323" height="155" key="GridCell.Tab.1.left" timestamp="1588900999691">
+        <screen x="0" y="0" width="1366" height="728" />
+      </state>
+      <state width="1323" height="155" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1588900999691" />
+      <state width="1877" height="282" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588854038065" />
+      <state width="1323" height="155" key="GridCell.Tab.1.right" timestamp="1588900999691">
+        <screen x="0" y="0" width="1366" height="728" />
+      </state>
+      <state width="1323" height="155" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1588900999691" />
+      <state width="1877" height="282" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588854038066" />
+      <state width="525" height="338" key="GridCell.Tab.2.bottom" timestamp="1588856323731">
+        <screen x="0" y="0" width="1366" height="728" />
+      </state>
+      <state width="525" height="338" key="GridCell.Tab.2.bottom/0.0.1366.728@0.0.1366.728" timestamp="1588856323731" />
+      <state width="525" height="338" key="GridCell.Tab.2.center" timestamp="1588856323731">
+        <screen x="0" y="0" width="1366" height="728" />
+      </state>
+      <state width="525" height="338" key="GridCell.Tab.2.center/0.0.1366.728@0.0.1366.728" timestamp="1588856323731" />
+      <state width="525" height="338" key="GridCell.Tab.2.left" timestamp="1588856323731">
+        <screen x="0" y="0" width="1366" height="728" />
+      </state>
+      <state width="525" height="338" key="GridCell.Tab.2.left/0.0.1366.728@0.0.1366.728" timestamp="1588856323731" />
+      <state width="525" height="338" key="GridCell.Tab.2.right" timestamp="1588856323731">
+        <screen x="0" y="0" width="1366" height="728" />
+      </state>
+      <state width="525" height="338" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1588856323731" />
+      <state x="455" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1588899573884">
+        <screen x="0" y="0" width="1366" height="728" />
+      </state>
+      <state x="455" y="241" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1588899573884" />
+      <state x="640" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588853819878" />
+    </component>
   </component>
-  <component name="ProjectId" id="1bZyGazPpueUqBS615ltmej8cse" />
+  <component name="ProjectId" id="1bcnlozGartjTCKe9R6aSt3aUbE" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="RequestMappingsPanelOrder0" value="0" />
-    <property name="RequestMappingsPanelOrder1" value="1" />
-    <property name="RequestMappingsPanelWidth0" value="75" />
-    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-<<<<<<< HEAD
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-=======
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
-  </component>
-  <component name="RestServicesNavigator">
-    <treeState>
-      <expand>
-        <path>
-          <item name="Found 29 services " type="fcff1e1b:RestServiceStructure$RootNode" />
-        </path>
-        <path>
-          <item name="Found 29 services " type="fcff1e1b:RestServiceStructure$RootNode" />
-          <item name="flowering-server" type="c588b436:RestServiceStructure$ProjectNode" />
-        </path>
-      </expand>
-      <select />
-    </treeState>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
->>>>>>> bbcad49fd9803410b7b521f53b5509dc7c9ac6c1
-  </component>
-  <component name="RunManager">
-    <configuration name="FloweringApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="flowering-server" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.happier.flowering.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.happier.flowering.FloweringApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <option name="contentProportion" value="0.5942813" />
-          <treeState>
-            <expand>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-            </expand>
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -144,105 +250,28 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="2fd2d116-7c56-4cab-b16a-12a8dc75878a" name="Default Changelist" comment="" />
-      <created>1588853671316</created>
+      <created>1588935729999</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1588853671316</updated>
-      <workItem from="1588853676274" duration="130000" />
-      <workItem from="1588853819191" duration="218000" />
-<<<<<<< HEAD
-      <workItem from="1588854379886" duration="1930000" />
-      <workItem from="1588856388670" duration="3350000" />
-      <workItem from="1588899560240" duration="3069000" />
-=======
-      <workItem from="1588854953165" duration="2211000" />
->>>>>>> bbcad49fd9803410b7b521f53b5509dc7c9ac6c1
+      <updated>1588935729999</updated>
+      <workItem from="1588935736914" duration="1328000" />
+      <workItem from="1588940412911" duration="1154000" />
+      <workItem from="1588941806480" duration="591000" />
+      <workItem from="1588945054645" duration="318000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
   <component name="WindowStateProjectService">
-    <state x="517" y="38" key="#Tomcat_Server" timestamp="1588854859280">
+    <state x="454" y="246" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1588940580751">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="517" y="38" key="#Tomcat_Server/0.0.1366.728@0.0.1366.728" timestamp="1588854859280" />
-    <state x="-5" y="33" width="1092" height="686" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588855926388">
+    <state x="454" y="246" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.728@0.0.1366.728" timestamp="1588940580751" />
+    <state x="375" y="191" key="com.intellij.ide.util.TipDialog" timestamp="1588945053240">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="-5" y="33" width="1092" height="686" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1588855926388" />
-    <state width="1323" height="155" key="GridCell.Tab.0.bottom" timestamp="1588900999691">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="155" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1588900999691" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588854038065" />
-    <state width="1323" height="155" key="GridCell.Tab.0.center" timestamp="1588900999691">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="155" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1588900999691" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588854038065" />
-    <state width="1323" height="155" key="GridCell.Tab.0.left" timestamp="1588900999689">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="155" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1588900999689" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588854038065" />
-    <state width="1323" height="155" key="GridCell.Tab.0.right" timestamp="1588900999691">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="155" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1588900999691" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588854038065" />
-    <state width="1323" height="155" key="GridCell.Tab.1.bottom" timestamp="1588900999691">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="155" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1588900999691" />
-    <state width="1877" height="282" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588854038066" />
-    <state width="1323" height="155" key="GridCell.Tab.1.center" timestamp="1588900999691">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="155" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1588900999691" />
-    <state width="1877" height="282" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588854038065" />
-    <state width="1323" height="155" key="GridCell.Tab.1.left" timestamp="1588900999691">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="155" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1588900999691" />
-    <state width="1877" height="282" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588854038065" />
-    <state width="1323" height="155" key="GridCell.Tab.1.right" timestamp="1588900999691">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="155" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1588900999691" />
-    <state width="1877" height="282" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588854038066" />
-    <state width="525" height="338" key="GridCell.Tab.2.bottom" timestamp="1588856323731">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="525" height="338" key="GridCell.Tab.2.bottom/0.0.1366.728@0.0.1366.728" timestamp="1588856323731" />
-    <state width="525" height="338" key="GridCell.Tab.2.center" timestamp="1588856323731">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="525" height="338" key="GridCell.Tab.2.center/0.0.1366.728@0.0.1366.728" timestamp="1588856323731" />
-    <state width="525" height="338" key="GridCell.Tab.2.left" timestamp="1588856323731">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="525" height="338" key="GridCell.Tab.2.left/0.0.1366.728@0.0.1366.728" timestamp="1588856323731" />
-    <state width="525" height="338" key="GridCell.Tab.2.right" timestamp="1588856323731">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="525" height="338" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1588856323731" />
-    <state x="455" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1588899573884">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="455" y="241" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1588899573884" />
-    <state x="640" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588853819878" />
+    <state x="375" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1588945053240" />
   </component>
 </project>

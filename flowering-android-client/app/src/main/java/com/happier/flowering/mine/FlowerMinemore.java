@@ -21,8 +21,6 @@ public class FlowerMinemore extends AppCompatActivity {
 
         private TextView textView = null;
         private Fragment fragment = null;
-
-
         // 设置是否被选中
         public void setSelect(boolean b) {
             if (b) {
@@ -34,8 +32,6 @@ public class FlowerMinemore extends AppCompatActivity {
 //                textView.se
             }
         }
-
-
 
         public void setTextView(TextView textView) {
             this.textView = textView;

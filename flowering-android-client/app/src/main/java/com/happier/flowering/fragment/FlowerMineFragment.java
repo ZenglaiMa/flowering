@@ -140,7 +140,7 @@ public class FlowerMineFragment extends Fragment {
                 String info = response.body().string();
                 Type type = new TypeToken<User>() {
                 }.getType();
-                user = new Gson().fromJson( info, type );
+//                user = new Gson().fromJson( info, type );
                 // Log.e("用户",user.getNickname());
             }
         } );
