@@ -77,11 +77,21 @@ public class CenterController {
                 .create();
         return gson.toJson(posts);
     }
+
+    /**=============关注相关===========
+     *
+     * @param userInitiative
+     * @param userPassive
+     */
     @RequestMapping("/addAttention")
     public void addAttention(@RequestParam("userInitiative") int userInitiative, @RequestParam("userPassive") int userPassive){
         //userInitiative:主动关注者
         //userPassive:被动关注者
         this.centerService.addAttention(userInitiative,userPassive);
+    }
+    @RequestMapping("/ifAttention")
+    public String ifAttention(@RequestParam("userInitiative") int userInitiative, @RequestParam("userPassive") int userPassive){
+        return this.centerService.ifAttention(userInitiative,userPassive);
     }
     /**
      * 個人詳情私信

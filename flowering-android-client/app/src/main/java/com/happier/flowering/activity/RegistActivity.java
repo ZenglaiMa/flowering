@@ -27,11 +27,6 @@ import java.net.URLConnection;
 
 
 public class RegistActivity extends AppCompatActivity {
-
-
-
-
-
        private static final  String PATH_REGIST="/center/registUser";
        private EditText nameTxt;
        private RadioButton maleBtn;

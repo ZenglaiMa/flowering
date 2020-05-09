@@ -51,9 +51,9 @@ public class FlowerOthermore extends AppCompatActivity implements View.OnClickLi
     private Button sendBtn;
     private Button followIs;
     private static final  String PATH_OTHER_SENDMESSAGE="/center/sendMessage";
-    private static final  String PATH_OTHER_ISFOLLOW="/center/sendMessage";
-    private static final  String PATH_OTHER_ADDFOLLOW="/center/sendMessage";
-    private static final  String PATH_OTHER_REMOVEFOLLOW="/center/sendMessage";
+    private static final  String PATH_OTHER_ISFOLLOW="/center/ifAttention";
+    private static final  String PATH_OTHER_ADDFOLLOW="/center/addAttention";
+    private static final  String PATH_OTHER_REMOVEFOLLOW="/center/removeAttention";
     private Handler sHandler;
     private Handler isfHandler;
     private Handler addHandler;

@@ -184,6 +184,13 @@ public class CenterService {
 
         this.attentionMapper.insertAttention(userInitiative,userPassive);
     }
+    public String ifAttention(int userInitiative, int userPassive) {
+        int a = this.attentionMapper.ifAttention(userInitiative, userPassive);
+        if (a == 0) {
+            return "no";
+        }
+        else return "yes";
+    }
     /**
      * 個人私信
      *
