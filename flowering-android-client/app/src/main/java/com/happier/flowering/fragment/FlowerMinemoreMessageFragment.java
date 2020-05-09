@@ -56,7 +56,7 @@ public class FlowerMinemoreMessageFragment extends Fragment implements AdapterVi
     private PopupWindow popupWindow=null;
     private View popupView=null;
     //定义一个bool值：
-    private boolean isGetData = false;
+//    private boolean isGetData = false;
 
     private static final  String PATH_MINEMORE_REPLYMESSAGE="/center/sendMessage";
     private static final  String PATH_MINEMORE_MESSAGE="/center/getAllMineMessage";
@@ -85,24 +85,17 @@ public class FlowerMinemoreMessageFragment extends Fragment implements AdapterVi
         return view;
     }
 
-    @Override
-    public Animator onCreateAnimator(int transit, boolean enter, int nextAnim) {
-        //   进入当前Fragment
-        if (enter && !isGetData) {
-            isGetData = true;
-            //   这里可以做网络请求或者需要的数据刷新操作
-            //   GetData();\
 
-        } else {
-            isGetData = false;
+
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
+        if (hidden) {   // 不在最前端显示 相当于调用了onPause();
+            return;
+        }else{  // 在最前端显示 相当于调用了onResume();
+            //网络数据刷新
+            initMessageData();
         }
-        return super.onCreateAnimator(transit, enter, nextAnim);
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        isGetData = false;
     }
 
     public void initMessageData(){
@@ -175,6 +168,7 @@ public class FlowerMinemoreMessageFragment extends Fragment implements AdapterVi
         popupWindow.setOutsideTouchable(true);
         // 设置PopupWindow是否相应点击事件
         popupWindow.setTouchable(true);
+        popupWindow.setFocusable(true);
 
         // 获取按钮并添加监听器
 

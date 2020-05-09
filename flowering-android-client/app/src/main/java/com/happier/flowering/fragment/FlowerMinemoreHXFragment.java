@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.google.gson.Gson;
@@ -40,7 +41,7 @@ import java.util.Map;
  //        * @date 2020/4/16 15:09
  //        * @Version 0.1
  //        */
-public class FlowerMinemoreHXFragment extends Fragment {
+public class FlowerMinemoreHXFragment extends Fragment implements AdapterView.OnItemClickListener {
     private List<Post> myPosts =new ArrayList<>();
     private MinemoreHXAdapter minemoreHXAdapter;
     private Handler handler;
@@ -61,10 +62,10 @@ public class FlowerMinemoreHXFragment extends Fragment {
             public void handleMessage(android.os.Message msg) {
                 String messages = (String) msg.obj;
                 myPosts = gson.fromJson(messages, new TypeToken<List<Post>>(){}.getType());
-                Log.e("私信查询",myPosts.toString());
+                Log.e("話現查询",myPosts.toString());
                 minemoreHXAdapter = new MinemoreHXAdapter(getContext(),myPosts, R.layout.minemore_fragment_flist);
                 listView.setAdapter(minemoreHXAdapter);
-                //listView.setOnItemClickListener(FlowerMinemoreHXFragment.this);
+                listView.setOnItemClickListener(FlowerMinemoreHXFragment.this);
             }
 
         };
@@ -72,6 +73,16 @@ public class FlowerMinemoreHXFragment extends Fragment {
 
 
         return view;
+    }
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
+        if (hidden) {   // 不在最前端显示 相当于调用了onPause();
+            return;
+        }else{  // 在最前端显示 相当于调用了onResume();
+            //网络数据刷新
+            initPostData();
+        }
     }
     public void initPostData(){
         new Thread(){
@@ -101,5 +112,17 @@ public class FlowerMinemoreHXFragment extends Fragment {
 
 
         }.start();
+    }
+
+    /**
+     * 跳轉詳情頁
+     * @param parent
+     * @param view
+     * @param position
+     * @param id
+     */
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
     }
 }

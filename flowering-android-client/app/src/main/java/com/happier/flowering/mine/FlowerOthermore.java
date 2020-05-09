@@ -9,15 +9,22 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 import com.happier.flowering.R;
+import com.happier.flowering.adapter.MinemoreHXAdapter;
 import com.happier.flowering.constant.Constant;
+import com.happier.flowering.entity.Post;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -27,9 +34,11 @@ import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.ArrayList;
+import java.util.List;
 
 
-public class FlowerOthermore extends AppCompatActivity implements View.OnClickListener{
+public class FlowerOthermore extends AppCompatActivity implements View.OnClickListener,AdapterView.OnItemClickListener{
     //个人信息
     private ImageView headImg;
     private TextView gender;
@@ -49,6 +58,13 @@ public class FlowerOthermore extends AppCompatActivity implements View.OnClickLi
     private Handler isfHandler;
     private Handler addHandler;
     private Handler removeHandler;
+    private Gson gson;
+    private ListView listView;
+    private List<Post> myPosts =new ArrayList<>();
+    private MinemoreHXAdapter minemoreHXAdapter;
+    private Handler handler;
+    private static final  String PATH_MINEMORE_HX="/center/findPosts";
+    //q_other_findinglist
     private PopupWindow popupWindow=null;
     private View popupView=null;
     //标识是否关注
@@ -62,12 +78,31 @@ public class FlowerOthermore extends AppCompatActivity implements View.OnClickLi
         initPersonView();
         initProfile();
         //是否关注设置填充
-        setByisAttention();
+//        setByisAttention();
         //发送私信弹出框
         sendBtn=findViewById(R.id.q_sendMessage);
         follow=findViewById(R.id.q_setfollow);
         sendBtn.setOnClickListener(this);
         follow.setOnClickListener(this);
+        listView=findViewById(R.id.q_finginglist);
+        gson = new GsonBuilder()
+                .setDateFormat("yyyy-MM-dd")
+                .create();
+        listView=findViewById(R.id.q_other_findinglist);
+        initPostData();
+        handler = new Handler() {
+            @Override
+            public void handleMessage(android.os.Message msg) {
+                String messages = (String) msg.obj;
+                myPosts = gson.fromJson(messages, new TypeToken<List<Post>>(){}.getType());
+                Log.e("話現查询",myPosts.toString());
+                minemoreHXAdapter = new MinemoreHXAdapter(FlowerOthermore.this,myPosts,R.layout.minemore_fragment_flist);
+                listView.setAdapter(minemoreHXAdapter);
+                listView.setOnItemClickListener(FlowerOthermore.this);
+            }
+
+        };
+
 
 
 
@@ -75,7 +110,35 @@ public class FlowerOthermore extends AppCompatActivity implements View.OnClickLi
 
 
     }
+    public void initPostData(){
+        new Thread(){
+            @Override
+            public void run() {
+                //查询私信数据
+                Log.e("我的花","查詢");
+                try {
+                    URL url= new URL(Constant.BASE_IP + PATH_MINEMORE_HX+"?id=2");
+                    URLConnection conn = url.openConnection();
+                    InputStream in = conn.getInputStream();
+                    BufferedReader reader = new BufferedReader(new InputStreamReader(in, "utf-8"));
+                    String info = reader.readLine();
+                    android.os.Message message = new android.os.Message();
+                    message.obj = info;
+                    handler.sendMessage(message);
+                } catch (MalformedURLException e) {
+                    e.printStackTrace();
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
 
+
+            }
+
+
+        }.start();
+    }
     /**
      * 查询是否关注并设置follow  text
      */
@@ -108,7 +171,7 @@ public class FlowerOthermore extends AppCompatActivity implements View.OnClickLi
                 //查询私信数据
                 try {
                     Log.e("查询是否关注","reply");
-                    URL url= new URL(Constant.BASE_IP + PATH_OTHER_ISFOLLOW+"?userId="+"&otherId");
+                    URL url= new URL(Constant.BASE_IP + PATH_OTHER_ISFOLLOW+"?userId="+"&otherId=");
                     URLConnection conn = url.openConnection();
                     InputStream in = conn.getInputStream();
                     BufferedReader reader = new BufferedReader(new InputStreamReader(in, "utf-8"));
@@ -130,7 +193,7 @@ public class FlowerOthermore extends AppCompatActivity implements View.OnClickLi
 
         }.start();
 
-}
+    }
 
 
     private void initPersonView(){
@@ -231,6 +294,7 @@ public class FlowerOthermore extends AppCompatActivity implements View.OnClickLi
         popupWindow.setOutsideTouchable(true);
         // 设置PopupWindow是否相应点击事件
         popupWindow.setTouchable(true);
+        popupWindow.setFocusable(true);
 
         // 获取按钮并添加监听器
         EditText content=popupView.findViewById(R.id.q_text_sendContent);
@@ -383,5 +447,15 @@ public class FlowerOthermore extends AppCompatActivity implements View.OnClickLi
         }
     }
 
+    /**
+     * 跳轉話現詳情額
+     * @param parent
+     * @param view
+     * @param position
+     * @param id
+     */
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+    }
 }
