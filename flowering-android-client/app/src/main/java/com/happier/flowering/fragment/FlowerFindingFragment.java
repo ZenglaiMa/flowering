@@ -57,9 +57,10 @@ public class FlowerFindingFragment extends Fragment {
     private LinearLayoutManager mLayoutManager;
     List<Plant> plantList = new ArrayList<>();
     public static final String GETALLPLANT_PATH = "/discovery/plantinfo ";
-    private final int  REQUEST_SUCCESS = 1;
-    private final int  REQUEST_FAIL = 0;
+    private final int REQUEST_SUCCESS = 1;
+    private final int REQUEST_FAIL = 0;
     private Gson gson = new Gson();
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -75,11 +76,10 @@ public class FlowerFindingFragment extends Fragment {
         findPlantButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getContext(),FindPlantActivity.class);
+                Intent intent = new Intent(getContext(), FindPlantActivity.class);
                 startActivity(intent);
             }
         });
-
 
 
         List<Bean> beanList = new ArrayList<>();
@@ -90,8 +90,8 @@ public class FlowerFindingFragment extends Fragment {
 
         GetAllPlantInfosThread thread = new GetAllPlantInfosThread();
         thread.start();
-        while (thread.flag==false){
-            Log.e("Thread ","is running..");
+        while (thread.flag == false) {
+            Log.e("Thread ", "is running..");
         }
 
         mAdapter = new RecyclerViewAdapter(getContext(), beanList, plantList);
@@ -104,31 +104,35 @@ public class FlowerFindingFragment extends Fragment {
         return view;
     }
 
-    public class  GetAllPlantInfosThread extends  Thread{
-        boolean flag=false;
-        public GetAllPlantInfosThread(){
+    public class GetAllPlantInfosThread extends Thread {
+        boolean flag = false;
+
+        public GetAllPlantInfosThread() {
 
         }
-        public void  run(){
+
+        public void run() {
             try {
                 List<Plant> list = new ArrayList<>();
                 OkHttpClient okHttpClient = new OkHttpClient();
                 Request request = new Request.Builder()
-                        .url(Constant.BASE_IP+GETALLPLANT_PATH)
+                        .url(Constant.BASE_IP + GETALLPLANT_PATH)
                         .build();
                 Response response = okHttpClient.newCall(request).execute();
 
                 String plantJson = response.body().string();
-                Log.e("myplant",plantJson);
-                plantList = gson.fromJson(plantJson,new TypeToken<List<Plant>>(){}.getType());
+                Log.e("myplant", plantJson);
+                plantList = gson.fromJson(plantJson, new TypeToken<List<Plant>>() {
+                }.getType());
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            Log.e("执行完成 ","2");
+            Log.e("执行完成 ", "2");
             callback();
         }
-        public void callback(){
-            Log.e("子线程执行结束","1");
+
+        public void callback() {
+            Log.e("子线程执行结束", "1");
             flag = true;
         }
     }
@@ -136,7 +140,7 @@ public class FlowerFindingFragment extends Fragment {
     private void initListener() {
         wordsNavigation.setOnShowLetter(letter -> {
             mLetter = letter;
-            Log.e("receive",mLetter);
+            Log.e("receive", mLetter);
             TopSmoothScroller scroller = new TopSmoothScroller(getActivity());
             switch (mLetter) {
                 case "A":

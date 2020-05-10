@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="100dp"
     android:id="@+id/ll_plantDetail"
-    android:layout_height="150dp"
+    android:layout_width="120dp"
+    android:layout_height="140dp"
     android:orientation="vertical"
-    android:paddingRight="10dp">
+    android:padding="10dp">
 
     <ImageView
         android:id="@+id/yimg_plant"
-        android:layout_width="match_parent"
-        android:layout_height="140dp" />
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="fitXY" />
+
     <TextView
-        android:gravity="center"
-        android:textSize="14dp"
-        android:textColor="@android:color/black"
         android:id="@+id/ytv_plantName"
         android:layout_width="match_parent"
-        android:layout_height="20dp" />
+        android:layout_height="20dp"
+        android:gravity="center"
+        android:textColor="@android:color/black"
+        android:textSize="14dp" />
 
 </LinearLayout>
