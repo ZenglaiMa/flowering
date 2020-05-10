@@ -3,59 +3,63 @@
     android:id="@+id/z_ll"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="5dp">
 
     <TextView
         android:id="@+id/z_tv_type"
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:gravity="center"
-        android:textColor="#C0C0C0"
         android:text="显示文章类型"
-        android:textSize="13dp" />
+        android:textColor="#C0C0C0"
+        android:textSize="12dp" />
 
     <ImageView
         android:id="@+id/z_iv_img"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scaleType="fitCenter" />
+        android:layout_height="250dp"
+        android:scaleType="fitXY" />
 
     <TextView
-        android:textSize="20dp"
-        android:textStyle="bold"
         android:id="@+id/z_tv_title"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:gravity="fill_vertical"
-        android:text="显示文章标题" />
+        android:layout_height="wrap_content"
+        android:text="显示文章标题"
+        android:textColor="#000"
+        android:textSize="20dp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/z_tv_overview"
         android:layout_width="match_parent"
-        android:layout_height="20dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:gravity="fill_vertical"
-        android:text="文章一句话描述" />
+        android:text="文章一句话描述"
+        android:textSize="16dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:textColor="#C0C0C0"
-            android:gravity="fill_vertical"
-            android:text="文：flowering" />
+            android:text="文：花花世界编辑部"
+            android:textSize="13dp" />
 
         <TextView
-            android:textColor="#C0C0C0"
             android:id="@+id/z_tv_reading_num"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="fill_vertical"
-            android:text="" />
+            android:textSize="13dp" />
+
     </LinearLayout>
+
 </LinearLayout>
