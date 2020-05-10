@@ -46,6 +46,7 @@ import okhttp3.Response;
  * @Version 0.1
  */
 public class FlowerAmongFragment extends Fragment {
+
     private ListView lvLeft = null;
     private ListView lvRight = null;
     private OkHttpClient client = new OkHttpClient();
@@ -55,6 +56,7 @@ public class FlowerAmongFragment extends Fragment {
     private FloweringAmongLeftAdapter adapter;
     private FloweringAmongRightAdapter adapter1;
     private Gson gson = new Gson();
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -104,18 +106,15 @@ public class FlowerAmongFragment extends Fragment {
     public void init(String result) {
         String[] strs = result.split("yy");
         if(strs[0].equals("0")){
-            types = gson.fromJson(strs[1], new TypeToken<List<Type>>() {
-            }.getType());
+            types = gson.fromJson(strs[1], new TypeToken<List<Type>>() {}.getType());
             adapter = new FloweringAmongLeftAdapter(types, getContext(), R.layout.adapter_flowering_among_left);
             lvLeft.setAdapter(adapter);
         }else if(strs[0].equals("1")){
-            articles = gson.fromJson(strs[1], new TypeToken<List<Article>>() {
-            }.getType());
-            adapter1 = new FloweringAmongRightAdapter(articles,getContext(), R.layout.adapter_flowering_among_right);
+            articles = gson.fromJson(strs[1], new TypeToken<List<Article>>() {}.getType());
+            adapter1 = new FloweringAmongRightAdapter(articles, getContext(), R.layout.adapter_flowering_among_right);
             lvRight.setAdapter(adapter1);
         }else if(strs[0].equals("2")){
-            articlesTemp = gson.fromJson(strs[1], new TypeToken<List<Article>>() {
-            }.getType());
+            articlesTemp = gson.fromJson(strs[1], new TypeToken<List<Article>>() {}.getType());
             Log.e("articlesTemp", articlesTemp.toString());
             articles.clear();
             Log.e("articles1", articles.toString());
@@ -144,10 +143,10 @@ public class FlowerAmongFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 getArticlesByType(types.get(position).getTypeId());
-
             }
         });
     }
+
     //阅读人数+1
     public void addReadingNum(int articleId){
         RequestBody requestBody = RequestBody.create(
@@ -168,6 +167,7 @@ public class FlowerAmongFragment extends Fragment {
             }
         });
     }
+
     public void getArticlesByType(int typeId){
         RequestBody requestBody = RequestBody.create(
                 MediaType.parse("text/plain;charset=utf-8"),
