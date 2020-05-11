@@ -8,6 +8,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/happier/flowering/flowering/discovery/controller/DiscoveryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/happier/flowering/flowering/discovery/controller/DiscoveryController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/happier/flowering/flowering/discovery/service/DiscoveryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/happier/flowering/flowering/discovery/service/DiscoveryService.java" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -221,6 +222,19 @@
       <state x="640" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588853819878" />
     </component>
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="F:/apache-maven-3.5.4" />
+        <option name="userSettingsFile" value="F:\apache-maven-3.5.4\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="1bcnlozGartjTCKe9R6aSt3aUbE" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -228,9 +242,14 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/happier/flowering/flowering/center" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -238,6 +257,47 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\flowering\flowering\flowering-server\src\main\java\com\happier\flowering\flowering\center" />
+    </key>
+  </component>
+  <component name="RestServicesNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="Found 30 services " type="fcff1e1b:RestServiceStructure$RootNode" />
+        </path>
+        <path>
+          <item name="Found 30 services " type="fcff1e1b:RestServiceStructure$RootNode" />
+          <item name="flowering-server" type="c588b436:RestServiceStructure$ProjectNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="FloweringApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="flowering-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.happier.flowering.FloweringApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -253,22 +313,57 @@
       <workItem from="1588940412911" duration="1154000" />
       <workItem from="1588941806480" duration="591000" />
       <workItem from="1588945054645" duration="318000" />
+<<<<<<< HEAD
       <workItem from="1589164007589" duration="90000" />
       <workItem from="1589164156787" duration="3885000" />
+=======
+      <workItem from="1588992377120" duration="1347000" />
+      <workItem from="1588994832480" duration="1073000" />
+      <workItem from="1589070225379" duration="3348000" />
+      <workItem from="1589073855122" duration="628000" />
+      <workItem from="1589093706693" duration="1039000" />
+      <workItem from="1589105753523" duration="692000" />
+      <workItem from="1589116077787" duration="663000" />
+>>>>>>> e85b7e472cd903a3b203ef90189db204bf703eb2
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
     <state x="454" y="246" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1588940580751">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="454" y="246" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.728@0.0.1366.728" timestamp="1588940580751" />
+<<<<<<< HEAD
     <state x="375" y="191" key="com.intellij.ide.util.TipDialog" timestamp="1589179074893">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="375" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1589179074893" />
+=======
+    <state x="567" y="90" key="FileChooserDialogImpl" timestamp="1588993058207">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="567" y="90" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1588993058207" />
+    <state x="351" y="181" key="com.intellij.ide.util.TipDialog" timestamp="1588996003847">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="351" y="181" key="com.intellij.ide.util.TipDialog/0.0.1280.689@0.0.1280.689" timestamp="1588996003847" />
+    <state x="375" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1588945053240" />
+>>>>>>> e85b7e472cd903a3b203ef90189db204bf703eb2
   </component>
 </project>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/main_back"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginLeft="20dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_gravity="center"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:background="#000"
+            android:alpha="0.2"
+            android:textColor="#fff"
+            android:text="昵称"/>
+        <EditText
+            android:layout_width="0dp"
+            android:layout_weight="5"
+            android:layout_height="match_parent"
+            android:id="@+id/q_login_name"
+            android:textColor="#fff"
+            />
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="120dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_gravity="center"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:background="#000"
+            android:alpha="0.2"
+            android:textColor="#fff"
+            android:text="密码"/>
+        <EditText
+            android:layout_width="0dp"
+            android:layout_weight="5"
+            android:layout_height="match_parent"
+            android:textColor="#fff"
+            android:inputType="textPassword"
+            android:text="123"
+            android:id="@+id/q_login_pass"
+            />
+    </LinearLayout>
+
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textSize="25dp"
+        android:textColor="#FFF5D23A"
+        android:text="确  认  登  录"
+        android:background="#FF12110E"
+        android:alpha="0.5"
+        android:layout_margin="30dp"
+        android:id="@+id/q_confirmlogin"
+        />
+</LinearLayout>

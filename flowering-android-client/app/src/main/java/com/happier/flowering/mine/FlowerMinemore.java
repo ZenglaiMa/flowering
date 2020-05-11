@@ -1,5 +1,6 @@
 package com.happier.flowering.mine;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -10,6 +11,8 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
@@ -40,6 +43,10 @@ public class FlowerMinemore extends AppCompatActivity {
         private TextView textView = null;
         private Fragment fragment = null;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> e85b7e472cd903a3b203ef90189db204bf703eb2
         // 设置是否被选中
         public void setSelect(boolean b) {
             if (b) {
@@ -51,6 +58,8 @@ public class FlowerMinemore extends AppCompatActivity {
 //                textView.se
             }
         }
+
+
 
         public void setTextView(TextView textView) {
             this.textView = textView;
@@ -86,9 +95,10 @@ public class FlowerMinemore extends AppCompatActivity {
     private String[] tabStrId = {"花现", "我的私信"};
     // 用于记录当前正在显示的Fragment
     private Fragment curFragment = null;
-
+    private Button editMess=null;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+<<<<<<< HEAD
         super.onCreate( savedInstanceState );
         setContentView( R.layout.flower_mine_minemore );
         //查询个人信息
@@ -105,6 +115,17 @@ public class FlowerMinemore extends AppCompatActivity {
 
         };
 
+=======
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.flower_mine_minemore);
+//        editMess=findViewById(R.id.q_edit_mess);
+//        editMess.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent=new Intent(FlowerMinemore.this, EditMess.class);
+//            }
+//        });
+>>>>>>> e85b7e472cd903a3b203ef90189db204bf703eb2
         // 1. 初始化MyTabSpec对象
         // Fragment、ImageView、TextView、normalImage、selectImage
         initData();
@@ -168,7 +189,11 @@ public class FlowerMinemore extends AppCompatActivity {
         // 1 切换Fragment
         changeFragment( s );
         // 2 切换图标及字体颜色
+<<<<<<< HEAD
         changeTextV( s );
+=======
+        changeTextV(s);
+>>>>>>> e85b7e472cd903a3b203ef90189db204bf703eb2
     }
 
     private void changeFragment(String s) {

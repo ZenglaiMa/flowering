@@ -10,4 +10,9 @@ import com.happier.flowering.entity.User;
  */
 public interface UserMapper {
     User findUserById(int id);
+    //注冊
+    int registUser(User u);
+    //登录
+    User loginUser(String password,String name);
+
 }

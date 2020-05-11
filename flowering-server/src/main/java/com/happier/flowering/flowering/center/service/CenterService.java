@@ -2,18 +2,10 @@ package com.happier.flowering.flowering.center.service;
 
 import com.happier.flowering.entity.*;
 import com.happier.flowering.mapper.*;
-import com.happier.flowering.entity.User;
-import com.happier.flowering.mapper.AttentionMapper;
-import com.happier.flowering.entity.Message;
-import com.happier.flowering.mapper.MessageMapper;
-import com.happier.flowering.mapper.UserMapper;
-
-import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
-
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -183,16 +175,15 @@ public class CenterService {
     }
 
 
-    public List<Post> findPosts(int userId) {
+    public List<Post> findPosts(int userId){
         List<Post> posts = this.postMapper.searchPostByUserId(userId);
-        return posts;
+        return  posts;
     }
 
-    public void addAttention(int userInitiative, int userPassive) {
+    public void addAttention(int userInitiative, int userPassive){
 
-        this.attentionMapper.insertAttention(userInitiative, userPassive);
+        this.attentionMapper.insertAttention(userInitiative,userPassive);
     }
-
     public String ifAttention(int userInitiative, int userPassive) {
         int a = this.attentionMapper.ifAttention(userInitiative, userPassive);
         if (a == 0) {
@@ -200,9 +191,7 @@ public class CenterService {
         }
         else return "yes";
     }
-    public void deleteAttention(@Param("userInitiative") int userInitiative, @Param("userPassive") int userPassive){
-        this.attentionMapper.deleteAttention(userInitiative,userPassive);
-    }    /**
+    /**
      * 個人私信
      *
      * @param userId
@@ -213,10 +202,11 @@ public class CenterService {
         List<Message> messages = messageMapper.searchMessageByUserId(userId);
         for (int i = 0; i < messages.size(); i++) {
             Map map = new HashMap();
-            User user = userMapper.findUserById(messages.get(i).getUserIdSend());
+            User user = this.userMapper.findUserById(messages.get(i).getUserIdSend());
             map.put("content", messages.get(i).getContent());
             map.put("senderId", messages.get(i).getUserIdSend());
             map.put("time", messages.get(i).getTime());
+            map.put("uid", messages.get(i).getUserIdSend());
             map.put("senderHead", user.getHeadImg());
             map.put("senderName", user.getNickname());
             maUsers.add(map);
@@ -228,9 +218,36 @@ public class CenterService {
      * 回复私信发送
      */
     public int sendMessage(int sendId,int recvId,String content){
-        Date time= new java.sql.Date(new java.util.Date().getTime());
+        Date time= new Date(new java.util.Date().getTime());
         int num=messageMapper.sendMessage(sendId,recvId,content,time);
         return num;
     }
+/**
+ * ==========注册登陆相关=========
+ */
+    /**
+     * 注册返回自增id
+     * @param nickname
+     * @param sex
+     * @param password
+     * @param address
+     * @param profile
+     * @return
+     */
+    public int registUser(String nickname,Integer sex,String password,String address,String profile) {
+        User u = new User();
+        u.setNickname(nickname);
+        u.setSex(sex);
+        u.setPassword(password);
+        u.setAddress(address);
+        u.setProfile(profile);
+        if (userMapper.registUser(u) == 1) {
+            return u.getUserId();
+        }
+        return 0;
+    }
+    public User loginUser(String pass, String name){
+        return userMapper.loginUser(pass,name);
 
+    }
 }

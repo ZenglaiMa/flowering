@@ -32,33 +32,7 @@ import java.util.Map;
 
 public class HttpUtils {
 
-
-	/**
-	 * get
-	 *
-	 * @param host
-	 * @param path
-	 * @param method
-	 * @param headers
-	 * @param querys
-	 * @return
-	 * @throws Exception
-	 */
-	public static HttpResponse doGet(String host, String path, String method,
-
-    /**
-     * get
-     *
-     * @param host
-     * @param path
-     * @param method
-     * @param headers
-     * @param querys
-     * @return
-     * @throws Exception
-     */
     public static HttpResponse doGet(String host, String path, String method,
-
                                      Map<String, String> headers,
                                      Map<String, String> querys)
             throws Exception {
@@ -72,35 +46,7 @@ public class HttpUtils {
         return httpClient.execute(request);
     }
 
-
-	/**
-	 * post form
-	 *
-	 * @param host
-	 * @param path
-	 * @param method
-	 * @param headers
-	 * @param querys
-	 * @param bodys
-	 * @return
-	 * @throws Exception
-	 */
-	public static HttpResponse doPost(String host, String path, String method,
-
-    /**
-     * post form
-     *
-     * @param host
-     * @param path
-     * @param method
-     * @param headers
-     * @param querys
-     * @param bodys
-     * @return
-     * @throws Exception
-     */
     public static HttpResponse doPost(String host, String path, String method,
-
                                       Map<String, String> headers,
                                       Map<String, String> querys,
                                       Map<String, String> bodys)
@@ -126,35 +72,7 @@ public class HttpUtils {
         return httpClient.execute(request);
     }
 
-
-	/**
-	 * Post String
-	 *
-	 * @param host
-	 * @param path
-	 * @param method
-	 * @param headers
-	 * @param querys
-	 * @param body
-	 * @return
-	 * @throws Exception
-	 */
-	public static HttpResponse doPost(String host, String path, String method,
-
-    /**
-     * Post String
-     *
-     * @param host
-     * @param path
-     * @param method
-     * @param headers
-     * @param querys
-     * @param body
-     * @return
-     * @throws Exception
-     */
     public static HttpResponse doPost(String host, String path, String method,
-
                                       Map<String, String> headers,
                                       Map<String, String> querys,
                                       String body)
@@ -173,35 +91,7 @@ public class HttpUtils {
         return httpClient.execute(request);
     }
 
-
-	/**
-	 * Post stream
-	 *
-	 * @param host
-	 * @param path
-	 * @param method
-	 * @param headers
-	 * @param querys
-	 * @param body
-	 * @return
-	 * @throws Exception
-	 */
-	public static HttpResponse doPost(String host, String path, String method,
-
-    /**
-     * Post stream
-     *
-     * @param host
-     * @param path
-     * @param method
-     * @param headers
-     * @param querys
-     * @param body
-     * @return
-     * @throws Exception
-     */
     public static HttpResponse doPost(String host, String path, String method,
-
                                       Map<String, String> headers,
                                       Map<String, String> querys,
                                       byte[] body)
@@ -220,32 +110,6 @@ public class HttpUtils {
         return httpClient.execute(request);
     }
 
-
-	/**
-	 * Put String
-	 * @param host
-	 * @param path
-	 * @param method
-	 * @param headers
-	 * @param querys
-	 * @param body
-	 * @return
-	 * @throws Exception
-	 */
-	public static HttpResponse doPut(String host, String path, String method,
-
-    /**
-     * Put String
-     *
-     * @param host
-     * @param path
-     * @param method
-     * @param headers
-     * @param querys
-     * @param body
-     * @return
-     * @throws Exception
-     */
     public static HttpResponse doPut(String host, String path, String method,
                                      Map<String, String> headers,
                                      Map<String, String> querys,
@@ -265,34 +129,7 @@ public class HttpUtils {
         return httpClient.execute(request);
     }
 
-
-	/**
-	 * Put stream
-	 * @param host
-	 * @param path
-	 * @param method
-	 * @param headers
-	 * @param querys
-	 * @param body
-	 * @return
-	 * @throws Exception
-	 */
-	public static HttpResponse doPut(String host, String path, String method,
-
-    /**
-     * Put stream
-     *
-     * @param host
-     * @param path
-     * @param method
-     * @param headers
-     * @param querys
-     * @param body
-     * @return
-     * @throws Exception
-     */
     public static HttpResponse doPut(String host, String path, String method,
-
                                      Map<String, String> headers,
                                      Map<String, String> querys,
                                      byte[] body)
@@ -311,33 +148,7 @@ public class HttpUtils {
         return httpClient.execute(request);
     }
 
-
-	/**
-	 * Delete
-	 *
-	 * @param host
-	 * @param path
-	 * @param method
-	 * @param headers
-	 * @param querys
-	 * @return
-	 * @throws Exception
-	 */
-	public static HttpResponse doDelete(String host, String path, String method,
-
-    /**
-     * Delete
-     *
-     * @param host
-     * @param path
-     * @param method
-     * @param headers
-     * @param querys
-     * @return
-     * @throws Exception
-     */
     public static HttpResponse doDelete(String host, String path, String method,
-
                                         Map<String, String> headers,
                                         Map<String, String> querys)
             throws Exception {
@@ -351,18 +162,11 @@ public class HttpUtils {
         return httpClient.execute(request);
     }
 
-	private static String buildUrl(String host, String path, Map<String, String> querys) throws UnsupportedEncodingException {
-    	StringBuilder sbUrl = new StringBuilder();
-    	sbUrl.append(host);
-    	if (!StringUtils.isBlank(path)) {
-    		sbUrl.append(path);
-
     private static String buildUrl(String host, String path, Map<String, String> querys) throws UnsupportedEncodingException {
         StringBuilder sbUrl = new StringBuilder();
         sbUrl.append(host);
         if (!StringUtils.isBlank(path)) {
             sbUrl.append(path);
-
         }
         if (null != querys) {
             StringBuilder sbQuery = new StringBuilder();
@@ -373,21 +177,19 @@ public class HttpUtils {
                 if (StringUtils.isBlank(query.getKey()) && !StringUtils.isBlank(query.getValue())) {
                     sbQuery.append(query.getValue());
                 }
-
-        		if (!StringUtils.isBlank(query.getKey())) {
-        			sbQuery.append(query.getKey());
-        			if (!StringUtils.isBlank(query.getValue())) {
-        				sbQuery.append("=");
-        				sbQuery.append(URLEncoder.encode(query.getValue(), "utf-8"));
-        			}
-
                 if (!StringUtils.isBlank(query.getKey())) {
                     sbQuery.append(query.getKey());
                     if (!StringUtils.isBlank(query.getValue())) {
                         sbQuery.append("=");
                         sbQuery.append(URLEncoder.encode(query.getValue(), "utf-8"));
                     }
-
+                    if (!StringUtils.isBlank(query.getKey())) {
+                        sbQuery.append(query.getKey());
+                        if (!StringUtils.isBlank(query.getValue())) {
+                            sbQuery.append("=");
+                            sbQuery.append(URLEncoder.encode(query.getValue(), "utf-8"));
+                        }
+                    }
                 }
             }
             if (0 < sbQuery.length()) {
@@ -404,21 +206,6 @@ public class HttpUtils {
             sslClient(httpClient);
         }
 
-
-    	return sbUrl.toString();
-    }
-
-	private static HttpClient wrapClient(String host) {
-		HttpClient httpClient = new DefaultHttpClient();
-		if (host.startsWith("https://")) {
-			sslClient(httpClient);
-		}
-
-		return httpClient;
-	}
-
-	private static void sslClient(HttpClient httpClient) {
-
         return httpClient;
     }
 
@@ -432,11 +219,9 @@ public class HttpUtils {
                 }
 
                 public void checkClientTrusted(X509Certificate[] xcs, String str) {
-
                 }
 
                 public void checkServerTrusted(X509Certificate[] xcs, String str) {
-
                 }
             };
             ctx.init(null, new TrustManager[]{tm}, null);

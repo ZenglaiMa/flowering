@@ -14,7 +14,16 @@
     </resultMap>
 
     <select id="findUserById" resultMap="userMap">
-        select * from user where user_id = #{userId}
+        select * from user where user_id = #{id}
+    </select>
+    <insert id="registUser" useGeneratedKeys="true" keyProperty="userId">
+
+insert into user (nickname,password,sex,profile,address)
+  values (#{nickname},#{password},#{sex},#{profile},#{address})
+
+    </insert>
+    <select id="loginUser" resultMap="userMap">
+select * from user where password=#{password} and nickname=#{name}
     </select>
 
 </mapper>
