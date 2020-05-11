@@ -10,26 +10,27 @@
         android:layout_height="match_parent">
 
         <RelativeLayout
-            android:background="@color/colorGreen"
             android:id="@+id/y_banner"
             android:layout_width="match_parent"
-            android:layout_height="40dp">
+            android:layout_height="40dp"
+            android:background="#FFF">
 
             <ImageView
                 android:id="@+id/yimg_drawback"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
-                android:src="@drawable/drawback" />
+                android:src="@drawable/back_to_up" />
 
             <TextView
                 android:id="@+id/ytv_plantDetailName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:textColor="@android:color/white"
-                android:textSize="25dp" />
+                android:textColor="@color/colorGreen"
+                android:textSize="20dp" />
+
         </RelativeLayout>
 
         <RelativeLayout
@@ -40,19 +41,20 @@
 
             <ImageView
                 android:id="@+id/yimg_drawback2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
-                android:src="@drawable/drawback" />
+                android:src="@drawable/back_to_up" />
 
             <TextView
                 android:id="@+id/ytv_plantDetailName2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:textColor="@android:color/white"
-                android:textSize="25dp" />
+                android:textColor="@color/colorGreen"
+                android:textSize="20dp" />
+
         </RelativeLayout>
 
         <ImageView
@@ -60,33 +62,31 @@
             android:layout_width="match_parent"
             android:layout_height="250dp"
             android:layout_below="@+id/y_banner"
-            android:scaleType="fitXY"
-            android:src="@drawable/jingjvsmall" />
+            android:scaleType="fitXY" />
 
         <RelativeLayout
             android:id="@+id/y_plantfamily"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/yimg_plantDetailImg"
-            android:layout_marginTop="-35dp"
+            android:layout_marginTop="-40dp"
             android:paddingLeft="10dp">
 
             <TextView
                 android:id="@+id/ytv_plantFamilt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="春黄菊族"
                 android:textColor="@android:color/white"
-                android:textSize="26dp" />
+                android:textSize="25dp" />
 
         </RelativeLayout>
-
 
         <LinearLayout
             android:id="@+id/y_jianjie"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/y_plantfamily">
+            android:layout_below="@id/y_plantfamily"
+            android:layout_marginTop="15dp">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -100,20 +100,21 @@
                 android:text="简介"
                 android:textColor="@android:color/black"
                 android:textSize="25dp" />
-        </LinearLayout>
 
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/y_desc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/y_jianjie"
+            android:layout_marginTop="3dp"
             android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"></LinearLayout>
+                android:layout_weight="1" />
 
             <TextView
                 android:id="@+id/ytv_plantDesc"
@@ -126,7 +127,8 @@
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"></LinearLayout>
+                android:layout_weight="1" />
+
         </LinearLayout>
 
         <TextView
@@ -153,6 +155,7 @@
                 android:text="养护"
                 android:textColor="@android:color/black"
                 android:textSize="25dp" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -160,12 +163,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/y_fosterBanner"
+            android:layout_marginTop="3dp"
             android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"></LinearLayout>
+                android:layout_weight="1" />
 
             <TextView
                 android:id="@+id/ytv_Foster"
@@ -173,15 +177,13 @@
                 android:layout_height="match_parent"
                 android:layout_weight="18"
                 android:textColor="@android:color/black"
-
                 android:textSize="16dp" />
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"></LinearLayout>
+                android:layout_weight="1" />
         </LinearLayout>
-
 
         <TextView
             android:id="@+id/y_line2"
@@ -207,6 +209,7 @@
                 android:text="主要价值"
                 android:textColor="@android:color/black"
                 android:textSize="25dp" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -214,12 +217,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/y_skillBanner"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="3dp"
             android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"></LinearLayout>
+                android:layout_weight="1" />
 
             <TextView
                 android:id="@+id/ytv_Skill"
@@ -232,8 +237,9 @@
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"></LinearLayout>
+                android:layout_weight="1" />
         </LinearLayout>
 
     </RelativeLayout>
+
 </ScrollView>

@@ -2,6 +2,7 @@ package com.happier.flowering.mine;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ListView;
 
 import com.google.gson.Gson;
@@ -32,19 +33,7 @@ public class MNotice extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_mnotice );
-        findViews();
-        setAdapters();
-    }
-    public void findViews() {
-        listView = findViewById( R.id.c_lv_notice );
-    }
-
-
-    public void setAdapters() {
-        noticeAdapter = new NoticeAdapter( this, dataList, R.layout.mine_notice_listview );
-        listView.setAdapter( noticeAdapter );
-    }
-    public void getNotice(){
+        Log.e("通知",dataList.toString());
         OkHttpClient okHttpClient = new OkHttpClient();
         Request request = new Request.Builder().url( Constant.BASE_IP + "/center/findComments" + "?id=" + 1 ).build();
         Call call = okHttpClient.newCall( request );
@@ -61,7 +50,20 @@ public class MNotice extends AppCompatActivity {
                 Type type = new TypeToken<List<Map<String,Object>>>() {
                 }.getType();
                 dataList= new Gson().fromJson( info, type );
+                findViews();
+                setAdapters();
             }
         } );
+
     }
+    public void findViews() {
+        listView = findViewById( R.id.c_lv_notice );
+    }
+
+
+    public void setAdapters() {
+        noticeAdapter = new NoticeAdapter( this, dataList, R.layout.mine_notice_listview );
+        listView.setAdapter( noticeAdapter );
+    }
+
 }

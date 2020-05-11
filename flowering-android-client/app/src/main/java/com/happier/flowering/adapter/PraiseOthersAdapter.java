@@ -59,9 +59,9 @@ public class PraiseOthersAdapter extends BaseAdapter {
         TextView postTxt = convertView.findViewById(R.id.c_tv_PraiseOthers_post_txt);
         ImageView postImg = convertView.findViewById( R.id.c_iv_PraiseOthers_post_Img);
         userName.setText( contents.get( position ).get("userName").toString());
-        userImg.setImageResource( (int)contents.get( position ).get("userImg") );
-        postTxt.setText( contents.get( position ).get("postTxt ").toString());
-        postImg.setImageResource((int)contents.get( position ).get("postImg"));
+//        userImg.setImageResource( (int)contents.get( position ).get("userImg") );
+        postTxt.setText( contents.get( position ).get("postTxt").toString());
+//        postImg.setImageResource((int)contents.get( position ).get("postImg"));
 
         return convertView;
     }

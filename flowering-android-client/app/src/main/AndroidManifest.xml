@@ -19,18 +19,6 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
-    <!-- 添加微信权限 -->
-    <!-- <uses-permission android:name="android.permission.INTERNET"/> -->
-    <!-- <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/> -->
-    <!-- <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/> -->
-    <!-- <uses-permission android:name="android.permission.READ_PHONE_STATE"/> -->
-    <!-- <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/> -->
-    <!-- 添加微信权限 -->
-    <!-- <uses-permission android:name="android.permission.INTERNET"/> -->
-    <!-- <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/> -->
-    <!-- <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/> -->
-    <!-- <uses-permission android:name="android.permission.READ_PHONE_STATE"/> -->
-    <!-- <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/> -->
     <application xmlns:tools="http://schemas.android.com/tools"
         android:name=".aboutjpush.FloweringApplication"
         android:allowBackup="true"
@@ -88,6 +76,7 @@
                 android:resource="@xml/rc_file_path"
                 tools:replace="android:resource" />
         </provider>
+
         <!-- since 3.0.9 Required SDK 核心功能 -->
         <provider
             android:name="cn.jpush.android.service.DataProvider"
@@ -168,33 +157,19 @@
         <activity android:name=".activity.ArticleDetail" />
         <activity android:name=".mine.MCollection" />
         <activity android:name=".mine.MPraise" />
-        <activity android:name=".mine.BePraised" />
-        <activity android:name=".mine.PraiseOthers" />
         <activity android:name=".activity.PostPublishActivity" />
         <activity android:name=".mine.FlowerMinemore" />
-        <!-- &lt;!&ndash; 微信登录 -->
-        <activity
-            android:name=".wxapi.WXEntryActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:exported="true"
-            android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data android:scheme="你申请的appid" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".activity.LoginActivity" />
+        <activity android:name=".activity.RegistActivity" />
+        <activity android:name=".activity.FlowerChoose" />
+        <activity android:name=".mine.FlowerOthermore" />
         <activity android:name=".mine.MNotice" />
         <activity android:name=".activity.FindPlantActivity" />
         <activity android:name=".activity.FindPlantDetailActivity" />
         <activity android:name=".activity.PlantDetailActivity" />
         <activity android:name=".activity.LoadingActivity" />
         <activity android:name=".mine.MAttention" />
-        <activity android:name=".mine.MFans"></activity>
+        <activity android:name=".mine.MFans" />
     </application>
 
 </manifest>

@@ -1,6 +1,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="60dp"
+    android:layout_height="70dp"
     android:orientation="horizontal">
 
     <ImageView
@@ -13,11 +13,13 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
         <TextView
+            android:text="小红"
             android:id="@+id/c_tv_bePraised_user_name"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"/>
         <TextView
+            android:text="好"
             android:id="@+id/c_tv_bePraised_post_txt"
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -28,6 +30,7 @@
             android:layout_height="0dp"
             android:layout_weight="1">
             <TextView
+                android:textColor="#FF8B8989"
                 android:text="赞了我的花现"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"

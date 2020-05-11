@@ -2,6 +2,8 @@ package com.happier.flowering.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -9,12 +11,14 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.happier.flowering.R;
+import com.happier.flowering.adapter.PraiseOthersAdapter;
 import com.happier.flowering.constant.Constant;
 import com.happier.flowering.entity.User;
 import com.happier.flowering.mine.FlowerMinemore;
@@ -24,9 +28,18 @@ import com.happier.flowering.mine.MFans;
 import com.happier.flowering.mine.MNotice;
 import com.happier.flowering.mine.MPraise;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Type;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -45,25 +58,43 @@ import okhttp3.Response;
 public class FlowerMineFragment extends Fragment {
     private LinearLayout collection;
     private LinearLayout praise;
-    private User user;
+    private Map<String,Object>  map;
+    private Handler handler;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate( R.layout.fragment_flower_mine, container, false );
-
         getInfo();
-        //设置昵称
+        handler = new Handler() {
+            @Override
+            public void handleMessage(Message msg) {
+                String messages = (String) msg.obj;
+                Log.e("获取——————————userInfo",messages);
+                Type type = new TypeToken<Map<String,Object>>() {}.getType();
+                map = new Gson().fromJson( messages, type );
+            }
+
+        };
+//        "username" "userImg" "address" "sex" "profile" "attention" "fans" "bepraised"
+        //昵称
         TextView nickName = view.findViewById( R.id.c_nickname );
+//        nickName.setText(map.get("username").toString());
+        //头像
+//        ImageView userImg = view.findViewById(R.id.c_userImg);
+//        userImg.setImageResource(Integer.valueOf(map.get("userImg").toString()));
+        //获赞
+        TextView bePraisedNum = view.findViewById(R.id.c_bePraised_num);
+//        bePraisedNum.setText(map.get("bepraised").toString());
+        //关注
+        TextView attentionNum = view.findViewById(R.id.c_attention_num);
+//        attentionNum.setText(map.get("attention").toString());
+        //粉丝
+        TextView fansNum = view.findViewById( R.id.c_fans_num);
+//        fansNum.setText(map.get("fans").toString());
+//        ImageView userImg = view.findViewById(R.id.c_userImg);
+//        userImg.setImageResource(Integer.valueOf(map.get( "userImg" ).toString()));
 
-
-//        nickName.setText(user.getNickname());
-
-        // nickName.setText(user.getNickname());
-
-
-//        nickName.setText(user.getNickname());
-        // nickName.setText(user.getNickname());
         //跳转收藏
         collection = view.findViewById( R.id.c_m_shou );
         collection.setOnClickListener( new View.OnClickListener() {
@@ -88,11 +119,11 @@ public class FlowerMineFragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setClass( getActivity(), FlowerMinemore.class );
-                intent.putExtra( "username", user.getNickname() );
-                intent.putExtra( "userImg", user.getHeadImg() );
-                intent.putExtra( "address", user.getAddress() );
-                intent.putExtra( "sex", user.getSex() );
-                intent.putExtra( "profile", user.getProfile() );
+//                intent.putExtra( "username", user.getNickname() );
+//                intent.putExtra( "userImg", user.getHeadImg() );
+//                intent.putExtra( "address", user.getAddress() );
+//                intent.putExtra( "sex", user.getSex() );
+//                intent.putExtra( "profile", user.getProfile() );
                 startActivity( intent );
             }
         } );
@@ -123,28 +154,32 @@ public class FlowerMineFragment extends Fragment {
         return view;
     }
 
-    //得到个人基本信息
-    public void getInfo() {
-        OkHttpClient okHttpClient = new OkHttpClient();
-        Request request = new Request.Builder().url( Constant.BASE_IP + "/center/userInfo" + "?id=" + 1 ).build();
-        Call call = okHttpClient.newCall( request );
 
-        call.enqueue( new Callback() {
+    public void getInfo(){
+        new Thread(){
             @Override
-            public void onFailure(Call call, IOException e) {
-                e.printStackTrace();
+            public void run() {
+                try {
+                    URL url= new URL( Constant.BASE_IP +"/center/userInfo" + "?id=" + 1 );
+                    URLConnection conn = url.openConnection();
+                    InputStream in = conn.getInputStream();
+                    BufferedReader reader = new BufferedReader(new InputStreamReader(in, "utf-8"));
+                    String info = reader.readLine();
+                    Log.e("******************",info);
+                    Message message = new Message();
+                    message.obj = info;
+                    handler.sendMessage(message);
+                } catch (MalformedURLException e) {
+                    e.printStackTrace();
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+
             }
 
-            @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                String info = response.body().string();
-                Type type = new TypeToken<User>() {
-                }.getType();
-                user = new Gson().fromJson( info, type );
-                // Log.e("用户",user.getNickname());
-            }
-        } );
-    }
 
-
-}
+        }.start();
+}}

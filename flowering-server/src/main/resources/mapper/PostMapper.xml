@@ -55,7 +55,7 @@
     </select>
 
     <select id="searchPostByUserId" resultMap="postResultMapper">
-        selecc * from post p where p.user_id = #{userId}
+        select * from post p where p.user_id = #{userId}
           order by p.time desc
     </select>
     <select id="searchPostByPostId" resultMap="postResultMapper">

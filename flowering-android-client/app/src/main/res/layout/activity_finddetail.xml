@@ -13,26 +13,26 @@
             android:id="@+id/y_banner"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:background="@color/colorGreen">
+            android:background="#FFF">
 
             <ImageView
                 android:id="@+id/yimg_drawback1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
-                android:src="@drawable/drawback" />
+                android:src="@drawable/back_to_up" />
 
             <TextView
                 android:id="@+id/ytv_plantDetailName1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:textColor="@android:color/white"
-                android:textSize="25dp" />
+                android:text="白静菊"
+                android:textColor="@color/colorGreen"
+                android:textSize="20dp" />
+
         </RelativeLayout>
-
-
 
         <ImageView
             android:id="@+id/yimg_plantDetailImg1"
@@ -41,14 +41,12 @@
             android:layout_below="@+id/y_banner"
             android:scaleType="fitXY" />
 
-
-
-
         <LinearLayout
             android:id="@+id/y_jianjie1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/yimg_plantDetailImg1">
+            android:layout_below="@id/yimg_plantDetailImg1"
+            android:layout_marginTop="10dp">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -62,20 +60,22 @@
                 android:text="简介"
                 android:textColor="@android:color/black"
                 android:textSize="25dp" />
-        </LinearLayout>
 
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/y_desc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/y_jianjie1"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="3dp"
             android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"></LinearLayout>
+                android:layout_weight="1" />
 
             <TextView
                 android:id="@+id/ytv_plantDesc1"
@@ -88,8 +88,10 @@
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"></LinearLayout>
+                android:layout_weight="1" />
+
         </LinearLayout>
 
     </RelativeLayout>
+
 </ScrollView>

@@ -56,7 +56,7 @@ public class AttentionAdapter extends BaseAdapter {
             convertView = inflater.inflate( itemLayoutId, null );
         }
         ImageView img = convertView.findViewById(R.id.c_iv_attentionImg);
-        img.setImageResource( Integer.parseInt(contents.get(position).getHeadImg()));
+//        img.setImageResource( Integer.parseInt(contents.get(position).getHeadImg()));
         TextView name = convertView.findViewById(R.id.c_tv_attentionName);
         name.setText(contents.get(position).getNickname());
         return convertView;

@@ -55,7 +55,7 @@ public class FansAdapter    extends BaseAdapter{
                 convertView = inflater.inflate( itemLayoutId, null );
             }
             ImageView img = convertView.findViewById( R.id.c_iv_fansImg);
-            img.setImageResource( Integer.parseInt(contents.get(position).getHeadImg()));
+//            img.setImageResource( Integer.parseInt(contents.get(position).getHeadImg()));
             TextView name = convertView.findViewById(R.id.c_tv_fansName);
             name.setText(contents.get(position).getNickname());
             return convertView;
