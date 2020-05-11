@@ -2,6 +2,7 @@ package com.happier.flowering.mine;
 
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -16,6 +17,8 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.happier.flowering.R;
 import com.happier.flowering.constant.Constant;
 
@@ -24,12 +27,16 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
+import java.lang.reflect.Type;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.Map;
 
 
 public class FlowerOthermore extends AppCompatActivity implements View.OnClickListener{
+    private Map<String, Object> infomap;
+    private Handler handler;
     //个人信息
     private ImageView headImg;
     private TextView gender;
@@ -58,7 +65,19 @@ public class FlowerOthermore extends AppCompatActivity implements View.OnClickLi
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.flower_other_othermore);
+        //查询个人信息
+        getInfo();
+        handler = new Handler() {
+            @Override
+            public void handleMessage(Message msg) {
+                String messages = (String) msg.obj;
+                Log.e( "获取——————————userInfo", messages );
+                Type type = new TypeToken<Map<String, Object>>() {
+                }.getType();
+                infomap = new Gson().fromJson( messages, type );
+            }
 
+        };
         initPersonView();
         initProfile();
         //是否关注设置填充
@@ -383,5 +402,32 @@ public class FlowerOthermore extends AppCompatActivity implements View.OnClickLi
         }
     }
 
+    public void getInfo() {
+        new Thread() {
+            @Override
+            public void run() {
+                try {
+                    URL url = new URL( Constant.BASE_IP + "/center/userInfo" + "?id=" + 1 );
+                    URLConnection conn = url.openConnection();
+                    InputStream in = conn.getInputStream();
+                    BufferedReader reader = new BufferedReader( new InputStreamReader( in, "utf-8" ) );
+                    String info = reader.readLine();
+                    Log.e( "******************", info );
+                    Message message = new Message();
+                    message.obj = info;
+                    handler.sendMessage( message );
+                } catch (MalformedURLException e) {
+                    e.printStackTrace();
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
 
+
+            }
+
+
+        }.start();
+    }
 }

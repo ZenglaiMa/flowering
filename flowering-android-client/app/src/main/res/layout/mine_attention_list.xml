@@ -1,13 +1,27 @@
 <LinearLayout android:layout_width="match_parent"
-    android:layout_height="60dp"
-    android:orientation="horizontal"
+    android:layout_height="70dp"
+    android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android" >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="68dp">
     <ImageView
         android:id="@+id/c_iv_attentionImg"
-        android:layout_width="50dp"
+        android:layout_width="60dp"
         android:layout_height="match_parent" />
     <TextView
+        android:textSize="25dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="10dp"
+        android:text="小陈"
         android:id="@+id/c_tv_attentionName"
         android:layout_width="wrap_content"
         android:layout_height="match_parent" />
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#FFEAE6E6"/>
 </LinearLayout>
+
+

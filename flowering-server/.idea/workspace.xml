@@ -2,16 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2fd2d116-7c56-4cab-b16a-12a8dc75878a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/adapter/PraiseOthersAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/adapter/PraiseOthersAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/constant/Constant.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/constant/Constant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/fragment/FlowerMineFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/fragment/FlowerMineFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/mine/BePraised.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/mine/BePraised.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/mine/FlowerMinemore.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/mine/FlowerMinemore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/mine/MPraise.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/mine/MPraise.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/mine/PraiseOthers.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/java/com/happier/flowering/mine/PraiseOthers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowering-android-client/app/src/main/res/layout/activity_mpraise.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../flowering-android-client/app/src/main/res/layout/activity_mpraise.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/happier/flowering/flowering/center/controller/CenterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/happier/flowering/flowering/center/controller/CenterController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/happier/flowering/flowering/discovery/HttpUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/happier/flowering/flowering/discovery/HttpUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/happier/flowering/flowering/discovery/controller/DiscoveryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/happier/flowering/flowering/discovery/controller/DiscoveryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/happier/flowering/flowering/discovery/service/DiscoveryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/happier/flowering/flowering/discovery/service/DiscoveryService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -258,6 +253,8 @@
       <workItem from="1588940412911" duration="1154000" />
       <workItem from="1588941806480" duration="591000" />
       <workItem from="1588945054645" duration="318000" />
+      <workItem from="1589164007589" duration="90000" />
+      <workItem from="1589164156787" duration="3885000" />
     </task>
     <servers />
   </component>
@@ -269,9 +266,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="454" y="246" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.728@0.0.1366.728" timestamp="1588940580751" />
-    <state x="375" y="191" key="com.intellij.ide.util.TipDialog" timestamp="1588945053240">
+    <state x="375" y="191" key="com.intellij.ide.util.TipDialog" timestamp="1589179074893">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="375" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1588945053240" />
+    <state x="375" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1589179074893" />
   </component>
 </project>
