@@ -89,7 +89,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             return true;
         } else {
             String lastGroupName = mList.get(position - 1).getGroupName();
+            if (position==26){
+                position=position-1;
+            }
             String currentGroupName = mList.get(position).getGroupName();
+
             //判断上一个数据的组别和下一个数据的组别是否一致，如果不一致则是不同组，也就是为第一项（头部）
             if (lastGroupName.equals(currentGroupName)) {
                 return false;
