@@ -37,16 +37,16 @@ public class CenterController {
         map.put("address", user.getAddress());
         map.put("sex", user.getSex());
         map.put("profile", user.getProfile());
-        List  attention = this.centerService.findInitiative(id);
-        map.put("attention",attention.size());
+        List attention = this.centerService.findInitiative(id);
+        map.put("attention", attention.size());
         List fans = this.centerService.findPassive(id);
-        map.put("fans",fans.size());
+        map.put("fans", fans.size());
         List BePraised = this.centerService.findThumbsMe(id);
-        map.put("bepraised",BePraised.size());
+        map.put("bepraised", BePraised.size());
 //        System.out.println(user.getNickname());
 //        System.out.println("用户个人信息" + new Gson().toJson(user));
-        return new Gson().toJson(map);
-        System.out.println(user.getNickname());
+//        return new Gson().toJson(map);
+//        System.out.println(user.getNickname());
         return new Gson().toJson(user);
     }
 
@@ -107,7 +107,8 @@ public class CenterController {
         return gson.toJson(posts);
     }
 
-    /**=============关注相关===========
+    /**
+     * =============关注相关===========
      *
      * @param userInitiative
      * @param userPassive
@@ -123,6 +124,7 @@ public class CenterController {
     public String ifAttention(@RequestParam("userInitiative") int userInitiative, @RequestParam("userPassive") int userPassive) {
         return this.centerService.ifAttention(userInitiative, userPassive);
     }
+
     /**
      * 個人詳情私信
      *
@@ -131,7 +133,7 @@ public class CenterController {
      */
     @RequestMapping("/getAllMineMessage")
     public String searchMessageByUserId(@RequestParam("userId") int userId) {
-        List<Map<String, Object>> messageAboutList = this.centerSsazervice.searchMessageByUserId(userId);
+        List<Map<String, Object>> messageAboutList = this.centerService.searchMessageByUserId(userId);
         return new Gson().toJson(messageAboutList);
     }
 
@@ -148,19 +150,19 @@ public class CenterController {
         int num = this.centerService.sendMessage(userId, recvId, mContent);
         if (num == 1) {
             return "ok";
+        }
         return "fail";
-
     }
 
     @RequestMapping("/registUser")
-    public int registUser(@RequestParam("nickname")String nickname,@RequestParam("gender")Integer sex,@RequestParam("password")String password,
-                          @RequestParam("address")String address,@RequestParam("profile")String profile){
-        return centerService.registUser(nickname,sex,password,address,profile);
+    public int registUser(@RequestParam("nickname") String nickname, @RequestParam("gender") Integer sex, @RequestParam("password") String password,
+                          @RequestParam("address") String address, @RequestParam("profile") String profile) {
+        return centerService.registUser(nickname, sex, password, address, profile);
     }
-    @RequestMapping("/loginUser")
-    public int loginUser(@RequestParam("password")String pass,@RequestParam("nickname")String name){
-      User user=centerService.loginUser(pass,name);
-      return  user.getUserId();
 
+    @RequestMapping("/loginUser")
+    public int loginUser(@RequestParam("password") String pass, @RequestParam("nickname") String name) {
+        User user = centerService.loginUser(pass, name);
+        return user.getUserId();
     }
 }

@@ -36,17 +36,14 @@ import java.lang.reflect.Type;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.HashMap;
 import java.util.Map;
 
-
-public class FlowerOthermore extends AppCompatActivity implements View.OnClickListener{
-    private Map<String, Object> infomap;
-    private Handler handler;
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class FlowerOthermore extends AppCompatActivity implements View.OnClickListener,AdapterView.OnItemClickListener{
+public class FlowerOthermore extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
     //个人信息
     private ImageView headImg;
     private TextView gender;
@@ -58,25 +55,26 @@ public class FlowerOthermore extends AppCompatActivity implements View.OnClickLi
     private TextView thumbs;
     private Button sendBtn;
     private Button followIs;
-    private static final  String PATH_OTHER_SENDMESSAGE="/center/sendMessage";
-    private static final  String PATH_OTHER_ISFOLLOW="/center/ifAttention";
-    private static final  String PATH_OTHER_ADDFOLLOW="/center/addAttention";
-    private static final  String PATH_OTHER_REMOVEFOLLOW="/center/removeAttention";
+    private static final String PATH_OTHER_SENDMESSAGE = "/center/sendMessage";
+    private static final String PATH_OTHER_ISFOLLOW = "/center/ifAttention";
+    private static final String PATH_OTHER_ADDFOLLOW = "/center/addAttention";
+    private static final String PATH_OTHER_REMOVEFOLLOW = "/center/removeAttention";
     private Handler sHandler;
     private Handler isfHandler;
     private Handler addHandler;
     private Handler removeHandler;
     private Gson gson;
     private ListView listView;
-    private List<Post> myPosts =new ArrayList<>();
+    private List<Post> myPosts = new ArrayList<>();
     private MinemoreHXAdapter minemoreHXAdapter;
+    private Map<String, Object> infomap = new HashMap<>();
     private Handler handler;
-    private static final  String PATH_MINEMORE_HX="/center/findPosts";
+    private static final String PATH_MINEMORE_HX = "/center/findPosts";
     //q_other_findinglist
-    private PopupWindow popupWindow=null;
-    private View popupView=null;
+    private PopupWindow popupWindow = null;
+    private View popupView = null;
     //标识是否关注
-    private boolean isAttention=false;
+    private boolean isAttention = false;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -88,10 +86,10 @@ public class FlowerOthermore extends AppCompatActivity implements View.OnClickLi
             @Override
             public void handleMessage(Message msg) {
                 String messages = (String) msg.obj;
-                Log.e( "获取——————————userInfo", messages );
+                Log.e("获取——————————userInfo", messages);
                 Type type = new TypeToken<Map<String, Object>>() {
                 }.getType();
-                infomap = new Gson().fromJson( messages, type );
+                infomap = new Gson().fromJson(messages, type);
             }
 
         };
@@ -100,23 +98,23 @@ public class FlowerOthermore extends AppCompatActivity implements View.OnClickLi
         //是否关注设置填充
 //        setByisAttention();
         //发送私信弹出框
-        sendBtn=findViewById(R.id.q_sendMessage);
-        follow=findViewById(R.id.q_setfollow);
+        sendBtn = findViewById(R.id.q_sendMessage);
+        follow = findViewById(R.id.q_setfollow);
         sendBtn.setOnClickListener(this);
         follow.setOnClickListener(this);
-        listView=findViewById(R.id.q_finginglist);
+        listView = findViewById(R.id.q_finginglist);
         gson = new GsonBuilder()
                 .setDateFormat("yyyy-MM-dd")
                 .create();
-        listView=findViewById(R.id.q_other_findinglist);
+        listView = findViewById(R.id.q_other_findinglist);
         initPostData();
         handler = new Handler() {
             @Override
             public void handleMessage(android.os.Message msg) {
                 String messages = (String) msg.obj;
-                myPosts = gson.fromJson(messages, new TypeToken<List<Post>>(){}.getType());
-                Log.e("話現查询",myPosts.toString());
-                minemoreHXAdapter = new MinemoreHXAdapter(FlowerOthermore.this,myPosts,R.layout.minemore_fragment_flist);
+                myPosts = gson.fromJson(messages, new TypeToken<List<Post>>() {}.getType());
+                Log.e("話現查询", myPosts.toString());
+                minemoreHXAdapter = new MinemoreHXAdapter(FlowerOthermore.this, myPosts, R.layout.minemore_fragment_flist);
                 listView.setAdapter(minemoreHXAdapter);
                 listView.setOnItemClickListener(FlowerOthermore.this);
             }
@@ -124,20 +122,16 @@ public class FlowerOthermore extends AppCompatActivity implements View.OnClickLi
         };
 
 
-
-
-
-
-
     }
-    public void initPostData(){
-        new Thread(){
+
+    public void initPostData() {
+        new Thread() {
             @Override
             public void run() {
                 //查询私信数据
-                Log.e("我的花","查詢");
+                Log.e("我的花", "查詢");
                 try {
-                    URL url= new URL(Constant.BASE_IP + PATH_MINEMORE_HX+"?id=2");
+                    URL url = new URL(Constant.BASE_IP + PATH_MINEMORE_HX + "?id=2");
                     URLConnection conn = url.openConnection();
                     InputStream in = conn.getInputStream();
                     BufferedReader reader = new BufferedReader(new InputStreamReader(in, "utf-8"));
@@ -152,32 +146,29 @@ public class FlowerOthermore extends AppCompatActivity implements View.OnClickLi
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-
-
             }
 
 
         }.start();
     }
+
     /**
      * 查询是否关注并设置follow  text
      */
-    private void setByisAttention(){
+    private void setByisAttention() {
         //查询是否关注
         isfHandler = new Handler() {
             @Override
             public void handleMessage(android.os.Message msg) {
                 //判断是否回复
-                String ms= (String) msg.obj;
-                Log.e("是否关注",ms);
-                if(ms.equals("yes")) {
-                    Toast ts = Toast.makeText(FlowerOthermore.this,"已关注", Toast.LENGTH_LONG);
+                String ms = (String) msg.obj;
+                Log.e("是否关注", ms);
+                if (ms.equals("yes")) {
+                    Toast ts = Toast.makeText(FlowerOthermore.this, "已关注", Toast.LENGTH_LONG);
                     ts.show();
-                    isAttention=true;
+                    isAttention = true;
                     followIs.setText("已关注");
-                }
-                else
-                {
+                } else {
                     Toast ts = Toast.makeText(FlowerOthermore.this, "未关注", Toast.LENGTH_LONG);
                     ts.show();
                 }
@@ -185,13 +176,13 @@ public class FlowerOthermore extends AppCompatActivity implements View.OnClickLi
 
         };
 
-        new Thread(){
+        new Thread() {
             @Override
             public void run() {
                 //查询私信数据
                 try {
-                    Log.e("查询是否关注","reply");
-                    URL url= new URL(Constant.BASE_IP + PATH_OTHER_ISFOLLOW+"?userId="+"&otherId=");
+                    Log.e("查询是否关注", "reply");
+                    URL url = new URL(Constant.BASE_IP + PATH_OTHER_ISFOLLOW + "?userId=" + "&otherId=");
                     URLConnection conn = url.openConnection();
                     InputStream in = conn.getInputStream();
                     BufferedReader reader = new BufferedReader(new InputStreamReader(in, "utf-8"));
@@ -206,8 +197,6 @@ public class FlowerOthermore extends AppCompatActivity implements View.OnClickLi
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-
-
             }
 
 
@@ -215,43 +204,43 @@ public class FlowerOthermore extends AppCompatActivity implements View.OnClickLi
 
     }
 
-
-    private void initPersonView(){
-        headImg=findViewById(R.id.q_other_headImg);
-        gender=findViewById(R.id.q_other_gender);
-        nickName=findViewById(R.id.q_other_name);
-        profile=findViewById(R.id.q_other_profile);
-        address=findViewById(R.id.q_other_address);
-        fans=findViewById(R.id.q_other_fans);
-        follow=findViewById(R.id.q_other_follow);
-        thumbs=findViewById(R.id.q_other_thumbs);
+    private void initPersonView() {
+        headImg = findViewById(R.id.q_other_headImg);
+        gender = findViewById(R.id.q_other_gender);
+        nickName = findViewById(R.id.q_other_name);
+        profile = findViewById(R.id.q_other_profile);
+        address = findViewById(R.id.q_other_address);
+        fans = findViewById(R.id.q_other_fans);
+        follow = findViewById(R.id.q_other_follow);
+        thumbs = findViewById(R.id.q_other_thumbs);
     }
 
     /**
      * 跳转携带userid查询他人信息
      * ----------需要查询
      */
-    private void initProfile(){
-// 填充信息
-
+    private void initProfile() {
+        // 填充信息
 
     }
+
     /**
      * 回复（发送）私信线程
+     *
      * @param mContent
      * @param senderId
      * @param recvId
      */
-    public void replyMessage(int senderId,int recvId,String mContent){
-        Log.e("回复私信","reply");
-        new Thread(){
+    public void replyMessage(int senderId, int recvId, String mContent) {
+        Log.e("回复私信", "reply");
+        new Thread() {
             @Override
             public void run() {
                 //查询私信数据
                 try {
-                    Log.e("回复私信","reply");
-                    URL url= new URL(Constant.BASE_IP +PATH_OTHER_SENDMESSAGE+"?userId="+
-                            senderId+"&recvId="+recvId+"&mContent="+mContent);
+                    Log.e("回复私信", "reply");
+                    URL url = new URL(Constant.BASE_IP + PATH_OTHER_SENDMESSAGE + "?userId=" +
+                            senderId + "&recvId=" + recvId + "&mContent=" + mContent);
                     URLConnection conn = url.openConnection();
                     InputStream in = conn.getInputStream();
                     BufferedReader reader = new BufferedReader(new InputStreamReader(in, "utf-8"));
@@ -288,14 +277,16 @@ public class FlowerOthermore extends AppCompatActivity implements View.OnClickLi
                 break;
         }
     }
-    public void onClicksendMessage(View v){
+
+    public void onClicksendMessage(View v) {
         showPopupWindow(v);
 
     }
+
     // 显示PopupWindow
     private void showPopupWindow(View view) {
         // 创建popupWindow对象
-        if(popupWindow!=null&&popupWindow.isShowing()){
+        if (popupWindow != null && popupWindow.isShowing()) {
             return;
         }
         popupWindow = new PopupWindow();
@@ -306,8 +297,6 @@ public class FlowerOthermore extends AppCompatActivity implements View.OnClickLi
         popupView = inf
                 .inflate(R.layout.mine_other_popwindow, null);
 
-
-
         // 设置PopupWindow显示的内容视图
         popupWindow.setContentView(popupView);
         // 设置PopupWindow是否能响应外部点击事件
@@ -317,29 +306,27 @@ public class FlowerOthermore extends AppCompatActivity implements View.OnClickLi
         popupWindow.setFocusable(true);
 
         // 获取按钮并添加监听器
-        EditText content=popupView.findViewById(R.id.q_text_sendContent);
+        EditText content = popupView.findViewById(R.id.q_text_sendContent);
 
         Button btnSend = popupView.findViewById(R.id.q_btn_send);
         btnSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //插入数据库回复私信
-                String mess=content.getText().toString();
-                Log.e("123",mess);
+                String mess = content.getText().toString();
+                Log.e("123", mess);
                 //接收者id在跳转过来时获取
-                replyMessage(2,1,mess);
+                replyMessage(2, 1, mess);
                 sHandler = new Handler() {
                     @Override
                     public void handleMessage(android.os.Message msg) {
                         //判断是否回复
-                        String ms= (String) msg.obj;
-                        Log.e("回复私信",ms);
-                        if(ms.equals("ok")) {
-                            Toast ts = Toast.makeText(FlowerOthermore.this,"已发送", Toast.LENGTH_LONG);
+                        String ms = (String) msg.obj;
+                        Log.e("回复私信", ms);
+                        if (ms.equals("ok")) {
+                            Toast ts = Toast.makeText(FlowerOthermore.this, "已发送", Toast.LENGTH_LONG);
                             ts.show();
-                        }
-                        else
-                        {
+                        } else {
                             Toast ts = Toast.makeText(FlowerOthermore.this, "发送失败", Toast.LENGTH_LONG);
                             ts.show();
                         }
@@ -353,26 +340,24 @@ public class FlowerOthermore extends AppCompatActivity implements View.OnClickLi
 
         // 在指定控件下方显示PopupWindow
 
-        popupWindow.showAtLocation(view, Gravity.CENTER,0,0);
+        popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
     }
 
-    public void onClicksetfollow(View v){
+    public void onClicksetfollow(View v) {
         //取消关注
-        if(isAttention==true){
-            removeHandler= new Handler() {
+        if (isAttention == true) {
+            removeHandler = new Handler() {
                 @Override
                 public void handleMessage(android.os.Message msg) {
                     //判断是否回复
-                    String ms= (String) msg.obj;
-                    Log.e("REMOVE关注",ms);
-                    if(ms.equals("yes")) {
-                        Toast ts = Toast.makeText(FlowerOthermore.this,"已remove关注", Toast.LENGTH_LONG);
+                    String ms = (String) msg.obj;
+                    Log.e("REMOVE关注", ms);
+                    if (ms.equals("yes")) {
+                        Toast ts = Toast.makeText(FlowerOthermore.this, "已remove关注", Toast.LENGTH_LONG);
                         ts.show();
-                        isAttention=false;
+                        isAttention = false;
                         followIs.setText("+关注");
-                    }
-                    else
-                    {
+                    } else {
                         Toast ts = Toast.makeText(FlowerOthermore.this, "remove关注false", Toast.LENGTH_LONG);
                         ts.show();
                     }
@@ -380,13 +365,13 @@ public class FlowerOthermore extends AppCompatActivity implements View.OnClickLi
 
             };
 
-            new Thread(){
+            new Thread() {
                 @Override
                 public void run() {
                     //查询私信数据
                     try {
-                        Log.e("取消关注","reply");
-                        URL url= new URL(Constant.BASE_IP + PATH_OTHER_REMOVEFOLLOW+"?userId="+"&otherId");
+                        Log.e("取消关注", "reply");
+                        URL url = new URL(Constant.BASE_IP + PATH_OTHER_REMOVEFOLLOW + "?userId=" + "&otherId");
                         URLConnection conn = url.openConnection();
                         InputStream in = conn.getInputStream();
                         BufferedReader reader = new BufferedReader(new InputStreamReader(in, "utf-8"));
@@ -409,26 +394,21 @@ public class FlowerOthermore extends AppCompatActivity implements View.OnClickLi
             }.start();
 
 
-
-
-
         }
         //+关注
-        if(isAttention==false){
-            addHandler= new Handler() {
+        if (isAttention == false) {
+            addHandler = new Handler() {
                 @Override
                 public void handleMessage(android.os.Message msg) {
                     //判断是否回复
-                    String ms= (String) msg.obj;
-                    Log.e("+关注",ms);
-                    if(ms.equals("yes")) {
-                        Toast ts = Toast.makeText(FlowerOthermore.this,"已关注", Toast.LENGTH_LONG);
+                    String ms = (String) msg.obj;
+                    Log.e("+关注", ms);
+                    if (ms.equals("yes")) {
+                        Toast ts = Toast.makeText(FlowerOthermore.this, "已关注", Toast.LENGTH_LONG);
                         ts.show();
-                        isAttention=true;
+                        isAttention = true;
                         followIs.setText("已关注");
-                    }
-                    else
-                    {
+                    } else {
                         Toast ts = Toast.makeText(FlowerOthermore.this, "+关注失败", Toast.LENGTH_LONG);
                         ts.show();
                     }
@@ -436,13 +416,13 @@ public class FlowerOthermore extends AppCompatActivity implements View.OnClickLi
 
             };
 
-            new Thread(){
+            new Thread() {
                 @Override
                 public void run() {
                     //查询私信数据
                     try {
-                        Log.e("加关注","reply");
-                        URL url= new URL(Constant.BASE_IP + PATH_OTHER_ADDFOLLOW+"?userId="+"&otherId");
+                        Log.e("加关注", "reply");
+                        URL url = new URL(Constant.BASE_IP + PATH_OTHER_ADDFOLLOW + "?userId=" + "&otherId");
                         URLConnection conn = url.openConnection();
                         InputStream in = conn.getInputStream();
                         BufferedReader reader = new BufferedReader(new InputStreamReader(in, "utf-8"));
@@ -472,15 +452,15 @@ public class FlowerOthermore extends AppCompatActivity implements View.OnClickLi
             @Override
             public void run() {
                 try {
-                    URL url = new URL( Constant.BASE_IP + "/center/userInfo" + "?id=" + 1 );
+                    URL url = new URL(Constant.BASE_IP + "/center/userInfo" + "?id=" + 1);
                     URLConnection conn = url.openConnection();
                     InputStream in = conn.getInputStream();
-                    BufferedReader reader = new BufferedReader( new InputStreamReader( in, "utf-8" ) );
+                    BufferedReader reader = new BufferedReader(new InputStreamReader(in, "utf-8"));
                     String info = reader.readLine();
-                    Log.e( "******************", info );
+                    Log.e("******************", info);
                     Message message = new Message();
                     message.obj = info;
-                    handler.sendMessage( message );
+                    handler.sendMessage(message);
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
                 } catch (UnsupportedEncodingException e) {
@@ -494,14 +474,10 @@ public class FlowerOthermore extends AppCompatActivity implements View.OnClickLi
 
 
         }.start();
-    /**
-     * 跳轉話現詳情額
-     * @param parent
-     * @param view
-     * @param position
-     * @param id
-     */
+    }
+
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
     }
 }

@@ -20,16 +20,18 @@ import java.util.List;
 
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
+
     private int mFirstY;
     private Context mContext;
     private List<Bean> mList;
     public static final int TYPE_SEARCH = 0;
     public static final int TYPE_NORMAL = 1;
-   // private GridView gridView;
+    // private GridView gridView;
     private GridViewAdapter gridViewAdapter;
     Gson gson = new Gson();
-    private List<Plant> plantList =  new ArrayList<>();
-    public RecyclerViewAdapter(Context context, List<Bean> list,List<Plant> plantList) {
+    private List<Plant> plantList = new ArrayList<>();
+
+    public RecyclerViewAdapter(Context context, List<Bean> list, List<Plant> plantList) {
         this.mContext = context;
         this.mList = list;
         this.plantList = plantList;
@@ -43,12 +45,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             View itemView = LayoutInflater.from(mContext).inflate(R.layout.addpter_flowerfinding, parent, false);
             viewHolder = new RecyclerViewAdapter.ViewHolder(itemView);
         }
-        View view =  LayoutInflater.from(mContext).inflate(R.layout.addpter_flowerfinding, parent, false);
-
+        View view = LayoutInflater.from(mContext).inflate(R.layout.addpter_flowerfinding, parent, false);
 
         return viewHolder;
     }
-
 
 
     @Override
@@ -56,20 +56,19 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         Gson gson = new Gson();
         List<Plant> list = new ArrayList<>();
         String groupName = mList.get(position).getGroupName();//获取分组首字母，根据首字母分配数据
-        for (int i = 0;i < plantList.size();i++){
-            if (plantList.get(i).getInitial().equals(groupName)){
-                Log.e("首字母",plantList.get(i).getInitial());
-                Log.e("groupName",groupName);
+        for (int i = 0; i < plantList.size(); i++) {
+            if (plantList.get(i).getInitial().equals(groupName)) {
+                Log.e("首字母", plantList.get(i).getInitial());
+                Log.e("groupName", groupName);
                 Plant plant = plantList.get(i);
                 list.add(plant);
             }
         }
 
-        Log.e("plantData",gson.toJson(list));
-        gridViewAdapter=new GridViewAdapter(list,mContext,R.layout.grindview_plant);
+        Log.e("plantData", gson.toJson(list));
+        gridViewAdapter = new GridViewAdapter(list, mContext, R.layout.grindview_plant);
         holder.gridView.setAdapter(gridViewAdapter);
     }
-
 
 
     @Override
@@ -85,12 +84,12 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
      * @return
      */
     public boolean isItemHeader(int position) {
-        if  (position == 0) {
+        if (position == 0) {
             return true;
         } else {
             String lastGroupName = mList.get(position - 1).getGroupName();
-            if (position==26){
-                position=position-1;
+            if (position == 26) {
+                position = position - 1;
             }
             String currentGroupName = mList.get(position).getGroupName();
 
@@ -121,6 +120,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         TextView mTextView;
         MyGridView gridView;
+
         public ViewHolder(View itemView) {
             super(itemView);
           /*  Gson gson = new Gson();
@@ -129,14 +129,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             gridViewAdapter=new GridViewAdapter(list,mContext,R.layout.grindview_plant);
             gridView.setAdapter(gridViewAdapter);
             mTextView = itemView.findViewById(R.id.tv_item_text);*/
-            gridView=itemView.findViewById(R.id.gv);
+            gridView = itemView.findViewById(R.id.gv);
             mTextView = itemView.findViewById(R.id.tv_item_text);
 
         }
     }
-
-
-
 
 
 }

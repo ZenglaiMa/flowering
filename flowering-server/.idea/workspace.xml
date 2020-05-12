@@ -10,6 +10,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/happier/flowering/flowering/discovery/controller/DiscoveryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/happier/flowering/flowering/discovery/controller/DiscoveryController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/happier/flowering/flowering/discovery/service/DiscoveryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/happier/flowering/flowering/discovery/service/DiscoveryService.java" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -226,6 +227,7 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
+        <option name="mavenHome" value="F:/apache-maven-3.5.4" />
         <option name="userSettingsFile" value="F:\apache-maven-3.5.4\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
@@ -268,15 +270,27 @@
     <treeState>
       <expand>
         <path>
-          <item name="Found 30 services " type="fcff1e1b:RestServiceStructure$RootNode" />
+          <item name="Found 31 services " type="fcff1e1b:RestServiceStructure$RootNode" />
         </path>
         <path>
-          <item name="Found 30 services " type="fcff1e1b:RestServiceStructure$RootNode" />
+          <item name="Found 31 services " type="fcff1e1b:RestServiceStructure$RootNode" />
           <item name="flowering-server" type="c588b436:RestServiceStructure$ProjectNode" />
         </path>
       </expand>
       <select />
     </treeState>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager">
     <configuration name="FloweringApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
@@ -315,6 +329,7 @@
       <workItem from="1589093706693" duration="1039000" />
       <workItem from="1589105753523" duration="692000" />
       <workItem from="1589116077787" duration="663000" />
+      <workItem from="1589252029962" duration="960000" />
     </task>
     <servers />
   </component>
