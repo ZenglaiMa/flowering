@@ -22,6 +22,7 @@
             android:src="@drawable/camera" />
 
         <LinearLayout
+            android:id="@+id/y_search_bar"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="5dp"

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_marginBottom="2dp"
+        android:id="@+id/serach_head"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+
+        <ImageView
+            android:layout_marginRight="20dp"
+            android:src="@drawable/houtui"
+            android:layout_width="0dp"
+            android:layout_weight="1.5"
+            android:layout_height="match_parent"/>
+
+        <LinearLayout
+            android:paddingTop="5dp"
+            android:paddingLeft="5dp"
+            android:orientation="horizontal"
+            android:id="@+id/y_searchbar"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="20"
+            android:background="@drawable/searchbar">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:src="@drawable/search" />
+
+            <EditText
+                android:background="@null"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="13"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_weight="0.5"
+            android:layout_width="0dp"
+            android:layout_gravity="center_vertical"
+            android:layout_height="23dp"/>
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/serach_head">
+
+        <com.yinglan.alphatabs.AlphaTabsIndicator xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/alphaIndicator_post"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal">
+
+            <com.yinglan.alphatabs.AlphaTabView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:tabText="文章"
+                app:tabTextSize="18dp"
+                app:textColorNormal="#2c2c2c"
+                app:textColorSelected="#45C01A" />
+
+            <com.yinglan.alphatabs.AlphaTabView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:tabText="帖子"
+                app:tabTextSize="18dp"
+                app:textColorNormal="#2c2c2c"
+                app:textColorSelected="#45C01A" />
+
+            <com.yinglan.alphatabs.AlphaTabView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:tabText="花现"
+                app:tabTextSize="18dp"
+                app:textColorNormal="#2c2c2c"
+                app:textColorSelected="#45C01A" />
+
+            <com.yinglan.alphatabs.AlphaTabView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:tabText="植物"
+                app:tabTextSize="18dp"
+                app:textColorNormal="#2c2c2c"
+                app:textColorSelected="#45C01A" />
+
+            <com.yinglan.alphatabs.AlphaTabView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:tabText="用户"
+                app:tabTextSize="18dp"
+                app:textColorNormal="#2c2c2c"
+                app:textColorSelected="#45C01A" />
+
+        </com.yinglan.alphatabs.AlphaTabsIndicator>
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/y_tab_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rl_up"
+        android:layout_marginTop="8dp" />
+
+
+</RelativeLayout>

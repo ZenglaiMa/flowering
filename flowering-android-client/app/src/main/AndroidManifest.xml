@@ -170,6 +170,7 @@
         <activity android:name=".activity.LoadingActivity" />
         <activity android:name=".mine.MAttention" />
         <activity android:name=".mine.MFans" />
+        <activity android:name=".activity.SearchActivity"/>
     </application>
 
 </manifest>

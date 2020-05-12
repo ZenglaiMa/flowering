@@ -20,6 +20,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.happier.flowering.R;
 import com.happier.flowering.activity.FindPlantActivity;
+import com.happier.flowering.activity.SearchActivity;
 import com.happier.flowering.adapter.RecyclerViewAdapter;
 import com.happier.flowering.constant.Constant;
 import com.happier.flowering.entity.Bean;
@@ -72,6 +73,14 @@ public class FlowerFindingFragment extends Fragment {
         wordsNavigation = view.findViewById(R.id.view_plant);
         findPlantButton = view.findViewById(R.id.ig_findPlant);
         ytv = view.findViewById(R.id.ytv_search);
+
+        searchBar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), SearchActivity.class);
+                startActivity(intent);
+            }
+        });
 
         findPlantButton.setOnClickListener(new View.OnClickListener() {
             @Override
