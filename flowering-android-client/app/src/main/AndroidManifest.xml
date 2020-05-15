@@ -159,8 +159,8 @@
         <activity android:name=".mine.MPraise" />
         <activity android:name=".activity.PostPublishActivity" />
         <activity android:name=".mine.FlowerMinemore" />
-        <activity android:name=".mine.EditMess"/>
-        <activity android:name=".mine.EditDetail"/>
+        <activity android:name=".mine.EditMess" />
+        <activity android:name=".mine.EditDetail" />
         <activity android:name=".activity.LoginActivity" />
         <activity android:name=".activity.RegistActivity" />
         <activity android:name=".activity.FlowerChoose" />
@@ -172,7 +172,8 @@
         <activity android:name=".activity.LoadingActivity" />
         <activity android:name=".mine.MAttention" />
         <activity android:name=".mine.MFans" />
-        <activity android:name=".activity.SearchActivity"/>
+        <activity android:name=".activity.SearchActivity" />
+        <activity android:name=".activity.SearchResultActivity" />
     </application>
 
 </manifest>

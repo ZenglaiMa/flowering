@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/m_search_result_rl_up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="8dp"
+        android:background="#FFF">
+
+        <com.yinglan.alphatabs.AlphaTabsIndicator xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/alphaIndicator_search_result"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp">
+
+            <com.yinglan.alphatabs.AlphaTabView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:tabText="花间"
+                app:tabTextSize="18dp"
+                app:textColorNormal="#2c2c2c"
+                app:textColorSelected="#45C01A" />
+
+            <com.yinglan.alphatabs.AlphaTabView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:tabText="花现"
+                app:tabTextSize="18dp"
+                app:textColorNormal="#2c2c2c"
+                app:textColorSelected="#45C01A" />
+
+            <com.yinglan.alphatabs.AlphaTabView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:tabText="用户"
+                app:tabTextSize="18dp"
+                app:textColorNormal="#2c2c2c"
+                app:textColorSelected="#45C01A" />
+
+        </com.yinglan.alphatabs.AlphaTabsIndicator>
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/tab_content_search_result"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/m_search_result_rl_up"
+        android:layout_marginTop="8dp" />
+
+</RelativeLayout>
