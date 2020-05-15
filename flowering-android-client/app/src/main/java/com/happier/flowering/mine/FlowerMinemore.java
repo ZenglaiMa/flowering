@@ -112,13 +112,14 @@ public class FlowerMinemore extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.flower_mine_minemore);
-//        editMess=findViewById(R.id.q_edit_mess);
-//        editMess.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent=new Intent(FlowerMinemore.this, EditMess.class);
-//            }
-//        });
+        editMess=findViewById(R.id.q_edit_mess);
+        editMess.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(FlowerMinemore.this, EditMess.class);
+                startActivity(intent);
+            }
+        });
         // 1. 初始化MyTabSpec对象
         // Fragment、ImageView、TextView、normalImage、selectImage
         initData();
@@ -143,26 +144,22 @@ public class FlowerMinemore extends AppCompatActivity {
         // 3 设置ImageView和TextView
         findView();
 
-        // 4 设置图片资源
-//       setTag()
-
 
     }
 
     private void setFragment() {
         map.get( tabStrId[0] ).setFragment( new FlowerMinemoreHXFragment() );
         map.get( tabStrId[1] ).setFragment( new FlowerMinemoreMessageFragment() );
-//        map.get(tabStrId[2]).setFragment(new FlowerMinemoreMessageFragment());
     }
 
     private void findView() {
         TextView tv1 = findViewById( R.id.q_tab_huaxian );
         TextView tv2 = findViewById( R.id.q_tab_message );
 
-//        map.get(tabStrId[0]).setImageView(iv1);
+
         map.get( tabStrId[0] ).setTextView( tv1 );
 
-//        map.get(tabStrId[1]).setImageView(iv2);
+
         map.get( tabStrId[1] ).setTextView( tv2 );
 
     }
@@ -170,12 +167,12 @@ public class FlowerMinemore extends AppCompatActivity {
     private void setListener() {
         TextView textView1 = findViewById( R.id.q_tab_huaxian );
         TextView textView2 = findViewById( R.id.q_tab_message );
-//        TextView textView3 = findViewById(R.id.q_tab_comment);
+
 
         MyListener listener = new MyListener();
         textView1.setOnClickListener( listener );
         textView2.setOnClickListener( listener );
-//        textView3.setOnClickListener(listener);
+
     }
 
     private void changeTab(String s) {

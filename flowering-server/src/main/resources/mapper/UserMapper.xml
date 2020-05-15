@@ -25,5 +25,21 @@ insert into user (nickname,password,sex,profile,address)
     <select id="loginUser" resultMap="userMap">
 select * from user where password=#{password} and nickname=#{name}
     </select>
+    <update id="updateImg">
+   update user
+        set head_img=#{path}
+        where user_id=#{userId}
+    </update>
+    <update id="updateName">
+   update user
+        set nickname=#{name}
+        where user_id=#{userId}
+    </update>
+    <update id="updateProfile">
+   update user
+        set profile=#{profile}
+         where user_id=#{userId}
+    </update>
+
 
 </mapper>

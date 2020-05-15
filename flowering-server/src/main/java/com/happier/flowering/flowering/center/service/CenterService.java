@@ -180,9 +180,13 @@ public class CenterService {
         return  posts;
     }
 
-    public void addAttention(int userInitiative, int userPassive){
+    public String addAttention(int userInitiative, int userPassive){
 
-        this.attentionMapper.insertAttention(userInitiative,userPassive);
+        int num=this.attentionMapper.insertAttention(userInitiative,userPassive);
+        if(num==1){
+            return "no";
+        }
+        return "yes";
     }
     public String ifAttention(int userInitiative, int userPassive) {
         int a = this.attentionMapper.ifAttention(userInitiative, userPassive);
@@ -190,6 +194,14 @@ public class CenterService {
             return "no";
         }
         else return "yes";
+    }
+    public String removeAttention(int userInitiative, int userPassive){
+        int num=this.attentionMapper.deleteAttention(userInitiative,userPassive);
+        if(num==1){
+            return "no";
+        }
+        return "yes";
+
     }
     /**
      * 個人私信
@@ -249,5 +261,16 @@ public class CenterService {
     public User loginUser(String pass, String name){
         return userMapper.loginUser(pass,name);
 
+    }
+    public int uploadHeaderImage(int id,String path){
+        return userMapper.updateImg(id,path);
+
+    }
+    public int updateName(int id,String name){
+        return userMapper.updateName(id,name);
+    }
+
+    public int updateProfile(int id,String profile){
+        return userMapper.updateProfile(id,profile);
     }
 }

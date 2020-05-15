@@ -6,11 +6,15 @@ import com.happier.flowering.entity.Article;
 import com.happier.flowering.entity.Post;
 import com.happier.flowering.entity.User;
 import com.happier.flowering.flowering.center.service.CenterService;
+import org.springframework.util.ResourceUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -114,17 +118,19 @@ public class CenterController {
      * @param userPassive
      */
     @RequestMapping("/addAttention")
-    public void addAttention(@RequestParam("userInitiative") int userInitiative, @RequestParam("userPassive") int userPassive) {
+    public String addAttention(@RequestParam("userInitiative") int userInitiative, @RequestParam("userPassive") int userPassive){
         //userInitiative:主动关注者
         //userPassive:被动关注者
-        this.centerService.addAttention(userInitiative, userPassive);
+        return this.centerService.addAttention(userInitiative,userPassive);
     }
-
     @RequestMapping("/ifAttention")
-    public String ifAttention(@RequestParam("userInitiative") int userInitiative, @RequestParam("userPassive") int userPassive) {
-        return this.centerService.ifAttention(userInitiative, userPassive);
+    public String ifAttention(@RequestParam("userInitiative") int userInitiative, @RequestParam("userPassive") int userPassive){
+        return this.centerService.ifAttention(userInitiative,userPassive);
     }
-
+    @RequestMapping("/removeAttention")
+    public String removeAttention(@RequestParam("userInitiative") int userInitiative, @RequestParam("userPassive") int userPassive){
+        return this.centerService.removeAttention(userInitiative,userPassive);
+    }
     /**
      * 個人詳情私信
      *
@@ -164,5 +170,36 @@ public class CenterController {
     public int loginUser(@RequestParam("password") String pass, @RequestParam("nickname") String name) {
         User user = centerService.loginUser(pass, name);
         return user.getUserId();
+    }
+    /**
+     * =======编辑信息相关=======
+     */
+    @RequestMapping("/uploadHeaderImage")
+    public int uploadHeaderImage(@RequestParam("userId") int id,@RequestParam("pName") MultipartFile file) {
+        String path = "/header-img/" + System.currentTimeMillis() + ".jpg";
+        System.out.println("upHead");
+        StringBuffer picPath = new StringBuffer();
+        if (file != null) {
+            try {
+                String tempPath = ResourceUtils.getURL("classpath:").getPath() + "static/header-img";
+                String fileName = System.currentTimeMillis() + ".jpg";
+                picPath.append("/header-img/" + fileName);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return this.centerService.uploadHeaderImage(id,path);
+    }
+    @RequestMapping("/editName")
+    public int updateName(@RequestParam("userId") int userId,@RequestParam("name") String name){
+        return this.centerService.updateName(userId,name);
+
+    }
+    @RequestMapping("/editProfile")
+    public int updateProfile(@RequestParam("userId") int userId,@RequestParam("profile") String profile){
+        return this.centerService.updateProfile(userId,profile);
+
     }
 }

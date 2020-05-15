@@ -58,17 +58,17 @@
                 />
 
         </LinearLayout>
-        <!--<Button-->
-            <!--android:layout_marginLeft="100dp"-->
-            <!--android:layout_width="80dp"-->
-            <!--android:layout_height="40dp"-->
-            <!--android:layout_marginTop="20dp"-->
-            <!--android:text="编 辑 资 料"-->
-            <!--android:textSize="15dp"-->
-            <!--android:background="#FF5CDF4F"-->
-            <!--android:id="@+id/q_edit_mess"-->
-            <!--&gt;-->
-        <!--</Button>-->
+        <Button
+            android:layout_marginLeft="100dp"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:text="编 辑 资 料"
+            android:textSize="15dp"
+            android:background="#FF5CDF4F"
+            android:id="@+id/q_edit_mess"
+            >
+        </Button>
 
     </LinearLayout>
     <TextView

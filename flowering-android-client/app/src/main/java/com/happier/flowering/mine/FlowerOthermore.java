@@ -80,19 +80,7 @@ public class FlowerOthermore extends AppCompatActivity implements View.OnClickLi
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.flower_other_othermore);
-        //查询个人信息
-        getInfo();
-        handler = new Handler() {
-            @Override
-            public void handleMessage(Message msg) {
-                String messages = (String) msg.obj;
-                Log.e("获取——————————userInfo", messages);
-                Type type = new TypeToken<Map<String, Object>>() {
-                }.getType();
-                infomap = new Gson().fromJson(messages, type);
-            }
 
-        };
         initPersonView();
         initProfile();
         //是否关注设置填充
@@ -216,11 +204,25 @@ public class FlowerOthermore extends AppCompatActivity implements View.OnClickLi
     }
 
     /**
-     * 跳转携带userid查询他人信息
+     *
      * ----------需要查询
      */
     private void initProfile() {
         // 填充信息
+        //查询个人信息
+        getInfo();
+        handler = new Handler() {
+            @Override
+            public void handleMessage(Message msg) {
+                String messages = (String) msg.obj;
+                Log.e("获取——————————userInfo", messages);
+                Type type = new TypeToken<Map<String, Object>>() {
+                }.getType();
+                infomap = new Gson().fromJson(messages, type);
+
+            }
+
+        };
 
     }
 

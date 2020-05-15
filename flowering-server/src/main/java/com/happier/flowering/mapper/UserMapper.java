@@ -14,5 +14,8 @@ public interface UserMapper {
     int registUser(User u);
     //登录
     User loginUser(String password,String name);
+    int updateImg(int userId,String path);
+    int updateName(int userId,String name);
+    int updateProfile(int userId,String profile);
 
 }
