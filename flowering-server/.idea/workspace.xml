@@ -100,6 +100,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_25.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_25.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -369,15 +370,27 @@
     <treeState>
       <expand>
         <path>
-          <item name="Found 37 services " type="fcff1e1b:RestServiceStructure$RootNode" />
+          <item name="Found 38 services " type="fcff1e1b:RestServiceStructure$RootNode" />
         </path>
         <path>
-          <item name="Found 37 services " type="fcff1e1b:RestServiceStructure$RootNode" />
+          <item name="Found 38 services " type="fcff1e1b:RestServiceStructure$RootNode" />
           <item name="flowering-server" type="c588b436:RestServiceStructure$ProjectNode" />
         </path>
       </expand>
       <select />
     </treeState>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager">
     <configuration name="FloweringApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
@@ -424,6 +437,7 @@
       <workItem from="1589593539080" duration="3196000" />
       <workItem from="1589608058123" duration="348000" />
       <workItem from="1589609338350" duration="90000" />
+      <workItem from="1589612314116" duration="6110000" />
     </task>
     <servers />
   </component>

@@ -158,7 +158,7 @@
         <activity android:name=".mine.MCollection" />
         <activity android:name=".mine.MPraise" />
         <activity android:name=".activity.PostPublishActivity" />
-        <activity android:name=".mine.FlowerMinemore" />
+        <activity android:name=".mine.FlowerMineMoreActivity" />
         <activity android:name=".mine.EditMess" />
         <activity android:name=".mine.EditDetail" />
         <activity android:name=".activity.LoginActivity" />

@@ -2,199 +2,104 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFAAF5A3"
     android:orientation="vertical">
-    <ImageView
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginLeft="10dp"
-        android:src="@drawable/flower_mine_left"
-        />
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal"
-        >
-        <ImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginLeft="20dp"
-            android:src="@drawable/q_mine_headborder"
-            android:background="@drawable/flowering"
-            android:id="@+id/q_img_headImg"
+        android:layout_height="150dp"
+        android:alpha="0.8"
+        android:background="#000"
+        android:orientation="vertical">
 
-            />
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="80dp"
-            android:orientation="vertical"
-            android:layout_marginLeft="20dp"
-            >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="昵称"
-                android:textSize="25dp"
-                android:id="@+id/q_text_name"
-                android:textColor="#ffffff"
-
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="gender"
-                android:textSize="15dp"
-                android:textColor="#FFDDDA3A"
-                android:id="@+id/q_text_gender"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="地址"
-                android:textSize="20dp"
-                android:textColor="#FFDDDA3A"
-                android:id="@+id/q_text_address"
-                />
-
-        </LinearLayout>
-        <Button
-            android:layout_marginLeft="100dp"
-            android:layout_width="80dp"
-            android:layout_height="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="编 辑 资 料"
-            android:textSize="15dp"
-            android:background="#FF5CDF4F"
-            android:id="@+id/q_edit_mess"
-            >
-        </Button>
+            android:orientation="horizontal">
 
-    </LinearLayout>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="我的个性签名"
-        android:textSize="20dp"
-        android:textColor="#FFDDDA3A"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="20dp"
-        android:id="@+id/q_text_profile"
-        />
-    <TextView
-        android:layout_width="350dp"
-        android:layout_height="2dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="20dp"
-        android:background="#ffffff"
-        />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal"
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:text="90"
-            android:textSize="20dp"
-            android:textColor="#ffffff"
-            android:id="@+id/q_text_thumbs"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:text="获赞"
-            android:textSize="15dp"
-            android:layout_marginRight="10dp"
-            android:textColor="#ffffff"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="90"
-            android:textSize="20dp"
-            android:textColor="#ffffff"
-            android:id="@+id/q_text_follow"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:text="关注"
-            android:textSize="15dp"
-            android:layout_marginRight="10dp"
-            android:textColor="#ffffff"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="90"
-            android:textSize="20dp"
-            android:textColor="#ffffff"
-            android:id="@+id/q_text_fans"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:text="粉丝"
-            android:textSize="15dp"
-            android:textColor="#ffffff"
-            />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="5dp"
-        android:orientation="vertical"
-        android:background="#ffffff"
-        >
+            <ImageView
+                android:id="@+id/q_img_headImg"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="20dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="15dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/q_text_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFF"
+                    android:textSize="25dp" />
+
+                <TextView
+                    android:id="@+id/q_text_gender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFF"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/q_text_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFF"
+                    android:textSize="18dp" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/q_edit_mess"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:src="@drawable/edit_personal_info" />
+
+        </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="2dp"
-
-            >
-
-            <TextView
-                android:id="@+id/q_tab_huaxian"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/q_textview_border"
-                android:drawableBottom="#fff445"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:text="花现"
-                android:layout_marginRight="25dp"
-                android:textSize="25dp" />
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
 
             <TextView
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="我的私信"
-                android:textSize="25dp"
-                android:id="@+id/q_tab_message"
-                android:orientation="vertical"/>
+                android:text="个性签名："
+                android:textColor="#FFF"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/q_text_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FFF"
+                android:textSize="18dp" />
 
         </LinearLayout>
-        <FrameLayout
-            android:id="@+id/q_tab_content"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            />
-
 
     </LinearLayout>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:text="发布的花现"
+        android:textColor="#45C01A"
+        android:textSize="20dp" />
+
+    <FrameLayout
+        android:id="@+id/q_tab_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </LinearLayout>

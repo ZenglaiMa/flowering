@@ -16,30 +16,32 @@
     <select id="findUserById" resultMap="userMap">
         select * from user where user_id = #{id}
     </select>
+
     <insert id="registUser" useGeneratedKeys="true" keyProperty="userId">
-
-insert into user (nickname,password,sex,profile,address)
-  values (#{nickname},#{password},#{sex},#{profile},#{address})
-
+        insert into user (nickname,password,sex,profile,address)
+        values (#{nickname},#{password},#{sex},#{profile},#{address})
     </insert>
+
     <select id="loginUser" resultMap="userMap">
-select * from user where password=#{password} and nickname=#{name}
+        select * from user where password=#{password} and nickname=#{name}
     </select>
+
     <update id="updateImg">
-   update user
+        update user
         set head_img=#{path}
         where user_id=#{userId}
     </update>
+
     <update id="updateName">
-   update user
+        update user
         set nickname=#{name}
         where user_id=#{userId}
     </update>
-    <update id="updateProfile">
-   update user
-        set profile=#{profile}
-         where user_id=#{userId}
-    </update>
 
+    <update id="updateProfile">
+        update user
+        set profile=#{profile}
+        where user_id=#{userId}
+    </update>
 
 </mapper>

@@ -2,6 +2,7 @@ package com.happier.flowering.adapter;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.text.TextUtils;
@@ -21,6 +22,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.happier.flowering.R;
 import com.happier.flowering.constant.Constant;
+import com.happier.flowering.mine.FlowerMineMoreActivity;
 import com.happier.flowering.model.CommentListModel;
 import com.happier.flowering.model.NineGridModel;
 import com.happier.flowering.view.NineGridLayoutExd;
@@ -168,8 +170,9 @@ public class LatestAndChoicePostAdapter extends BaseAdapter {
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.m_post_user_header_img:
-                    // todo: 点击头像进入用户个人主页
-                    Toast.makeText(context, "todo: 用户(id=" + Integer.valueOf(dataSource.get(position).get("user_id").toString()) + ")个人主页", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(context, FlowerMineMoreActivity.class);
+                    intent.putExtra("userId", Integer.valueOf(dataSource.get(position).get("user_id").toString()));
+                    context.startActivity(intent);
                     break;
                 case R.id.m_good:
                     doGood(Integer.valueOf(dataSource.get(position).get("post_id").toString()));

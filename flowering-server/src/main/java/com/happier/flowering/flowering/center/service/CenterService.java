@@ -3,7 +3,6 @@ package com.happier.flowering.flowering.center.service;
 import com.happier.flowering.entity.*;
 import com.happier.flowering.mapper.*;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.sql.Date;
@@ -19,7 +18,6 @@ import java.util.Map;
  * @Date 2020-04-15 15:10
  */
 @Service
-@Transactional(readOnly = false)
 public class CenterService {
 
     @Resource
@@ -36,24 +34,13 @@ public class CenterService {
     private ThumbsUpMapper thumbsUpMapper;
     @Resource
     private PostMapper postMapper;
+    @Resource
+    private CommentMapper commentMapper;
 
-    /**
-     * @ClassName CenterService
-     * @Description 根据用户id查询用户基本信息
-     * @Author 陈雅楠
-     * @Date 2020/5/1
-     */
     public User findUser(int id) {
-        User user = this.userMapper.findUserById(id);
-        return user;
+        return this.userMapper.findUserById(id);
     }
 
-    /**
-     * @ClassName CenterService
-     * @Description 查询关注
-     * @Author 陈雅楠
-     * @Date 2020/5/1
-     */
     public List<User> findInitiative(int id) {
         List<Integer> ids = this.attentionMapper.findUserInitiativeId(id);
         List<User> users = new ArrayList<>();
@@ -64,12 +51,6 @@ public class CenterService {
         return users;
     }
 
-    /**
-     * @ClassName CenterService
-     * @Description 查询粉丝
-     * @Author 陈雅楠
-     * @Date 2020/5/1
-     */
     public List<User> findPassive(int id) {
         List<Integer> ids = this.attentionMapper.findUserpassiveId(id);
         List<User> users = new ArrayList<>();
@@ -80,12 +61,6 @@ public class CenterService {
         return users;
     }
 
-    /**
-     * @ClassName CenterService
-     * @Description 查询收藏的花间
-     * @Author 陈雅楠
-     * @Date 2020/5/1
-     */
     public List<Article> findCollect(int id) {
         List<Integer> ids = this.collectMapper.findCollect(id);
         List<Article> articles = new ArrayList<>();
@@ -96,12 +71,6 @@ public class CenterService {
         return articles;
     }
 
-    /**
-     * @ClassName CenterService
-     * @Description 查询点赞别人的帖子
-     * @Author 陈雅楠
-     * @Date 2020/5/1
-     */
     public List<Map<String, Object>> findThumbsOther(int id) {
         List<Integer> ids = this.thumbsUpMapper.findThumbsOther(id);
         List<Map<String, Object>> posts = new ArrayList<>();
@@ -118,13 +87,6 @@ public class CenterService {
         }
         return posts;
     }
-
-    /**
-     * @ClassName CenterService
-     * @Description 查询我的帖子的获赞
-     * @Author 陈雅楠
-     * @Date 2020/5/1
-     */
 
     public List<Map<String, Object>> findThumbsMe(int userId) {
         List<Post> posts = this.postMapper.searchPostByUserId(userId);
@@ -144,15 +106,6 @@ public class CenterService {
         }
         return list;
     }
-
-    /**
-     * @ClassName CenterService
-     * @Description 查询我的通知
-     * @Author 陈雅楠
-     * @Date 2020/5/2
-     */
-    @Resource
-    CommentMapper commentMapper;
 
     public List<Map<String, Object>> findComments(int userId) {
         List<Map<String, Object>> list = new ArrayList<>();
@@ -174,41 +127,37 @@ public class CenterService {
         return list;
     }
 
-
-    public List<Post> findPosts(int userId){
+    public List<Post> findPosts(int userId) {
         List<Post> posts = this.postMapper.searchPostByUserId(userId);
-        return  posts;
+        return posts;
     }
 
-    public String addAttention(int userInitiative, int userPassive){
-
-        int num=this.attentionMapper.insertAttention(userInitiative,userPassive);
-        if(num==1){
+    public String addAttention(int userInitiative, int userPassive) {
+        int num = this.attentionMapper.insertAttention(userInitiative, userPassive);
+        if (num == 1) {
             return "no";
         }
         return "yes";
     }
+
     public String ifAttention(int userInitiative, int userPassive) {
         int a = this.attentionMapper.ifAttention(userInitiative, userPassive);
         if (a == 0) {
             return "no";
+        } else {
+            return "yes";
         }
-        else return "yes";
     }
-    public String removeAttention(int userInitiative, int userPassive){
-        int num=this.attentionMapper.deleteAttention(userInitiative,userPassive);
-        if(num==1){
+
+    public String removeAttention(int userInitiative, int userPassive) {
+        int num = this.attentionMapper.deleteAttention(userInitiative, userPassive);
+        if (num == 1) {
             return "no";
         }
         return "yes";
 
     }
-    /**
-     * 個人私信
-     *
-     * @param userId
-     * @return
-     */
+
     public List<Map<String, Object>> searchMessageByUserId(int userId) {
         List<Map<String, Object>> maUsers = new ArrayList<>();
         List<Message> messages = messageMapper.searchMessageByUserId(userId);
@@ -226,27 +175,14 @@ public class CenterService {
 
         return maUsers;
     }
-    /**
-     * 回复私信发送
-     */
-    public int sendMessage(int sendId,int recvId,String content){
-        Date time= new Date(new java.util.Date().getTime());
-        int num=messageMapper.sendMessage(sendId,recvId,content,time);
+
+    public int sendMessage(int sendId, int recvId, String content) {
+        Date time = new Date(new java.util.Date().getTime());
+        int num = messageMapper.sendMessage(sendId, recvId, content, time);
         return num;
     }
-/**
- * ==========注册登陆相关=========
- */
-    /**
-     * 注册返回自增id
-     * @param nickname
-     * @param sex
-     * @param password
-     * @param address
-     * @param profile
-     * @return
-     */
-    public int registUser(String nickname,Integer sex,String password,String address,String profile) {
+
+    public int registUser(String nickname, Integer sex, String password, String address, String profile) {
         User u = new User();
         u.setNickname(nickname);
         u.setSex(sex);
@@ -258,19 +194,21 @@ public class CenterService {
         }
         return 0;
     }
-    public User loginUser(String pass, String name){
-        return userMapper.loginUser(pass,name);
 
-    }
-    public int uploadHeaderImage(int id,String path){
-        return userMapper.updateImg(id,path);
-
-    }
-    public int updateName(int id,String name){
-        return userMapper.updateName(id,name);
+    public User loginUser(String pass, String name) {
+        return userMapper.loginUser(pass, name);
     }
 
-    public int updateProfile(int id,String profile){
-        return userMapper.updateProfile(id,profile);
+    public int uploadHeaderImage(int id, String path) {
+        return userMapper.updateImg(id, path);
     }
+
+    public int updateName(int id, String name) {
+        return userMapper.updateName(id, name);
+    }
+
+    public int updateProfile(int id, String profile) {
+        return userMapper.updateProfile(id, profile);
+    }
+
 }

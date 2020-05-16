@@ -1,21 +1,14 @@
 package com.happier.flowering.mine;
 
-import android.app.LocalActivityManager;
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.TabHost;
-import android.widget.TabWidget;
 import android.widget.TextView;
 
 import com.happier.flowering.R;
-import com.happier.flowering.fragment.FlowerMinemoreHXFragment;
-import com.happier.flowering.fragment.FlowerMinemoreMessageFragment;
 
 import java.util.HashMap;
 import java.util.Map;
