@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.HashMap;
@@ -180,10 +181,14 @@ public class CenterController {
         System.out.println("upHead");
         StringBuffer picPath = new StringBuffer();
         if (file != null) {
+            System.out.println(file.getSize());
             try {
                 String tempPath = ResourceUtils.getURL("classpath:").getPath() + "static/header-img";
+                String realPath = tempPath.replace("%20", " ").replace("/", "\\").substring(1);
                 String fileName = System.currentTimeMillis() + ".jpg";
-                picPath.append("/header-img/" + fileName);
+                file.transferTo(new File(realPath, fileName));
+                System.out.println(realPath);
+                picPath.append("/header-img/" + fileName + ",");
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             } catch (IOException e) {

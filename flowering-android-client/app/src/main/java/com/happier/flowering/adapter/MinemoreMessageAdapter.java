@@ -2,6 +2,7 @@ package com.happier.flowering.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Handler;
 import android.util.Log;
 import android.view.Gravity;
@@ -16,6 +17,8 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.happier.flowering.R;
 import com.happier.flowering.constant.Constant;
 import com.happier.flowering.entity.Message;
@@ -23,6 +26,7 @@ import com.happier.flowering.entity.User;
 import com.happier.flowering.fragment.FlowerMinemoreMessageFragment;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -76,7 +80,11 @@ public class MinemoreMessageAdapter extends BaseAdapter {
 //            headImg.setBackgroundResource(R.drawable.(messages.get(position).get("senderHead").toString()));
 //        Message ms=new Message();
 //        ms= messages.get(position).get("content").;
-        content.setText(messages.get(position).get("content").toString());
+        if(!messages.get(position).get("senderHead").toString().trim().equals("")&&messages.get(position).get("senderHead").toString().trim()!=null) {
+            RequestOptions options = new RequestOptions().circleCrop();
+            Glide.with(context).load(Uri.fromFile(new File(Constant.BASE_IP + messages.get(position).get("senderHead").toString()))).apply(options).into(headImg);
+            content.setText(messages.get(position).get("content").toString());
+        }
         time.setText(messages.get(position).get("time").toString());
         name.setText(messages.get(position).get("senderName").toString());
 

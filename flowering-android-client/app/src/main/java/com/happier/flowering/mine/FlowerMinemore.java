@@ -2,6 +2,7 @@ package com.happier.flowering.mine;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -13,8 +14,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.happier.flowering.R;
@@ -23,6 +27,7 @@ import com.happier.flowering.fragment.FlowerMinemoreHXFragment;
 import com.happier.flowering.fragment.FlowerMinemoreMessageFragment;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -46,12 +51,9 @@ public class FlowerMinemore extends AppCompatActivity {
         // 设置是否被选中
         public void setSelect(boolean b) {
             if (b) {
-//                imageView.setImageResource(selectImage);
                 textView.setBackgroundResource( R.drawable.q_textview_border );
             } else {
-//                imageView.setImageResource(normalImage);
                 textView.setBackgroundColor( Color.parseColor( "#ffffff" ) );
-//                textView.se
             }
         }
 
@@ -92,23 +94,22 @@ public class FlowerMinemore extends AppCompatActivity {
     // 用于记录当前正在显示的Fragment
     private Fragment curFragment = null;
     private Button editMess=null;
+    private ImageView headImg;
+    private TextView gender;
+    private TextView profile;
+    private TextView nickName;
+    private TextView address;
+    private TextView fans;
+    private TextView follow;
+    private TextView thumbs;
+    private String myId=String.valueOf(getSharedPreferences("data", MODE_PRIVATE).getInt("userId", 0));
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.flower_mine_minemore );
         //查询个人信息
-        getInfo();
-        handler = new Handler() {
-            @Override
-            public void handleMessage(Message msg) {
-                String messages = (String) msg.obj;
-                Log.e( "获取——————————userInfo", messages );
-                Type type = new TypeToken<Map<String, Object>>() {
-                }.getType();
-                infomap = new Gson().fromJson( messages, type );
-            }
-
-        };
+        initPersonView();
+        initProfile();
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.flower_mine_minemore);
@@ -121,7 +122,6 @@ public class FlowerMinemore extends AppCompatActivity {
             }
         });
         // 1. 初始化MyTabSpec对象
-        // Fragment、ImageView、TextView、normalImage、selectImage
         initData();
 
         // 2. 设置监听器，在监听器中完成切换
@@ -131,7 +131,49 @@ public class FlowerMinemore extends AppCompatActivity {
         changeTab( tabStrId[0] );
 
     }
+    private void initPersonView(){
+        headImg=findViewById(R.id.q_img_headImg);
+        gender=findViewById(R.id.q_text_gender);
+        profile=findViewById(R.id.q_text_profile);
+        nickName=findViewById(R.id.q_text_name);
+        address=findViewById(R.id.q_text_address);
+        fans=findViewById(R.id.q_text_fans);
+        follow=findViewById(R.id.q_text_follow);
+        thumbs=findViewById(R.id.q_text_thumbs);
 
+    }
+    private void  initProfile(){
+        getInfo();
+        handler = new Handler() {
+            @Override
+            public void handleMessage(Message msg) {
+                String messages = (String) msg.obj;
+                Log.e( "获取——————————userInfo", messages );
+                Type type = new TypeToken<Map<String, Object>>() {
+                }.getType();
+                infomap = new Gson().fromJson( messages, type );
+                //填充数据
+                ////        "username" "userImg" "address" "sex" "profile" "attention" "fans" "bepraised"
+                nickName.setText(infomap.get("username").toString());
+                //設置圖片資源
+                if(!infomap.get("userImg").toString().trim().equals("")&&infomap.get("userImg").toString().trim()!=null) {
+                    RequestOptions options = new RequestOptions().circleCrop();
+                    Glide.with(FlowerMinemore.this).load(Uri.fromFile(new File(Constant.BASE_IP + infomap.get("userImg").toString()))).apply(options).into(headImg);
+//            headImg.setImageResource(Integer.valueOf(infomap.get("userImg").toString()));
+                }
+                gender.setText(infomap.get("sex").toString());
+                profile.setText(infomap.get("profile").toString());
+                address.setText(infomap.get("address").toString());
+                fans.setText(infomap.get("fans").toString());
+                follow.setText(infomap.get("attention").toString());
+                thumbs.setText(infomap.get("bepraised").toString());
+
+
+            }
+
+        };
+
+    }
 
     private void initData() {
         // 1 创建MyTabSpec对象
@@ -219,7 +261,8 @@ public class FlowerMinemore extends AppCompatActivity {
             @Override
             public void run() {
                 try {
-                    URL url = new URL( Constant.BASE_IP + "/center/userInfo" + "?id=" + 1 );
+
+                    URL url = new URL( Constant.BASE_IP + "/center/userInfo" + "?id=" + myId );
                     URLConnection conn = url.openConnection();
                     InputStream in = conn.getInputStream();
                     BufferedReader reader = new BufferedReader( new InputStreamReader( in, "utf-8" ) );

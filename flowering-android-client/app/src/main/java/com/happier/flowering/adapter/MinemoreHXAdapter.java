@@ -1,6 +1,7 @@
 package com.happier.flowering.adapter;
 
 import android.content.Context;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,9 +9,14 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.happier.flowering.R;
+import com.happier.flowering.constant.Constant;
 import com.happier.flowering.entity.Post;
+import com.happier.flowering.mine.FlowerMinemore;
 
+import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -54,6 +60,10 @@ public class MinemoreHXAdapter extends BaseAdapter {
 
         //填充数据按照时间降序显示最新
 //            headImg.setBackgroundResource(R.drawable.(messages.get(position).get("senderHead").toString()));
+        if(!posts.get(position).getImg().toString().trim().equals("")&&posts.get(position).getImg().toString().trim()!=null) {
+            RequestOptions options = new RequestOptions().circleCrop();
+            Glide.with(context).load(Uri.fromFile(new File(Constant.BASE_IP + posts.get(position).getImg().toString()))).apply(options).into(headImg);
+        }
         content.setText(posts.get(position).getTxt().toString());
         SimpleDateFormat sdf=new SimpleDateFormat("yyyy-mm-dd");//格式化为：xxxx年xx月xx日
         time.setText(sdf.format(posts.get(position).getTime()).toString());

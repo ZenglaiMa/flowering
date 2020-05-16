@@ -38,15 +38,16 @@ public class EditMess extends AppCompatActivity {
     private static final int REQUEST_CODE_SELECT_GRAPH = 200;
     private static final String UPLOAD_PATH = "/center/uploadHeaderImage";
     private OkHttpClient client = new OkHttpClient();
-    private ImageView ivHeader;
+    private ImageView headImg;
     private ImageView editName;
     private ImageView editProfile;
+    private String  myId=String.valueOf(getSharedPreferences("data", MODE_PRIVATE).getInt("userId", 0));
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_mess);
-        ivHeader=findViewById(R.id.header);
+        headImg=findViewById(R.id.header);
         editName=findViewById(R.id.q_name_change);
         editProfile=findViewById(R.id.q_profile_change);
         changeHead=findViewById(R.id.q_head_change);
@@ -79,7 +80,7 @@ public class EditMess extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-
+//        super.onActivityResult(requestCode, resultCode, data);
 // 用户没有进行有效的设置操作，返回
         if (resultCode == RESULT_CANCELED) {
             Toast.makeText(getApplication(), "取消", Toast.LENGTH_LONG).show();
@@ -92,31 +93,27 @@ public class EditMess extends AppCompatActivity {
             if (cursor != null) {
                 if (cursor.moveToFirst()) {
                     String imagePath = cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.DATA));
-                    Log.e( "uri"+imagePath,"12");
                     RequestOptions options = new RequestOptions().circleCrop();
-                    Log.e("33","start");
-                    Glide.with(this).load(Uri.fromFile(new File(imagePath))).apply(options).into(ivHeader);
-                    Log.e("33","end");
+                    Glide.with(this).load(Uri.fromFile(new File(imagePath))).apply(options).into(headImg);
                     uploadToServer(imagePath);
-                    Log.e("33","d");
+
                 }
             }
 
         }
-        super.onActivityResult(requestCode, resultCode, data);
+
 
     }
 
     private void uploadToServer(String imagePath) {
         MultipartBody.Builder builder = new MultipartBody.Builder();
         builder.setType(MultipartBody.FORM);
-        builder.addFormDataPart("userId","16");
-            File file = new File(imagePath);
-            Log.e("22",file.getName().toString());
-            if (file != null) {
-                Log.e("2",file.getName().toString());
-                builder.addFormDataPart("pName", file.getName(), RequestBody.create(MediaType.parse("image/*"), file));
-            }
+
+        builder.addFormDataPart("userId", myId);
+        File file = new File(imagePath);
+        if (file != null) {
+            builder.addFormDataPart("pName", file.getName(), RequestBody.create(MediaType.parse("image/*"), file));
+        }
 
         MultipartBody body = builder.build();
         Request request = new Request.Builder().url(Constant.BASE_IP + UPLOAD_PATH).post(body).build();
@@ -127,14 +124,18 @@ public class EditMess extends AppCompatActivity {
             @Override
             public void onFailure(Call call, IOException e) {
                 e.printStackTrace();
-                Log.e("upload", "ff");
             }
 
             @Override
             public void onResponse(Call call, Response response) {
-                EventBus.getDefault().post(response.body().toString());
-                String result = response.body().toString();
-                Log.e("upload", Integer.parseInt(result) == 1 ? "success" : "fail");
+                String result = null;
+                try {
+                    result = response.body().string();
+                    Log.e("upload", Integer.parseInt(result) == 1 ? "success" : "fail");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
             }
         });
     }

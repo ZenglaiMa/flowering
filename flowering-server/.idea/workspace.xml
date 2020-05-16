@@ -100,7 +100,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_25.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_25.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -380,18 +379,6 @@
       <select />
     </treeState>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager">
     <configuration name="FloweringApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="flowering-server" />
@@ -435,6 +422,8 @@
       <workItem from="1589545550533" duration="1157000" />
       <workItem from="1589589376775" duration="3935000" />
       <workItem from="1589593539080" duration="3196000" />
+      <workItem from="1589608058123" duration="348000" />
+      <workItem from="1589609338350" duration="90000" />
     </task>
     <servers />
   </component>
@@ -504,10 +493,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="337" y="236" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1589183433805" />
-    <state x="640" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1589298115659">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="351" y="181" key="com.intellij.ide.util.TipDialog" timestamp="1589608454699">
+      <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="351" y="181" key="com.intellij.ide.util.TipDialog/0.0.1280.689@0.0.1280.689" timestamp="1588996003847" />
+    <state x="351" y="181" key="com.intellij.ide.util.TipDialog/0.0.1280.689@0.0.1280.689" timestamp="1589608454699" />
     <state x="375" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1588945053240" />
     <state x="640" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589298115659" />
   </component>

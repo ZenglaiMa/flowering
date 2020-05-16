@@ -1,5 +1,6 @@
 package com.happier.flowering.mine;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -19,6 +20,8 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
@@ -28,6 +31,7 @@ import com.happier.flowering.constant.Constant;
 import com.happier.flowering.entity.Post;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -75,16 +79,19 @@ public class FlowerOthermore extends AppCompatActivity implements View.OnClickLi
     private View popupView = null;
     //标识是否关注
     private boolean isAttention = false;
+    private String myId=String.valueOf(getSharedPreferences("data", MODE_PRIVATE).getInt("userId", 0));
+    private int otherId;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.flower_other_othermore);
-
+        otherId=getIntent().getExtras().getInt("otherId");
         initPersonView();
         initProfile();
         //是否关注设置填充
 //        setByisAttention();
+
         //发送私信弹出框
         sendBtn = findViewById(R.id.q_sendMessage);
         follow = findViewById(R.id.q_setfollow);
@@ -119,7 +126,7 @@ public class FlowerOthermore extends AppCompatActivity implements View.OnClickLi
                 //查询私信数据
                 Log.e("我的花", "查詢");
                 try {
-                    URL url = new URL(Constant.BASE_IP + PATH_MINEMORE_HX + "?id=2");
+                    URL url = new URL(Constant.BASE_IP + PATH_MINEMORE_HX + "?id="+otherId);
                     URLConnection conn = url.openConnection();
                     InputStream in = conn.getInputStream();
                     BufferedReader reader = new BufferedReader(new InputStreamReader(in, "utf-8"));
@@ -170,7 +177,7 @@ public class FlowerOthermore extends AppCompatActivity implements View.OnClickLi
                 //查询私信数据
                 try {
                     Log.e("查询是否关注", "reply");
-                    URL url = new URL(Constant.BASE_IP + PATH_OTHER_ISFOLLOW + "?userId=" + "&otherId=");
+                    URL url = new URL(Constant.BASE_IP + PATH_OTHER_ISFOLLOW + "?userId="+myId+"&otherId="+otherId);
                     URLConnection conn = url.openConnection();
                     InputStream in = conn.getInputStream();
                     BufferedReader reader = new BufferedReader(new InputStreamReader(in, "utf-8"));
@@ -219,6 +226,18 @@ public class FlowerOthermore extends AppCompatActivity implements View.OnClickLi
                 Type type = new TypeToken<Map<String, Object>>() {
                 }.getType();
                 infomap = new Gson().fromJson(messages, type);
+                nickName.setText(infomap.get("username").toString());
+//                headImg.setImageResource(Integer.valueOf(infomap.get("userImg").toString()));
+                if(!infomap.get("userImg").toString().trim().equals("")&&infomap.get("userImg").toString().trim()!=null) {
+                    RequestOptions options = new RequestOptions().circleCrop();
+                    Glide.with(FlowerOthermore.this).load(Uri.fromFile(new File(Constant.BASE_IP + infomap.get("userImg").toString()))).apply(options).into(headImg);
+                }
+                gender.setText(infomap.get("sex").toString());
+                profile.setText(infomap.get("profile").toString());
+                address.setText(infomap.get("address").toString());
+                fans.setText(infomap.get("fans").toString());
+                follow.setText(infomap.get("attention").toString());
+                thumbs.setText(infomap.get("bepraised").toString());
 
             }
 
@@ -318,7 +337,7 @@ public class FlowerOthermore extends AppCompatActivity implements View.OnClickLi
                 String mess = content.getText().toString();
                 Log.e("123", mess);
                 //接收者id在跳转过来时获取
-                replyMessage(2, 1, mess);
+                replyMessage(Integer.parseInt(myId), otherId, mess);
                 sHandler = new Handler() {
                     @Override
                     public void handleMessage(android.os.Message msg) {
@@ -355,12 +374,12 @@ public class FlowerOthermore extends AppCompatActivity implements View.OnClickLi
                     String ms = (String) msg.obj;
                     Log.e("REMOVE关注", ms);
                     if (ms.equals("yes")) {
-                        Toast ts = Toast.makeText(FlowerOthermore.this, "已remove关注", Toast.LENGTH_LONG);
+                        Toast ts = Toast.makeText(FlowerOthermore.this, "已取消关注", Toast.LENGTH_LONG);
                         ts.show();
                         isAttention = false;
-                        followIs.setText("+关注");
+                        followIs.setText("+ 关 注");
                     } else {
-                        Toast ts = Toast.makeText(FlowerOthermore.this, "remove关注false", Toast.LENGTH_LONG);
+                        Toast ts = Toast.makeText(FlowerOthermore.this, "取消失敗", Toast.LENGTH_LONG);
                         ts.show();
                     }
                 }
@@ -373,7 +392,7 @@ public class FlowerOthermore extends AppCompatActivity implements View.OnClickLi
                     //查询私信数据
                     try {
                         Log.e("取消关注", "reply");
-                        URL url = new URL(Constant.BASE_IP + PATH_OTHER_REMOVEFOLLOW + "?userId=" + "&otherId");
+                        URL url = new URL(Constant.BASE_IP + PATH_OTHER_REMOVEFOLLOW + "?userId=" +myId+ "&otherId"+otherId);
                         URLConnection conn = url.openConnection();
                         InputStream in = conn.getInputStream();
                         BufferedReader reader = new BufferedReader(new InputStreamReader(in, "utf-8"));
@@ -409,7 +428,7 @@ public class FlowerOthermore extends AppCompatActivity implements View.OnClickLi
                         Toast ts = Toast.makeText(FlowerOthermore.this, "已关注", Toast.LENGTH_LONG);
                         ts.show();
                         isAttention = true;
-                        followIs.setText("已关注");
+                        followIs.setText("已 关 注");
                     } else {
                         Toast ts = Toast.makeText(FlowerOthermore.this, "+关注失败", Toast.LENGTH_LONG);
                         ts.show();
@@ -424,7 +443,7 @@ public class FlowerOthermore extends AppCompatActivity implements View.OnClickLi
                     //查询私信数据
                     try {
                         Log.e("加关注", "reply");
-                        URL url = new URL(Constant.BASE_IP + PATH_OTHER_ADDFOLLOW + "?userId=" + "&otherId");
+                        URL url = new URL(Constant.BASE_IP + PATH_OTHER_ADDFOLLOW + "?userId=" +myId+ "&otherId="+otherId);
                         URLConnection conn = url.openConnection();
                         InputStream in = conn.getInputStream();
                         BufferedReader reader = new BufferedReader(new InputStreamReader(in, "utf-8"));
@@ -454,7 +473,8 @@ public class FlowerOthermore extends AppCompatActivity implements View.OnClickLi
             @Override
             public void run() {
                 try {
-                    URL url = new URL(Constant.BASE_IP + "/center/userInfo" + "?id=" + 1);
+
+                    URL url = new URL(Constant.BASE_IP + "/center/userInfo" + "?id=" + myId);
                     URLConnection conn = url.openConnection();
                     InputStream in = conn.getInputStream();
                     BufferedReader reader = new BufferedReader(new InputStreamReader(in, "utf-8"));

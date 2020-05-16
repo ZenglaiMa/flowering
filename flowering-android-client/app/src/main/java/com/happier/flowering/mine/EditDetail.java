@@ -30,6 +30,7 @@ public class EditDetail  extends AppCompatActivity {
     private Button editBtn;
     private Handler handler;
     private String PATH_EDIT = "/center/editName";
+    private String  myId=String.valueOf(getSharedPreferences("data", MODE_PRIVATE).getInt("userId", 0));
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -108,7 +109,7 @@ public class EditDetail  extends AppCompatActivity {
                             break;
 
                     }
-                    URL url = new URL(Constant.BASE_IP + PATH_EDIT + "?userId="+id+pathmore+edit);
+                    URL url = new URL(Constant.BASE_IP + PATH_EDIT + "?userId="+myId+pathmore+edit);
                     URLConnection conn = url.openConnection();
                     InputStream in = conn.getInputStream();
                     BufferedReader reader = new BufferedReader(new InputStreamReader(in, "utf-8"));
