@@ -54,6 +54,17 @@
             p.post_id
     </select>
 
+    <select id="findByText" resultMap="postResultMapper">
+        select
+            p.post_id, p.txt, p.img, p.time,u.user_id, u.nickname, u.head_img, t.topic_name, count(th.post_id) as thu
+        from
+            user u left outer join post p on u.user_id = p.user_id left outer join topic t on p.topic_id = t.topic_id left outer join thumbsup th on p.post_id = th.post_id
+        where
+            p.txt like "%"#{keyword}"%"
+        group by
+            p.post_id
+    </select>
+
     <select id="searchPostByUserId" resultMap="postResultMapper">
         select * from post p where p.user_id = #{userId}
           order by p.time desc

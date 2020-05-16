@@ -41,6 +41,11 @@ public class PostController {
         return postService.listPostsByTopic(pageNum, pageSize, topicId);
     }
 
+    @GetMapping("/listByText")
+    public List<PostListModel> listByText(@RequestParam("pageNum") int pageNum, @RequestParam("pageSize") int pageSize, @RequestParam("textKeyWord") String keyword) {
+        return postService.listPostsByText(pageNum, pageSize, keyword);
+    }
+
     @PostMapping("/publish")
     public String publishPost(@RequestParam("postText") String postText, @RequestParam("topicId") Integer topicId, @RequestParam("userId") Integer userId, @RequestParam("pic") MultipartFile[] files) {
         System.out.println("publish post");

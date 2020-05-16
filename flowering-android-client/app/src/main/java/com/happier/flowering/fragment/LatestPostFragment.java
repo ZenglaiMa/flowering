@@ -66,6 +66,7 @@ public class LatestPostFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
         View view = inflater.inflate(R.layout.fragment_post_latest_and_choice, container, false);
         listView = view.findViewById(R.id.m_post_lv);
         refreshLayout = view.findViewById(R.id.m_post_list_refresh);
@@ -179,4 +180,5 @@ public class LatestPostFragment extends Fragment {
         EventBus.getDefault().unregister(this);
         super.onDestroy();
     }
+
 }
