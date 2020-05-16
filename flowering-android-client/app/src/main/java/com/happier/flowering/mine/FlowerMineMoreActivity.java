@@ -1,5 +1,6 @@
 package com.happier.flowering.mine;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -62,14 +63,13 @@ public class FlowerMineMoreActivity extends AppCompatActivity {
 
         showFragment();
 
-//        editMess = findViewById(R.id.q_edit_mess);
-//        editMess.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(FlowerMineMoreActivity.this, EditMess.class);
-//                startActivity(intent);
-//            }
-//        });
+        ivEditInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(FlowerMineMoreActivity.this, EditMess.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
