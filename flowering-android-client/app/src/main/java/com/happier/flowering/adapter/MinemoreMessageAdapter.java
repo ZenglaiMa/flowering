@@ -24,6 +24,7 @@ import com.happier.flowering.constant.Constant;
 import com.happier.flowering.entity.Message;
 import com.happier.flowering.entity.User;
 import com.happier.flowering.fragment.FlowerMinemoreMessageFragment;
+import com.happier.flowering.mine.FlowerOthermore;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -77,13 +78,16 @@ public class MinemoreMessageAdapter extends BaseAdapter {
         Map<String, Object> map = messages.get(position);
         //填充数据
 
-//            headImg.setBackgroundResource(R.drawable.(messages.get(position).get("senderHead").toString()));
 //        Message ms=new Message();
 //        ms= messages.get(position).get("content").;
-        if(!messages.get(position).get("senderHead").toString().trim().equals("")&&messages.get(position).get("senderHead").toString().trim()!=null) {
+        if(messages.get(position).get("senderHead")!=null&&!messages.get(position).get("senderHead").toString().equals("")) {
             RequestOptions options = new RequestOptions().circleCrop();
-            Glide.with(context).load(Uri.fromFile(new File(Constant.BASE_IP + messages.get(position).get("senderHead").toString()))).apply(options).into(headImg);
+            Glide.with(context).load(Constant.BASE_IP + messages.get(position).get("senderHead").toString()).apply(options).into(headImg);
             content.setText(messages.get(position).get("content").toString());
+        }
+        else{
+            RequestOptions options = new RequestOptions().circleCrop();
+            Glide.with(context).load(R.drawable.flowering).apply(options).into(headImg);
         }
         time.setText(messages.get(position).get("time").toString());
         name.setText(messages.get(position).get("senderName").toString());

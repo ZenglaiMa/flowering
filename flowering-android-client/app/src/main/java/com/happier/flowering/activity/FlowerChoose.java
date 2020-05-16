@@ -10,29 +10,32 @@ import android.widget.Button;
 import com.happier.flowering.R;
 
 public class FlowerChoose extends AppCompatActivity {
-    private Button registBtn;
+
+    private Button registerBtn;
     private Button loginBtn;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.flower_main_loginc);
-        registBtn=findViewById(R.id.q_regist);
-        loginBtn=findViewById(R.id.q_login);
-        registBtn.setOnClickListener(new View.OnClickListener() {
+
+        registerBtn = findViewById(R.id.q_regist);
+        loginBtn = findViewById(R.id.q_login);
+
+        registerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(FlowerChoose.this,RegistActivity.class);
+                Intent intent = new Intent(FlowerChoose.this, RegistActivity.class);
                 startActivity(intent);
-
             }
         });
+
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(FlowerChoose.this,LoginActivity.class);
+                Intent intent = new Intent(FlowerChoose.this, LoginActivity.class);
                 startActivity(intent);
-
             }
         });
     }

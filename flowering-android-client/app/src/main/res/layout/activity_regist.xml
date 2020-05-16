@@ -1,56 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/main_back"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:orientation="vertical">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_margin="10dp"
         android:orientation="horizontal">
+
         <TextView
-            android:layout_height="match_parent"
             android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
             android:layout_weight="2"
-            android:layout_gravity="center"
-            android:textSize="20dp"
-            android:gravity="center"
-            android:background="#000"
             android:alpha="0.2"
+            android:background="#000"
+            android:gravity="center"
+            android:text="用户名"
             android:textColor="#fff"
-            android:text="昵称"/>
+            android:textSize="20dp" />
+
         <EditText
-            android:layout_width="0dp"
-            android:layout_weight="5"
-            android:layout_height="match_parent"
             android:id="@+id/q_regist_name"
-            android:textColor="#fff"
-            />
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:hint="请输入用户名"
+            android:textColor="#000" />
+
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_margin="10dp"
         android:orientation="horizontal">
+
         <TextView
-            android:layout_height="match_parent"
             android:layout_width="0dp"
-            android:layout_weight="3"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:textSize="20dp"
-            android:gravity="center"
-            android:background="#000"
-            android:alpha="0.2"
-            android:textColor="#fff"
             android:layout_marginRight="20dp"
-            android:text="性别"/>
+            android:layout_weight="3"
+            android:alpha="0.2"
+            android:background="#000"
+            android:gravity="center"
+            android:text="性别"
+            android:textColor="#fff"
+            android:textSize="20dp" />
+
         <RadioGroup
             android:id="@+id/m_register_rg_status"
             android:layout_width="0dp"
-            android:layout_weight="7"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_weight="7"
             android:orientation="horizontal">
 
             <RadioButton
@@ -58,81 +65,84 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
-                android:checked="true"
-                 />
+                android:checked="true" />
+
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:src="@drawable/male"
                 android:layout_marginRight="80dp"
-                />
+                android:src="@drawable/male" />
 
             <RadioButton
                 android:id="@+id/q_regist_female"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
-               />
+                android:layout_marginRight="10dp" />
+
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:src="@drawable/female"
-                />
+                android:src="@drawable/female" />
 
         </RadioGroup>
+
     </LinearLayout>
-
-
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_margin="10dp"
         android:orientation="horizontal">
+
         <TextView
-            android:layout_height="match_parent"
             android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
             android:layout_weight="2"
-            android:layout_gravity="center"
-            android:textSize="20dp"
-            android:gravity="center"
-            android:background="#000"
             android:alpha="0.2"
+            android:background="#000"
+            android:gravity="center"
+            android:text="密码"
             android:textColor="#fff"
-            android:text="密码"/>
+            android:textSize="20dp" />
+
         <EditText
-            android:layout_width="0dp"
-            android:layout_weight="5"
-            android:layout_height="match_parent"
-            android:textColor="#fff"
-            android:inputType="textPassword"
             android:id="@+id/q_regist_pass"
-            />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_margin="10dp"
-        android:orientation="horizontal">
-        <TextView
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_width="0dp"
-            android:layout_weight="3"
-            android:layout_gravity="center"
-            android:textSize="20dp"
-            android:gravity="center"
-            android:background="#000"
-            android:alpha="0.2"
-            android:textColor="#fff"
-            android:text="确认密码"/>
-        <EditText
-            android:layout_width="0dp"
             android:layout_weight="5"
-            android:layout_height="match_parent"
-            android:textColor="#fff"
+            android:hint="请输入密码"
             android:inputType="textPassword"
+            android:textColor="#000" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="3"
+            android:alpha="0.2"
+            android:background="#000"
+            android:gravity="center"
+            android:text="确认密码"
+            android:textColor="#fff"
+            android:textSize="20dp" />
+
+        <EditText
             android:id="@+id/q_regist_confirmpass"
-            />
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:hint="请再次输入密码"
+            android:inputType="textPassword"
+            android:textColor="#000" />
 
     </LinearLayout>
 
@@ -141,61 +151,66 @@
         android:layout_height="50dp"
         android:layout_margin="10dp"
         android:orientation="horizontal">
+
         <TextView
-            android:layout_height="match_parent"
             android:layout_width="0dp"
-            android:layout_weight="3"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:textSize="20dp"
-            android:gravity="center"
-            android:background="#000"
+            android:layout_weight="3"
             android:alpha="0.2"
+            android:background="#000"
+            android:gravity="center"
+            android:text="地址"
             android:textColor="#fff"
-            android:text="住址"/>
+            android:textSize="20dp" />
+
         <EditText
-            android:layout_width="0dp"
-            android:layout_weight="5"
-            android:textColor="#fff"
-            android:layout_height="match_parent"
             android:id="@+id/q_regist_address"
-            />
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:hint="请输入地址"
+            android:textColor="#000" />
 
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_margin="10dp"
         android:orientation="horizontal">
+
         <TextView
-            android:layout_height="match_parent"
             android:layout_width="0dp"
-            android:layout_weight="3"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:textSize="20dp"
-            android:gravity="center"
-            android:background="#000"
+            android:layout_weight="3"
             android:alpha="0.2"
+            android:background="#000"
+            android:gravity="center"
+            android:text="个性签名"
             android:textColor="#fff"
-            android:text="个性签名"/>
+            android:textSize="20dp" />
+
         <EditText
-            android:layout_width="0dp"
-            android:layout_weight="5"
-            android:layout_height="match_parent"
-            android:textColor="#fff"
-            android:text="我的个性签名"
             android:id="@+id/q_regist_profile"
-            />
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:hint="请输入个性签名"
+            android:textColor="#000" />
 
     </LinearLayout>
+
     <Button
+        android:id="@+id/q_regist_confirm"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:textSize="25dp"
-        android:textColor="#FFF5D23A"
-        android:text="确  认  注  册"
-        android:background="#FF12110E"
-        android:alpha="0.5"
         android:layout_margin="30dp"
-        android:id="@+id/q_regist_confirm"
-        />
+        android:alpha="0.5"
+        android:background="#FF12110E"
+        android:text="确  认  注  册"
+        android:textColor="#FFF5D23A"
+        android:textSize="25dp" />
+
 </LinearLayout>

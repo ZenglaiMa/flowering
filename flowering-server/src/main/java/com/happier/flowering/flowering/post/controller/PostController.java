@@ -46,6 +46,11 @@ public class PostController {
         return postService.listPostsByText(pageNum, pageSize, keyword);
     }
 
+    @GetMapping("/listByUserId")
+    public List<PostListModel> listByUserId(@RequestParam("pageNum") int pageNum, @RequestParam("pageSize") int pageSize, @RequestParam("userId") Integer userId) {
+        return postService.listPostsByUserId(pageNum, pageSize, userId);
+    }
+
     @PostMapping("/publish")
     public String publishPost(@RequestParam("postText") String postText, @RequestParam("topicId") Integer topicId, @RequestParam("userId") Integer userId, @RequestParam("pic") MultipartFile[] files) {
         System.out.println("publish post");
@@ -76,16 +81,6 @@ public class PostController {
     @GetMapping("/good")
     public void doGood(@RequestParam("postId") Integer postId, @RequestParam("userId") Integer userId) {
         postService.doGood(userId, postId);
-    }
-
-    /**
-     * 個人發現
-     *
-     * @param userId
-     * @return
-     */
-    public String searchPostByUserId(int userId) {
-        return "";
     }
 
 }

@@ -109,6 +109,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/happier/flowering/mapper/ArticleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/happier/flowering/mapper/ArticleMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ArticleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ArticleMapper.xml" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -393,15 +394,27 @@
     <treeState>
       <expand>
         <path>
-          <item name="Found 37 services " type="fcff1e1b:RestServiceStructure$RootNode" />
+          <item name="Found 38 services " type="fcff1e1b:RestServiceStructure$RootNode" />
         </path>
         <path>
-          <item name="Found 37 services " type="fcff1e1b:RestServiceStructure$RootNode" />
+          <item name="Found 38 services " type="fcff1e1b:RestServiceStructure$RootNode" />
           <item name="flowering-server" type="c588b436:RestServiceStructure$ProjectNode" />
         </path>
       </expand>
       <select />
     </treeState>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager">
     <configuration name="FloweringApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
@@ -448,7 +461,11 @@
       <workItem from="1589593539080" duration="3196000" />
       <workItem from="1589608058123" duration="348000" />
       <workItem from="1589609338350" duration="90000" />
+<<<<<<< HEAD
       <workItem from="1589618832789" duration="5086000" />
+=======
+      <workItem from="1589612314116" duration="6110000" />
+>>>>>>> 2a219493f2dc688d0a0e0d586e325946bf3f699d
     </task>
     <servers />
   </component>

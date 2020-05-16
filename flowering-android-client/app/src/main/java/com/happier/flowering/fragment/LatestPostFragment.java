@@ -105,6 +105,7 @@ public class LatestPostFragment extends Fragment {
         call.enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
+                e.printStackTrace();
             }
 
             @Override

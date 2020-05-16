@@ -7,6 +7,7 @@ import com.happier.flowering.entity.Post;
 import com.happier.flowering.entity.User;
 import com.happier.flowering.flowering.center.service.CenterService;
 import org.springframework.util.ResourceUtils;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -48,10 +49,7 @@ public class CenterController {
         map.put("fans", fans.size());
         List BePraised = this.centerService.findThumbsMe(id);
         map.put("bepraised", BePraised.size());
-//        System.out.println(user.getNickname());
-//        System.out.println("用户个人信息" + new Gson().toJson(user));
-//        return new Gson().toJson(map);
-//        System.out.println(user.getNickname());
+
         return new Gson().toJson(user);
     }
 
@@ -119,19 +117,22 @@ public class CenterController {
      * @param userPassive
      */
     @RequestMapping("/addAttention")
-    public String addAttention(@RequestParam("userInitiative") int userInitiative, @RequestParam("userPassive") int userPassive){
+    public String addAttention(@RequestParam("userInitiative") int userInitiative, @RequestParam("userPassive") int userPassive) {
         //userInitiative:主动关注者
         //userPassive:被动关注者
-        return this.centerService.addAttention(userInitiative,userPassive);
+        return this.centerService.addAttention(userInitiative, userPassive);
     }
+
     @RequestMapping("/ifAttention")
-    public String ifAttention(@RequestParam("userInitiative") int userInitiative, @RequestParam("userPassive") int userPassive){
-        return this.centerService.ifAttention(userInitiative,userPassive);
+    public String ifAttention(@RequestParam("userInitiative") int userInitiative, @RequestParam("userPassive") int userPassive) {
+        return this.centerService.ifAttention(userInitiative, userPassive);
     }
+
     @RequestMapping("/removeAttention")
-    public String removeAttention(@RequestParam("userInitiative") int userInitiative, @RequestParam("userPassive") int userPassive){
-        return this.centerService.removeAttention(userInitiative,userPassive);
+    public String removeAttention(@RequestParam("userInitiative") int userInitiative, @RequestParam("userPassive") int userPassive) {
+        return this.centerService.removeAttention(userInitiative, userPassive);
     }
+
     /**
      * 個人詳情私信
      *
@@ -172,11 +173,12 @@ public class CenterController {
         User user = centerService.loginUser(pass, name);
         return user.getUserId();
     }
+
     /**
      * =======编辑信息相关=======
      */
     @RequestMapping("/uploadHeaderImage")
-    public int uploadHeaderImage(@RequestParam("userId") int id,@RequestParam("pName") MultipartFile file) {
+    public int uploadHeaderImage(@RequestParam("userId") int id, @RequestParam("pName") MultipartFile file) {
         String path = "/header-img/" + System.currentTimeMillis() + ".jpg";
         System.out.println("upHead");
         StringBuffer picPath = new StringBuffer();
@@ -195,16 +197,22 @@ public class CenterController {
                 e.printStackTrace();
             }
         }
-        return this.centerService.uploadHeaderImage(id,path);
+        return this.centerService.uploadHeaderImage(id, path);
     }
+
     @RequestMapping("/editName")
-    public int updateName(@RequestParam("userId") int userId,@RequestParam("name") String name){
-        return this.centerService.updateName(userId,name);
-
+    public int updateName(@RequestParam("userId") int userId, @RequestParam("name") String name) {
+        return this.centerService.updateName(userId, name);
     }
+
     @RequestMapping("/editProfile")
-    public int updateProfile(@RequestParam("userId") int userId,@RequestParam("profile") String profile){
-        return this.centerService.updateProfile(userId,profile);
-
+    public int updateProfile(@RequestParam("userId") int userId, @RequestParam("profile") String profile) {
+        return this.centerService.updateProfile(userId, profile);
     }
+
+    @GetMapping("/UserSimpleInfo")
+    public User showSimpleInfo(@RequestParam("userId") Integer userId) {
+        return centerService.findUser(userId);
+    }
+
 }

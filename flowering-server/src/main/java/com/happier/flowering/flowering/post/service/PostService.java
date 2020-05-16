@@ -150,6 +150,35 @@ public class PostService {
         return models;
     }
 
+    public List<PostListModel> listPostsByUserId(int pageNum, int pageSize, Integer userId) {
+        List<PostListModel> models = new ArrayList<>();
+        PageHelper.startPage(pageNum, pageSize);
+        Page<Post> page = (Page<Post>) postMapper.findByUserId(userId);
+        for (Post post : page.getResult()) {
+            PostListModel model = new PostListModel();
+            model.setPostId(post.getPostId());
+            model.setPostText(post.getTxt());
+            model.setPostImg(post.getImg());
+            model.setPostCreateTime(post.getTime());
+            model.setUserId(post.getUser().getUserId());
+            model.setNickname(post.getUser().getNickname());
+            model.setHeadImg(post.getUser().getHeadImg());
+            model.setTopicName(post.getTopic().getTopicName());
+            model.setThumbsUpCount(post.getThumbsUpCount());
+            List<CommentListModel> commentListModels = new ArrayList<>();
+            for (Comment comment : commentMapper.findByPostId(post.getPostId())) {
+                CommentListModel commentListModel = new CommentListModel();
+                commentListModel.setContent(comment.getContent());
+                commentListModel.setUserName(userMapper.findUserById(comment.getUserId()).getNickname());
+                commentListModels.add(commentListModel);
+            }
+            model.setCommentListModels(commentListModels);
+            models.add(model);
+        }
+
+        return models;
+    }
+
     @Transactional(readOnly = false)
     public boolean publishPost(String txt, String img, Integer topicId, Integer userId, Date time) {
         return postMapper.savePost(txt, img, topicId, userId, time) > 0 ? true : false;
@@ -158,10 +187,6 @@ public class PostService {
     @Transactional(readOnly = false)
     public int doGood(Integer userId, Integer postId) {
         return postMapper.saveThumbsUp(userId, postId, new Date());
-    }
-
-    public List<Post> searchPostByUserId(int userId) {
-        return postMapper.searchPostByUserId(userId);
     }
 
 }

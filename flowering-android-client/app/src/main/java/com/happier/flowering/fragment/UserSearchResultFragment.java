@@ -1,5 +1,6 @@
 package com.happier.flowering.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -9,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -17,6 +17,7 @@ import com.happier.flowering.R;
 import com.happier.flowering.adapter.FansAdapter;
 import com.happier.flowering.constant.Constant;
 import com.happier.flowering.entity.User;
+import com.happier.flowering.mine.FlowerMineMoreActivity;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -68,8 +69,10 @@ public class UserSearchResultFragment extends Fragment {
         lvUserList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                // todo: 跳到该用户的个人主页, 通过dataSource.get(position)可拿到该用户信息
-                Toast.makeText(getActivity(), "跳转到其个人主页", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), FlowerMineMoreActivity.class);
+                intent.putExtra("userId", (int) id);
+                startActivity(intent);
+                getActivity().overridePendingTransition(R.anim.right_in, R.anim.left_out);
             }
         });
 
@@ -95,7 +98,8 @@ public class UserSearchResultFragment extends Fragment {
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void handleData(String flag) {
         if (flag.equals(FLAG)) {
-            dataSource = new Gson().fromJson(result, new TypeToken<List<User>>() {}.getType());
+            dataSource = new Gson().fromJson(result, new TypeToken<List<User>>() {
+            }.getType());
             FansAdapter adapter = new FansAdapter(getActivity(), dataSource, R.layout.mine_fans_list);
             lvUserList.setAdapter(adapter);
         }

@@ -228,11 +228,20 @@ public class FlowerOthermore extends AppCompatActivity implements View.OnClickLi
                 infomap = new Gson().fromJson(messages, type);
                 nickName.setText(infomap.get("username").toString());
 //                headImg.setImageResource(Integer.valueOf(infomap.get("userImg").toString()));
-                if(!infomap.get("userImg").toString().trim().equals("")&&infomap.get("userImg").toString().trim()!=null) {
+                if(infomap.get("userImg")!=null&&!infomap.get("userImg").toString().equals("")){
                     RequestOptions options = new RequestOptions().circleCrop();
-                    Glide.with(FlowerOthermore.this).load(Uri.fromFile(new File(Constant.BASE_IP + infomap.get("userImg").toString()))).apply(options).into(headImg);
+                    Glide.with(FlowerOthermore.this).load(Constant.BASE_IP + infomap.get("userImg").toString()).apply(options).into(headImg);
                 }
-                gender.setText(infomap.get("sex").toString());
+                else{
+                    RequestOptions options = new RequestOptions().circleCrop();
+                    Glide.with(FlowerOthermore.this).load(R.drawable.flowering).apply(options).into(headImg);
+                }
+                if(infomap.get("sex").toString().equals("2")) {
+                    gender.setText("女");
+                }
+                else{
+                    gender.setText("男");
+                }
                 profile.setText(infomap.get("profile").toString());
                 address.setText(infomap.get("address").toString());
                 fans.setText(infomap.get("fans").toString());
