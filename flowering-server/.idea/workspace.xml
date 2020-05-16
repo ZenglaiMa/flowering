@@ -106,6 +106,13 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
@@ -363,10 +370,10 @@
     <treeState>
       <expand>
         <path>
-          <item name="Found 36 services " type="fcff1e1b:RestServiceStructure$RootNode" />
+          <item name="Found 37 services " type="fcff1e1b:RestServiceStructure$RootNode" />
         </path>
         <path>
-          <item name="Found 36 services " type="fcff1e1b:RestServiceStructure$RootNode" />
+          <item name="Found 37 services " type="fcff1e1b:RestServiceStructure$RootNode" />
           <item name="flowering-server" type="c588b436:RestServiceStructure$ProjectNode" />
         </path>
       </expand>
@@ -427,6 +434,7 @@
       <workItem from="1589507832732" duration="1228000" />
       <workItem from="1589545550533" duration="1157000" />
       <workItem from="1589589376775" duration="3935000" />
+      <workItem from="1589593539080" duration="3196000" />
     </task>
     <servers />
   </component>

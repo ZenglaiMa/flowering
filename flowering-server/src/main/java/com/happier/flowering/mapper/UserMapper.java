@@ -1,6 +1,9 @@
 package com.happier.flowering.mapper;
 
 import com.happier.flowering.entity.User;
+import org.apache.ibatis.annotations.Select;
+
+import java.util.List;
 
 /**
  * @ClassName UserMapper
@@ -17,5 +20,8 @@ public interface UserMapper {
     int updateImg(int userId,String path);
     int updateName(int userId,String name);
     int updateProfile(int userId,String profile);
+
+    @Select("select * from user where nickname like \"%\"#{keyword}\"%\"")
+    List<User> findByUserNameLike(String keyword);
 
 }

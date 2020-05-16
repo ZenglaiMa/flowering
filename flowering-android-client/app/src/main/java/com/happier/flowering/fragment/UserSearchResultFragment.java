@@ -7,8 +7,30 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.Toast;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.happier.flowering.R;
+import com.happier.flowering.adapter.FansAdapter;
+import com.happier.flowering.constant.Constant;
+import com.happier.flowering.entity.User;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 /**
  * @ClassName UserSearchResultFragment
@@ -19,7 +41,17 @@ import com.happier.flowering.R;
  */
 public class UserSearchResultFragment extends Fragment {
 
+    private ListView lvUserList;
+
+    private List<User> dataSource = new ArrayList<>();
+
+    private OkHttpClient client = new OkHttpClient();
+
+    private static final String USER_LIST_SEARCH_RESULT = "/UserSearchResult/users";
+    private static final String FLAG = "search_result_of_user";
+
     private String keyword = null;
+    private String result = null;
 
     @Nullable
     @Override
@@ -29,7 +61,55 @@ public class UserSearchResultFragment extends Fragment {
 
         keyword = getActivity().getIntent().getStringExtra("keyword");
 
-        return view;
+        lvUserList = view.findViewById(R.id.m_lv_user_list);
 
+        getUserInfo();
+
+        lvUserList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // todo: 跳到该用户的个人主页, 通过dataSource.get(position)可拿到该用户信息
+                Toast.makeText(getActivity(), "跳转到其个人主页", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        return view;
+    }
+
+    private void getUserInfo() {
+        Request request = new Request.Builder().url(Constant.BASE_IP + USER_LIST_SEARCH_RESULT + "?keyword=" + keyword).build();
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                e.printStackTrace();
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                result = response.body().string();
+                EventBus.getDefault().post("search_result_of_user");
+            }
+        });
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void handleData(String flag) {
+        if (flag.equals(FLAG)) {
+            dataSource = new Gson().fromJson(result, new TypeToken<List<User>>() {}.getType());
+            FansAdapter adapter = new FansAdapter(getActivity(), dataSource, R.layout.mine_fans_list);
+            lvUserList.setAdapter(adapter);
+        }
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        EventBus.getDefault().register(this);
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
     }
 }
