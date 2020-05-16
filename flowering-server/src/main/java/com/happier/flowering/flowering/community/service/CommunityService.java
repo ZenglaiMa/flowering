@@ -43,6 +43,15 @@ public class CommunityService {
     @Resource
     private CollectMapper collectMapper;
     /*
+     * @description 花间的模糊查找
+     * @param keyWord 模糊查找的关键字
+     * @return
+     * @author 赵语涵
+     */
+    public List<Article> searchArtical(String keyWord){
+        return articleMapper.searchArtical(keyWord);
+    }
+    /*
      * @description 为某篇文章增加一个阅读量
      * @param articleId 针对哪篇文章
      * @return

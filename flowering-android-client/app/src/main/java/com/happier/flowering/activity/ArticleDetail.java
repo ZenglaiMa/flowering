@@ -2,6 +2,7 @@ package com.happier.flowering.activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.Point;
 import android.graphics.drawable.BitmapDrawable;
@@ -22,6 +23,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
@@ -65,6 +67,7 @@ public class ArticleDetail extends AppCompatActivity {
     private Gson gson = new Gson();
     private Article article;
     private Boolean flag = false;
+    private Boolean flagLogin = false;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -156,14 +159,18 @@ public class ArticleDetail extends AppCompatActivity {
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.z_ll_star:
-                    if(!flag) {
-                        ivStar.setImageResource(R.drawable.star_filled);
-                        setStar();
-                        flag = true;
-                    }else {
-                        ivStar.setImageResource(R.drawable.star);
-                        unStar();
-                        flag = false;
+                    if(flagLogin) {//true 已登录
+                        if(!flag) {
+                            ivStar.setImageResource(R.drawable.star_filled);
+                            setStar();
+                            flag = true;
+                        }else {
+                            ivStar.setImageResource(R.drawable.star);
+                            unStar();
+                            flag = false;
+                        }
+                    }else {//false 未登录
+                        Toast.makeText(ArticleDetail.this, "未登录，不可执行此操作", Toast.LENGTH_LONG).show();
                     }
                     break;
                 case R.id.z_ll_share:
@@ -192,34 +199,40 @@ public class ArticleDetail extends AppCompatActivity {
     public void isStar() {
         Collect collect = new Collect();
         collect.setArticleId(article.getArticleId());
-        collect.setUserId(1);//TODO 用户id还没有取到
+        collect.setUserId(1);
+//        SharedPreferences sharedPreferences = getSharedPreferences("data", MODE_PRIVATE);
+//        collect.setUserId(sharedPreferences.getInt("userId",0));//TODO 用户id
+        if(collect.getUserId() != 0) {
+            flagLogin = true;//已经登录了
+            RequestBody requestBody = RequestBody.create(
+                    MediaType.parse("text/plain;charset=utf-8"),
+                    new Gson().toJson(collect));
+            Request request = new Request.Builder()
+                    .post(requestBody)
+                    .url(Constant.BASE_IP + "/community/isStar")
+                    .build();
+            Call call = client.newCall(request);
+            call.enqueue(new Callback() {
+                @Override
+                public void onFailure(Call call, IOException e) {
+                }
 
-        RequestBody requestBody = RequestBody.create(
-                MediaType.parse("text/plain;charset=utf-8"),
-                new Gson().toJson(collect));
-        Request request = new Request.Builder()
-                .post(requestBody)
-                .url(Constant.BASE_IP + "/community/isStar")
-                .build();
-        Call call = client.newCall(request);
-        call.enqueue(new Callback() {
-            @Override
-            public void onFailure(Call call, IOException e) {
-            }
-
-            @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                String result = response.body().string();
-                EventBus.getDefault().post(result+"aa");
-            }
-        });
+                @Override
+                public void onResponse(Call call, Response response) throws IOException {
+                    String result = response.body().string();
+                    EventBus.getDefault().post(result+"aa");
+                }
+            });
+        }
     }
 
     //收藏
     public void setStar() {
         Collect collect = new Collect();
         collect.setArticleId(article.getArticleId());
-        collect.setUserId(1);//TODO 用户id还没有取到
+        collect.setUserId(1);
+//        SharedPreferences sharedPreferences = getSharedPreferences("data", MODE_PRIVATE);
+//        collect.setUserId(sharedPreferences.getInt("userId",0));//TODO 用户id
 
         RequestBody requestBody = RequestBody.create(
                 MediaType.parse("text/plain;charset=utf-8"),
@@ -244,7 +257,9 @@ public class ArticleDetail extends AppCompatActivity {
     public void unStar() {
         Collect collect = new Collect();
         collect.setArticleId(article.getArticleId());
-        collect.setUserId(1);//TODO 用户id还没有取到
+        collect.setUserId(1);
+//        SharedPreferences sharedPreferences = getSharedPreferences("data", MODE_PRIVATE);
+//        collect.setUserId(sharedPreferences.getInt("userId",0));//TODO 用户id
 
         RequestBody requestBody = RequestBody.create(
                 MediaType.parse("text/plain;charset=utf-8"),

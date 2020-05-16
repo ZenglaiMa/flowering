@@ -13,6 +13,13 @@ import java.util.List;
  */
 public interface ArticleMapper {
     /*
+     * @description 模糊查找文章标题
+     * @param keyWord
+     * @return
+     * @author adi
+     */
+    public List<Article> searchArtical(String keyWord);
+    /*
      * @description 查询当前的阅读量
      * @param articleId 针对哪篇文章
      * @return

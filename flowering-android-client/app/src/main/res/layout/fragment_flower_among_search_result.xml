@@ -4,11 +4,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
+    <ListView
+        android:id="@+id/z_lv_search"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="花间查询结果"
-        android:textSize="35dp" />
+        android:layout_marginRight="3dp"
+        android:padding="5dp"
+        android:scrollbars="none" />
 
 </LinearLayout>

@@ -17,6 +17,11 @@
             <result property="typeName" column="type_name"></result>
         </association>
     </resultMap>
+    <select id="searchArtical" resultMap="articalMap">
+        select a.article_id, a.content, a.title, a.img, a.overview, a.time, a.reading_num, a.type_id, t.type_id t_type_id, t.type_name
+        from article a, type t
+        where a.type_id=t.type_id and a.title like '%${keyWord}%'
+    </select>
     <select id="getReadingNum" resultType="java.lang.Integer">
         select a.reading_num
         from article a

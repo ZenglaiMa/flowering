@@ -112,4 +112,20 @@ public class CommunityController {
             e.printStackTrace();
         }
     }
+
+    @RequestMapping("/search")
+    public String search(HttpServletRequest request) {
+        try {
+            ServletInputStream is = request.getInputStream();
+            InputStreamReader isR = new InputStreamReader(is);
+            BufferedReader reader = new BufferedReader(isR);
+            String str = reader.readLine();
+            List<Article> articles = communityService.searchArtical(str);
+            return new Gson().toJson(articles);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "";
+        }
+
+    }
 }
