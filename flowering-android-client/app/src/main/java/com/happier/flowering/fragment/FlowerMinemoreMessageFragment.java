@@ -39,6 +39,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import static android.content.Context.MODE_PRIVATE;
+
 /**
  //        * @ClassName FlowerMinemoreFragment
  //        * @Description 我的详情私信Fragment
@@ -55,6 +57,7 @@ public class FlowerMinemoreMessageFragment extends Fragment implements AdapterVi
     private Gson gson=new Gson();
     private PopupWindow popupWindow=null;
     private View popupView=null;
+    private String myId=String.valueOf(getActivity().getSharedPreferences("data", MODE_PRIVATE).getInt("userId", 0));
     //定义一个bool值：
 //    private boolean isGetData = false;
 
@@ -104,7 +107,7 @@ public class FlowerMinemoreMessageFragment extends Fragment implements AdapterVi
             public void run() {
                 //查询私信数据
                 try {
-                    URL url= new URL(Constant.BASE_IP + PATH_MINEMORE_MESSAGE+"?userId=2");
+                    URL url= new URL(Constant.BASE_IP + PATH_MINEMORE_MESSAGE+"?userId="+myId);
                     URLConnection conn = url.openConnection();
                     InputStream in = conn.getInputStream();
                     BufferedReader reader = new BufferedReader(new InputStreamReader(in, "utf-8"));
@@ -152,12 +155,6 @@ public class FlowerMinemoreMessageFragment extends Fragment implements AdapterVi
         Map<String, Object> map = dataSource.get(position);
         TextView messMore=popupView.findViewById(R.id.q_message_content);
         messMore.setText(dataSource.get(position).get("content").toString());
-//        TextView serve=popupView.findViewById(R.id.serve);
-//        serve.setText(map.get("bound").toString());
-//        TextView phone=popupView.findViewById(R.id.phone);
-//        phone.setText(map.get("phone").toString());
-//        TextView address=popupView.findViewById(R.id.address);
-//        address.setText(map.get("message2").toString());
         EditText replyMess=popupView.findViewById(R.id.q_text_reply);
 
 

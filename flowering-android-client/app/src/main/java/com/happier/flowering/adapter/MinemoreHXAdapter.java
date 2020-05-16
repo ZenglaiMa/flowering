@@ -14,10 +14,14 @@ import com.bumptech.glide.request.RequestOptions;
 import com.happier.flowering.R;
 import com.happier.flowering.constant.Constant;
 import com.happier.flowering.entity.Post;
+import com.happier.flowering.mine.FlowerMineMoreActivity;
+import com.happier.flowering.mine.FlowerOthermore;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 
 public class MinemoreHXAdapter extends BaseAdapter {
@@ -57,9 +61,13 @@ public class MinemoreHXAdapter extends BaseAdapter {
 
         //填充数据按照时间降序显示最新
 //            headImg.setBackgroundResource(R.drawable.(messages.get(position).get("senderHead").toString()));
-        if(!posts.get(position).getImg().toString().trim().equals("")&&posts.get(position).getImg().toString().trim()!=null) {
+        if(posts.get(position).getImg()!=null&&!posts.get(position).getImg().toString().equals("")) {
             RequestOptions options = new RequestOptions().circleCrop();
-            Glide.with(context).load(Uri.fromFile(new File(Constant.BASE_IP + posts.get(position).getImg().toString()))).apply(options).into(headImg);
+            Glide.with(context).load(Constant.BASE_IP + posts.get(position).getImg().toString()).apply(options).into(headImg);
+        }
+        else{
+            RequestOptions options = new RequestOptions().circleCrop();
+            Glide.with(context).load(R.drawable.flowering).apply(options).into(headImg);
         }
         content.setText(posts.get(position).getTxt().toString());
         SimpleDateFormat sdf=new SimpleDateFormat("yyyy-mm-dd");//格式化为：xxxx年xx月xx日
