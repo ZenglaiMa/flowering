@@ -98,8 +98,7 @@ public class UserSearchResultFragment extends Fragment {
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void handleData(String flag) {
         if (flag.equals(FLAG)) {
-            dataSource = new Gson().fromJson(result, new TypeToken<List<User>>() {
-            }.getType());
+            dataSource = new Gson().fromJson(result, new TypeToken<List<User>>() {}.getType());
             FansAdapter adapter = new FansAdapter(getActivity(), dataSource, R.layout.mine_fans_list);
             lvUserList.setAdapter(adapter);
         }

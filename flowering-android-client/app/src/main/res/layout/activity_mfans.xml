@@ -1,22 +1,22 @@
-<LinearLayout android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android" >
+    android:orientation="vertical">
+
     <TextView
-        android:textSize="30dp"
-        android:layout_marginTop="30dp"
-        android:layout_gravity="center"
-        android:text="粉丝"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <TextView
-        android:layout_marginTop="15dp"
-        android:background="#FFB6B4B4"
         android:layout_width="match_parent"
-        android:layout_height="0.5dp" />
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="粉丝"
+        android:textColor="#45C01A"
+        android:textSize="18dp" />
+
     <ListView
         android:id="@+id/c_lv_mFans"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"/>
+        android:layout_height="match_parent"
+        android:paddingTop="10dp"
+        android:scrollbars="none" />
+
 </LinearLayout>

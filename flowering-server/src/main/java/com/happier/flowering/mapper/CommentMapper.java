@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -18,7 +19,8 @@ public interface CommentMapper {
     @Select("select user_id, content from comment where post_id = #{postId}")
     List<Comment> findByPostId(Integer postId);
 
-    @Insert("insert into comment(user_id, post_id, content) values(#{userId}, #{postId}, #{content})")
-    int save(@Param("userId") Integer userId, @Param("postId") Integer postId, @Param("content") String content);
-    public List<Comment> findCommentByPostId(@Param("postId") int postId);
+    @Insert("insert into comment(user_id, post_id, content, time) values(#{userId}, #{postId}, #{content}, #{date})")
+    int save(@Param("userId") Integer userId, @Param("postId") Integer postId, @Param("content") String content, @Param("date") Date date);
+
+    List<Comment> findCommentByPostId(@Param("postId") int postId);
 }

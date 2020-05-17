@@ -140,9 +140,9 @@ public class ArticleDetail extends AppCompatActivity {
                     WindowManager wm = (WindowManager) getBaseContext().getSystemService(Context.WINDOW_SERVICE);
                     wm.getDefaultDisplay().getSize(p);
                     BitmapDrawable drawable = new BitmapDrawable(bitmap);
-                    float a = p.x/bitmap.getWidth();
+                    float a = p.x / bitmap.getWidth();
                     draw.addLevel(1, 1, drawable);
-                    draw.setBounds(0, 0, p.x, (int)(bitmap.getHeight()*a));
+                    draw.setBounds(0, 0, p.x, (int) (bitmap.getHeight() * a));
                     draw.setLevel(1);
 
                     CharSequence charSequence = tv.getText();
@@ -159,17 +159,17 @@ public class ArticleDetail extends AppCompatActivity {
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.z_ll_star:
-                    if(flagLogin) {//true 已登录
-                        if(!flag) {
+                    if (flagLogin) {//true 已登录
+                        if (!flag) {
                             ivStar.setImageResource(R.drawable.star_filled);
                             setStar();
                             flag = true;
-                        }else {
+                        } else {
                             ivStar.setImageResource(R.drawable.star);
                             unStar();
                             flag = false;
                         }
-                    }else {//false 未登录
+                    } else {//false 未登录
                         Toast.makeText(ArticleDetail.this, "未登录，不可执行此操作", Toast.LENGTH_LONG).show();
                     }
                     break;
@@ -199,10 +199,10 @@ public class ArticleDetail extends AppCompatActivity {
     public void isStar() {
         Collect collect = new Collect();
         collect.setArticleId(article.getArticleId());
-        collect.setUserId(1);
-//        SharedPreferences sharedPreferences = getSharedPreferences("data", MODE_PRIVATE);
-//        collect.setUserId(sharedPreferences.getInt("userId",0));//TODO 用户id
-        if(collect.getUserId() != 0) {
+//        collect.setUserId(1);
+        SharedPreferences sharedPreferences = getSharedPreferences("data", MODE_PRIVATE);
+        collect.setUserId(sharedPreferences.getInt("userId", 0));
+        if (collect.getUserId() != 0) {
             flagLogin = true;//已经登录了
             RequestBody requestBody = RequestBody.create(
                     MediaType.parse("text/plain;charset=utf-8"),
@@ -220,7 +220,7 @@ public class ArticleDetail extends AppCompatActivity {
                 @Override
                 public void onResponse(Call call, Response response) throws IOException {
                     String result = response.body().string();
-                    EventBus.getDefault().post(result+"aa");
+                    EventBus.getDefault().post(result + "aa");
                 }
             });
         }
@@ -230,9 +230,9 @@ public class ArticleDetail extends AppCompatActivity {
     public void setStar() {
         Collect collect = new Collect();
         collect.setArticleId(article.getArticleId());
-        collect.setUserId(1);
-//        SharedPreferences sharedPreferences = getSharedPreferences("data", MODE_PRIVATE);
-//        collect.setUserId(sharedPreferences.getInt("userId",0));//TODO 用户id
+//        collect.setUserId(1);
+        SharedPreferences sharedPreferences = getSharedPreferences("data", MODE_PRIVATE);
+        collect.setUserId(sharedPreferences.getInt("userId", 0));
 
         RequestBody requestBody = RequestBody.create(
                 MediaType.parse("text/plain;charset=utf-8"),
@@ -257,9 +257,9 @@ public class ArticleDetail extends AppCompatActivity {
     public void unStar() {
         Collect collect = new Collect();
         collect.setArticleId(article.getArticleId());
-        collect.setUserId(1);
-//        SharedPreferences sharedPreferences = getSharedPreferences("data", MODE_PRIVATE);
-//        collect.setUserId(sharedPreferences.getInt("userId",0));//TODO 用户id
+//        collect.setUserId(1);
+        SharedPreferences sharedPreferences = getSharedPreferences("data", MODE_PRIVATE);
+        collect.setUserId(sharedPreferences.getInt("userId", 0));
 
         RequestBody requestBody = RequestBody.create(
                 MediaType.parse("text/plain;charset=utf-8"),
@@ -279,12 +279,13 @@ public class ArticleDetail extends AppCompatActivity {
             }
         });
     }
+
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void init(String result) {
-        if (result.equals("0aa")){//没被收藏
+        if (result.equals("0aa")) {//没被收藏
             flag = false;
             ivStar.setImageResource(R.drawable.star);
-        }else {//被收藏了
+        } else {//被收藏了
             flag = true;
             ivStar.setImageResource(R.drawable.star_filled);
         }

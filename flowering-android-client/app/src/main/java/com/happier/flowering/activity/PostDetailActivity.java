@@ -1,29 +1,28 @@
-package com.happier.flowering.mine;
+package com.happier.flowering.activity;
 
-import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.KeyEvent;
 
 import com.happier.flowering.R;
+import com.happier.flowering.fragment.PostDetailFragment;
 
-public class MPraise extends AppCompatActivity {
+public class PostDetailActivity extends AppCompatActivity {
 
-    // 用于记录当前正在显示的Fragment
     private Fragment curFragment = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mpraise);
+        setContentView(R.layout.activity_post_detail);
 
-        showFragment(new BePraised());
+        showFragment(new PostDetailFragment());
 
     }
 
-    // 根据不同的选项卡显示不同的Fragment
-    public void showFragment(Fragment fragment) {
+    private void showFragment(Fragment fragment) {
         if (curFragment == fragment) {
             return;
         }
@@ -32,7 +31,7 @@ public class MPraise extends AppCompatActivity {
             transaction.hide(curFragment);
         }
         if (!fragment.isAdded()) {
-            transaction.add(R.id.thumbs_up_tab_content, fragment);
+            transaction.add(R.id.post_detail_tab_content, fragment);
         }
         transaction.show(fragment);
         curFragment = fragment;

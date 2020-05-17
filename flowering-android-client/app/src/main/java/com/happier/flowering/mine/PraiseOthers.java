@@ -76,23 +76,23 @@ public class PraiseOthers extends Fragment {
 //                Log.e( "----------", dataList.toString() );
 //            }
 //        } );
-        initData();
-        handler = new Handler() {
-            @Override
-            public void handleMessage(Message msg) {
-                String messages = (String) msg.obj;
-                Log.e("获取——————————message",messages);
-                Type type = new TypeToken<List<Map<String,Object>>>() {}.getType();
-                dataList = new Gson().fromJson( messages, type );
-
-                Log.e("喜欢####",dataList.toString());
-                listView = view.findViewById( R.id.c_lv_praisedOther );
-                praiseOthersAdapter = new PraiseOthersAdapter( getContext(), dataList, R.layout.mine_praiseothers_list );
-                listView.setAdapter( praiseOthersAdapter );
-
-            }
-
-        };
+//        initData();
+//        handler = new Handler() {
+//            @Override
+//            public void handleMessage(Message msg) {
+//                String messages = (String) msg.obj;
+//                Log.e("获取——————————message",messages);
+//                Type type = new TypeToken<List<Map<String,Object>>>() {}.getType();
+//                dataList = new Gson().fromJson( messages, type );
+//
+//                Log.e("喜欢####",dataList.toString());
+//                listView = view.findViewById( R.id.c_lv_praisedOther );
+//                praiseOthersAdapter = new PraiseOthersAdapter( getContext(), dataList, R.layout.mine_praiseothers_list );
+//                listView.setAdapter( praiseOthersAdapter );
+//
+//            }
+//
+//        };
         return view;
     }
     public void initData(){

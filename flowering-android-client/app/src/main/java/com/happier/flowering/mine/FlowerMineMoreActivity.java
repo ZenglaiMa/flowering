@@ -67,6 +67,12 @@ public class FlowerMineMoreActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(FlowerMineMoreActivity.this, EditMess.class);
+                User user = new Gson().fromJson(result, User.class);
+                intent.putExtra("nickname", user.getNickname());
+                intent.putExtra("headImg", user.getHeadImg());
+                intent.putExtra("gender", user.getSex());
+                intent.putExtra("address", user.getAddress());
+                intent.putExtra("profile", user.getProfile());
                 startActivity(intent);
             }
         });

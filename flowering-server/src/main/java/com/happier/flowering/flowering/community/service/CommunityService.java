@@ -42,25 +42,39 @@ public class CommunityService {
     private TypeMapper typeMapper;
     @Resource
     private CollectMapper collectMapper;
+
+    /**
+     * @Description 查询用户收藏的文章
+     * @Author Seven
+     * @Date 2020/5/17 17:27
+     * @Params [userId]
+     * @return java.util.List<com.happier.flowering.entity.Article>
+     **/
+    public List<Article> listArticlesOfUserCollected(Integer userId) {
+        return articleMapper.getArticlesByUserCollected(userId);
+    }
+
     /*
      * @description 花间的模糊查找
      * @param keyWord 模糊查找的关键字
      * @return
      * @author 赵语涵
      */
-    public List<Article> searchArtical(String keyWord){
+    public List<Article> searchArtical(String keyWord) {
         return articleMapper.searchArtical(keyWord);
     }
+
     /*
      * @description 为某篇文章增加一个阅读量
      * @param articleId 针对哪篇文章
      * @return
      * @author 赵语涵
      */
-    public void updateReadingNum(int articleId){
+    public void updateReadingNum(int articleId) {
         int num = articleMapper.getReadingNum(articleId);
-        articleMapper.addReadingNum(articleId, num+1);
+        articleMapper.addReadingNum(articleId, num + 1);
     }
+
     /*
      * @description 获取某个类型的所有文章
      * @param typeId
@@ -70,52 +84,58 @@ public class CommunityService {
     public List<Article> getArticleByType(int typeId) {
         return articleMapper.getArticleByType(typeId);
     }
+
     /*
      * @description 某个人将某个文章取消收藏
      * @param collect
      * @author 赵语涵
      */
-    public void unStar(Collect collect){
+    public void unStar(Collect collect) {
         collectMapper.unStar(collect);
     }
+
     /*
      * @description 判断一篇文章是否被一个用户收藏
      * @param collect
      * @return
      * @author 赵语涵
      */
-    public int isStar(Collect collect){
+    public int isStar(Collect collect) {
         int count = collectMapper.isStar(collect);
-        if(count == 0) {
+        if (count == 0) {
             return 0;//没有收藏
-        }else {
+        } else {
             return 1;//收藏了
         }
     }
+
     /*
      * @description 某个人将某个文章收藏
      * @param collect 传进来的collect
      * @return
      * @author 赵语涵
      */
-    public void setStar(Collect collect){
+    public void setStar(Collect collect) {
         collectMapper.setStar(collect);
     }
+
     /*
      * @description 获取所有的类型
      * @author 赵语涵
      */
-    public List<Type> getAllTypes(){
+    public List<Type> getAllTypes() {
         return typeMapper.getAllTypes();
     }
+
     /*
      * @description 获取所有的文章
      * @return
      * @author 赵语涵
      */
-    public List<Article> getAllArticle(){
+    public List<Article> getAllArticle() {
         return articleMapper.getAllArtical();
     }
+
     /*
      * @description 任务调度 + JPush推送文章方法1
      * @author 赵语涵
@@ -124,7 +144,7 @@ public class CommunityService {
     public void jpush() {
         int count = articleMapper.getCount();
         Random rand = new Random();
-        int randNum = rand.nextInt(count)+1;
+        int randNum = rand.nextInt(count) + 1;
         Article article = articleMapper.getArticalById(randNum);
         System.out.println(article.toString());
 

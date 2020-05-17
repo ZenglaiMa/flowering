@@ -42,7 +42,6 @@ public class FlowerPostFragment extends Fragment {
 
         ivPublishPost = view.findViewById(R.id.iv_publish_post);
 
-
         indicator = view.findViewById(R.id.alphaIndicator_post);
         indicator.setOnTabChangedListner(new OnTabChangedListner() {
             @Override

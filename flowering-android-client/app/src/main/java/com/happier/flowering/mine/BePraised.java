@@ -1,13 +1,10 @@
 package com.happier.flowering.mine;
 
+import android.content.Context;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,26 +13,16 @@ import android.widget.ListView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.happier.flowering.R;
-import com.happier.flowering.adapter.AttentionAdapter;
 import com.happier.flowering.adapter.BePraisedAdapter;
-import com.happier.flowering.adapter.CollectionAdapter;
-import com.happier.flowering.adapter.PraiseOthersAdapter;
 import com.happier.flowering.constant.Constant;
-import com.happier.flowering.entity.User;
 
-import java.io.BufferedReader;
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
-import java.lang.reflect.Type;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLConnection;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -44,21 +31,36 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 public class BePraised extends Fragment {
+
     private ListView listView;
     private BePraisedAdapter bePraisedAdapter;
-    private List<Map<String,Object>> dataList ;
-    //"userName"  "userImg"  "postTxt"  "postImg"
-    private Handler handler;
-    //"userName""userImg""postTxt""postImg"
-    private Gson gson;
+    private List<Map<String, Object>> dataList;
+
+    private String result = null;
+
+    private static final String FLAG = "GetThumbsUpSuccess";
+
+    private int currentUserId;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate( R.layout.activity_be_praised, container, false );
+        View view = inflater.inflate(R.layout.activity_be_praised, container, false);
+
+        currentUserId = getActivity().getSharedPreferences("data", Context.MODE_PRIVATE).getInt("userId", 0);
+
+        listView = view.findViewById(R.id.c_lv_bePraised);
+
+        initData();
+
+        return view;
+    }
+
+    private void initData() {
         OkHttpClient okHttpClient = new OkHttpClient();
-        Request request = new Request.Builder().url( Constant.BASE_IP+"/center/findThumbsMe" + "?id=" + 1 ).build();
-        Call call = okHttpClient.newCall( request );
-        call.enqueue( new Callback() {
+        Request request = new Request.Builder().url(Constant.BASE_IP + "/center/findThumbsMe" + "?id=" + currentUserId).build();
+        Call call = okHttpClient.newCall(request);
+        call.enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
                 e.printStackTrace();
@@ -66,57 +68,30 @@ public class BePraised extends Fragment {
 
             @Override
             public void onResponse(Call call, Response response) throws IOException {
-                String info = response.body().string();
-                Log.e( "*****", info );
-                Type type = new TypeToken<List<Map<String, Object>>>() {
-                }.getType();
-                dataList = new Gson().fromJson( info, type );
-                listView = view.findViewById( R.id.c_lv_bePraised);
-                bePraisedAdapter= new BePraisedAdapter( getActivity(), dataList, R.layout.mine_bepraised_list );
-                listView.setAdapter(bePraisedAdapter);
-                Log.e( "----------", dataList.toString() );
+                result = response.body().string();
+                EventBus.getDefault().post("GetThumbsUpSuccess");
             }
-        } );
-//        initData();
-//        handler = new Handler() {
-//            @Override
-//            public void handleMessage(Message msg) {
-//                String messages = (String) msg.obj;
-//                dataList = gson.fromJson(messages, new TypeToken<List<Map<String,Objects>>>(){}.getType());
-//                Log.e("喜欢####",dataList.toString());
-//                listView = view.findViewById( R.id.c_lv_praisedOther );
-//                bePraisedAdapter= new BePraisedAdapter( getActivity(), dataList, R.layout.mine_bepraised_list );
-//                listView.setAdapter(bePraisedAdapter);
-//            }
-//
-//        };
-        return view;
-//    }
-//    public void initData(){
-//        new Thread(){
-//            @Override
-//            public void run() {
-//                try {
-//                    URL url= new URL( Constant.BASE_IP + "/logistics-server/assessServlet" );
-//                    URLConnection conn = url.openConnection();
-//                    InputStream in = conn.getInputStream();
-//                    BufferedReader reader = new BufferedReader(new InputStreamReader(in, "utf-8"));
-//                    String info = reader.readLine();
-//                    Message message = new Message();
-//                    message.obj = info;
-//                    handler.sendMessage(message);
-//                } catch (MalformedURLException e) {
-//                    e.printStackTrace();
-//                } catch (UnsupportedEncodingException e) {
-//                    e.printStackTrace();
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
-//
-//
-//            }
-//
-//
-//        }.start();
+        });
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void showLayout(String flag) {
+        if (flag.equals(FLAG)) {
+            dataList = new Gson().fromJson(result, new TypeToken<List<Map<String, Object>>>() {}.getType());
+            bePraisedAdapter = new BePraisedAdapter(getActivity(), dataList, R.layout.mine_bepraised_list);
+            listView.setAdapter(bePraisedAdapter);
+        }
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        EventBus.getDefault().register(this);
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
     }
 }

@@ -67,9 +67,6 @@ public class LatestAndChoicePostAdapter extends BaseAdapter {
         }
     };
 
-    // todo: 当前用户user_id, 从SharedPreference中获取, 目前暂定为1
-    private Integer currentUserId = 1;
-
     public LatestAndChoicePostAdapter(Context context, List<Map<String, Object>> dataSource, int itemId) {
         this.context = context;
         this.dataSource = dataSource;
@@ -220,7 +217,7 @@ public class LatestAndChoicePostAdapter extends BaseAdapter {
                     Toast.makeText(context, "请输入评论内容", Toast.LENGTH_SHORT).show();
                 } else {
                     Request request = new Request.Builder()
-                            .url(Constant.BASE_IP + DO_COMMENT_PATH + "?userId=" + currentUserId + "&postId=" + dataSource.get(position).get("post_id").toString() + "&content=" + content)
+                            .url(Constant.BASE_IP + DO_COMMENT_PATH + "?userId=" + context.getSharedPreferences("data", Context.MODE_PRIVATE).getInt("userId", 0) + "&postId=" + dataSource.get(position).get("post_id").toString() + "&content=" + content)
                             .build();
                     client.newCall(request).enqueue(new Callback() {
                         @Override
@@ -247,7 +244,7 @@ public class LatestAndChoicePostAdapter extends BaseAdapter {
     }
 
     private void doGood(int postId) {
-        Request request = new Request.Builder().url(Constant.BASE_IP + DO_GOOD_PATH + "?postId=" + postId + "&userId=" + currentUserId).build();
+        Request request = new Request.Builder().url(Constant.BASE_IP + DO_GOOD_PATH + "?postId=" + postId + "&userId=" + context.getSharedPreferences("data", Context.MODE_PRIVATE).getInt("userId", 0)).build();
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {

@@ -41,6 +41,11 @@ public class PostController {
         return postService.listPostsByTopic(pageNum, pageSize, topicId);
     }
 
+    @GetMapping("/detail")
+    public List<PostListModel> listByDetail(@RequestParam("postId") Integer postId) {
+        return postService.listPostById(postId);
+    }
+
     @GetMapping("/listByText")
     public List<PostListModel> listByText(@RequestParam("pageNum") int pageNum, @RequestParam("pageSize") int pageSize, @RequestParam("textKeyWord") String keyword) {
         return postService.listPostsByText(pageNum, pageSize, keyword);

@@ -141,8 +141,7 @@ public class PostPublishActivity extends TakePhotoActivity {
         builder.setType(MultipartBody.FORM);
         builder.addFormDataPart("postText", postText);
         builder.addFormDataPart("topicId", String.valueOf(selectedTopic));
-        // todo: 从SharedPreference中得到真实user_id, 此处添加测试数据 user_id = 1
-        builder.addFormDataPart("userId", String.valueOf(1));
+        builder.addFormDataPart("userId", String.valueOf(getSharedPreferences("data", MODE_PRIVATE).getInt("userId", 0)));
         String[] paths = picPath.substring(1, picPath.length() - 1).replace(" ", "").split(",");
         for (String path : paths) {
             File file = new File(path);

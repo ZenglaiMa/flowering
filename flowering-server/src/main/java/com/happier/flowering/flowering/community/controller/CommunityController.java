@@ -6,7 +6,9 @@ import com.happier.flowering.entity.Collect;
 import com.happier.flowering.entity.Type;
 import com.happier.flowering.flowering.community.service.CommunityService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.ServletInputStream;
@@ -126,6 +128,10 @@ public class CommunityController {
             e.printStackTrace();
             return "";
         }
+    }
 
+    @GetMapping("/collect")
+    public List<Article> getCollectedArticles(@RequestParam("userId") Integer userId) {
+        return communityService.listArticlesOfUserCollected(userId);
     }
 }

@@ -60,4 +60,13 @@ public interface ArticleMapper {
      * @author 赵语涵
      */
     public List<Article> getAllArtical();
+
+    /**
+     * @Description 查询用户收藏的文章
+     * @Author Seven
+     * @Date 2020/5/17 17:25
+     * @Params [userId]
+     * @return java.util.List<com.happier.flowering.entity.Article>
+     **/
+    List<Article> getArticlesByUserCollected(Integer userId);
 }

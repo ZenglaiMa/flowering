@@ -10,7 +10,9 @@
         <result property="content" column="content"/>
         <result property="time" column="time"/>
     </resultMap>
+
     <select id="findCommentByPostId" resultMap="CommentMap">
-        select * from comment where post_id = #{postId}
+        select * from comment where post_id = #{postId} order by time desc
     </select>
+
 </mapper>

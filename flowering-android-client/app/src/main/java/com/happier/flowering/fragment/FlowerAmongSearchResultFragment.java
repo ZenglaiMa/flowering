@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,11 +15,9 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.happier.flowering.R;
 import com.happier.flowering.activity.ArticleDetail;
-import com.happier.flowering.adapter.FloweringAmongLeftAdapter;
 import com.happier.flowering.adapter.FloweringAmongRightAdapter;
 import com.happier.flowering.constant.Constant;
 import com.happier.flowering.entity.Article;
-import com.happier.flowering.entity.Type;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -53,6 +50,7 @@ public class FlowerAmongSearchResultFragment extends Fragment {
     private FloweringAmongRightAdapter adapter = null;
     private List<Article> articles = new ArrayList<>();
     private View view;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -64,7 +62,6 @@ public class FlowerAmongSearchResultFragment extends Fragment {
         initData(keyword);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 addReadingNum(articles.get(position).getArticleId());
@@ -75,6 +72,7 @@ public class FlowerAmongSearchResultFragment extends Fragment {
                 adapter.notifyDataSetChanged();
             }
         });
+
         return view;
     }
 
@@ -90,6 +88,7 @@ public class FlowerAmongSearchResultFragment extends Fragment {
         call.enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
+                e.printStackTrace();
             }
 
             @Override
@@ -99,6 +98,7 @@ public class FlowerAmongSearchResultFragment extends Fragment {
             }
         });
     }
+
     //阅读人数+1
     public void addReadingNum(int articleId) {
         RequestBody requestBody = RequestBody.create(
@@ -112,6 +112,7 @@ public class FlowerAmongSearchResultFragment extends Fragment {
         call.enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
+                e.printStackTrace();
             }
 
             @Override
@@ -119,6 +120,7 @@ public class FlowerAmongSearchResultFragment extends Fragment {
             }
         });
     }
+
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void init(String result) {
         articles = new Gson().fromJson(result, new TypeToken<List<Article>>() {}.getType());

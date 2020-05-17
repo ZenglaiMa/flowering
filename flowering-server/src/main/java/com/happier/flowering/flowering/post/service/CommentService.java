@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Date;
+
 /**
  * @ClassName CommentService
  * @Description
@@ -22,7 +24,7 @@ public class CommentService {
     private UserMapper userMapper;
 
     public String publishComment(Integer userId, Integer postId, String content) {
-        commentMapper.save(userId, postId, content);
+        commentMapper.save(userId, postId, content, new Date());
         return userMapper.findUserById(userId).getNickname();
     }
 

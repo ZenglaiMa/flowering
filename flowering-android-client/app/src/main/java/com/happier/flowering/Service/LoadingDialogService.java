@@ -4,15 +4,14 @@ import android.app.Service;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.IBinder;
-import android.support.annotation.Nullable;
-import android.view.WindowManager;
 
-import com.happier.flowering.activity.LoadingActivity;
 import com.zyao89.view.zloading.ZLoadingDialog;
 import com.zyao89.view.zloading.Z_TYPE;
 
 public class LoadingDialogService extends Service {
+
     private ZLoadingDialog zLoadingDialog;
+
     @Override
     public IBinder onBind(Intent arg0) {
         // TODO Auto-generated method stub

@@ -6,7 +6,7 @@
     android:orientation="vertical">
 
     <RelativeLayout
-        android:id="@+id/m_thumbs_up_rl_up"
+        android:id="@+id/m_post_detail_rl_up"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -14,7 +14,6 @@
 
         <com.yinglan.alphatabs.AlphaTabsIndicator xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/alphaIndicator_thumbs_up"
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:orientation="horizontal"
@@ -25,7 +24,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                app:tabText="获赞"
+                app:tabText="帖子详情"
                 app:tabTextSize="18dp"
                 app:textColorNormal="#2c2c2c"
                 app:textColorSelected="#45C01A" />
@@ -35,10 +34,10 @@
     </RelativeLayout>
 
     <FrameLayout
-        android:id="@+id/thumbs_up_tab_content"
+        android:id="@+id/post_detail_tab_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/m_thumbs_up_rl_up"
+        android:layout_below="@+id/m_post_detail_rl_up"
         android:layout_marginTop="8dp" />
 
 </RelativeLayout>

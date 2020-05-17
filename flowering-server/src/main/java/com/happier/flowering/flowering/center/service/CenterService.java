@@ -89,22 +89,21 @@ public class CenterService {
     }
 
     public List<Map<String, Object>> findThumbsMe(int userId) {
-        List<Post> posts = this.postMapper.searchPostByUserId(userId);
-        List<Map<String, Object>> list = new ArrayList<>();
+        List<Post> posts = postMapper.searchPostByUserId(userId);
+        List<Map<String, Object>> resultSet = new ArrayList<>();
         for (Post post : posts) {
-            post = this.postMapper.searchPostByPostId(post.getPostId());
-            List<Integer> userIds = this.thumbsUpMapper.findThumbsMe(post.getPostId());
-            for (Integer i : userIds) {
-                Map map = new HashMap();
-                User user = this.userMapper.findUserById(i);
+            List<ThumbsUp> thumbsUps = thumbsUpMapper.findThumbsMe(post.getPostId());
+            for (ThumbsUp thumbsUp : thumbsUps) {
+                Map<String, Object> map = new HashMap<>();
+                User user = userMapper.findUserById(thumbsUp.getUserId());
                 map.put("userName", user.getNickname());
-                map.put("userImg", user.getHeadImg());
-                map.put("postTxt", post.getTxt());
-                map.put("postImg", post.getImg());
-                list.add(map);
+                map.put("userHeadImg", user.getHeadImg());
+                map.put("thumbsUpTime", thumbsUp.getTime());
+                resultSet.add(map);
             }
         }
-        return list;
+
+        return resultSet;
     }
 
     public List<Map<String, Object>> findComments(int userId) {
@@ -115,15 +114,14 @@ public class CenterService {
             for (Comment comment : comments) {
                 User user = this.userMapper.findUserById(comment.getUserId());
                 Map map = new HashMap();
-                map.put("CommentContent", comment.getContent());
                 map.put("CommentTime", comment.getTime());
                 map.put("UserName", user.getNickname());
-                map.put("UserImg", user.getHeadImg());
-                map.put("PostContent", post.getTxt());
                 map.put("PostImg", post.getImg());
+                map.put("PostId", post.getPostId());
                 list.add(map);
             }
         }
+
         return list;
     }
 
@@ -209,6 +207,10 @@ public class CenterService {
 
     public int updateProfile(int id, String profile) {
         return userMapper.updateProfile(id, profile);
+    }
+
+    public int updatePersonalInfo(Integer userId, String nickname, int gender, String address, String profile) {
+        return userMapper.updateUserInfo(userId, nickname, gender, address, profile);
     }
 
 }

@@ -50,7 +50,7 @@ public class CenterController {
         List BePraised = this.centerService.findThumbsMe(id);
         map.put("bepraised", BePraised.size());
 
-        return new Gson().toJson(user);
+        return new Gson().toJson(map);
     }
 
     @RequestMapping("/findInitiative")
@@ -84,14 +84,12 @@ public class CenterController {
     @RequestMapping("/findThumbsMe")
     public String findThumbsMe(@RequestParam("id") int id) {
         List<Map<String, Object>> maps = this.centerService.findThumbsMe(id);
-        System.out.println("我的获赞" + new Gson().toJson(maps));
         return new Gson().toJson(maps);
     }
 
     @RequestMapping("/findComments")
     public String findComments(@RequestParam("id") int id) {
         List<Map<String, Object>> maps = this.centerService.findComments(id);
-        System.out.println("我的通知" + new Gson().toJson(maps));
         return new Gson().toJson(maps);
     }
 
@@ -197,6 +195,7 @@ public class CenterController {
                 e.printStackTrace();
             }
         }
+
         return this.centerService.uploadHeaderImage(id, path);
     }
 
@@ -213,6 +212,11 @@ public class CenterController {
     @GetMapping("/UserSimpleInfo")
     public User showSimpleInfo(@RequestParam("userId") Integer userId) {
         return centerService.findUser(userId);
+    }
+
+    @GetMapping("/UpdatePersonalInfo")
+    public int editPersonalInfo(@RequestParam("userId") Integer userId, @RequestParam("nickname") String nickname, @RequestParam("gender") int gender, @RequestParam("address") String address, @RequestParam("profile") String profile) {
+        return centerService.updatePersonalInfo(userId, nickname, gender, address, profile);
     }
 
 }
