@@ -1,12 +1,164 @@
+/*
+ Navicat Premium Data Transfer
+
+ Source Server         : localhost_3306
+ Source Server Type    : MySQL
+ Source Server Version : 50615
+ Source Host           : localhost:3306
+ Source Schema         : flowering
+
+ Target Server Type    : MySQL
+ Target Server Version : 50615
+ File Encoding         : 65001
+
+ Date: 03/06/2020 11:18:50
+*/
+
+SET NAMES utf8mb4;
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+-- Table structure for article
+-- ----------------------------
+DROP TABLE IF EXISTS `article`;
+CREATE TABLE `article`  (
+  `article_id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `img` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `content` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
+  `overview` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `time` datetime(0) NULL DEFAULT NULL,
+  `reading_num` int(11) NULL DEFAULT NULL,
+  `type_id` int(11) NULL DEFAULT NULL,
+  PRIMARY KEY (`article_id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 15 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of article
+-- ----------------------------
+INSERT INTO `article` VALUES (1, '向日葵的奥秘', '/article-img/z_1.jpg', '<!DOCTYPE html>\n<html>\n<head>\n    <title></title>\n</head>\n<body>\n    <img src=\"http://192.168.1.109:8080/article-img/z_1.jpg\" width=\"100%\">\n    <h3>向日葵的别称</h3>\n    <p>向日葵是菊科的一年生草本植物，别称有“朝阳花”、“望日莲”和“太阳花”等。<br/>向日葵的原产地 是南美洲，目前在欧洲、俄罗斯、中国等世界各地都有种植。</p>\n    <h3>向日葵的形态特征</h3>\n    <p>向日葵的茎为粗壮的直立茎，整体呈多棱角的圆形，生有白色的粗硬毛。<br/>向日葵的叶子一般为互生，形状一般为卵圆形或是心状的卵形，叶片两面都生有粗糙的毛。<br/>向日葵的花序为极大的头状，单生在枝的端部或者茎的顶部，通常开时会有下倾。<br/>向日葵的果实为倒卵形或卵状长圆形的瘦果，即“葵花籽”，木质化的果皮呈黑色或灰色。</p>\n    <img src=\"http://192.168.1.109:8080/article-img/z_2.jpg\" width=\"100%\">\n    <h3>向日葵的生长习性</h3>\n    <p>    一年四季均能对向日葵进行栽种，在夏冬两季最好。向日葵的生长速度很快，从种下到开花一般只需2个月左右，最长的花期时间约在两周以上。</p>\n    <img src=\"http://192.168.1.109:8080/article-img/z_3.jpg\" class=\"imgType\" width=\"100%\">\n    <h3>向日葵的价值用途</h3>\n    <p>    食用价值：因为向日葵的种子内含有大量的油，因此有着很高的食用价值，是一种很好的油料作物，榨油和炒食均可。<br/>\n    药用价值：向日葵植株的很多部分都可入药使用，有着清热化痰、疏风解毒和利湿止痛等多种功效。<br/>\n    净化价值：向日葵有着修复土壤的绿化功能，它的根系在吸收养分的同时还能提取土壤中的有害污染物。</p>\n</body>\n</html>', '神秘的向日葵，为太阳而生', NULL, 61, 1);
+INSERT INTO `article` VALUES (2, '姜花，你喜欢吗', '/article-img/z_4.jpg', '<!DOCTYPE html>\n<html>\n<head>\n    <title></title>\n</head>\n<body>\n    <img src=\"http://192.168.1.109:8080/article-img/z_4.jpg\" width=\"100%\">\n    <h3>姜花的别称</h3>\n    <p>姜花又名蝴蝶姜、蝴蝶花、夜寒苏、香雪花、姜兰花、穗花山奈，姜黄等。<br/>姜花的形态特征 姜花茎可高达两米。其叶片长为披针形或长圆披针形，约长20-40厘</p>\n    <h3>姜花的形态特征</h3>\n    <p>姜花茎可高达两米。其叶片长为披针形或长圆披针形，约长20-40厘米，顶部渐尖生长，根基急尖，叶表面光滑有光泽，带有长2-3厘米的叶舌。<br>\n       顶部花生长有序，呈椭圆形，约长不足20厘米；苞片为卵圆形，每一苞片约花开3朵；倒心形的唇瓣，6厘米左右长宽。花丝长3厘米左右，花药室长约1.5厘米。</p>\n    <h3>姜花的花语</h3>\n    <p>将记忆永远留在夏天。<br>\n        它是巨蟹座的守护花朵，居家的幸福感。<br>\n        原产于印度，只有一天的寿命，如蝴蝶般飘陨。<br>\n        芳香沁人，所有绚丽的颜色都淡出。<br>\n        由爱到情：爱一个人最好的状态就是将记忆留在夏天。<br>\n        生命如此，在特定的时间邂逅特定的你，这或许就是人生的幸福。<br>\n        爱花的恬淡，它的与世无争，以此情有独钟。</p><br>\n    <img src=\"http://192.168.1.109:8080/article-img/z_5.jpg\" class=\"imgType\" width=\"100%\">\n</body>\n</html>\n', '姜花：它是巨蟹座的守护花朵，居家的幸福感。', NULL, 16, 2);
+INSERT INTO `article` VALUES (3, '你养过琉璃翠吗', '/article-img/z_6.jpg', '<!DOCTYPE html>\n<html>\n<head>\n    <title></title>\n</head>\n<body>\n    <img src=\"http://192.168.1.109:8080/article-img/z_6.jpg\" width=\"100%\">\n    <h3>玻璃翠的培植</h3>\n    <p>培养土可选用腐叶土、园土和粗沙以1:1:1的比例混合，并施入少量豆饼为基肥。</p>\n    <h3>浇水</h3>\n    <p>玻璃翠性喜湿润，畏气候干燥。生长期间除了适当浇水外，要保持较高的空气湿度。<br>为此，可经常用清水向叶面喷雾，特别是在夏天，每天早、晚都应用水喷洗枝叶，同时向花盆四周洒水，以提高空气湿度、降低温度。在整个生长过程中，一旦空气过于干燥，叶片即失去光泽、不舒展，严重时叶柄也卷曲。</p>\n    <h3>光照、温度</h3>\n    <p>夏季要适当遮阴，避免强光直晒。如果过度阴蔽或施肥水过足，易引起茎叶徒长，导致倒伏。<br>\n       冬季移入室内，放置窗台阳光充足处养护。保持室温13-16℃、盆土微潮润，每隔5-7天用与室温接近的温水喷洗枝叶1次；空气干燥时也要经常用水喷雾，以增加空气湿度，只有这样，才能保持玻璃翠叶片翠嫩、花朵鲜艳。<br>\n       玻璃翠在整个生长发育过程中，每7天左右最好转动花盆1次，使植株各部分受光均匀、株型美观。</p><br>\n    <img src=\"http://192.168.1.109:8080/article-img/z_7.jpg\" class=\"imgType\" width=\"100%\">\n</body>\n</html>\n', '琉璃翠：翠绿为何而生', NULL, 19, 1);
+INSERT INTO `article` VALUES (4, '百子莲的秘密', '/article-img/z_8.jpg', '<!DOCTYPE html>\n<html>\n<head>\n    <title></title>\n</head>\n<body>\n    <img src=\"http://192.168.1.109:8080/article-img/z_8.jpg\">\n    <h3>培植</h3>\n    <p>百子莲栽培宜用园土3份、砻糠灰和堆肥各1份混合使用。</p>\n    <h3>浇水</h3>\n    <p>浇水浇水以湿润为度，见干见湿，夏季尤要注意保证给予充足的水分，并要经常在植株及周围环境喷水增湿、降温。<br>冬季要注意控制浇水，保持盆土稍微湿润即可，不能多浇。</p>\n    <img src=\"http://192.168.1.109:8080/article-img/z_9.jpg\">\n    <h3>光照、温度</h3>\n    <p>养护宜放在半阴湿润处，6-9月要注意不让烈日直射，以免灼伤叶片。<br>\n        10月以后停止施肥，并在温度降至1-2℃时移入室内湿润处，保持0℃以上就可安全越冬。</p><br>\n    <h3>繁殖</h3>\n    <p>百子莲以分株繁殖为主，播种需5-6年才能开花，较少使用。<br>\n        分株可在春季翻盆时进行，但当年多不开花。秋季花后较为适宜，取分蘖种植，或将大株分为2-3丛，分开栽植。分株后要注意施肥灌水，放阴凉和通风良好处。</p>\n</body>\n</html>\n', '百子莲：呆在自己的小世界', NULL, 7, 3);
+INSERT INTO `article` VALUES (5, '巴西木的养殖', '/article-img/z_10.jpg', '<!DOCTYPE html>\n<html>\n<head>\n    <title></title>\n</head>\n<body>\n    <img src=\"http://192.168.1.109:8080/article-img/z_10.jpg\">\n    <h3>培植</h3>\n    <p>盆栽巴西木常用12-20厘米口径盆，3个茎干的用25厘米口径盆。<br>\n        盆栽以腐叶土、培养土和粗沙的混合土最好。市场上盆栽巴西木多采用精沙土，有利于植株发根，但长期使用会因缺肥而不利于植物生长，必须换成以上配制的混合土。每年春季必须换盆，新株每年换盆1次，老株2年换盆1次。</p>\n    <h3>浇水</h3>\n    <p>巴西木对水分需求量少，浇水一般10天左右1次，盆土保持在半干半湿即可。浇水不宜过多，以防树干腐烂。<br>    此外，在北方莳养，由于气候干燥，应经常向叶面及周围地面喷水，提高周围的空气湿度，以利于巴西木的生长。</p>\n    <img src=\"http://192.168.1.109:8080/article-img/z_11.jpg\">\n    <h3>光照、温度</h3>\n    <p>巴西木生长适温为20-30℃。冬季10℃以上即可过冬，温度过低时会停止生长，且叶尖和叶缘会出现黄褐斑。<br>\n        巴西木较喜阴，在明亮的散射光处生长良好。夏季要避免直射光，宜置于阴凉处。秋、冬季时，放在室内阳光充足处即可。光照过少时，巴西木的叶片会呈灰绿色且条纹不清，基部叶片黄化，尤其是斑叶种类长期在低光照条件下，色彩会变浅或消失，从而失去观赏价值。</p>\n</body>\n</html>\n', '巴西木：和巴西有关吗', NULL, 10, 4);
+INSERT INTO `article` VALUES (6, '君子兰：花中君子', '/article-img/z_12.jpg', '<!DOCTYPE html>\n<html>\n<head>\n    <title></title>\n</head>\n<body>\n    <img src=\"http://192.168.1.109:8080/article-img/z_12.jpg\">\n    <h3>适宜君子兰生长的土壤</h3>\n    <p>君子兰专用土不能直接用来种植栀子花，需要经过处理之后才能种植，否则栀子花会出现黄叶。<br>\n        君子兰属石蒜科君子兰属，是多年生常绿草本植物，它的叶片明亮有光泽，很有特色，从假鳞茎处分开，向两边生长，而且每片叶子排列整齐，有很高的观赏性；它的花朵花色鲜艳，花期长；它的果实成熟时呈红色，很是可爱。因此，君子兰是既可以观叶、观花，还可以观果的植物。那种植这么可爱的君子兰需要什么样的土壤呢？</p>\n    <p>种植君子兰需要选择疏松、肥沃、排水性良好的微酸性土壤，这种土壤比较适宜君子兰的生长。养植了十多年的君子兰，个人比较喜欢利用园土、松针腐叶土和河沙混合土配制君子兰土壤，上盆的时候在盆底铺一些风化的松果，或者适量的腐熟果皮，君子兰长势很好。<br>\n     当然，也有人觉得自己配制土壤太麻烦，或者没有其它土壤来配制，就直接买君子兰专用土，觉得用起来比较简单方便，而且土壤配制更专业。君子兰专用土基本都会选用珍珠岩、草炭土、发酵的树皮、蛭石、河沙等配制而成，其中发酵的树皮会含有腐殖质，虽然含有丰富的微量元素，但是酸性度不高，PH值在6—6.5之间，属于微酸性土壤。<br></p>\n     <img src=\"http://192.168.1.109:8080/article-img/z_13.jpg\">\n    <h3>适宜栀子花生长的土壤</h3>\n    栀子花是一种常绿灌木，原产于我国南方，也就是说适宜南方的酸性土壤，栀子花的花朵洁白，带着浓郁的香味，代表着美好与喜悦，而且栀子花还有净化空气的作用，很受花友的喜欢。\n    栀子花到了北方因为气候和土壤的关系，只能盆栽养植，配制的酸性土壤要肥沃、疏松、排水性好。栀子花在种植之前需要将土壤配制成酸性土壤，PH值在5—6之间，栀子花才不会因为酸性度不够而发生黄化病。\n    因此，个人觉得直接利用君子兰专用土来种植栀子花，酸性度还不够，会影响栀子花的生长、开花。如果想要用君子兰专用土种植栀子花，那就在使用之前在土壤中加入适量的堆肥、腐熟肥，或者用硫酸亚铁溶液灌浇君子兰专用土，提高土壤的酸性度之后，再种植栀子花。\n    \n</body>\n</html>\n', '君子兰专用土种植栀子花合适吗', NULL, 2, 1);
+INSERT INTO `article` VALUES (7, '鼠尾掌的奥秘', '/article-img/z_14.jpg', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n    <title></title>\r\n</head>\r\n<body>\r\n    <img src=\"http://192.168.1.109:8080/article-img/z_15.jpg\">\r\n    <h3>鼠尾掌的介绍</h3>\r\n    <p>鼠尾掌又名金纽，为仙人掌科鼠尾掌属多浆植物。变态茎细长、匍匐，通常扭状下垂，在原产地可长达2米，一般栽培20—30厘米，具气生根。幼茎绿色，以后变灰，径1.5—2厘米，无叶，具10—14棱，隔0.5厘米着生15—20枚短刺丛，初生略带红色，以后变至黄褐色，因其外形酷似老鼠尾巴而得名。花期4—5月，花漏斗状，粉红色，长约8厘米，径长7厘米，花被片急尖，昼开夜闭，可持续一周。浆果球形，红色，有刺毛，种子小，红褐色。鼠尾掌茎细扭垂，颜色浓绿，短刺丛生，排列整齐，花色鲜艳而优美，是室内优良观赏植物。用金属丝将花盆悬挂檐下，冬季陈列于窗前，观赏效果极佳。</p>\r\n    \r\n     <img src=\"http://192.168.1.109:8080/article-img/z_16.jpg\">\r\n    <h3>鼠尾掌的形态特征</h3>\r\n    茎细长，匍匐，多分枝，长可达2米，幼时亮绿色，后变灰绿色。具浅棱10-14，辐射刺10-20，新刺红色，后变黄至褐色。4-5月开花，花两侧对称，粉红色，昼开夜闭。浆果球形，红色。\r\n    <h3>鼠尾掌的病害防治</h3>\r\n    <p>茎部有时发生斑点病，可用65%代森锌可湿性粉剂600倍液喷洒。主要害虫是红蜘蛛，可定期喷洒乐果预防。 鼠尾掌属植物约有7种，常见栽培的有：细蛇鼠尾掌A.leptophis，茎粗约1厘米。\r\n具浅棱7-8，刺10-15。花红色。康氏鼠尾掌A.conzatii，茎粗1-2.5厘米。具棱8-10，刺15-20。花砖红色。鞭形鼠尾掌A.flagriformis，与鼠尾掌很相似，但茎较粗，棱较少，仅7-10，刺黄色。花深红色。<br></p>\r\n</body>\r\n</html>\r\n', '鼠尾掌要怎么培育呢？', NULL, 1, 5);
+INSERT INTO `article` VALUES (8, '黄丽：又名宝石花', '/article-img/z_17.jpg', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n    <title></title>\r\n</head>\r\n<body>\r\n    <img src=\"http://192.168.1.109:8080/article-img/z_18.jpg\">\r\n    <h3>黄丽的介绍</h3>\r\n    <p>也称“宝石花”。被称为宝石花的品种繁多，且模样相似，一般人难以区分。蜡质的叶片呈现特别的金黄色，喜欢充足的阳光，日光浴之后，边缘会变成漂亮的红色。光线不足虽然也能生长，但颜色会比较暗淡，茎也会伸长。害怕潮湿。春秋是生长季节，盆土差不多全部干燥的时候浇透水。夏季要保持盆土稍干，避免暴晒。冬天也要减少浇水，否则容易腐烂。</p>\r\n    \r\n     <img src=\"http://192.168.1.109:8080/article-img/z_19.jpg\">\r\n    <h3>黄丽的形态特征</h3>\r\n    <p>多年生多肉类植物，植株具短茎，肉质叶，排列紧密，呈莲座状，叶片匙形，顶端有小尖头，叶片松散，表面附蜡质呈黄绿色或金黄色偏红，长期生长于阴凉处时叶片呈绿色，光照充足情况下，叶片边缘会泛红，花单瓣，聚伞花序，浅黄色，较少开花。</p>\r\n    <h3>黄丽的生态习性</h3>\r\n    <p>性喜日照，耐半阴，忌暴晒，忌大湿大水，怕潮，人工繁殖成活率高。</p>\r\n</body>\r\n</html>\r\n', '宝石花的美', NULL, 1, 6);
+INSERT INTO `article` VALUES (9, '骆驼刺的生长', '/article-img/z_20.jpg', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n    <title></title>\r\n</head>\r\n<body>\r\n    <img src=\"http://192.168.1.109:8080/article-img/z_21.jpg\">\r\n    <h3>骆驼刺的介绍</h3>\r\n    <p>骆驼刺属豆科、落叶灌木，主要枝上多刺，叶长圆形，花粉红色，6月开花，8月最盛，每朵花可开放20 余天，结荚果，总状花序，根系一般长达20米。从沙漠和戈壁深处吸取地下水份和营养，是一种自然生长的耐旱植物，因为这种植物茎上长着剌状的很坚硬的小绿叶，故叫骆驼剌，是草本植物，是戈壁滩和沙漠中骆驼唯一能吃的赖以生存的草，故又名骆驼草。\r\n骆驼刺主要分布在内陆干旱地区，被誉为沙漠勇士。骆驼刺是一种低矮的地表植物。骆驼刺具有抗寒、抗旱、耐盐和抗风沙的特性，并具有适应性强、分布广、面积大的特点，在防止土地遭受风沙侵蚀方面具有非常重要的作用。</p>\r\n    \r\n     <img src=\"http://192.168.1.109:8080/article-img/z_22.jpg\">\r\n    <h3>骆驼刺的形态特征</h3>\r\n    <p>骆驼刺为半灌木，高25-40厘米。茎直立，具细条纹，无毛或幼茎具短柔毛，从基部开始分枝，枝条平行上升。叶互生，卵形、倒卵形或倒圆卵形，长8-15毫米，宽5-10毫米，先端圆形，具短硬尖，基部楔形，全缘，无毛，具短柄。总状花序，腋生，花序轴变成坚硬的锐刺，刺长为叶的2-3倍，无毛，当年生枝条的刺上具花3-6 (-8) 朵，老茎的刺上无花；花长8-10毫米；苞片钻状，长约1毫米；花梗长1-3毫米；花萼钟状，长4-5毫米，被短柔毛，萼齿三角状或钻状三角形，长为萼筒的三之一至四分之一；花冠深紫红色，旗瓣倒长卵形，长8-9毫米，先端钝圆或截平，基部楔形，具短瓣柄，冀瓣长圆形，长为旗瓣的四分之三，龙骨瓣与旗瓣约等长；子房线形，无毛。荚果线形，常弯曲，几无毛。\r\n骆驼刺落叶、多分枝灌木；茎、枝有腋生的长针刺；叶小，单叶，全缘；生于上部的无叶而叶柄变为刺；托叶小；花数朵排成腋生的总状花序，总轴有刺；萼钟形，裂齿5，短，近相等；花冠红色，各瓣近等长，旗瓣倒卵形，具短柄，翼瓣镰状长圆形，龙骨瓣内弯；雄蕊10，二体（9+1），花药同型；子房近无柄，有胚珠多颗，花柱丝状，内弯；荚果线形，厚或近圆柱状，常弯曲，几无毛，不开裂，常于种子间缢缩而内面具隔膜，但荚节不断离；种子肾形，无种阜。\r\n骆驼刺主要枝上多刺，叶长圆形，花粉红色，6月开花，8月最盛，每朵花可开放20 余天，结荚果，总状花序，根系一般长达20米。</p>\r\n</body>\r\n</html>\r\n', '骆驼刺的倔强', NULL, 1, 6);
+INSERT INTO `article` VALUES (10, '火棘：你听说过吗', '/article-img/z_35.jpg', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n    <title></title>\r\n</head>\r\n<body>\r\n    <img src=\"http://192.168.1.109:8080/article-img/z_36.jpg\">\r\n    <h3>火棘的介绍</h3>\r\n    <p>火棘又名救兵粮、救命粮、火把果、赤阳子，蔷薇科火棘属常绿灌木或小乔木，高可达4m，通常采用播种、扦插和压条法繁殖。 火棘树形优美，夏有繁花，秋有红果，果实存留枝头甚久，在庭院中做绿篱以及园林造景材料，在路边可以用作绿篱，美化、绿化环境。</p>\r\n    \r\n     <img src=\"http://192.168.1.109:8080/article-img/z_37.jpg\">\r\n    <h3>火棘的生态习性</h3>\r\n    <p>喜强光，耐贫瘠，抗干旱；黄河以南露地种植，华北需盆栽，塑料棚或低温温室越冬，温度可低至0℃、水搓子。对土壤要求不严，而以排水良好、湿润、疏松的中性或微酸性壤土为好。</p>\r\n</body>\r\n</html>\r\n', '火棘的奥秘', NULL, 2, 7);
+INSERT INTO `article` VALUES (11, '独占春的培植', '/article-img/z_32.jpg', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n    <title></title>\r\n</head>\r\n<body>\r\n    <img src=\"http://192.168.1.109:8080/article-img/z_33.jpg\">\r\n    <h3>独占春的介绍</h3>\r\n    <p>独占春为附生植物；假鳞茎近梭形或卵形，包藏于叶基之内，基部常有由叶鞘撕裂后残留的纤维状物。叶6-11枚，每年继续发出新叶，多者可达15-17枚。花葶从假鳞茎下部叶腋发出，直立或近直立；总状花序具1-3朵花；花较大，不完全开放，稍有香气；萼片与花瓣白色，有时略有粉红色晕，唇瓣亦白色。\r\n独占春又有“双燕齐飞”或“双燕迎春”的美称。广州人叫“双飞燕”，是从它所开的花形貌似两只正在飞翔的燕子而得名。\r\n此花是农历正月初五开的兰花，若能掌握其习性，适当加强光照，管理得法，培育有方的话，很可能使它在春节期间开花贺岁。通常它的花期能达一月之久。生于溪谷旁岩石上。产中国海南、广西和云南，尼泊尔、印度、缅甸也有分布。有栽培，具较高的观赏价值。</p>\r\n    \r\n     <img src=\"http://192.168.1.109:8080/article-img/z_34.jpg\">\r\n    <h3>独占春的生态习性</h3>\r\n    <p>独占春一般生长在深山幽谷的山腰谷壁，透水和保水性良好的倾斜山坡或石隙，稀疏的山草旁，次生杂木林阴下。或有遮阴，日照时间短或只有星散漏光的地方。空气湿度大且空气能流通的地方，有时也生于山溪边峭壁之上。<br>\r\n独占春宜种植于空气流通的环境。性喜阴，忌阳光直射，喜湿润，忌干燥，15℃至30℃最宜生长。35℃以上生长不良。5℃以下的严寒会影响其生长力，这时，兰花常处于休眠状态。如气温太高加上阳光曝晒则一两天内即出现叶子灼伤或枯焦。如气温太低又没及时转移进屋里，则会出现冻伤的现象。\r\n独占春是肉质根，适合采用富含腐殖质的砂质壤土，排水性能必须良好，应选用腐叶土或含腐殖质较多的山土。微酸性的松土或含铁质的土壤，pH值以5.5-6.5为宜。</p>\r\n</body>\r\n</html>\r\n', '独占春的奥秘，你来看看吗', NULL, 7, 8);
+INSERT INTO `article` VALUES (12, '矮仙丹的奥秘', '/article-img/z_29.jpg', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n    <title></title>\r\n</head>\r\n<body>\r\n    <img src=\"http://192.168.1.109:8080/article-img/z_30.jpg\">\r\n    <h3>矮仙丹的介绍</h3>\r\n    <p>矮仙丹常绿矮小灌木，叶长椭圆形，成对长在枝条上，叶小生长紧密。原产亚洲热带地区。日照需充足，耐旱喜高温。<br>\r\n矮仙丹叶长椭圆形，成对长在枝条上，叶小生长紧密。日照需充足，耐旱喜高温，早春应剪枝，促进生长。 常绿矮小灌木。叶外形椭圆，成对长在枝条上；叶柄着落处两侧有一对小托叶。</p>\r\n    \r\n     <img src=\"http://192.168.1.109:8080/article-img/z_31.jpg\">\r\n    <h3>矮仙丹的形态特征</h3>\r\n    <p>常绿矮小灌木。叶长椭圆形，成对长在枝条上，叶小生长紧密。四季开花，但夏季为盛开期。夏秋开红色花，盛花期花团锦簇，美丽壮观。果实为浆果，球形，成熟时黑色。早春应剪枝，促进生长。</p>\r\n    <h3>矮仙丹的名字由来</h3>\r\n    <p>从前，有一对母子住在深山中，母亲体弱多病，儿子看了很操心，就在每天的早晨去採花採药，突然看见了仙丹花，把母亲的病治好了，人们才较它做仙丹花。</p>\r\n</body>\r\n</html>\r\n', '矮仙丹是名字由来', NULL, 4, 9);
+INSERT INTO `article` VALUES (13, '岩桐：花中美人', '/article-img/z_26.jpg', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n    <title></title>\r\n</head>\r\n<body>\r\n    <img src=\"http://192.168.1.109:8080/article-img/z_27.jpg\">\r\n    <h3>岩桐的介绍</h3>\r\n    <p>岩桐：苦苣苔科，多年生草本。 又名落雪尼，为苦苣苔科多年生球根草本花卉。<br>具肥大肉质块茎，地上茎极短，叶片长椭圆形，密生绒毛，稍成肉质，叶对生，花顶生或腋生，花冠钟形，尖端浑圆，色彩艳丽，有丝绒感，颜色有红、粉红、玫瑰红、紫红、蓝及复色，花形奇特，是一种极好的盆栽观花植物。</p>\r\n    \r\n     <img src=\"http://192.168.1.109:8080/article-img/z_28.jpg\">\r\n    <h3>岩桐的形态特征</h3>\r\n    <p>叶心脏形，肥大而厚，有长叶柄，自根丛生。春夏间叶丛抽花茎着花，一茎一萼，花冠长筒形，花瓣肥厚，生有光泽，五浅裂，色白，其叶俱密生绒毛。具肥大肉质块茎，地上茎极短，叶片长椭圆形，密生绒毛，稍成肉质，叶对生，花顶生或腋生，花冠钟形，尖端浑圆，色彩艳丽，有丝绒感，颜色有红、粉红、玫瑰红、紫红、蓝及复色，花形奇特，是一种极好的盆栽观花植物。</p>\r\n    <h3>岩桐的病害防治</h3>\r\n    <p>生长期间主要有尺蠖食腋芽，可用氧化乐果1000倍液防治。</p>\r\n</body>\r\n</html>\r\n', '岩桐的美姿', NULL, 2, 9);
+INSERT INTO `article` VALUES (14, '白玉草的美姿', '/article-img/z_23.jpg', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n    <title></title>\r\n</head>\r\n<body>\r\n    <img src=\"http://192.168.1.109:8080/article-img/z_24.jpg\">\r\n    <h3>白玉草的介绍</h3>\r\n    <p>白玉草（学名：Silene vulgaris）是石竹科蝇子草属的植物。<br>\r\n白玉草多年生草本，高40-100厘米，全株无毛，呈灰绿色。生于海拔150-2700米的草甸、灌丛中、林下多砾石的草地或撂荒地，有时生于农田中</p>\r\n    \r\n     <img src=\"http://192.168.1.109:8080/article-img/z_25.jpg\">\r\n    <h3>白玉草的形态特征</h3>\r\n    <p>多年生草本，高40-100厘米，全株无毛，呈灰绿色。根微粗壮，木质。茎疏丛生，直立，上部分枝，常灰白色。叶片卵状披针形、披针形或卵形，长4-10厘米，宽1-3 (-4.5) 厘米，下部茎生叶片基部渐狭成柄状，顶端渐尖或急尖，边缘有时具不明显的细齿，中脉明显，上部茎生叶片基部楔形、截形或圆形，微抱茎。二歧聚伞花序大型；花微俯垂；花梗比花萼短或近等长；苞片卵状披针形，草质；花萼宽卵形，呈囊状，长13-16毫米，直径5-7毫米，近膜质，常显紫堇色，萼齿短，宽三角形，顶端急尖，边缘具缘毛；雌雄蕊柄无毛，长约2毫米；花瓣白色，长15-18毫米，爪楔状倒披针形，无毛，耳卵形，瓣片露出花萼，轮廓倒卵形，深2裂几达瓣片基部，裂片狭倒卵形；副花冠缺；雄蕊明显外露，花丝无毛，花药蓝紫色；花柱明显外露。种子圆肾形，长约1.5毫米，褐色，脊平。2n = 24。花期6-8月，果期8-9月。</p>\r\n    <h3>白玉草的生态习性</h3>\r\n    <p>生于海拔150-2700米的草甸、灌丛中、林下多砾石的草地或撂荒地，有时生于农田中 。</p>\r\n</body>\r\n</html>\r\n', '养殖白玉草有什么需要注意的？', NULL, 5, 10);
+
+-- ----------------------------
+-- Table structure for attention
+-- ----------------------------
+DROP TABLE IF EXISTS `attention`;
+CREATE TABLE `attention`  (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_initiative` int(11) NULL DEFAULT NULL,
+  `user_passive` int(11) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of attention
+-- ----------------------------
+INSERT INTO `attention` VALUES (1, 1, 2);
+INSERT INTO `attention` VALUES (2, 1, 3);
+INSERT INTO `attention` VALUES (3, 1, 4);
+INSERT INTO `attention` VALUES (4, 3, 2);
+INSERT INTO `attention` VALUES (5, 4, 2);
+INSERT INTO `attention` VALUES (6, 2, 1);
+INSERT INTO `attention` VALUES (7, 4, 1);
+INSERT INTO `attention` VALUES (8, 2, 5);
+INSERT INTO `attention` VALUES (9, 2, 6);
+INSERT INTO `attention` VALUES (10, 2, 7);
+
+-- ----------------------------
+-- Table structure for collect
+-- ----------------------------
+DROP TABLE IF EXISTS `collect`;
+CREATE TABLE `collect`  (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NULL DEFAULT NULL,
+  `article_id` int(11) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of collect
+-- ----------------------------
+INSERT INTO `collect` VALUES (1, 2, 1);
+INSERT INTO `collect` VALUES (4, 2, 11);
+INSERT INTO `collect` VALUES (5, 2, 14);
+
+-- ----------------------------
+-- Table structure for comment
+-- ----------------------------
+DROP TABLE IF EXISTS `comment`;
+CREATE TABLE `comment`  (
+  `comment_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NULL DEFAULT NULL,
+  `post_id` int(11) NULL DEFAULT NULL,
+  `content` varchar(300) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `time` datetime(0) NULL DEFAULT NULL,
+  PRIMARY KEY (`comment_id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of comment
+-- ----------------------------
+INSERT INTO `comment` VALUES (1, 4, 1, '美。', '2020-05-17 18:40:50');
+INSERT INTO `comment` VALUES (2, 5, 1, '这花真漂亮！', '2020-05-17 18:40:52');
+INSERT INTO `comment` VALUES (3, 6, 1, '哇塞，你这花养的真好。', '2020-05-17 18:40:53');
+INSERT INTO `comment` VALUES (4, 8, 17, '真好看。', '2020-05-17 18:45:00');
+INSERT INTO `comment` VALUES (5, 12, 17, '我是小葵花~', '2020-05-17 18:45:18');
+INSERT INTO `comment` VALUES (7, 2, 16, '厉害厉害。', '2020-05-17 20:47:04');
+INSERT INTO `comment` VALUES (8, 2, 15, '哈哈哈', '2020-06-02 09:24:04');
+INSERT INTO `comment` VALUES (9, 2, 8, '你好', '2020-06-02 20:59:45');
+INSERT INTO `comment` VALUES (10, 2, 16, '你好你好', '2020-06-03 11:14:46');
+
+-- ----------------------------
+-- Table structure for message
+-- ----------------------------
+DROP TABLE IF EXISTS `message`;
+CREATE TABLE `message`  (
+  `message_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id_send` int(11) NULL DEFAULT NULL,
+  `user_id_recv` int(11) NULL DEFAULT NULL,
+  `content` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
+  `time` datetime(0) NULL DEFAULT NULL,
+  PRIMARY KEY (`message_id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Table structure for plant
+-- ----------------------------
+DROP TABLE IF EXISTS `plant`;
+CREATE TABLE `plant`  (
+  `plant_id` int(11) NOT NULL AUTO_INCREMENT,
+  `name_cn` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `name_en` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `area` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `family` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `description` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `conservation` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `skill` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `img` varchar(5000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `initial` varchar(1) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`plant_id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 506 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of plant
 -- ----------------------------
-INSERT INTO `plant` VALUES (1, '艾草', 'Asiatic wormwood', '中国', '春黄菊族', '艾（学名：Artemisia argyi Levl. et Van）是菊科蒿属植物，多年生草本或略成半灌木状，植株有浓烈香气。主根明显，略粗长，直径达1.5厘米，侧根多。茎单生或少数，高80-150（-250）厘米。叶厚纸质，上面被灰白色短柔毛，并有白色腺点与小凹点。头状花序椭圆形，直径2.5-3（-3.5）毫米，无梗或近无梗。瘦果长卵形或长圆形。花果期7-10月。分布于蒙古、朝鲜、俄罗斯（远东地区）和中国；分布广，在中国除极干旱与高寒地区外，几乎遍及中国。日本有栽培。生于低海拔至中海拔地区的荒地、路旁河边及山坡等地，也见于森林草原及草原地区，局部地区为植物群落的优势种。', '土壤：养艾草要用肥沃、通透性良好的土壤。浇水：保证土壤微微湿润，浇水时要适量，不要过多或过少，浇水也不要过于频繁。光照：保证充足的光照，夏季阳光强烈要采取遮荫措施。施肥：播种之前要施底肥，每采收一次就要施一次肥。', '全草入药，有温经、去湿、散寒、止血、消炎、平喘、止咳、安胎、抗过敏等作用。艾叶晒干捣碎得“艾绒”，制艾条供艾灸用，又可作“印泥”的原料。此外全草作杀虫的农药或薰烟作房间消毒、杀虫药。嫩芽及幼苗作菜蔬。 [1]  艾晒干粉碎成艾蒿粉，是畜禽优质饲料添加剂。还可以做天然植物染料使用。', 'https://i.loli.net/2020/04/25/gJcUiyYFLHdN2XA.jpg', 'A');
-INSERT INTO `plant` VALUES (2, '薄荷', 'mint', '江苏、安徽', '塔花族', '薄荷，土名叫“银丹草”，为唇形科植物，即同属其他干燥全草。多生于山野湿地河旁，根茎横生地下，多生于2100米海拔高度，但也可在3500米海拔上生长，是一种有特种经济价值的芳香作物。全株青气芳香。叶对生，花小淡紫色，唇形，花后结暗紫棕色的小粒果。', '养薄荷需要提供排水性能力好、透气性高的土。它不耐强光，应该放在半阴的地方养殖，保证每天不少于五小时的光照条件。给它浇水先观察土壤的状态，只有完全干燥下才需要浇。施肥的时候选用淡肥。繁殖方法可以使用采用扦插法。还需注意病虫害的防治。', '薄荷是中华常用中药之一。它是辛凉性发汗解热药，治流行性感冒、头疼、目赤、身热、咽喉、牙床肿痛等症。外用可治神经痛、皮肤瘙痒、皮疹和湿疹等。平常以薄荷代茶，清心明目。', 'https://i.loli.net/2020/04/23/ZG8k1ehwXajmc6N.jpg', 'B');
-INSERT INTO `plant` VALUES (3, '白晶菊', 'Chrysanthemum paludo', '原产于：北非、西班牙', '春黄菊族', '白晶菊又名小白菊，为一、二年生草本花卉。喜温暖湿润和阳光充足的环境。较耐寒，耐半荫。适宜生长在疏松肥沃排水性好的壤土中。白晶菊矮而强健，多花，花期早，花期长，成片栽培耀眼夺目。头状花序顶生，花后结瘦果，5月下旬成熟。白晶菊的花有色白、黄色，植株低矮，花繁茂，适用于花坛、庭院布置，也可作为地被花卉栽种。白晶菊低矮而强健，多花，花期早，花期长,成片栽培耀眼夺目，也适合盆栽或早春花坛美化。', '白晶菊由于花期长，生育期或开花期间每20-30天追肥一次，所以平时培养土要保持湿润，花谢后立即剪除残花，可促使新芽再开花。病虫防治：常见病害有叶斑病、茎腐病，可用65%代森锌可湿性粉剂喷洒。虫害有盲蝽和潜叶蝇危害，可用25%西维因可湿性粉剂1500倍喷杀。', '白晶菊低矮而强健，多花，花期早，花期长，成片栽培耀眼夺目，也适合盆栽或早春花坛美化。也可作为地被花卉栽种。', 'https://i.loli.net/2020/04/26/pTFOZNvQJ8zd2Vc.jpg', 'B');
-INSERT INTO `plant` VALUES (4, '百合花', 'Lilium', '原产于中国，主要分布在亚洲东部、欧洲、北美洲等', '百合属', '百合花（学名：Lilium）是百合科百合属多年生草本球根植物，原产于北半球的几乎每一个大陆的温带地区，主要分布在亚洲东部、欧洲、北美洲等，全球已发现有110多个品种，其中55种产于中国。近年更有不少经过人工杂交而产生的新品种，如：亚洲百合、麝香百合、香水百合、葵（火）百合、姬百合等。百合花姿雅致叶片青翠娟秀，茎干亭亭玉立，是名贵的切花新秀。学名(Lilium brownii var. viridulum Baker)又名强蜀、番韭、山丹、倒仙、重迈、中庭、摩罗、重箱、中逢花、百合蒜、大师傅蒜、蒜脑薯、夜合花等。', '首先要选择充实、健壮的种鳞茎，亚洲系列的种鳞茎周径必须在10～12厘米，东方系列的种鳞茎周径在12～14厘米。种鳞茎越大，花蕾数也多，见表。但品种不同，着蕾数也有一定差别。因此，好的种鳞茎具有较高的商品价值，对盆栽百合十分重要。', '百合具有较高的营养成分，又具有较高的药用价值，早在2000多年前，百合就被中医引用，历代《本草》中有详尽的记述。中医认为：百合有润肺止咳、清心安神、补中益气之功能，能治肺痨久咳、咳唾痰血、虚烦、惊悸、神志恍惚、脚气浮肿等症，常用的百合药膳方有蜜煎百合、百合香米粥、百合党参猪肺汤、百合鸡子汤、百合煨肉等；临床常用的方剂有百合知母汤、百合地黄汤、百合滑不散、百合干粉、新鲜百合汁等。百合虽是滋补佳品和名食，但因其甘寒质润，凡风寒咳嗽、大便溏泄、脾胃虚弱、寒湿久滞，肾阳衰退者均忌用。', 'https://i.loli.net/2020/04/26/zQc3CxgtJjSwuoW.jpg', 'B');
-INSERT INTO `plant` VALUES (5, '白兰花', 'Michelia alba DC', '中国福建、广东、广西、云南', '含笑属', '白兰（学名：Michelia alba DC.）：常绿乔木，高达17米，枝广展，呈阔伞形树冠；胸径30厘米；树皮灰色；揉枝叶有芳香；嫩枝及芽密被淡黄白色微柔毛，老时毛渐脱落。叶薄革质，长椭圆形或披针状椭圆形，上面无毛，下面疏生微柔毛，干时两面网脉均很明显。花白色，极香；花被片10片，披针形；雌蕊心皮多数，成熟时随着花托的延伸，形成蓇葖疏生的聚合果；蓇葖熟时鲜红色。花期4-9月，夏季盛开，通常不结实。', '家庭盆栽白兰花，应选择疏松、透气性强且含腐殖质较丰富的土壤栽培。通常选用透气性好的瓦盆、紫砂盆（缸）或用底孔较多的塑料盆。盆内土壤最好能有一定量的大小不等的颗粒状土壤，以利渗水透气。', '白兰花株形直立有分枝，落落大方。在南方可露地庭院栽培，是南方园林中的骨干树种。北方盆栽，可布置庭院、厅堂、会议室。中小型植株可陈设于客厅、书房。因其惧怕烟熏，应放在空气流通处。除了可以花叶齐观，作为一种香料植物，白兰花还可以兼做香料和药用。', 'https://i.loli.net/2020/04/26/8RU5oQNgqCPxiAZ.jpg', 'B');
+INSERT INTO `plant` VALUES (1, '艾草', 'Asiatic wormwood', '中国', '春黄菊族', '艾（学名：Artemisia argyi Levl. et Van）是菊科蒿属植物，多年生草本或略成半灌木状，植株有浓烈香气。主根明显，略粗长，直径达1.5厘米，侧根多。茎单生或少数，高80-150（-250）厘米。叶厚纸质，上面被灰白色短柔毛，并有白色腺点与小凹点。头状花序椭圆形，直径2.5-3（-3.5）毫米，无梗或近无梗。瘦果长卵形或长圆形。花果期7-10月。分布于蒙古、朝鲜、俄罗斯（远东地区）和中国；分布广，在中国除极干旱与高寒地区外，几乎遍及中国。日本有栽培。生于低海拔至中海拔地区的荒地、路旁河边及山坡等地，也见于森林草原及草原地区，局部地区为植物群落的优势种。', '土壤：养艾草要用肥沃、通透性良好的土壤。浇水：保证土壤微微湿润，浇水时要适量，不要过多或过少，浇水也不要过于频繁。光照：保证充足的光照，夏季阳光强烈要采取遮荫措施。施肥：播种之前要施底肥，每采收一次就要施一次肥。', '全草入药，有温经、去湿、散寒、止血、消炎、平喘、止咳、安胎、抗过敏等作用。艾叶晒干捣碎得“艾绒”，制艾条供艾灸用，又可作“印泥”的原料。此外全草作杀虫的农药或薰烟作房间消毒、杀虫药。嫩芽及幼苗作菜蔬。 [1]  艾晒干粉碎成艾蒿粉，是畜禽优质饲料添加剂。还可以做天然植物染料使用。', 'https://i.loli.net/2020/05/11/qdZmPtLln51MFKT.jpg', 'A');
+INSERT INTO `plant` VALUES (2, '薄荷', 'mint', '江苏、安徽', '塔花族', '薄荷，土名叫“银丹草”，为唇形科植物，即同属其他干燥全草。多生于山野湿地河旁，根茎横生地下，多生于2100米海拔高度，但也可在3500米海拔上生长，是一种有特种经济价值的芳香作物。全株青气芳香。叶对生，花小淡紫色，唇形，花后结暗紫棕色的小粒果。', '养薄荷需要提供排水性能力好、透气性高的土。它不耐强光，应该放在半阴的地方养殖，保证每天不少于五小时的光照条件。给它浇水先观察土壤的状态，只有完全干燥下才需要浇。施肥的时候选用淡肥。繁殖方法可以使用采用扦插法。还需注意病虫害的防治。', '薄荷是中华常用中药之一。它是辛凉性发汗解热药，治流行性感冒、头疼、目赤、身热、咽喉、牙床肿痛等症。外用可治神经痛、皮肤瘙痒、皮疹和湿疹等。平常以薄荷代茶，清心明目。', 'https://i.loli.net/2020/05/11/ACRXkarmbYzLvOc.jpg', 'B');
+INSERT INTO `plant` VALUES (3, '白晶菊', 'Chrysanthemum paludo', '原产于：北非、西班牙', '春黄菊族', '白晶菊又名小白菊，为一、二年生草本花卉。喜温暖湿润和阳光充足的环境。较耐寒，耐半荫。适宜生长在疏松肥沃排水性好的壤土中。白晶菊矮而强健，多花，花期早，花期长，成片栽培耀眼夺目。头状花序顶生，花后结瘦果，5月下旬成熟。白晶菊的花有色白、黄色，植株低矮，花繁茂，适用于花坛、庭院布置，也可作为地被花卉栽种。白晶菊低矮而强健，多花，花期早，花期长,成片栽培耀眼夺目，也适合盆栽或早春花坛美化。', '白晶菊由于花期长，生育期或开花期间每20-30天追肥一次，所以平时培养土要保持湿润，花谢后立即剪除残花，可促使新芽再开花。病虫防治：常见病害有叶斑病、茎腐病，可用65%代森锌可湿性粉剂喷洒。虫害有盲蝽和潜叶蝇危害，可用25%西维因可湿性粉剂1500倍喷杀。', '白晶菊低矮而强健，多花，花期早，花期长，成片栽培耀眼夺目，也适合盆栽或早春花坛美化。也可作为地被花卉栽种。', 'https://i.loli.net/2020/05/11/Vpcj4tf67IiAOCT.jpg', 'B');
+INSERT INTO `plant` VALUES (4, '百合花', 'Lilium', '原产于中国，主要分布在亚洲东部、欧洲、北美洲等', '百合属', '百合花（学名：Lilium）是百合科百合属多年生草本球根植物，原产于北半球的几乎每一个大陆的温带地区，主要分布在亚洲东部、欧洲、北美洲等，全球已发现有110多个品种，其中55种产于中国。近年更有不少经过人工杂交而产生的新品种，如：亚洲百合、麝香百合、香水百合、葵（火）百合、姬百合等。百合花姿雅致叶片青翠娟秀，茎干亭亭玉立，是名贵的切花新秀。学名(Lilium brownii var. viridulum Baker)又名强蜀、番韭、山丹、倒仙、重迈、中庭、摩罗、重箱、中逢花、百合蒜、大师傅蒜、蒜脑薯、夜合花等。', '首先要选择充实、健壮的种鳞茎，亚洲系列的种鳞茎周径必须在10～12厘米，东方系列的种鳞茎周径在12～14厘米。种鳞茎越大，花蕾数也多，见表。但品种不同，着蕾数也有一定差别。因此，好的种鳞茎具有较高的商品价值，对盆栽百合十分重要。', '百合具有较高的营养成分，又具有较高的药用价值，早在2000多年前，百合就被中医引用，历代《本草》中有详尽的记述。中医认为：百合有润肺止咳、清心安神、补中益气之功能，能治肺痨久咳、咳唾痰血、虚烦、惊悸、神志恍惚、脚气浮肿等症，常用的百合药膳方有蜜煎百合、百合香米粥、百合党参猪肺汤、百合鸡子汤、百合煨肉等；临床常用的方剂有百合知母汤、百合地黄汤、百合滑不散、百合干粉、新鲜百合汁等。百合虽是滋补佳品和名食，但因其甘寒质润，凡风寒咳嗽、大便溏泄、脾胃虚弱、寒湿久滞，肾阳衰退者均忌用。', 'https://i.loli.net/2020/05/11/4eY5hr6sxPBdnCm.jpg', 'B');
+INSERT INTO `plant` VALUES (5, '白兰花', 'Michelia alba DC', '中国福建、广东、广西、云南', '含笑属', '白兰（学名：Michelia alba DC.）：常绿乔木，高达17米，枝广展，呈阔伞形树冠；胸径30厘米；树皮灰色；揉枝叶有芳香；嫩枝及芽密被淡黄白色微柔毛，老时毛渐脱落。叶薄革质，长椭圆形或披针状椭圆形，上面无毛，下面疏生微柔毛，干时两面网脉均很明显。花白色，极香；花被片10片，披针形；雌蕊心皮多数，成熟时随着花托的延伸，形成蓇葖疏生的聚合果；蓇葖熟时鲜红色。花期4-9月，夏季盛开，通常不结实。', '家庭盆栽白兰花，应选择疏松、透气性强且含腐殖质较丰富的土壤栽培。通常选用透气性好的瓦盆、紫砂盆（缸）或用底孔较多的塑料盆。盆内土壤最好能有一定量的大小不等的颗粒状土壤，以利渗水透气。', '白兰花株形直立有分枝，落落大方。在南方可露地庭院栽培，是南方园林中的骨干树种。北方盆栽，可布置庭院、厅堂、会议室。中小型植株可陈设于客厅、书房。因其惧怕烟熏，应放在空气流通处。除了可以花叶齐观，作为一种香料植物，白兰花还可以兼做香料和药用。', 'https://i.loli.net/2020/05/11/JblfVKaDeGAvwoS.jpg', 'B');
 INSERT INTO `plant` VALUES (6, '金边龙舌兰', NULL, NULL, NULL, NULL, NULL, NULL, 'http://img.boqiicdn.com/Data/BK/P/imagick37971445246358.jpg', 'J');
 INSERT INTO `plant` VALUES (7, '花烟草', NULL, NULL, NULL, NULL, NULL, NULL, 'http://img.boqiicdn.com/Data/BK/P/imagick84711440409959.jpg', 'H');
 INSERT INTO `plant` VALUES (8, '锦晃星', NULL, NULL, NULL, NULL, NULL, NULL, 'http://img.boqiicdn.com/Data/BK/P/imagick14741443603797.jpg', 'J');
@@ -507,3 +659,186 @@ INSERT INTO `plant` VALUES (502, '风信子', NULL, NULL, NULL, NULL, NULL, NULL
 INSERT INTO `plant` VALUES (503, '桃美人', NULL, NULL, NULL, NULL, NULL, NULL, 'http://img.boqiicdn.com/Data/BK/P/imagick1361441704641.jpg', 'T');
 INSERT INTO `plant` VALUES (504, '四季海棠', NULL, NULL, NULL, NULL, NULL, NULL, 'http://img.boqiicdn.com/Data/BK/P/imagick88991447925084.jpg', 'S');
 INSERT INTO `plant` VALUES (505, '白粉藤', NULL, NULL, NULL, NULL, NULL, NULL, 'http://img.boqiicdn.com/Data/BK/P/imagick22231448960884.jpg', 'B');
+
+-- ----------------------------
+-- Table structure for post
+-- ----------------------------
+DROP TABLE IF EXISTS `post`;
+CREATE TABLE `post`  (
+  `post_id` int(11) NOT NULL AUTO_INCREMENT,
+  `txt` varchar(300) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `img` varchar(1000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `topic_id` int(11) NULL DEFAULT NULL,
+  `user_id` int(11) NULL DEFAULT NULL,
+  `time` datetime(0) NULL DEFAULT NULL,
+  PRIMARY KEY (`post_id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 19 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of post
+-- ----------------------------
+INSERT INTO `post` VALUES (1, '爱养花，爱生活。', '/post-img/1.jpg', 2, 2, '2020-04-01 16:27:27');
+INSERT INTO `post` VALUES (2, 'Hoooooooo漂亮~', '/post-img/1.jpg,/post-img/2.jpg', 1, 1, '2020-04-02 16:27:38');
+INSERT INTO `post` VALUES (3, '这些花有人想要吗？', '/post-img/1.jpg,/post-img/2.jpg,/post-img/3.jpg', 3, 3, '2020-04-03 16:27:42');
+INSERT INTO `post` VALUES (4, '今天这些花娇艳欲滴。', '/post-img/1.jpg,/post-img/2.jpg,/post-img/3.jpg,/post-img/4.jpg', 2, 4, '2020-04-09 16:27:48');
+INSERT INTO `post` VALUES (5, '美丽的花儿要和大家分享~', '/post-img/1.jpg,/post-img/2.jpg,/post-img/3.jpg,/post-img/4.jpg,/post-img/5.jpg', 4, 5, '2020-04-14 16:28:02');
+INSERT INTO `post` VALUES (6, '一片花海。', '/post-img/1.jpg,/post-img/2.jpg,/post-img/3.jpg,/post-img/4.jpg,/post-img/5.jpg,/post-img/6.jpg', 1, 6, '2020-04-05 16:28:06');
+INSERT INTO `post` VALUES (7, '看到这么多美丽的花儿心情真舒畅。', '/post-img/1.jpg,/post-img/2.jpg,/post-img/3.jpg,/post-img/4.jpg,/post-img/5.jpg,/post-img/6.jpg,/post-img/7.jpg', 4, 7, '2020-04-13 16:28:09');
+INSERT INTO `post` VALUES (8, '快来看看，快来看看！', '/post-img/1.jpg,/post-img/2.jpg,/post-img/3.jpg,/post-img/4.jpg,/post-img/5.jpg,/post-img/6.jpg,/post-img/7.jpg,/post-img/8.jpg', 2, 8, '2020-04-07 16:28:12');
+INSERT INTO `post` VALUES (9, '悠闲惬意的时光~', '/post-img/1.jpg,/post-img/2.jpg,/post-img/3.jpg,/post-img/4.jpg,/post-img/5.jpg,/post-img/6.jpg,/post-img/7.jpg,/post-img/8.jpg,/post-img/9.jpg', 3, 9, '2020-04-21 16:28:17');
+INSERT INTO `post` VALUES (10, '养花可以让人心静下来。', '/post-img/7.jpg,/post-img/8.jpg,/post-img/9.jpg', 1, 10, '2020-04-23 09:38:44');
+INSERT INTO `post` VALUES (11, '这些花儿太美了。', '/post-img/1.jpg,/post-img/2.jpg,/post-img/3.jpg,/post-img/4.jpg', 4, 11, '2020-04-23 10:12:00');
+INSERT INTO `post` VALUES (12, '花花世界迷人眼~', '/post-img/1.jpg,/post-img/2.jpg,/post-img/3.jpg,/post-img/4.jpg,/post-img/5.jpg,/post-img/6.jpg,/post-img/7.jpg,/post-img/8.jpg,/post-img/9.jpg', 1, 11, '2020-04-23 10:38:44');
+INSERT INTO `post` VALUES (13, '修心养性。', '/post-img/1.jpg,/post-img/2.jpg,/post-img/3.jpg,/post-img/4.jpg,/post-img/5.jpg', 3, 11, '2020-04-23 10:39:02');
+INSERT INTO `post` VALUES (14, '你们觉得漂亮吗？', '/post-img/1.jpg,/post-img/2.jpg', 2, 11, '2020-04-23 10:54:48');
+INSERT INTO `post` VALUES (15, '开启养花新生活。', '/post-img/1.jpg,/post-img/2.jpg,/post-img/3.jpg,/post-img/4.jpg,/post-img/5.jpg,/post-img/6.jpg,/post-img/7.jpg,/post-img/8.jpg,/post-img/9.jpg', 3, 1, '2020-05-16 18:44:09');
+INSERT INTO `post` VALUES (16, '向日葵太漂亮了！', '/post-img/10.jpg,/post-img/11.jpg,/post-img/12.jpg,/post-img/13.jpg,/post-img/14.jpg,/post-img/15.jpg,/post-img/16.jpg', 5, 12, '2020-05-16 20:46:03');
+INSERT INTO `post` VALUES (17, '四哥的一天~', '/post-img/10.jpg,/post-img/11.jpg,/post-img/12.jpg,/post-img/13.jpg,/post-img/14.jpg,/post-img/15.jpg', 10, 2, '2020-05-17 18:44:15');
+
+-- ----------------------------
+-- Table structure for reply
+-- ----------------------------
+DROP TABLE IF EXISTS `reply`;
+CREATE TABLE `reply`  (
+  `reply_id` int(11) NOT NULL AUTO_INCREMENT,
+  `comment_id` int(11) NULL DEFAULT NULL,
+  `user_id` int(11) NULL DEFAULT NULL,
+  `content` varchar(300) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `time` datetime(0) NULL DEFAULT NULL,
+  PRIMARY KEY (`reply_id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Table structure for thumbsup
+-- ----------------------------
+DROP TABLE IF EXISTS `thumbsup`;
+CREATE TABLE `thumbsup`  (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NULL DEFAULT NULL,
+  `post_id` int(11) NULL DEFAULT NULL,
+  `time` datetime(0) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 29 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of thumbsup
+-- ----------------------------
+INSERT INTO `thumbsup` VALUES (1, 3, 1, '2020-05-23 15:32:20');
+INSERT INTO `thumbsup` VALUES (2, 4, 1, '2020-05-17 15:32:24');
+INSERT INTO `thumbsup` VALUES (3, 1, 2, NULL);
+INSERT INTO `thumbsup` VALUES (4, 1, 3, NULL);
+INSERT INTO `thumbsup` VALUES (5, 1, 4, '2020-05-17 15:30:06');
+INSERT INTO `thumbsup` VALUES (6, 2, 4, '2020-05-17 15:30:08');
+INSERT INTO `thumbsup` VALUES (7, 3, 4, '2020-05-17 15:30:11');
+INSERT INTO `thumbsup` VALUES (8, 5, 4, '2020-05-17 15:30:13');
+INSERT INTO `thumbsup` VALUES (9, 1, 5, NULL);
+INSERT INTO `thumbsup` VALUES (10, 1, 6, NULL);
+INSERT INTO `thumbsup` VALUES (11, 1, 6, NULL);
+INSERT INTO `thumbsup` VALUES (12, 1, 7, NULL);
+INSERT INTO `thumbsup` VALUES (13, 1, 8, NULL);
+INSERT INTO `thumbsup` VALUES (14, 1, 9, NULL);
+INSERT INTO `thumbsup` VALUES (15, 1, 9, NULL);
+INSERT INTO `thumbsup` VALUES (16, 1, 9, NULL);
+INSERT INTO `thumbsup` VALUES (17, 1, 9, NULL);
+INSERT INTO `thumbsup` VALUES (18, 1, 9, NULL);
+INSERT INTO `thumbsup` VALUES (19, 1, 9, NULL);
+INSERT INTO `thumbsup` VALUES (20, 1, 10, NULL);
+INSERT INTO `thumbsup` VALUES (21, 1, 1, '2020-05-16 09:21:23');
+INSERT INTO `thumbsup` VALUES (22, 1, 14, '2020-05-16 19:05:13');
+INSERT INTO `thumbsup` VALUES (23, 2, 16, '2020-05-17 18:24:20');
+INSERT INTO `thumbsup` VALUES (24, 2, 16, '2020-05-17 20:46:56');
+INSERT INTO `thumbsup` VALUES (25, 2, 15, '2020-06-02 09:23:57');
+INSERT INTO `thumbsup` VALUES (26, 2, 8, '2020-06-02 20:59:52');
+INSERT INTO `thumbsup` VALUES (27, 2, 8, '2020-06-02 21:00:39');
+INSERT INTO `thumbsup` VALUES (28, 2, 16, '2020-06-03 11:14:47');
+
+-- ----------------------------
+-- Table structure for topic
+-- ----------------------------
+DROP TABLE IF EXISTS `topic`;
+CREATE TABLE `topic`  (
+  `topic_id` int(11) NOT NULL AUTO_INCREMENT,
+  `topic_name` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`topic_id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 21 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of topic
+-- ----------------------------
+INSERT INTO `topic` VALUES (1, '#爱花展示#');
+INSERT INTO `topic` VALUES (2, '#阳台养花#');
+INSERT INTO `topic` VALUES (3, '#今日花事#');
+INSERT INTO `topic` VALUES (4, '#生活要有花#');
+INSERT INTO `topic` VALUES (5, '#花花世界#');
+INSERT INTO `topic` VALUES (6, '#花友交流#');
+INSERT INTO `topic` VALUES (7, '#爱花互换#');
+INSERT INTO `topic` VALUES (8, '#养花日记#');
+INSERT INTO `topic` VALUES (9, '#识花鉴花#');
+INSERT INTO `topic` VALUES (10, '#开心一天#');
+INSERT INTO `topic` VALUES (11, '#云赏花#');
+INSERT INTO `topic` VALUES (12, '#百花迎春#');
+INSERT INTO `topic` VALUES (13, '#今日萌宠#');
+INSERT INTO `topic` VALUES (14, '#早安日签#');
+INSERT INTO `topic` VALUES (15, '#艺术插花#');
+INSERT INTO `topic` VALUES (16, '#夏花绚烂#');
+INSERT INTO `topic` VALUES (17, '#盛夏花语#');
+INSERT INTO `topic` VALUES (18, '#秋日美好时光#');
+INSERT INTO `topic` VALUES (19, '#冬之物语#');
+INSERT INTO `topic` VALUES (20, '#多肉植物#');
+
+-- ----------------------------
+-- Table structure for type
+-- ----------------------------
+DROP TABLE IF EXISTS `type`;
+CREATE TABLE `type`  (
+  `type_id` int(11) NOT NULL AUTO_INCREMENT,
+  `type_name` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`type_id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of type
+-- ----------------------------
+INSERT INTO `type` VALUES (1, '爱花展示');
+INSERT INTO `type` VALUES (2, '花友换花');
+INSERT INTO `type` VALUES (3, '兰花专区');
+INSERT INTO `type` VALUES (4, '多肉植物');
+INSERT INTO `type` VALUES (5, '月季专区');
+INSERT INTO `type` VALUES (6, '造园交流');
+INSERT INTO `type` VALUES (7, '养花日记');
+INSERT INTO `type` VALUES (8, '心情树洞');
+INSERT INTO `type` VALUES (9, '萌宠家园');
+INSERT INTO `type` VALUES (10, '花友生活秀');
+
+-- ----------------------------
+-- Table structure for user
+-- ----------------------------
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE `user`  (
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+  `nickname` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `password` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `sex` int(1) NULL DEFAULT NULL,
+  `address` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `profile` varchar(300) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `head_img` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`user_id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 13 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of user
+-- ----------------------------
+INSERT INTO `user` VALUES (1, '刘能', '123456', 1, '河北省石家庄市', '随风奔跑自由是方向~', '/header-img/1.jpg');
+INSERT INTO `user` VALUES (2, '赵四', '123456', 1, '辽宁省铁岭市', '念桥边红药，年年知为谁生。', '/header-img/2.jpg');
+INSERT INTO `user` VALUES (3, '广坤', '123456', 1, '北京市海淀区', '一蓑烟雨任平生。', '/header-img/3.jpg');
+INSERT INTO `user` VALUES (4, '王老七', '123456', 1, '山东省青岛市', '小舟从此逝，江海寄余生。', '/header-img/4.jpg');
+INSERT INTO `user` VALUES (5, '谢大脚', '123456', 2, '美国加利福尼亚州', '大江东去，浪淘尽，千古风流人物。', '/header-img/5.jpg');
+INSERT INTO `user` VALUES (6, '王长贵', '123456', 1, '天津市和平区', '此心安处是吾乡。', '/header-img/6.jpg');
+INSERT INTO `user` VALUES (7, '赵玉田', '123456', 1, '河北省秦皇岛市', '夜阑对酒处，依旧梦魂中。 ', '/header-img/7.jpg');
+INSERT INTO `user` VALUES (8, '王大拿', '123456', 1, '河北省唐山市', '少年听雨歌楼上，红烛昏罗帐。', '/header-img/8.jpg');
+INSERT INTO `user` VALUES (9, '刘大脑袋', '123456', 1, '河北省保定市', '壮年听雨客舟中，江阔云低，断雁叫西风。', '/header-img/9.jpg');
+INSERT INTO `user` VALUES (10, '永强娘', '123456', 2, '广东省深圳市', '而今听雨僧庐下，鬓已星星也。', '/header-img/10.jpg');
+INSERT INTO `user` VALUES (11, '谢腾飞', '123456', 1, '黑龙江省齐齐哈尔市', '莫惜尊前仔细看，应是容颜老。', '/header-img/11.jpg');
+INSERT INTO `user` VALUES (12, '小葵花', '123456', 2, '日本北海道', '渡船春雨至，船上伞高低。', '/header-img/12.jpg');
+
+SET FOREIGN_KEY_CHECKS = 1;

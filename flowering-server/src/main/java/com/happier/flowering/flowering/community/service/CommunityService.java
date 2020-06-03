@@ -189,8 +189,8 @@ public class CommunityService {
     public PushPayload send_N(String alert, String extrasparam) {
         return PushPayload.newBuilder()
                 .setPlatform(Platform.all())//    推送平台设置：所有平台
-                .setAudience(Audience.registrationId("140fe1da9e35c48bff1"))
-//                .setAudience(Audience.all())
+//                .setAudience(Audience.registrationId("140fe1da9e35c48bff1"))
+                .setAudience(Audience.all())
 //    			.setNotification(Notification.alert(alert))
                 .setNotification(Notification.newBuilder()
                         .addPlatformNotification(AndroidNotification.newBuilder()
